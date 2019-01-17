@@ -15,7 +15,7 @@
       height: 100%;
       width: 100%;
       display: flex;
-      position: fixed;
+      position: relative;
       align-items: center;
       justify-content: center;
 
@@ -32,15 +32,24 @@
       text-decoration: none;
 
     }
+    h2:hover {
+      transition: 1s;
+      background-color: white;
+      color: teal;
+    }
+    h2 {
+      background-color: teal;
+    }
   </style>
 </head>
 
 <body>
-  <div>
-    <h1>I'm working on re-designing my website.<br />Come back soon.</h1><br  />
-<a href="framework.html"><h2>Sneak peak!</h2></a>
+  <div style="display:normal;">
+    <h1>I'm working on re-designing my website.<br />Come back soon.</h1>
+
 
   </div>
+  <div><a href="framework.html"><h2>Sneak peak!</h2></a></div>
 </body>
 
 </html>
