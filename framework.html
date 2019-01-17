@@ -32,6 +32,7 @@
   .secondary-name {
     display: none;
     justify-content: center;
+    font-size: 48px;
   }
 
   @media screen and (max-width: 1137px) {
@@ -40,6 +41,21 @@
     }
     .secondary-name {
       display: flex;
+    }
+  }
+  @media screen and (max-width: 600px) {
+    .secondary-name {
+      font-size: 36px;
+    }
+  }
+  @media screen and (max-width: 490px) {
+    .secondary-name {
+      font-size: 30px;
+    }
+  }
+  @media screen and (max-width: 425px) {
+    .secondary-name {
+      font-size: 24px;
     }
   }
 </style>
@@ -52,7 +68,7 @@
     <!-- The Grid -->
     <div class="w3-row-padding">
       <div class="w3-cell-row w3-center">
-        <div class="w3-xxxlarge secondary-name w3-mobile">
+        <div class="secondary-name w3-mobile">
           <div class="w3-panel w3-theme-d5">
             Steven
           </div>
