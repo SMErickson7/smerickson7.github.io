@@ -590,10 +590,10 @@ function amiright() {
   var solution4 = document.getElementsByName("solution4")[0].value;
   var solution5 = document.getElementsByName("solution5")[0].value;
   var solution6 = document.getElementsByName("solution6")[0].value;
-  var solution7 = document.getElementsByName("solution5")[0].value;
-  var solution8 = document.getElementsByName("solution6")[0].value;
+  var solution7 = document.getElementsByName("solution7")[0].value;
+  var solution8 = document.getElementsByName("solution8")[0].value;
   var final_solution = solution1 + solution2 + solution3 + solution4 + solution5 + solution6 + solution7 + solution8;
-  final_solution = final_solution.toLowerCase();
+  final_solution = final_solution.toUpperCase();
   var solutionURL = "https://tinyurl.com/" + final_solution;
   console.log(solutionURL);
   window.open(solutionURL, "_blank")
