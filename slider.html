@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Slider Puzzle</title>
+  <link rel="stylesheet" type="text/css" href="/css/slider.css">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://www.w3schools.com/lib/w3-colors-highway.css">
+</head>
+
+<body>
+  <div id="changeimage"></div>
+  <div class="w3-row" style="height: 100%; min-height: 100%;">
+    <div class="w3-col m1 l2 w3-hide-small" style="height: 100%;">&nbsp;</div>
+
+    <div class="w3-col m10 l8 w3-white w3-card-4" style="height: 100vh; min-height: 100vh;">
+      <div class="w3-container w3-highway-green w3-center w3-padding-16">
+        <h1><strong>Slider Puzzle</strong>
+      </div>
+      <div class="w3-container w3-white" style="height: 100vh; min-height: 100%;">
+        <div class="w3-display-container" style="height: 625px;">
+          <div class="w3-display-middle w3-margin-top" style="width: 500px;">
+            <p>Rearrange the tiles in the correct arrangment to reveal one of our favorite photos of us together. After completion, your gift will be revealed.</p>
+            <div id="game">
+              <li class="tile" id="1"><span class="number">1</span></li>
+              <li class="tile" id="2"><span class="number">2</span></li>
+              <li class="tile" id="3"><span class="number">3</span></li>
+              <li class="tile" id="4"><span class="number">4</span></li>
+              <li class="tile" id="5"><span class="number">5</span></li>
+              <li class="tile" id="6"><span class="number">6</span></li>
+              <li class="tile" id="7"><span class="number">7</span></li>
+              <li class="tile" id="8"><span class="number">8</span></li>
+              <li class="tile" id="9"><span class="number">9</span></li>
+              <li class="tile" id="10"><span class="number">10</span></li>
+              <li class="tile" id="11"><span class="number">11</span></li>
+              <li class="tile" id="12"><span class="number">12</span></li>
+              <li class="tile" id="13"><span class="number">13</span></li>
+              <li class="tile" id="14"><span class="number">14</span></li>
+              <li class="tile" id="15"><span class="number">15</span></li>
+              <li class="tile" id="blank"><span></span></li>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="w3-content w3-center w3-hide">
+          <button class="w3-button w3-dark-gray w3-hover-blue-gray w3-xlarge w3-padding-large" onclick="win();">The Gift</button>
+        </div>
+
+        <div id="help" class="w3-container w3-center">
+          <label class="toggle-checkbox">
+            <input type="checkbox" name="enablehelp" onchange="shownumbers();" />
+            <i class="fa fa-toggle-off unchecked w3-xxlarge w3-text-highway-green" aria-hidden="true"></i>
+            <i class="fa fa-toggle-on checked w3-xxlarge w3-text-highway-green" aria-hidden="true"></i>
+            <span class="w3-xxlarge w3-text-highway-green">Enable help</span>
+          </label>
+        </div>
+
+        <div id="completion" class="w3-content w3-center w3-hide">
+          <h1>You did it!</h1>
+          <p>Now it's time for you to receive your gift. At the other end of this button is something that I've worked hard on.<br />I love you Natalia</p>
+          <button class="w3-button w3-highway-green w3-hover-green w3-xxlarge w3-padding-large">The Gift</button>
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="w3-col m1 l2 w3-hide-small">&nbsp;</div>
+  </div>
+
+</body>
+<script src="/js/slider.js"></script>
+
+</html>
