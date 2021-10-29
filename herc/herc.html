@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,600;0,700;0,800;1,400;1,600;1,700;1,800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <!-- Querystring library -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/qs/6.7.0/qs.min.js"></script>
+  <script src="https://kit.fontawesome.com/74ff93bbed.js" crossorigin="anonymous"></script>
+
+  <title>API</title>
+</head>
+
+<body>
+  <div class="main">
+    <div class="row">
+      <div class="column">
+        <h1 class="main-header">Hercules Gomez Cup</h1>
+      </div>
+    </div>
+    <div class="row">
+      <div class="column">
+        <div class="tab">
+          <button class="tablinks active" onclick="standingsTab(event, 'I95cupTable')">Cup Table</button>
+          <button class="tablinks" onclick="standingsTab(event, 'I95formGuide')">Form Guide</button>
+          <button class="tablinks" onclick="standingsTab(event, 'I95fixtures')">Cup Fixtures</button>
+        </div>
+      </div>
+    </div>
+
+    <div id="I95formGuide" class="row tabcontent">
+      <div class="column">
+        <div>
+          <h3>Hercules Gomez Form Guide</h3>
+          <div id="formGuide">
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="I95cupTable" class="row tabcontent" style="display: block">
+      <div class="column">
+        <h3>Hercules Gomez Cup Table</h3>
+        <table id="standingsData">
+          <thead>
+            <th onclick="sortTable(0)">Team</th>
+            <th onclick="sortTable(1)">PL</th>
+            <th onclick="sortTable(2)">W</th>
+            <th onclick="sortTable(3)">D</th>
+            <th onclick="sortTable(4)">L</th>
+            <th onclick="sortTable(5)">+/-</th>
+            <th onclick="sortTable(6)">GD</th>
+            <th onclick="sortTable(7)">PTS</th>
+            <th onclick="sortTable(8)">PPG</th>
+            <th onclick="sortTable(9)">Home</th>
+            <th onclick="sortTable(10)">Away</th>
+          </thead>
+          <tbody>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div id="I95fixtures" class="row tabcontent">
+      <div class="column">
+        <h3>Hercules Gomez Cup fixtures</h3>
+        <div style="text-align: center; padding:10px 4px;">
+          <img id="ner" src="https://media.api-sports.io/football/teams/1609.png" class="filterTeams" onclick="filterFixturesTeam('New England Revolution', 'ner')">
+          <img id="skc" src="https://media.api-sports.io/football/teams/1611.png" class="filterTeams" onclick="filterFixturesTeam('Sporting Kansas City', 'skc')">
+          <img id="sea" src="https://media.api-sports.io/football/teams/1595.png" class="filterTeams" onclick="filterFixturesTeam('Seattle Sounders', 'sea')">
+          <img id="col" src="https://media.api-sports.io/football/teams/1610.png" class="filterTeams" onclick="filterFixturesTeam('Colorado Rapids', 'col')">
+          <img id="phi" src="https://media.api-sports.io/football/teams/1599.png" class="filterTeams" onclick="filterFixturesTeam('Philadelphia Union', 'phi')">
+          <img id="por" src="https://media.api-sports.io/football/teams/1617.png" class="filterTeams" onclick="filterFixturesTeam('Portland Timbers', 'por')">
+          <img id="nycfc" src="https://media.api-sports.io/football/teams/1604.png" class="filterTeams" onclick="filterFixturesTeam('New York City FC', 'nycfc')">
+          <img id="lag" src="https://media.api-sports.io/football/teams/1605.png" class="filterTeams" onclick="filterFixturesTeam('Los Angeles Galaxy', 'lag')">
+          <img id="rsl" src="https://media.api-sports.io/football/teams/1606.png" class="filterTeams" onclick="filterFixturesTeam('Real Salt Lake', 'rsl')">
+          <img id="dcu" src="https://media.api-sports.io/football/teams/1615.png" class="filterTeams" onclick="filterFixturesTeam('DC United', 'dcu')">
+        </div>
+        <div style="text-align: center; padding:10px 4px;">
+          <div class="calendar" onclick="filterFixturesMonth(1, 'jan')">
+            <svg id="jan" width="40" height="40">
+              <rect x="0" y="0" rx="4" ry="4" width="40" height="40" fill="#E3E3E3" opacity="1" />
+              <rect id="jan2" class="changeclr" x="0" y="0" rx="4" ry="4" width="40" height="8" fill="#AF1E2D" opacity="1" />
+              <rect id="jan3" class="changeclr" x="0" y="5" rx="0" ry="0" width="40" height="8" fill="#AF1E2D" opacity="1" />
+              <circle cx="12" cy="7" r="2.5" fill="white" />
+              <circle cx="28" cy="7" r="2.5" fill="white" />
+              <text x="50%" y="70%" dominant-baseline="middle" text-anchor="middle" fill="black">jan</text>
+              <rect x="0" y="0" rx="4" ry="4" width="40" height="40" fill="#E3E3E3" opacity="0.75" />
+              Sorry, your browser does not support inline SVG.
+            </svg></div>
+          <div class="calendar" onclick="filterFixturesMonth(2, 'feb')">
+            <svg id="feb" width="40" height="40">
+              <rect x="0" y="0" rx="4" ry="4" width="40" height="40" fill="#E3E3E3" opacity="1" />
+              <rect id="feb2" class="changeclr" x="0" y="0" rx="4" ry="4" width="40" height="8" fill="#AF1E2D" opacity="1" />
+              <rect id="feb3" class="changeclr" x="0" y="5" rx="0" ry="0" width="40" height="8" fill="#AF1E2D" opacity="1" />
+              <circle cx="12" cy="7" r="2.5" fill="white" />
+              <circle cx="28" cy="7" r="2.5" fill="white" />
+              <text x="50%" y="70%" dominant-baseline="middle" text-anchor="middle" fill="black">feb</text>
+              <rect x="0" y="0" rx="4" ry="4" width="40" height="40" fill="#E3E3E3" opacity="0.75" />
+              Sorry, your browser does not support inline SVG.
+            </svg></div>
+          <div class="calendar" onclick="filterFixturesMonth(3, 'mar')">
+            <svg id="mar" width="40" height="40">
+              <rect x="0" y="0" rx="4" ry="4" width="40" height="40" fill="#E3E3E3" opacity="1" />
+              <rect id="mar2" class="changeclr" x="0" y="0" rx="4" ry="4" width="40" height="8" fill="#AF1E2D" opacity="1" />
+              <rect id="mar3" class="changeclr" x="0" y="5" rx="0" ry="0" width="40" height="8" fill="#AF1E2D" opacity="1" />
+              <circle cx="12" cy="7" r="2.5" fill="white" />
+              <circle cx="28" cy="7" r="2.5" fill="white" />
+              <text x="50%" y="70%" dominant-baseline="middle" text-anchor="middle" fill="black">mar</text>
+              <rect x="0" y="0" rx="4" ry="4" width="40" height="40" fill="#E3E3E3" opacity="0.75" />
+              Sorry, your browser does not support inline SVG.
+            </svg></div>
+          <div class="calendar" onclick="filterFixturesMonth(4, 'apr')">
+            <svg id="apr" width="40" height="40">
+              <rect x="0" y="0" rx="4" ry="4" width="40" height="40" fill="#E3E3E3" opacity="1" />
+              <rect id="apr2" class="changeclr" x="0" y="0" rx="4" ry="4" width="40" height="8" fill="#AF1E2D" opacity="1" />
+              <rect id="apr3" class="changeclr" x="0" y="5" rx="0" ry="0" width="40" height="8" fill="#AF1E2D" opacity="1" />
+              <circle cx="12" cy="7" r="2.5" fill="white" />
+              <circle cx="28" cy="7" r="2.5" fill="white" />
+              <text x="50%" y="70%" dominant-baseline="middle" text-anchor="middle" fill="black">apr</text>
+              Sorry, your browser does not support inline SVG.
+            </svg></div>
+          <div class="calendar" onclick="filterFixturesMonth(5, 'may')">
+            <svg id="may" width="40" height="40">
+              <rect x="0" y="0" rx="4" ry="4" width="40" height="40" fill="#E3E3E3" opacity="1" />
+              <rect id="may2" class="changeclr" x="0" y="0" rx="4" ry="4" width="40" height="8" fill="#AF1E2D" opacity="1" />
+              <rect id="may3" class="changeclr" x="0" y="5" rx="0" ry="0" width="40" height="8" fill="#AF1E2D" opacity="1" />
+              <circle cx="12" cy="7" r="2.5" fill="white" />
+              <circle cx="28" cy="7" r="2.5" fill="white" />
+              <text x="50%" y="70%" dominant-baseline="middle" text-anchor="middle" fill="black">may</text>
+              Sorry, your browser does not support inline SVG.
+            </svg></div>
+          <div class="calendar" onclick="filterFixturesMonth(6, 'jun')">
+            <svg id="jun" width="40" height="40">
+              <rect x="0" y="0" rx="4" ry="4" width="40" height="40" fill="#E3E3E3" opacity="1" />
+              <rect id="jun2" class="changeclr" x="0" y="0" rx="4" ry="4" width="40" height="8" fill="#AF1E2D" opacity="1" />
+              <rect id="jun3" class="changeclr" x="0" y="5" rx="0" ry="0" width="40" height="8" fill="#AF1E2D" opacity="1" />
+              <circle cx="12" cy="7" r="2.5" fill="white" />
+              <circle cx="28" cy="7" r="2.5" fill="white" />
+              <text x="50%" y="70%" dominant-baseline="middle" text-anchor="middle" fill="black">jun</text>
+              Sorry, your browser does not support inline SVG.
+            </svg></div>
+          <div class="calendar" onclick="filterFixturesMonth(7, 'jul')">
+            <svg id="jul" width="40" height="40">
+              <rect x="0" y="0" rx="4" ry="4" width="40" height="40" fill="#E3E3E3" opacity="1" />
+              <rect id="jul2" class="changeclr" x="0" y="0" rx="4" ry="4" width="40" height="8" fill="#AF1E2D" opacity="1" />
+              <rect id="jul3" class="changeclr" x="0" y="5" rx="0" ry="0" width="40" height="8" fill="#AF1E2D" opacity="1" />
+              <circle cx="12" cy="7" r="2.5" fill="white" />
+              <circle cx="28" cy="7" r="2.5" fill="white" />
+              <text x="50%" y="70%" dominant-baseline="middle" text-anchor="middle" fill="black">jul</text>
+              Sorry, your browser does not support inline SVG.
+            </svg></div>
+          <div class="calendar" onclick="filterFixturesMonth(8, 'aug')">
+            <svg id="aug" width="40" height="40">
+              <rect x="0" y="0" rx="4" ry="4" width="40" height="40" fill="#E3E3E3" opacity="1" />
+              <rect id="aug2" class="changeclr" x="0" y="0" rx="4" ry="4" width="40" height="8" fill="#AF1E2D" opacity="1" />
+              <rect id="aug3" class="changeclr" x="0" y="5" rx="0" ry="0" width="40" height="8" fill="#AF1E2D" opacity="1" />
+              <circle cx="12" cy="7" r="2.5" fill="white" />
+              <circle cx="28" cy="7" r="2.5" fill="white" />
+              <text x="50%" y="70%" dominant-baseline="middle" text-anchor="middle" fill="black">aug</text>
+              Sorry, your browser does not support inline SVG.
+            </svg></div>
+          <div class="calendar" onclick="filterFixturesMonth(9, 'sep')">
+            <svg id="sep" width="40" height="40">
+              <rect x="0" y="0" rx="4" ry="4" width="40" height="40" fill="#E3E3E3" opacity="1" />
+              <rect id="sep2" class="changeclr" x="0" y="0" rx="4" ry="4" width="40" height="8" fill="#AF1E2D" opacity="1" />
+              <rect id="sep3" class="changeclr" x="0" y="5" rx="0" ry="0" width="40" height="8" fill="#AF1E2D" opacity="1" />
+              <circle cx="12" cy="7" r="2.5" fill="white" />
+              <circle cx="28" cy="7" r="2.5" fill="white" />
+              <text x="50%" y="70%" dominant-baseline="middle" text-anchor="middle" fill="black">sep</text>
+              Sorry, your browser does not support inline SVG.
+            </svg></div>
+          <div class="calendar" onclick="filterFixturesMonth(10, 'oct')">
+            <svg id="oct" width="40" height="40">
+              <rect x="0" y="0" rx="4" ry="4" width="40" height="40" fill="#E3E3E3" opacity="1" />
+              <rect id="oct2" class="changeclr" x="0" y="0" rx="4" ry="4" width="40" height="8" fill="#AF1E2D" opacity="1" />
+              <rect id="oct3" class="changeclr" x="0" y="5" rx="0" ry="0" width="40" height="8" fill="#AF1E2D" opacity="1" />
+              <circle cx="12" cy="7" r="2.5" fill="white" />
+              <circle cx="28" cy="7" r="2.5" fill="white" />
+              <text x="50%" y="70%" dominant-baseline="middle" text-anchor="middle" fill="black">oct</text>
+              Sorry, your browser does not support inline SVG.
+            </svg></div>
+          <div class="calendar" onclick="filterFixturesMonth(11, 'nov')">
+            <svg id="nov" width="40" height="40">
+              <rect x="0" y="0" rx="4" ry="4" width="40" height="40" fill="#E3E3E3" opacity="1" />
+              <rect id="nov2" class="changeclr" x="0" y="0" rx="4" ry="4" width="40" height="8" fill="#AF1E2D" opacity="1" />
+              <rect id="nov3" class="changeclr" x="0" y="5" rx="0" ry="0" width="40" height="8" fill="#AF1E2D" opacity="1" />
+              <circle cx="12" cy="7" r="2.5" fill="white" />
+              <circle cx="28" cy="7" r="2.5" fill="white" />
+              <text x="50%" y="70%" dominant-baseline="middle" text-anchor="middle" fill="black">nov</text>
+              Sorry, your browser does not support inline SVG.
+            </svg></div>
+          <div class="calendar" onclick="filterFixturesMonth(12, 'dec')">
+            <svg id="dec" width="40" height="40">
+              <rect x="0" y="0" rx="4" ry="4" width="40" height="40" fill="#E3E3E3" opacity="1" />
+              <rect id="dec2" class="changeclr" x="0" y="0" rx="4" ry="4" width="40" height="8" fill="#AF1E2D" opacity="1" />
+              <rect id="dec3" class="changeclr" x="0" y="5" rx="0" ry="0" width="40" height="8" fill="#AF1E2D" opacity="1" />
+              <circle cx="12" cy="7" r="2.5" fill="white" />
+              <circle cx="28" cy="7" r="2.5" fill="white" />
+              <text x="50%" y="70%" dominant-baseline="middle" text-anchor="middle" fill="black">dec</text>
+              <rect x="0" y="0" rx="4" ry="4" width="40" height="40" fill="#E3E3E3" opacity="0.75" />
+              Sorry, your browser does not support inline SVG.
+            </svg></div>
+        </div>
+        <br />
+
+        <div class="main-header">
+          <button onclick="resetFixtures()" class="resetbtn">Reset</button>
+        </div>
+        <table class="fixtureTable" id="newFixtureTable">
+        </table>
+        <br />
+        <table class="hide" id="fixturedata">
+          <thead>
+            <th>Date</th>
+            <th>Matchup</th>
+            <th>Venue</th>
+            <th>Score</th>
+          </thead>
+          <tbody>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+  </div>
+  <!-- Import axios library -->
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  <!-- Querystring library -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/qs/6.7.0/qs.min.js"></script>
+  <!-- Import our javascript file -->
+  <!--  <script src="mls.js"></script> -->
+  <script src="standings.js"></script>
+  <script src="formguide.js"></script>
+  <script src="cupfixturetable.js"></script>
+  <!--   <script src="combine.js"></script> -->
+  <!--  <script src="test.js"></script> -->
+  <script>
+    function standingsTab(evt, tabData) {
+      // Declare all variables
+      var i, tabcontent, tablinks;
+
+      // Get all elements with class="tabcontent" and hide them
+      tabcontent = document.getElementsByClassName("tabcontent");
+      for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
+      }
+
+      // Get all elements with class="tablinks" and remove the class "active"
+      tablinks = document.getElementsByClassName("tablinks");
+      for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].className = tablinks[i].className.replace(" active", "");
+      }
+
+      // Show the current tab, and add an "active" class to the button that opened the tab
+      document.getElementById(tabData).style.display = "block";
+      evt.currentTarget.className += " active";
+    }
+  </script>
+
+
+  <script>
+    function sortTable(n) {
+      var table, rows, switching, i, x, y, shouldSwitch, dir, switchcount = 0;
+      table = document.getElementById("standingsData");
+      switching = true;
+      // Set the sorting direction to ascending:
+      dir = "asc";
+      /* Make a loop that will continue until
+      no switching has been done: */
+      while (switching) {
+        // Start by saying: no switching is done:
+        switching = false;
+        rows = table.rows;
+        /* Loop through all table rows (except the
+        first, which contains table headers): */
+        for (i = 1; i < (rows.length - 1); i++) {
+          // Start by saying there should be no switching:
+          shouldSwitch = false;
+          /* Get the two elements you want to compare,
+          one from current row and one from the next: */
+          x = rows[i].getElementsByTagName("TD")[n];
+          y = rows[i + 1].getElementsByTagName("TD")[n];
+          /* Check if the two rows should switch place,
+          based on the direction, asc or desc: */
+          if (dir == "asc") {
+            if (x.innerHTML.toLowerCase() > y.innerHTML.toLowerCase()) {
+              // If so, mark as a switch and break the loop:
+              shouldSwitch = true;
+              break;
+            }
+          } else if (dir == "desc") {
+            if (x.innerHTML.toLowerCase() < y.innerHTML.toLowerCase()) {
+              // If so, mark as a switch and break the loop:
+              shouldSwitch = true;
+              break;
+            }
+          }
+        }
+        if (shouldSwitch) {
+          /* If a switch has been marked, make the switch
+          and mark that a switch has been done: */
+          rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+          switching = true;
+          // Each time a switch is done, increase this count by 1:
+          switchcount++;
+        } else {
+          /* If no switching has been done AND the direction is "asc",
+          set the direction to "desc" and run the while loop again. */
+          if (switchcount == 0 && dir == "asc") {
+            dir = "desc";
+            switching = true;
+          }
+        }
+      }
+    }
+  </script>
+
+</body>
+
+</html>
