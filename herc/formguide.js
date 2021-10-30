@@ -8,13 +8,15 @@ fetch('mls2021.json')
     console.log('error: ' + err);
   });
 
-var fgTeams = ['New England Revolution', 'Sporting Kansas City', 'Seattle Sounders', 'Colorado Rapids', 'Philadelphia Union', 'Portland Timbers', 'New York City FC', 'Los Angeles Galaxy', 'Real Salt Lake', 'DC United'];
-
+var fgTeams = ['New England Revolution', 'New York Red Bulls', 'Sporting Kansas City', 'Seattle Sounders', 'Colorado Rapids', 'Philadelphia Union', 'Portland Timbers', 'New York City FC', 'Los Angeles Galaxy', 'Real Salt Lake', 'DC United'];
+fgTeams.sort();
+console.log(fgTeams[1]);
 
 function createFormGuide(gameData) {
   function comp(a, b) {
     return new Date(a.fixture.date).getTime() - new Date(b.fixture.date).getTime();
   }
+  gameData = gameData.sort(comp);
   gameData = gameData.sort(comp);
   let mainContainer = document.getElementById("formGuide");
 
