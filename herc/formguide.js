@@ -8,9 +8,6 @@ fetch('mls2021.json')
     console.log('error: ' + err);
   });
 
-var fgTeams = ['New England Revolution', 'New York Red Bulls', 'Sporting Kansas City', 'Seattle Sounders', 'Colorado Rapids', 'Philadelphia Union', 'Portland Timbers', 'New York City FC', 'Los Angeles Galaxy', 'Real Salt Lake', 'DC United'];
-fgTeams.sort();
-console.log(fgTeams[1]);
 
 function createFormGuide(gameData) {
   function comp(a, b) {
@@ -24,7 +21,22 @@ function createFormGuide(gameData) {
   let game = document.createElement('div');
   team.innerHTML = '<div class="fg-team" style="margin-bottom: 10px;"><strong>Team</strong></div>';
 
-  for (var i = 0; i < 14; i++) {
+  var numGames = [];
+  for (var x = 0; x < fgTeams.length; x++) {
+    var totalGames = 0;
+    for (var y = 0; y < gameData.length; y++) {
+      for (var z = 0; z < fgTeams.length; z++) {
+        if (fgTeams[x] == gameData[y].teams.home.name && fgTeams[z] == gameData[y].teams.away.name || fgTeams[z] == gameData[y].teams.home.name && fgTeams[x] == gameData[y].teams.away.name) {
+          totalGames = totalGames + 1;
+          numGames.splice(x,1,totalGames);
+          //console.log(numGames);
+        }
+
+      }
+    }
+  }
+  num = Math.max.apply(null, numGames);
+  for (var i = 0; i < Math.max.apply(null, numGames); i++) {
     let game = document.createElement('div');
     game.classList.add('fg-cell', 'fg-match');
     round = i + 1;

@@ -4,7 +4,9 @@ var filterTeam = 0;
 var fgTeams = ['New England Revolution', 'New York Red Bulls', 'Sporting Kansas City', 'Seattle Sounders', 'Colorado Rapids', 'Philadelphia Union', 'Portland Timbers', 'New York City FC', 'Los Angeles Galaxy', 'Real Salt Lake', 'DC United'];
 fgTeams.sort();
 
-var fixTeamLogoArray = [{
+var fixTeamLogoArray =
+[
+  {
     "team": "New England Revolution",
     "value": "ner",
     "id": 1609
