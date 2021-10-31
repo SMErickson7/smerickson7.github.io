@@ -13,7 +13,6 @@
   <!-- Querystring library -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/qs/6.7.0/qs.min.js"></script>
   <script src="https://kit.fontawesome.com/74ff93bbed.js" crossorigin="anonymous"></script>
-
   <title>Herculez Gomez Cup</title>
 </head>
 
@@ -69,18 +68,7 @@
     <div id="I95fixtures" class="row tabcontent">
       <div class="column">
         <h3>Herculez Gomez Cup fixtures</h3>
-        <div class="fixtureLogos">
-          <img id="col" src="https://media.api-sports.io/football/teams/1610.png" class="filterTeams" onclick="filterFixturesTeam('Colorado Rapids', 'col')">
-          <img id="dcu" src="https://media.api-sports.io/football/teams/1615.png" class="filterTeams" onclick="filterFixturesTeam('DC United', 'dcu')">
-          <img id="lag" src="https://media.api-sports.io/football/teams/1605.png" class="filterTeams" onclick="filterFixturesTeam('Los Angeles Galaxy', 'lag')">
-          <img id="ner" src="https://media.api-sports.io/football/teams/1609.png" class="filterTeams" onclick="filterFixturesTeam('New England Revolution', 'ner')">
-          <img id="nycfc" src="https://media.api-sports.io/football/teams/1604.png" class="filterTeams" onclick="filterFixturesTeam('New York City FC', 'nycfc')">
-          <img id="nyrb" src="https://media.api-sports.io/football/teams/1602.png" class="filterTeams" onclick="filterFixturesTeam('New York Red Bulls', 'nyrb')">
-          <img id="phi" src="https://media.api-sports.io/football/teams/1599.png" class="filterTeams" onclick="filterFixturesTeam('Philadelphia Union', 'phi')">
-          <img id="por" src="https://media.api-sports.io/football/teams/1617.png" class="filterTeams" onclick="filterFixturesTeam('Portland Timbers', 'por')">
-          <img id="rsl" src="https://media.api-sports.io/football/teams/1606.png" class="filterTeams" onclick="filterFixturesTeam('Real Salt Lake', 'rsl')">
-          <img id="sea" src="https://media.api-sports.io/football/teams/1595.png" class="filterTeams" onclick="filterFixturesTeam('Seattle Sounders', 'sea')">
-          <img id="skc" src="https://media.api-sports.io/football/teams/1611.png" class="filterTeams" onclick="filterFixturesTeam('Sporting Kansas City', 'skc')">
+        <div id="fixLogosFilter" class="fixtureLogos">
         </div>
         <div style="text-align: center; padding:10px 4px;">
           <div class="calendar" onclick="filterFixturesMonth(1, 'jan')">
@@ -240,7 +228,7 @@
   <script src="formguide.js"></script>
   <script src="cupfixturetable.js"></script>
   <!--   <script src="combine.js"></script> -->
-  <!--  <script src="test.js"></script> -->
+   <!-- <script src="test.js"></script> -->
   <script>
     function standingsTab(evt, tabData) {
       // Declare all variables

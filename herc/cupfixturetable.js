@@ -3,6 +3,86 @@ var filterTeam = 0;
 
 var fgTeams = ['New England Revolution', 'New York Red Bulls', 'Sporting Kansas City', 'Seattle Sounders', 'Colorado Rapids', 'Philadelphia Union', 'Portland Timbers', 'New York City FC', 'Los Angeles Galaxy', 'Real Salt Lake', 'DC United'];
 fgTeams.sort();
+
+var fixTeamLogoArray = [{
+    "team": "New England Revolution",
+    "value": "ner",
+    "id": 1609
+  },
+  {
+    "team": "Sporting Kansas City",
+    "value": "skc",
+    "id": 1611
+  },
+  {
+    "team": "Seattle Sounders",
+    "value": "sea",
+    "id": 1595
+  },
+  {
+    "team": "Colorado Rapids",
+    "value": "col",
+    "id": 1610
+  },
+  {
+    "team": "Philadelphia Union",
+    "value": "phi",
+    "id": 1599
+  }, {
+    "team": "Portland Timbers",
+    "value": "por",
+    "id": 1617
+  }, {
+    "team": "New York City FC",
+    "value": "nycfc",
+    "id": 1604
+  }, {
+    "team": "Los Angeles Galaxy",
+    "value": "lag",
+    "id": 1605
+  }, {
+    "team": "Real Salt Lake",
+    "value": "rsl",
+    "id": 1606
+  }, {
+    "team": "DC United",
+    "value": "dcu",
+    "id": 1615
+  }, {
+    "team": "New York Red Bulls",
+    "value": "nyrb",
+    "id": 1602
+  }
+];
+
+function sortByProperty(property) {
+  return function(a, b) {
+    if (a[property] > b[property])
+      return 1;
+    else if (a[property] < b[property])
+      return -1;
+
+    return 0;
+  }
+}
+
+fixTeamLogoArray.sort(sortByProperty("team"));
+console.log(fixTeamLogoArray);
+
+function genLogoListing(fixTeamLogoArray) {
+  let mainContainer = document.getElementById("fixLogosFilter");
+  for (let i = 0; i < fixTeamLogoArray.length; i++) {
+    let game = document.createElement('img');
+    game.id = fixTeamLogoArray[i].value;
+    game.src = "https://media.api-sports.io/football/teams/" + fixTeamLogoArray[i].id + ".png";
+    game.className = "filterTeams";
+    game.onclick = function() { filterFixturesTeam(fixTeamLogoArray[i].team, fixTeamLogoArray[i].value); };
+    mainContainer.appendChild(game);
+  }
+}
+
+genLogoListing(fixTeamLogoArray);
+
 function fetchData() {
   fetch('mls2021.json')
     .then(function(response) {
