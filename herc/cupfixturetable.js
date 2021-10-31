@@ -1,11 +1,15 @@
 var filterMonth = 0;
 var filterTeam = 0;
 
-var fgTeams = ['New England Revolution', 'New York Red Bulls', 'Sporting Kansas City', 'Seattle Sounders', 'Colorado Rapids', 'Philadelphia Union', 'Portland Timbers', 'New York City FC', 'Los Angeles Galaxy', 'Real Salt Lake', 'DC United'];
+var fgTeams = ['Minnesota United FC', 'New England Revolution', 'New York Red Bulls', 'Sporting Kansas City', 'Seattle Sounders', 'Colorado Rapids', 'Philadelphia Union', 'Portland Timbers', 'New York City FC', 'Los Angeles Galaxy', 'Real Salt Lake', 'DC United'];
 fgTeams.sort();
 
-var fixTeamLogoArray =
-[
+var fixTeamLogoArray = [
+  {
+    "team": "Minnesota United FC",
+    "value": "mnu",
+    "id": 1612
+  },
   {
     "team": "New England Revolution",
     "value": "ner",
@@ -78,7 +82,9 @@ function genLogoListing(fixTeamLogoArray) {
     game.id = fixTeamLogoArray[i].value;
     game.src = "https://media.api-sports.io/football/teams/" + fixTeamLogoArray[i].id + ".png";
     game.className = "filterTeams";
-    game.onclick = function() { filterFixturesTeam(fixTeamLogoArray[i].team, fixTeamLogoArray[i].value); };
+    game.onclick = function() {
+      filterFixturesTeam(fixTeamLogoArray[i].team, fixTeamLogoArray[i].value);
+    };
     mainContainer.appendChild(game);
   }
 }

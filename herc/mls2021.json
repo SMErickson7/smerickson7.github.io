@@ -29383,8 +29383,8 @@
       "date": "2021-10-31T17:00:00+00:00",
       "timestamp": 1635699600,
       "periods": {
-        "first": null,
-        "second": null
+        "first": 1635699600,
+        "second": 1635703200
       },
       "venue": {
         "id": 1617,
@@ -29392,9 +29392,9 @@
         "city": "Saint Paul, Minnesota"
       },
       "status": {
-        "long": "Not Started",
-        "short": "NS",
-        "elapsed": null
+        "long": "Match Finished",
+        "short": "FT",
+        "elapsed": 90
       }
     },
     "league": {
@@ -29411,27 +29411,27 @@
         "id": 1612,
         "name": "Minnesota United FC",
         "logo": "https://media.api-sports.io/football/teams/1612.png",
-        "winner": null
+        "winner": true
       },
       "away": {
         "id": 1611,
         "name": "Sporting Kansas City",
         "logo": "https://media.api-sports.io/football/teams/1611.png",
-        "winner": null
+        "winner": false
       }
     },
     "goals": {
-      "home": null,
-      "away": null
+      "home": 2,
+      "away": 1
     },
     "score": {
       "halftime": {
-        "home": null,
-        "away": null
+        "home": 2,
+        "away": 1
       },
       "fulltime": {
-        "home": null,
-        "away": null
+        "home": 2,
+        "away": 1
       },
       "extratime": {
         "home": null,
