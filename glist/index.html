@@ -1,0 +1,803 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <link rel="manifest" href="manifest.json" />
+  <!-- ios support -->
+  <link rel="apple-touch-icon" href="images/icons/icon-72x72.png" />
+  <link rel="apple-touch-icon" href="images/icons/icon-96x96.png" />
+  <link rel="apple-touch-icon" href="images/icons/icon-128x128.png" />
+  <link rel="apple-touch-icon" href="images/icons/icon-144x144.png" />
+  <link rel="apple-touch-icon" href="images/icons/icon-152x152.png" />
+  <link rel="apple-touch-icon" href="images/icons/icon-192x192.png" />
+  <link rel="apple-touch-icon" href="images/icons/icon-384x384.png" />
+  <link rel="apple-touch-icon" href="images/icons/icon-512x512.png" />
+  <meta name="apple-mobile-web-app-status-bar" content="#627D98" />
+  <meta name="theme-color" content="#627D98" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <title>Grocery List</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap" rel="stylesheet">
+</head>
+
+<body onload="loadSavedList()">
+  <main>
+    <div class="container">
+      <div class="row">
+        <div class="nine columns">
+          <h3>My Grocery List</h3>
+        </div>
+        <div class="three columns">
+          <button id="toggleSwitch" onclick="toggleList()" disabled>Show List</button>
+        </div>
+        </row>
+        <div class="row">
+          <div class="twelve columns">
+            <div id="mydiv" style="display: none;"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="three columns">
+          <h5>Produce</h5>
+          <label class="container-checkbox">Apples
+            <input id="Apples" onclick="addToList('Apples')" type="checkbox" value="Apples">
+            <span class="checkmark"></span>
+          </label>
+          <label class="container-checkbox">Pears
+            <input id="Pears" onclick="addToList('Pears')" type="checkbox" value="Pears">
+            <span class="checkmark"></span>
+          </label>
+          <label class="container-checkbox">Peaches
+            <input id="Peaches" onclick="addToList('Peaches')" type="checkbox" value="Peaches">
+            <span class="checkmark"></span>
+          </label>
+          <label class="container-checkbox">Bananas
+            <input id="Bananas" onclick="addToList('Bananas')" type="checkbox" value="Bananas">
+            <span class="checkmark"></span>
+          </label>
+          <label class="container-checkbox">Oranges
+            <input id="Oranges" onclick="addToList('Oranges')" type="checkbox" value="Oranges">
+            <span class="checkmark"></span>
+          </label>
+          <label class="container-checkbox">Lemons
+            <input id="Lemons" onclick="addToList('Lemons')" type="checkbox" value="Lemons">
+            <span class="checkmark"></span>
+          </label>
+          <label class="container-checkbox">Limes
+            <input id="Limes" onclick="addToList('Limes')" type="checkbox" value="Limes">
+            <span class="checkmark"></span>
+          </label>
+          <label class="container-checkbox">Kiwis
+            <input id="Kiwis" onclick="addToList('Kiwis')" type="checkbox" value="Kiwis">
+            <span class="checkmark"></span>
+          </label>
+          <label class="container-checkbox">Clementines
+            <input id="Clementines" onclick="addToList('Clementines')" type="checkbox" value="Clementines">
+            <span class="checkmark"></span>
+          </label>
+          <label class="container-checkbox">Strawberries
+            <input id="Strawberries" onclick="addToList('Strawberries')" type="checkbox" value="Strawberries">
+            <span class="checkmark"></span>
+          </label>
+          <label class="container-checkbox">Blueberries
+            <input id="Blueberries" onclick="addToList('Blueberries')" type="checkbox" value="Blueberries">
+            <span class="checkmark"></span>
+          </label>
+          <label class="container-checkbox">Raspberries
+            <input id="Raspberries" onclick="addToList('Raspberries')" type="checkbox" value="Raspberries">
+            <span class="checkmark"></span>
+          </label>
+          <label class="container-checkbox">Blackberries
+            <input id="Blackberries" onclick="addToList('Blackberries')" type="checkbox" value="Blackberries">
+            <span class="checkmark"></span>
+          </label>
+          <label class="container-checkbox">Honeydew melon
+            <input id="Honeydew melon" onclick="addToList('Honeydew melon')" type="checkbox" value="Honeydew_melon">
+            <span class="checkmark"></span>
+          </label>
+          <label class="container-checkbox">Watermelon
+            <input id="Watermelon" onclick="addToList('Watermelon')" type="checkbox" value="Watermelon">
+            <span class="checkmark"></span>
+          </label>
+          <label class="container-checkbox">Cantaloupe
+            <input id="Cantaloupe" onclick="addToList('Cantaloupe')" type="checkbox" value="Cantaloupe">
+            <span class="checkmark"></span>
+          </label>
+          <label class="container-checkbox">Pineapple
+            <input id="Pineapple" onclick="addToList('Pineapple')" type="checkbox" value="Pineapple">
+            <span class="checkmark"></span>
+          </label>
+          <label class="container-checkbox">Tomatoes
+            <input id="Tomatoes" onclick="addToList('Tomatoes')" type="checkbox" value="Tomatoes">
+            <span class="checkmark"></span>
+          </label>
+          <label class="container-checkbox">Avocados
+            <input id="Avocados" onclick="addToList('Avocados')" type="checkbox" value="Avocados">
+            <span class="checkmark"></span>
+          </label>
+          <label class="container-checkbox">Cherry tomatoes
+            <input id="Cherry tomatoes" onclick="addToList('Cherry tomatoes')" type="checkbox" value="Cherry_tomatoes">
+            <span class="checkmark"></span>
+          </label>
+          <label class="container-checkbox">Sweet peppers
+            <input id="Sweet peppers" onclick="addToList('Sweet peppers')" type="checkbox" value="Sweet_peppers">
+            <span class="checkmark"></span>
+          </label>
+          <label class="container-checkbox">Beets
+            <input id="Beets" onclick="addToList('Beets')" type="checkbox" value="Beets">
+            <span class="checkmark"></span>
+          </label>
+          <label class="container-checkbox">Green beans
+            <input id="Green beans" onclick="addToList('Green beans')" type="checkbox" value="Green_beans">
+            <span class="checkmark"></span>
+          </label>
+          <label class="container-checkbox">Parsley
+            <input id="Parsley" onclick="addToList('Parsley')" type="checkbox" value="Parsley">
+            <span class="checkmark"></span>
+          </label>
+          <label class="container-checkbox">Cilantro
+            <input id="Cilantro" onclick="addToList('Cilantro')" type="checkbox" value="Cilantro">
+            <span class="checkmark"></span>
+          </label>
+          <label class="container-checkbox">Fresh dill
+            <input id="Fresh dill" onclick="addToList('Fresh dill')" type="checkbox" value="Fresh_dill">
+            <span class="checkmark"></span>
+          </label>
+          <label class="container-checkbox">Rosemary
+            <input id="Rosemary" onclick="addToList('Rosemary')" type="checkbox" value="Rosemary">
+            <span class="checkmark"></span>
+          </label>
+          <label class="container-checkbox">Sage leaves
+            <input id="Sage leaves" onclick="addToList('Sage leaves')" type="checkbox" value="Sage_leaves">
+            <span class="checkmark"></span>
+          </label>
+          <label class="container-checkbox">Thyme
+            <input id="Thyme" onclick="addToList('Thyme')" type="checkbox" value="Thyme">
+            <span class="checkmark"></span>
+          </label>
+          <label class="container-checkbox">Basil
+            <input id="Basil" onclick="addToList('Basil')" type="checkbox" value="Basil">
+            <span class="checkmark"></span>
+          </label>
+          <label class="container-checkbox">Radishes
+            <input id="Radishes" onclick="addToList('Radishes')" type="checkbox" value="Radishes">
+            <span class="checkmark"></span>
+          </label>
+          <label class="container-checkbox">Broccoli
+            <input id="Broccoli" onclick="addToList('Broccoli')" type="checkbox" value="Broccoli">
+            <span class="checkmark"></span>
+          </label>
+          <label class="container-checkbox">Cauliflower
+            <input id="Cauliflower" onclick="addToList('Cauliflower')" type="checkbox" value="Cauliflower">
+            <span class="checkmark"></span>
+          </label>
+          <label class="container-checkbox">Carrots
+            <input id="Carrots" onclick="addToList('Carrots')" type="checkbox" value="Carrots">
+            <span class="checkmark"></span>
+          </label>
+          <label class="container-checkbox">Red cabbage
+            <input id="Red cabbage" onclick="addToList('Red cabbage')" type="checkbox" value="Red_cabbage">
+            <span class="checkmark"></span>
+          </label>
+          <label class="container-checkbox">Fennel
+            <input id="Fennel" onclick="addToList('Fennel')" type="checkbox" value="Fennel">
+            <span class="checkmark"></span>
+          </label>
+          <label class="container-checkbox">Leek
+            <input id="Leek" onclick="addToList('Leek')" type="checkbox" value="Leek">
+            <span class="checkmark"></span>
+          </label>
+          <label class="container-checkbox">Swiss chard
+            <input id="Swiss chard" onclick="addToList('Swiss chard')" type="checkbox" value="Swiss_chard">
+            <span class="checkmark"></span>
+          </label>
+          <label class="container-checkbox">Celery
+            <input id="Celery" onclick="addToList('Celery')" type="checkbox" value="Celery">
+            <span class="checkmark"></span>
+          </label>
+          <label class="container-checkbox">Scallion
+            <input id="Scallion" onclick="addToList('Scallion')" type="checkbox" value="Scallion">
+            <span class="checkmark"></span>
+          </label>
+          <label class="container-checkbox">Lettuce
+            <input id="Lettuce" onclick="addToList('Lettuce')" type="checkbox" value="Lettuce">
+            <span class="checkmark"></span>
+          </label>
+          <label class="container-checkbox">Arugula
+            <input id="Arugula" onclick="addToList('Arugula')" type="checkbox" value="Arugula">
+            <span class="checkmark"></span>
+          </label>
+          <label class="container-checkbox">Romaine lettuce
+            <input id="Romaine lettuce" onclick="addToList('Romaine lettuce')" type="checkbox" value="Romaine_lettuce">
+            <span class="checkmark"></span>
+          </label>
+          <label class="container-checkbox">Spinach
+            <input id="Spinach" onclick="addToList('Spinach')" type="checkbox" value="Spinach">
+            <span class="checkmark"></span>
+          </label>
+          <label class="container-checkbox">Asparagus
+            <input id="Asparagus" onclick="addToList('Asparagus')" type="checkbox" value="Asparagus">
+            <span class="checkmark"></span>
+          </label>
+          <label class="container-checkbox">Zucchini
+            <input id="Zucchini" onclick="addToList('Zucchini')" type="checkbox" value="Zucchini">
+            <span class="checkmark"></span>
+          </label>
+          <label class="container-checkbox">Bell pepper
+            <input id="Bell pepper" onclick="addToList('Bell pepper')" type="checkbox" value="Bell_pepper">
+            <span class="checkmark"></span>
+          </label>
+          <label class="container-checkbox">Corn
+            <input id="Corn" onclick="addToList('Corn')" type="checkbox" value="Corn">
+            <span class="checkmark"></span>
+          </label>
+          <label class="container-checkbox">Red onion
+            <input id="Red onion" onclick="addToList('Red onion')" type="checkbox" value="Red_onion">
+            <span class="checkmark"></span>
+          </label>
+          <label class="container-checkbox">Yellow onion
+            <input id="Yellow onion" onclick="addToList('Yellow onion')" type="checkbox" value="Yellow_onion">
+            <span class="checkmark"></span>
+          </label>
+          <label class="container-checkbox">Yukon gold potatoes
+            <input id="Yukon gold potatoes" onclick="addToList('Yukon gold potatoes')" type="checkbox" value="Yukon_gold_potatoes">
+            <span class="checkmark"></span>
+          </label>
+          <label class="container-checkbox">Potatoes
+            <input id="Potatoes" onclick="addToList('Potatoes')" type="checkbox" value="Potatoes">
+            <span class="checkmark"></span>
+          </label>
+          <label class="container-checkbox">Sweet potatoes
+            <input id="Sweet potatoes" onclick="addToList('Sweet potatoes')" type="checkbox" value="Sweet_potatoes">
+            <span class="checkmark"></span>
+          </label>
+          <label class="container-checkbox">Garlic cloves
+            <input id="Garlic cloves" onclick="addToList('Garlic cloves')" type="checkbox" value="Garlic_cloves">
+            <span class="checkmark"></span>
+          </label>
+          <label class="container-checkbox">Ginger
+            <input id="Ginger" onclick="addToList('Ginger')" type="checkbox" value="Ginger">
+            <span class="checkmark"></span>
+          </label>
+        </div>
+        <div class="three columns">
+          <h5>Deli</h5>
+          <label class="container-checkbox">Giovanni Rana pasta
+            <input id="Giovanni Rana pasta" onclick="addToList('Giovanni Rana pasta')" type="checkbox" value="Giovanni_Rana_pasta">
+            <span class="checkmark"></span>
+          </label>
+          <label class="container-checkbox">Alfredo sauce
+            <input id="Alfredo sauce" onclick="addToList('Alfredo sauce')" type="checkbox" value="Alfredo_sauce">
+            <span class="checkmark"></span>
+          </label>
+          <label class="container-checkbox">Hummus
+            <input id="Hummus" onclick="addToList('Hummus')" type="checkbox" value="Hummus">
+            <span class="checkmark"></span>
+          </label>
+          <label class="container-checkbox">Turkey
+            <input id="Turkey" onclick="addToList('Turkey')" type="checkbox" value="Turkey">
+            <span class="checkmark"></span>
+          </label>
+          <label class="container-checkbox">Ham
+            <input id="Ham" onclick="addToList('Ham')" type="checkbox" value="Ham">
+            <span class="checkmark"></span>
+          </label>
+          <label class="container-checkbox">Roast beef
+            <input id="Roast beef" onclick="addToList('Roast beef')" type="checkbox" value="Roast_beef">
+            <span class="checkmark"></span>
+          </label>
+          <label class="container-checkbox">Mortadella
+            <input id="Mortadella" onclick="addToList('Mortadella')" type="checkbox" value="Mortadella">
+            <span class="checkmark"></span>
+          </label>
+          <label class="container-checkbox">American cheese
+            <input id="American cheese" onclick="addToList('American cheese')" type="checkbox" value="American_cheese">
+            <span class="checkmark"></span>
+          </label>
+          <label class="container-checkbox">Swiss cheese
+            <input id="Swiss cheese" onclick="addToList('Swiss cheese')" type="checkbox" value="Swiss_cheese">
+            <span class="checkmark"></span>
+          </label>
+          <label class="container-checkbox">Pita bread
+            <input id="Pita bread" onclick="addToList('Pita bread')" type="checkbox" value="Pita_bread">
+            <span class="checkmark"></span>
+          </label>
+          <label class="container-checkbox">Dried cranberries
+            <input id="Dried cranberries" onclick="addToList('Dried cranberries')" type="checkbox" value="Dried_cranberries">
+            <span class="checkmark"></span>
+          </label>
+          <label class="container-checkbox">In shell nuts
+            <input id="In shell nuts" onclick="addToList('In shell nuts')" type="checkbox" value="In_shell_nuts">
+            <span class="checkmark"></span>
+          </label>
+          <label class="container-checkbox">Sliced almonds
+            <input id="Sliced almonds" onclick="addToList('Sliced almonds')" type="checkbox" value="Sliced_almonds">
+            <span class="checkmark"></span>
+          </label>
+          <label class="container-checkbox">Walnuts
+            <input id="Walnuts" onclick="addToList('Walnuts')" type="checkbox" value="Walnuts">
+            <span class="checkmark"></span>
+          </label>
+          <label class="container-checkbox">Olives
+            <input id="Olives" onclick="addToList('Olives')" type="checkbox" value="Olives">
+            <span class="checkmark"></span>
+          </label>
+          <label class="container-checkbox">Feta cheese
+            <input id="Feta cheese" onclick="addToList('Feta cheese')" type="checkbox" value="Feta_cheese">
+            <span class="checkmark"></span>
+          </label>
+          <label class="container-checkbox">Monterey jack cheese
+            <input id="Monterey jack cheese" onclick="addToList('Monterey jack cheese')" type="checkbox" value="Monterey_jack_cheese">
+            <span class="checkmark"></span>
+          </label>
+          <label class="container-checkbox">Gorgonzola
+            <input id="Gorgonzola" onclick="addToList('Gorgonzola')" type="checkbox" value="Gorgonzola">
+            <span class="checkmark"></span>
+          </label>
+          <label class="container-checkbox">Goat cheese
+            <input id="Goat cheese" onclick="addToList('Goat cheese')" type="checkbox" value="Goat_cheese">
+            <span class="checkmark"></span>
+          </label>
+          <label class="container-checkbox">Gouda
+            <input id="Gouda" onclick="addToList('Gouda')" type="checkbox" value="Gouda">
+            <span class="checkmark"></span>
+          </label>
+          <label class="container-checkbox">Grana padano
+            <input id="Grana padano" onclick="addToList('Grana padano')" type="checkbox" value="Grana_padano">
+            <span class="checkmark"></span>
+          </label>
+          <label class="container-checkbox">Fig jam
+            <input id="Fig jam" onclick="addToList('Fig jam')" type="checkbox" value="Fig_jam">
+            <span class="checkmark"></span>
+          </label>
+          <label class="container-checkbox">Egg salad
+            <input id="Egg salad" onclick="addToList('Egg salad')" type="checkbox" value="Egg_salad">
+            <span class="checkmark"></span>
+          </label>
+          <label class="container-checkbox">Chicken salad
+            <input id="Chicken salad" onclick="addToList('Chicken salad')" type="checkbox" value="Chicken_salad">
+            <span class="checkmark"></span>
+          </label>
+          <label class="container-checkbox">Quiche
+            <input id="Quiche" onclick="addToList('Quiche')" type="checkbox" value="Quiche">
+            <span class="checkmark"></span>
+          </label>
+          <label class="container-checkbox">Sushi
+            <input id="Sushi" onclick="addToList('Sushi')" type="checkbox" value="Sushi">
+            <span class="checkmark"></span>
+          </label>
+        </div>
+        <div class="three columns">
+          <h5>Meat</h5>
+          <label class="container-checkbox">Salmon
+            <input id="Salmon" onclick="addToList('Salmon')" type="checkbox" value="Salmon">
+            <span class="checkmark"></span>
+          </label>
+          <label class="container-checkbox">White fish
+            <input id="White fish" onclick="addToList('White fish')" type="checkbox" value="White_fish">
+            <span class="checkmark"></span>
+          </label>
+          <label class="container-checkbox">Pork chops
+            <input id="Pork chops" onclick="addToList('Pork chops')" type="checkbox" value="Pork_chops">
+            <span class="checkmark"></span>
+          </label>
+          <label class="container-checkbox">Ground beef
+            <input id="Ground beef" onclick="addToList('Ground beef')" type="checkbox" value="Ground_beef">
+            <span class="checkmark"></span>
+          </label>
+          <label class="container-checkbox">Meatloaf meat
+            <input id="Meatloaf meat" onclick="addToList('Meatloaf meat')" type="checkbox" value="Meatloaf_meat">
+            <span class="checkmark"></span>
+          </label>
+          <label class="container-checkbox">Ground turkey
+            <input id="Ground turkey" onclick="addToList('Ground turkey')" type="checkbox" value="Ground_turkey">
+            <span class="checkmark"></span>
+          </label>
+          <label class="container-checkbox">Chicken
+            <input id="Chicken" onclick="addToList('Chicken')" type="checkbox" value="Chicken">
+            <span class="checkmark"></span>
+          </label>
+          <label class="container-checkbox">Hot dogs
+            <input id="Hot dogs" onclick="addToList('Hot dogs')" type="checkbox" value="Hot_dogs">
+            <span class="checkmark"></span>
+          </label>
+          <label class="container-checkbox">Bacon
+            <input id="Bacon" onclick="addToList('Bacon')" type="checkbox" value="Bacon">
+            <span class="checkmark"></span>
+          </label>
+        </div>
+        <div class="three columns">
+          <h5>Organics</h5>
+          <label class="container-checkbox">Cliff bars
+            <input id="Cliff bars" onclick="addToList('Cliff bars')" type="checkbox" value="Cliff_bars">
+            <span class="checkmark"></span>
+          </label>
+          <label class="container-checkbox">Potato chips
+            <input id="Potato chips" onclick="addToList('Potato chips')" type="checkbox" value="Potato_chips">
+            <span class="checkmark"></span>
+          </label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="three columns">
+          <h5>Snacks</h5>
+          <label class="container-checkbox">Gum
+            <input id="Gum" onclick="addToList('Gum')" type="checkbox" value="Gum">
+            <span class="checkmark"></span>
+          </label>
+          <label class="container-checkbox">Snickers
+            <input id="Snickers" onclick="addToList('Snickers')" type="checkbox" value="Snickers">
+            <span class="checkmark"></span>
+          </label>
+          <label class="container-checkbox">Graham crackers
+            <input id="Graham crackers" onclick="addToList('Graham crackers')" type="checkbox" value="Graham_crackers">
+            <span class="checkmark"></span>
+          </label>
+          <label class="container-checkbox">Popcorn
+            <input id="Popcorn" onclick="addToList('Popcorn')" type="checkbox" value="Popcorn">
+            <span class="checkmark"></span>
+          </label>
+        </div>
+        <div class="three columns">
+          <h5>Breakfast</h5>
+          <label class="container-checkbox">Cereal
+            <input id="Cereal" onclick="addToList('Cereal')" type="checkbox" value="Cereal">
+            <span class="checkmark"></span>
+          </label>
+          <label class="container-checkbox">Granola
+            <input id="Granola" onclick="addToList('Granola')" type="checkbox" value="Granola">
+            <span class="checkmark"></span>
+          </label>
+          <label class="container-checkbox">Peppermint tea
+            <input id="Peppermint tea" onclick="addToList('Peppermint tea')" type="checkbox" value="Peppermint_tea">
+            <span class="checkmark"></span>
+          </label>
+          <label class="container-checkbox">Earl grey
+            <input id="Earl grey" onclick="addToList('Earl grey')" type="checkbox" value="Earl_grey">
+            <span class="checkmark"></span>
+          </label>
+        </div>
+        <div class="three columns">
+          <h5>Beverage</h5>
+          <label class="container-checkbox">Powerade
+            <input id="Powerade" onclick="addToList('Powerade')" type="checkbox" value="Powerade">
+            <span class="checkmark"></span>
+          </label>
+          <label class="container-checkbox">La croix
+            <input id="La croix" onclick="addToList('La croix')" type="checkbox" value="La_croix">
+            <span class="checkmark"></span>
+          </label>
+        </div>
+        <div class="three columns">
+          <h5>Soup/Condiments</h5>
+          <label class="container-checkbox">Artichoke hearts
+            <input id="Artichoke hearts" onclick="addToList('Artichoke hearts')" type="checkbox" value="Artichoke_hearts">
+            <span class="checkmark"></span>
+          </label>
+          <label class="container-checkbox">Baked beans
+            <input id="Baked beans" onclick="addToList('Baked beans')" type="checkbox" value="Baked_beans">
+            <span class="checkmark"></span>
+          </label>
+          <label class="container-checkbox">Pinto beans
+            <input id="Pinto beans" onclick="addToList('Pinto beans')" type="checkbox" value="Pinto_beans">
+            <span class="checkmark"></span>
+          </label>
+          <label class="container-checkbox">Canned salmon
+            <input id="Canned salmon" onclick="addToList('Canned salmon')" type="checkbox" value="Canned_salmon">
+            <span class="checkmark"></span>
+          </label>
+          <label class="container-checkbox">Tuna fish
+            <input id="Tuna fish" onclick="addToList('Tuna fish')" type="checkbox" value="Tuna_fish">
+            <span class="checkmark"></span>
+          </label>
+          <label class="container-checkbox">Dijon mustard
+            <input id="Dijon mustard" onclick="addToList('Dijon mustard')" type="checkbox" value="Dijon_mustard">
+            <span class="checkmark"></span>
+          </label>
+          <label class="container-checkbox">Mayonnaise
+            <input id="Mayonnaise" onclick="addToList('Mayonnaise')" type="checkbox" value="Mayonnaise">
+            <span class="checkmark"></span>
+          </label>
+          <label class="container-checkbox">Ketchup
+            <input id="Ketchup" onclick="addToList('Ketchup')" type="checkbox" value="Ketchup">
+            <span class="checkmark"></span>
+          </label>
+          <label class="container-checkbox">Sriracha
+            <input id="Sriracha" onclick="addToList('Sriracha')" type="checkbox" value="Sriracha">
+            <span class="checkmark"></span>
+          </label>
+          <label class="container-checkbox">Sauerkraut
+            <input id="Sauerkraut" onclick="addToList('Sauerkraut')" type="checkbox" value="Sauerkraut">
+            <span class="checkmark"></span>
+          </label>
+          <label class="container-checkbox">Bleu cheese
+            <input id="Bleu cheese" onclick="addToList('Bleu cheese')" type="checkbox" value="Bleu_cheese">
+            <span class="checkmark"></span>
+          </label>
+          <label class="container-checkbox">Pickles
+            <input id="Pickles" onclick="addToList('Pickles')" type="checkbox" value="Pickles">
+            <span class="checkmark"></span>
+          </label>
+          <label class="container-checkbox">Apple sauce
+            <input id="Apple sauce" onclick="addToList('Apple sauce')" type="checkbox" value="Apple_sauce">
+            <span class="checkmark"></span>
+          </label>
+          <label class="container-checkbox">Chicken stock
+            <input id="Chicken stock" onclick="addToList('Chicken stock')" type="checkbox" value="Chicken_stock">
+            <span class="checkmark"></span>
+          </label>
+          <label class="container-checkbox">Beef broth
+            <input id="Beef broth" onclick="addToList('Beef broth')" type="checkbox" value="Beef_broth">
+            <span class="checkmark"></span>
+          </label>
+          <label class="container-checkbox">Soups
+            <input id="Soups" onclick="addToList('Soups')" type="checkbox" value="Soups">
+            <span class="checkmark"></span>
+          </label>
+          <label class="container-checkbox">Red wine vinegar
+            <input id="Red wine vinegar" onclick="addToList('Red wine vinegar')" type="checkbox" value="Red_wine_vinegar">
+            <span class="checkmark"></span>
+          </label>
+          <label class="container-checkbox">White wine vinegar
+            <input id="White wine vinegar" onclick="addToList('White wine vinegar')" type="checkbox" value="White_wine_vinegar">
+            <span class="checkmark"></span>
+          </label>
+          <label class="container-checkbox">Distilled vinegar
+            <input id="Distilled vinegar" onclick="addToList('Distilled vinegar')" type="checkbox" value="Distilled_vinegar">
+            <span class="checkmark"></span>
+          </label>
+          <label class="container-checkbox">Rice vinegar
+            <input id="Rice vinegar" onclick="addToList('Rice vinegar')" type="checkbox" value="Rice_vinegar">
+            <span class="checkmark"></span>
+          </label>
+          <label class="container-checkbox">Miso soup
+            <input id="Miso soup" onclick="addToList('Miso soup')" type="checkbox" value="Miso_soup">
+            <span class="checkmark"></span>
+          </label>
+          <label class="container-checkbox">Hoisin sauce
+            <input id="Hoisin sauce" onclick="addToList('Hoisin sauce')" type="checkbox" value="Hoisin_sauce">
+            <span class="checkmark"></span>
+          </label>
+          <label class="container-checkbox">Oyster sauce
+            <input id="Oyster sauce" onclick="addToList('Oyster sauce')" type="checkbox" value="Oyster_sauce">
+            <span class="checkmark"></span>
+          </label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="three columns">
+          <h5>Spices/Baking</h5>
+          <label class="container-checkbox">Peppercorns
+            <input id="Peppercorns" onclick="addToList('Peppercorns')" type="checkbox" value="Peppercorns">
+            <span class="checkmark"></span>
+          </label>
+          <label class="container-checkbox">Kosher salt
+            <input id="Kosher salt" onclick="addToList('Kosher salt')" type="checkbox" value="Kosher_salt">
+            <span class="checkmark"></span>
+          </label>
+          <label class="container-checkbox">Paprika
+            <input id="Paprika" onclick="addToList('Paprika')" type="checkbox" value="Paprika">
+            <span class="checkmark"></span>
+          </label>
+          <label class="container-checkbox">Dried marjoram
+            <input id="Dried marjoram" onclick="addToList('Dried marjoram')" type="checkbox" value="Dried_marjoram">
+            <span class="checkmark"></span>
+          </label>
+          <label class="container-checkbox">Chili powder
+            <input id="Chili powder" onclick="addToList('Chili powder')" type="checkbox" value="Chili_powder">
+            <span class="checkmark"></span>
+          </label>
+          <label class="container-checkbox">Celery seed
+            <input id="Celery seed" onclick="addToList('Celery seed')" type="checkbox" value="Celery_seed">
+            <span class="checkmark"></span>
+          </label>
+          <label class="container-checkbox">Cumin
+            <input id="Cumin" onclick="addToList('Cumin')" type="checkbox" value="Cumin">
+            <span class="checkmark"></span>
+          </label>
+          <label class="container-checkbox">Sugar
+            <input id="Sugar" onclick="addToList('Sugar')" type="checkbox" value="Sugar">
+            <span class="checkmark"></span>
+          </label>
+          <label class="container-checkbox">Light brown sugar
+            <input id="Light brown sugar" onclick="addToList('Light brown sugar')" type="checkbox" value="Light_brown_sugar">
+            <span class="checkmark"></span>
+          </label>
+          <label class="container-checkbox">Flour
+            <input id="Flour" onclick="addToList('Flour')" type="checkbox" value="Flour">
+            <span class="checkmark"></span>
+          </label>
+          <label class="container-checkbox">Semolina flour
+            <input id="Semolina flour" onclick="addToList('Semolina flour')" type="checkbox" value="Semolina_flour">
+            <span class="checkmark"></span>
+          </label>
+          <label class="container-checkbox">Baking soda
+            <input id="Baking soda" onclick="addToList('Baking soda')" type="checkbox" value="Baking_soda">
+            <span class="checkmark"></span>
+          </label>
+          <label class="container-checkbox">Maple syrup
+            <input id="Maple syrup" onclick="addToList('Maple syrup')" type="checkbox" value="Maple_syrup">
+            <span class="checkmark"></span>
+          </label>
+          <label class="container-checkbox">Honey
+            <input id="Honey" onclick="addToList('Honey')" type="checkbox" value="Honey">
+            <span class="checkmark"></span>
+          </label>
+          <label class="container-checkbox">Scones mix
+            <input id="Scones mix" onclick="addToList('Scones mix')" type="checkbox" value="Scones_mix">
+            <span class="checkmark"></span>
+          </label>
+        </div>
+        <div class="three columns">
+          <h5>International</h5>
+          <label class="container-checkbox">Jasmine rice
+            <input id="Jasmine rice" onclick="addToList('Jasmine rice')" type="checkbox" value="Jasmine_rice">
+            <span class="checkmark"></span>
+          </label>
+          <label class="container-checkbox">Pearl couscous
+            <input id="Pearl couscous" onclick="addToList('Pearl couscous')" type="checkbox" value="Pearl_couscous">
+            <span class="checkmark"></span>
+          </label>
+          <label class="container-checkbox">Coconut milk
+            <input id="Coconut milk" onclick="addToList('Coconut milk')" type="checkbox" value="Coconut_milk">
+            <span class="checkmark"></span>
+          </label>
+          <label class="container-checkbox">Chickpeas
+            <input id="Chickpeas" onclick="addToList('Chickpeas')" type="checkbox" value="Chickpeas">
+            <span class="checkmark"></span>
+          </label>
+          <label class="container-checkbox">Tortillas
+            <input id="Tortillas" onclick="addToList('Tortillas')" type="checkbox" value="Tortillas">
+            <span class="checkmark"></span>
+          </label>
+          <label class="container-checkbox">Olive oil
+            <input id="Olive oil" onclick="addToList('Olive oil')" type="checkbox" value="Olive_oil">
+            <span class="checkmark"></span>
+          </label>
+          <label class="container-checkbox">Polenta
+            <input id="Polenta" onclick="addToList('Polenta')" type="checkbox" value="Polenta">
+            <span class="checkmark"></span>
+          </label>
+          <label class="container-checkbox">Spaghetti
+            <input id="Spaghetti" onclick="addToList('Spaghetti')" type="checkbox" value="Spaghetti">
+            <span class="checkmark"></span>
+          </label>
+          <label class="container-checkbox">Tomato sauce
+            <input id="Tomato sauce" onclick="addToList('Tomato sauce')" type="checkbox" value="Tomato_sauce">
+            <span class="checkmark"></span>
+          </label>
+          <label class="container-checkbox">Tomato paste
+            <input id="Tomato paste" onclick="addToList('Tomato paste')" type="checkbox" value="Tomato_paste">
+            <span class="checkmark"></span>
+          </label>
+          <label class="container-checkbox">Pomi
+            <input id="Pomi" onclick="addToList('Pomi')" type="checkbox" value="Pomi">
+            <span class="checkmark"></span>
+          </label>
+        </div>
+        <div class="three columns">
+          <h5>Pets</h5>
+          <label class="container-checkbox">Cat food
+            <input id="Cat food" onclick="addToList('Cat food')" type="checkbox" value="Cat_food">
+            <span class="checkmark"></span>
+          </label>
+        </div>
+        <div class="three columns">
+          <h5>Frozen meals</h5>
+          <label class="container-checkbox">Frozen pizza
+            <input id="Frozen pizza" onclick="addToList('Frozen pizza')" type="checkbox" value="Frozen_pizza">
+            <span class="checkmark"></span>
+          </label>
+          <label class="container-checkbox">Boca Burgers
+            <input id="Boca Burgers" onclick="addToList('Boca Burgers')" type="checkbox" value="Boca_Burgers">
+            <span class="checkmark"></span>
+          </label>
+          <label class="container-checkbox">Eggos
+            <input id="Eggos" onclick="addToList('Eggos')" type="checkbox" value="Eggos">
+            <span class="checkmark"></span>
+          </label>
+        </div>
+
+      </div>
+      <div class="row">
+        <div class="four columns">
+          <h5>Frozen veg/Ice cream</h5>
+          <label class="container-checkbox">Ice cream
+            <input id="Ice cream" onclick="addToList('Ice cream')" type="checkbox" value="Ice_cream">
+            <span class="checkmark"></span>
+          </label>
+          <label class="container-checkbox">Frozen fruit
+            <input id="Frozen fruit" onclick="addToList('Frozen fruit')" type="checkbox" value="Frozen_fruit">
+            <span class="checkmark"></span>
+          </label>
+        </div>
+        <div class="four columns">
+          <h5>Dairy</h5>
+          <label class="container-checkbox">Noosa yogurt
+            <input id="Noosa yogurt" onclick="addToList('Noosa yogurt')" type="checkbox" value="Noosa_yogurt">
+            <span class="checkmark"></span>
+          </label>
+          <label class="container-checkbox">Yogurt
+            <input id="Yogurt" onclick="addToList('Yogurt')" type="checkbox" value="Yogurt">
+            <span class="checkmark"></span>
+          </label>
+          <label class="container-checkbox">Ricotta cheese
+            <input id="Ricotta cheese" onclick="addToList('Ricotta cheese')" type="checkbox" value="Ricotta_cheese">
+            <span class="checkmark"></span>
+          </label>
+          <label class="container-checkbox">Sour cream
+            <input id="Sour cream" onclick="addToList('Sour cream')" type="checkbox" value="Sour_cream">
+            <span class="checkmark"></span>
+          </label>
+          <label class="container-checkbox">Oat milk
+            <input id="Oat milk" onclick="addToList('Oat milk')" type="checkbox" value="Oat_milk">
+            <span class="checkmark"></span>
+          </label>
+          <label class="container-checkbox">Milk
+            <input id="Milk" onclick="addToList('Milk')" type="checkbox" value="Milk">
+            <span class="checkmark"></span>
+          </label>
+          <label class="container-checkbox">Heavy cream
+            <input id="Heavy cream" onclick="addToList('Heavy cream')" type="checkbox" value="Heavy_cream">
+            <span class="checkmark"></span>
+          </label>
+          <label class="container-checkbox">Whipped cream
+            <input id="Whipped cream" onclick="addToList('Whipped cream')" type="checkbox" value="Whipped_cream">
+            <span class="checkmark"></span>
+          </label>
+          <label class="container-checkbox">Eggs
+            <input id="Eggs" onclick="addToList('Eggs')" type="checkbox" value="Eggs">
+            <span class="checkmark"></span>
+          </label>
+          <label class="container-checkbox">Butter
+            <input id="Butter" onclick="addToList('Butter')" type="checkbox" value="Butter">
+            <span class="checkmark"></span>
+          </label>
+        </div>
+        <div class="four columns">
+          <h5>Bread</h5>
+          <label class="container-checkbox">Peanut butter
+            <input id="Peanut butter" onclick="addToList('Peanut butter')" type="checkbox" value="Peanut_butter">
+            <span class="checkmark"></span>
+          </label>
+          <label class="container-checkbox">Jam
+            <input id="Jam" onclick="addToList('Jam')" type="checkbox" value="Jam">
+            <span class="checkmark"></span>
+          </label>
+          <label class="container-checkbox">Nutella
+            <input id="Nutella" onclick="addToList('Nutella')" type="checkbox" value="Nutella">
+            <span class="checkmark"></span>
+          </label>
+          <label class="container-checkbox">English muffins
+            <input id="English muffins" onclick="addToList('English muffins')" type="checkbox" value="English_muffins">
+            <span class="checkmark"></span>
+          </label>
+          <label class="container-checkbox">Hot dog buns
+            <input id="Hot dog buns" onclick="addToList('Hot dog buns')" type="checkbox" value="Hot_dog_buns">
+            <span class="checkmark"></span>
+          </label>
+          <label class="container-checkbox">Hamburger buns
+            <input id="Hamburger buns" onclick="addToList('Hamburger buns')" type="checkbox" value="Hamburger_buns">
+            <span class="checkmark"></span>
+          </label>
+          <label class="container-checkbox">Bread
+            <input id="Bread" onclick="addToList('Bread')" type="checkbox" value="Bread">
+            <span class="checkmark"></span>
+          </label>
+        </div>
+      </div>
+    </div>
+  </main>
+</body>
+<script src="https://www.gstatic.com/firebasejs/4.3.0/firebase.js"></script>
+<script src="js/script.js"></script>
+
+</html>
