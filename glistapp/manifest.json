@@ -2,7 +2,7 @@
   "name": "Grocery List",
   "short_name": "GroceryList",
   "start_url": "index.html",
-  "display": "fullscreen",
+  "display": "standalone",
   "background_color": "#222222",
   "theme_color": "#627D98",
   "orientation": "portrait-primary",
