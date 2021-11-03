@@ -42,11 +42,14 @@ function loadSavedList(){
     var gData = snapshot.val();
     var obj = JSON.stringify(gData);
     if (gData != null) {
+
       for (var i = 0; i < gData.length; i++) {
         groceryList.push(gData[i]);
         console.log("Initial: ", groceryList);
         document.getElementById("toggleSwitch").disabled = false;
         document.getElementById(gData[i]).checked = true;
+        nameList = '<label class="container-checkbox">' + groceryList[i] + '<input onclick="addToList(\'' + groceryList[i] + '\')" type="checkbox" value="' + groceryList[i] + '" checked><span class= "checkmark"></span>';
+        document.getElementById("mydiv").innerHTML += nameList;
       }
     }
   }, function(error) {
@@ -119,18 +122,18 @@ function addToList(x) {
 
 
 function toggleList() {
-  var x = document.getElementById("mydiv");
+  var myList = document.getElementById("mydiv");
   var btn = document.getElementById("toggleSwitch");
-  if (x.style.display === "none") {
+  if (myList.style.display === "none") {
     if (groceryList.length == 0) {
       document.getElementById("mydiv").innerHTML = "No items have been added to the grocery list";
     }
-    x.style.display = "block";
+    myList.style.display = "block";
     btn.innerText = "Hide List";
     btn.style.color = "#DDDDDD";
     btn.style.backgroundColor = "#E94560";
   } else {
-    x.style.display = "none";
+    myList.style.display = "none";
     btn.innerText = "Show List"
     btn.style.backgroundColor = "#627D98";
   }
