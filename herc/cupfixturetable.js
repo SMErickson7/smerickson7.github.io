@@ -6,6 +6,31 @@ fgTeams.sort();
 
 var fixTeamLogoArray = [
   {
+    "team": "Atlanta United FC",
+    "value": "atl",
+    "id": 1608
+  },
+  {
+    "team": "Colorado Rapids",
+    "value": "col",
+    "id": 1610
+  },
+  {
+    "team": "Columbus Crew",
+    "value": "clb",
+    "id": 1613
+  },
+  {
+    "team": "DC United",
+    "value": "dcu",
+    "id": 1615
+  },
+  {
+    "team": "Los Angeles Galaxy",
+    "value": "lag",
+    "id": 1605
+  },
+  {
     "team": "Minnesota United FC",
     "value": "mnu",
     "id": 1612
@@ -16,9 +41,34 @@ var fixTeamLogoArray = [
     "id": 1609
   },
   {
-    "team": "Sporting Kansas City",
-    "value": "skc",
-    "id": 1611
+    "team": "New York City FC",
+    "value": "nycfc",
+    "id": 1604
+  },
+  {
+    "team": "New York Red Bulls",
+    "value": "nyrb",
+    "id": 1602
+  },
+  {
+    "team": "Orlando City SC",
+    "value": "orl",
+    "id": 1598
+  },
+  {
+    "team": "Philadelphia Union",
+    "value": "phi",
+    "id": 1599
+  },
+  {
+    "team": "Portland Timbers",
+    "value": "por",
+    "id": 1617
+  },
+  {
+    "team": "Real Salt Lake",
+    "value": "rsl",
+    "id": 1606
   },
   {
     "team": "Seattle Sounders",
@@ -26,38 +76,9 @@ var fixTeamLogoArray = [
     "id": 1595
   },
   {
-    "team": "Colorado Rapids",
-    "value": "col",
-    "id": 1610
-  },
-  {
-    "team": "Philadelphia Union",
-    "value": "phi",
-    "id": 1599
-  }, {
-    "team": "Portland Timbers",
-    "value": "por",
-    "id": 1617
-  }, {
-    "team": "New York City FC",
-    "value": "nycfc",
-    "id": 1604
-  }, {
-    "team": "Los Angeles Galaxy",
-    "value": "lag",
-    "id": 1605
-  }, {
-    "team": "Real Salt Lake",
-    "value": "rsl",
-    "id": 1606
-  }, {
-    "team": "DC United",
-    "value": "dcu",
-    "id": 1615
-  }, {
-    "team": "New York Red Bulls",
-    "value": "nyrb",
-    "id": 1602
+    "team": "Sporting Kansas City",
+    "value": "skc",
+    "id": 1611
   }
 ];
 
