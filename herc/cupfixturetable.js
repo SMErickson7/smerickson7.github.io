@@ -1,7 +1,7 @@
 var filterMonth = 0;
 var filterTeam = 0;
 
-var fgTeams = ['Minnesota United FC', 'New England Revolution', 'New York Red Bulls', 'Sporting Kansas City', 'Seattle Sounders', 'Colorado Rapids', 'Philadelphia Union', 'Portland Timbers', 'New York City FC', 'Los Angeles Galaxy', 'Real Salt Lake', 'DC United'];
+var fgTeams = ['New England Revolution', 'Seattle Sounders', 'Sporting Kansas City', 'Colorado Rapids', 'Philadelphia Union', 'Portland Timbers', 'New York City FC', 'Atlanta United FC', 'Orlando City SC', 'New York Red Bulls', 'Minnesota United FC', 'DC United', 'Columbus Crew', 'Los Angeles Galaxy', 'Real Salt Lake'];
 fgTeams.sort();
 
 var fixTeamLogoArray = [
