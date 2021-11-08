@@ -1,0 +1,370 @@
+[
+  {
+    "fixture": {
+      "id": 202101,
+      "teams": {
+        "home": {
+          "name": "\"Portland Timbers\""
+        },
+        "away": {
+          "name": "\"Minnesota United FC\""
+        }
+      },
+      "status": {
+        "elapsed": null
+      }
+    }
+  },
+  {
+    "fixture": {
+      "id": 202102,
+      "teams": {
+        "home": {
+          "name": "\"Sporting Kansas City\""
+        },
+        "away": {
+          "name": "\"Vancouver Whitecaps\""
+        }
+      },
+      "status": {
+        "elapsed": null
+      }
+    }
+  },
+  {
+    "fixture": {
+      "id": 202103,
+      "teams": {
+        "home": {
+          "name": "\"Seattle Sounders\""
+        },
+        "away": {
+          "name": "\"Real Salt Lake\""
+        }
+      },
+      "status": {
+        "elapsed": null
+      }
+    }
+  },
+  {
+    "fixture": {
+      "id": 202104,
+      "teams": {
+        "home": {
+          "name": "\"New York City FC\""
+        },
+        "away": {
+          "name": "\"Atlanta United FC\""
+        }
+      },
+      "status": {
+        "elapsed": null
+      }
+    }
+  },
+  {
+    "fixture": {
+      "id": 202105,
+      "teams": {
+        "home": {
+          "name": "\"Nashville SC\""
+        },
+        "away": {
+          "name": "\"Orlando City SC\""
+        }
+      },
+      "status": {
+        "elapsed": null
+      }
+    }
+  },
+  {
+    "fixture": {
+      "id": 202106,
+      "teams": {
+        "home": {
+          "name": "\"Philadelphia Union\""
+        },
+        "away": {
+          "name": "\"New York Red Bulls\""
+        }
+      },
+      "status": {
+        "elapsed": null
+      }
+    }
+  },
+  {
+    "fixture": {
+      "id": 202107,
+      "teams": {
+        "home": {
+          "name": "\"Colorado Rapids\""
+        },
+        "away": {
+          "name": "\"TBD\""
+        }
+      },
+      "status": {
+        "elapsed": null
+      }
+    }
+  },
+  {
+    "fixture": {
+      "id": 202108,
+      "teams": {
+        "home": {
+          "name": "\"New England Revolution\""
+        },
+        "away": {
+          "name": "\"TBD\""
+        }
+      },
+      "status": {
+        "elapsed": null
+      }
+    }
+  },
+  {
+    "fixture": {
+      "id": 202109,
+      "teams": {
+        "home": {
+          "name": "\"TBD\""
+        },
+        "away": {
+          "name": "\"TBD\""
+        }
+      },
+      "status": {
+        "elapsed": null
+      }
+    }
+  },
+  {
+    "fixture": {
+      "id": 202110,
+      "teams": {
+        "home": {
+          "name": "\"TBD\""
+        },
+        "away": {
+          "name": "\"TBD\""
+        }
+      },
+      "status": {
+        "elapsed": null
+      }
+    }
+  },
+  {
+    "fixture": {
+      "id": 202111,
+      "teams": {
+        "home": {
+          "name": "\"TBD\""
+        },
+        "away": {
+          "name": "\"TBD\""
+        }
+      },
+      "status": {
+        "elapsed": null
+      }
+    }
+  },
+  {
+    "fixture": {
+      "id": 202112,
+      "teams": {
+        "home": {
+          "name": "\"TBD\""
+        },
+        "away": {
+          "name": "\"TBD\""
+        }
+      },
+      "status": {
+        "elapsed": null
+      }
+    }
+  },
+  {
+    "fixture": {
+      "id": 202113,
+      "teams": {
+        "home": {
+          "name": "\"TBD\""
+        },
+        "away": {
+          "name": "\"TBD\""
+        }
+      },
+      "status": {
+        "elapsed": null
+      }
+    }
+  },
+  {
+    "fixture": {
+      "id": 202114,
+      "teams": {
+        "home": {
+          "name": "\"TBD\""
+        },
+        "away": {
+          "name": "\"TBD\""
+        }
+      },
+      "status": {
+        "elapsed": null
+      }
+    }
+  },
+  {
+    "fixture": {
+      "id": 202115,
+      "teams": {
+        "home": {
+          "name": "\"TBD\""
+        },
+        "away": {
+          "name": "\"TBD\""
+        }
+      },
+      "status": {
+        "elapsed": null
+      }
+    }
+  },
+  {
+    "fixture": {
+      "id": 202116,
+      "teams": {
+        "home": {
+          "name": "\"TBD\""
+        },
+        "away": {
+          "name": "\"TBD\""
+        }
+      },
+      "status": {
+        "elapsed": null
+      }
+    }
+  },
+  {
+    "fixture": {
+      "id": 202117,
+      "teams": {
+        "home": {
+          "name": "\"TBD\""
+        },
+        "away": {
+          "name": "\"TBD\""
+        }
+      },
+      "status": {
+        "elapsed": null
+      }
+    }
+  },
+  {
+    "fixture": {
+      "id": 202118,
+      "teams": {
+        "home": {
+          "name": "\"TBD\""
+        },
+        "away": {
+          "name": "\"TBD\""
+        }
+      },
+      "status": {
+        "elapsed": null
+      }
+    }
+  },
+  {
+    "fixture": {
+      "id": 202119,
+      "teams": {
+        "home": {
+          "name": "\"TBD\""
+        },
+        "away": {
+          "name": "\"TBD\""
+        }
+      },
+      "status": {
+        "elapsed": null
+      }
+    }
+  },
+  {
+    "fixture": {
+      "id": 202120,
+      "teams": {
+        "home": {
+          "name": "\"TBD\""
+        },
+        "away": {
+          "name": "\"TBD\""
+        }
+      },
+      "status": {
+        "elapsed": null
+      }
+    }
+  },
+  {
+    "fixture": {
+      "id": 202121,
+      "teams": {
+        "home": {
+          "name": "\"TBD\""
+        },
+        "away": {
+          "name": "\"TBD\""
+        }
+      },
+      "status": {
+        "elapsed": null
+      }
+    }
+  },
+  {
+    "fixture": {
+      "id": 202122,
+      "teams": {
+        "home": {
+          "name": "\"TBD\""
+        },
+        "away": {
+          "name": "\"TBD\""
+        }
+      },
+      "status": {
+        "elapsed": null
+      }
+    }
+  },
+  {
+    "fixture": {
+      "id": 202123,
+      "teams": {
+        "home": {
+          "name": "\"TBD\""
+        },
+        "away": {
+          "name": "\"TBD\""
+        }
+      },
+      "status": {
+        "elapsed": null
+      }
+    }
+  }
+]

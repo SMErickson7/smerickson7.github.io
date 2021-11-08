@@ -1,0 +1,171 @@
+body {
+  background-color: rgb(68, 68, 68);
+}
+
+.outline {
+  stroke: white;
+  stroke-width: 2.5px;
+}
+
+.fixture {
+  fill: #656565;
+}
+
+.svg {
+  display: block;
+  position: relative;
+  width: 85vh;
+  z-index: -1;
+  margin: auto;
+}
+
+.container {
+  position: relative;
+  width: 100%;
+  max-width: 960px;
+  margin: 0 auto;
+  box-sizing: border-box;
+  text-align: center;
+}
+
+.teamLogo {
+  position: absolute;
+  top: 10%;
+  right: 50%;
+  height: 5vw;
+  width: 5vw;
+  z-index: 1;
+}
+
+/*
+/* Round 1 West */
+/*
+.W-r1-1vbye-1 {
+  fill: #fff;
+}
+
+
+.W-r1-4v5-4 {
+   fill: #00482B;
+}
+
+.W-r1-4v5-5 {
+  fill: #9BCDE4;
+}
+
+.W-r1-3v6-3 {
+fill: #862633;
+}
+
+.W-r1-3v6-6 {
+  fill: #04265C;
+}
+
+.W-r1-2v7-2 {
+  fill: #93B1D7;
+}
+
+.W-r1-2v7-7 {
+  fill: #FFD200;
+}
+*/
+/* Round 1 East */
+/*
+.E-r1-1vbye-1 {
+  fill: #fff;
+}
+
+
+.E-r1-4v5-4 {
+  fill: #6CACE4;
+}
+
+.E-r1-4v5-5 {
+  fill: #A19060;
+}
+
+.E-r1-3v6-3 {
+  fill: #ECE83A;
+}
+
+.E-r1-3v6-6 {
+  fill: #61259E;
+}
+
+.E-r1-2v7-2 {
+  fill: #002D55;
+}
+
+.E-r1-2v7-7 {
+  fill: #E31351;
+}
+*/
+/* Conference Semis West */
+/*
+.W-cs-1v4-5-1 {
+  fill: #658D1B;
+}
+
+.W-cs-1v4-5-4-5 {
+  fill: white;
+}
+
+.W-cs-3-6v2-7-2-7 {
+  fill: white;
+}
+
+.W-cs-3-6v2-7-3-6 {
+  fill: white;
+}
+
+/* Conference Semis East */
+/*
+.E-cs-1v4-5-1 {
+  fill: #E51938;
+}
+
+.E-cs-1v4-5-4-5 {
+  fill: white;
+}
+
+.E-cs-3-6v2-7-3-6 {
+  fill: white;
+}
+
+.E-cs-3-6v2-7-2-7 {
+  fill: white;
+}
+
+/* Conference Finals West */
+/*
+.W-cf-cs1vcs2-cs1 {
+  fill: white;
+}
+
+.W-cf-cs1vcs2-cs2 {
+  fill: white;
+}
+
+/* Conference Finals East */
+/*
+.E-cf-cs1vcs2-cs1 {
+  fill: white;
+}
+
+.E-cf-cs1vcs2-cs2 {
+  fill: white;
+}
+
+/* MLS Cup[] */
+/*
+.W-cf {
+  fill: white;
+}
+
+.E-cf {
+  fill: white;
+}
+
+.hide {
+  display: none;
+}
