@@ -205,14 +205,14 @@ svg {
   margin: 0 auto;
   padding: 10px;
   position: relative;
-  background-color:#fff;
+  background-color: #fff;
 }
 
 .fixtureLogos {
   text-align: center;
-  padding:10px 4px;
-  margin-left: 120px;
-  margin-right: 120px;
+  padding: 10px 4px;
+  margin-left: 100px;
+  margin-right: 100px;
 }
 
 /* Clearfix (clear floats) */
