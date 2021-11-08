@@ -1,24 +1,24 @@
-fixture/id,fixture/teams/home/name,fixture/teams/away/name,fixture/status/elapsed
-202101,"""Portland Timbers""","""Minnesota United FC""",null
-202102,"""Sporting Kansas City""","""Vancouver Whitecaps""",null
-202103,"""Seattle Sounders""","""Real Salt Lake""",null
-202104,"""New York City FC""","""Atlanta United FC""",null
-202105,"""Nashville SC""","""Orlando City SC""",null
-202106,"""Philadelphia Union""","""New York Red Bulls""",null
-202107,"""Colorado Rapids""","""TBD""",null
-202108,"""New England Revolution""","""TBD""",null
-202109,"""TBD""","""TBD""",null
-202110,"""TBD""","""TBD""",null
-202111,"""TBD""","""TBD""",null
-202112,"""TBD""","""TBD""",null
-202113,"""TBD""","""TBD""",null
-202114,"""TBD""","""TBD""",null
-202115,"""TBD""","""TBD""",null
-202116,"""TBD""","""TBD""",null
-202117,"""TBD""","""TBD""",null
-202118,"""TBD""","""TBD""",null
-202119,"""TBD""","""TBD""",null
-202120,"""TBD""","""TBD""",null
-202121,"""TBD""","""TBD""",null
-202122,"""TBD""","""TBD""",null
-202123,"""TBD""","""TBD""",null
+fixture/id,fixture/teams/home/name,fixture/teams/home/winner,fixture/teams/away/name,fixture/teams/away/winner,fixture/status/elapsed
+202101,"""Portland Timbers""",null,"""Minnesota United FC""",null,null
+202102,"""Sporting Kansas City""",null,"""Vancouver Whitecaps""",null,null
+202103,"""Seattle Sounders""",null,"""Real Salt Lake""",null,null
+202104,"""New York City FC""",null,"""Atlanta United FC""",null,null
+202105,"""Nashville SC""",null,"""Orlando City SC""",null,null
+202106,"""Philadelphia Union""",null,"""New York Red Bulls""",null,null
+202107,"""Colorado Rapids""",null,"""TBD""",null,null
+202108,"""New England Revolution""",null,"""TBD""",null,null
+202109,"""TBD""",null,"""TBD""",null,null
+202110,"""TBD""",null,"""TBD""",null,null
+202111,"""TBD""",null,"""TBD""",null,null
+202112,"""TBD""",null,"""TBD""",null,null
+202113,"""TBD""",null,"""TBD""",null,null
+202114,"""TBD""",null,"""TBD""",null,null
+202115,"""TBD""",null,"""TBD""",null,null
+202116,"""TBD""",null,"""TBD""",null,null
+202117,"""TBD""",null,"""TBD""",null,null
+202118,"""TBD""",null,"""TBD""",null,null
+202119,"""TBD""",null,"""TBD""",null,null
+202120,"""TBD""",null,"""TBD""",null,null
+202121,"""TBD""",null,"""TBD""",null,null
+202122,"""TBD""",null,"""TBD""",null,null
+202123,"""TBD""",null,"""TBD""",null,null
