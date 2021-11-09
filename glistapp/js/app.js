@@ -37,7 +37,7 @@ firebase.initializeApp(config);
 
 var ref = firebase.database().ref('gList');
 
-function loadSavedList(){
+function loadSavedList() {
   firebase.database().ref('gList').once('value').then(function(snapshot) {
     var gData = snapshot.val();
     var obj = JSON.stringify(gData);
@@ -63,7 +63,7 @@ function addToList(x) {
   document.getElementById(x).checked = true;
   console.log(x);
   if (groceryList.length == 0) {
-    gListObj= x;
+    gListObj = x;
     groceryList.push(x);
     document.getElementById("toggleSwitch").disabled = false;
     console.log("1: ", groceryList);
@@ -74,7 +74,7 @@ function addToList(x) {
   } else {
     console.log("3: ", groceryList);
     console.log(groceryList.indexOf(x));
-   groceryList.splice(groceryList.indexOf(x), 1);
+    groceryList.splice(groceryList.indexOf(x), 1);
     document.getElementById(x).checked = false;
   }
   groceryList.sort(function(a, b) {
@@ -91,50 +91,50 @@ function addToList(x) {
   }
 };
 
-console.log(groceryList);
-
-
-/*
-function addToList(x) {
-  document.getElementById(x).checked = true;
-  console.log(x);
-  if (groceryList.length == 0) {
-    groceryList.push(x);
-    document.getElementById("toggleSwitch").disabled = false;
-    console.log("add first item");
-  } else if (!groceryList.includes(x)) {
-    groceryList.push(x);
-  } else {
-    groceryList.splice(groceryList.indexOf(x), 1);
-    document.getElementById(x).checked = false;
-  }
-  groceryList.sort(function(a, b) {
-    return itemPriority.indexOf(a) - itemPriority.indexOf(b);
-  });
-
-  document.getElementById("mydiv").innerHTML = "";
-  for (var i = 0; i < groceryList.length; i++) {
-    nameList = '<label class="container-checkbox">' + groceryList[i] + '<input onclick="addToList(\'' + groceryList[i] + '\')" type="checkbox" value="' + groceryList[i] + '" checked><span class= "checkmark"></span>';
-    document.getElementById("mydiv").innerHTML += nameList;
-  }
-}
-*/
-
-
-function toggleList() {
-  var myList = document.getElementById("mydiv");
-  var btn = document.getElementById("toggleSwitch");
-  if (myList.style.display === "none") {
-    if (groceryList.length == 0) {
-      document.getElementById("mydiv").innerHTML = "No items have been added to the grocery list";
+function toggleList(x) {
+  console.log("toggle" + x);
+  const toggleHeader = document.getElementById("toggle" + x)
+  toggleHeader.classList.toggle("is-active");
+  if (x == 0) {
+    var myList = document.getElementById("mydiv");
+    if (myList.style.display === "none") {
+      if (groceryList.length == 0) {
+        document.getElementById("mydiv").innerHTML = "No items have been added to the grocery list";
+      }
+      myList.style.display = "block";
+      return
+    } else {
+      myList.style.display = "none";
+      return
     }
-    myList.style.display = "block";
-    btn.innerText = "Hide List";
-    btn.style.color = "#DDDDDD";
-    btn.style.backgroundColor = "#E94560";
   } else {
-    myList.style.display = "none";
-    btn.innerText = "Show List"
-    btn.style.backgroundColor = "#627D98";
+    var aisleList = document.getElementById("itemlist" + x);
+    if (aisleList.style.display === "none") {
+      aisleList.style.display = "block";
+      return
+    } else {
+      aisleList.style.display = "none";
+      return
+    }
   }
 }
+
+/* async function populatePage() {
+  const response = await fetch('js/data/items.json');
+  const data = await response.json();
+  return data
+}
+
+populatePage().then(data => {
+
+  for (var i = 0; i < data.length; i++) {
+    let xyz = data[i];
+    let abc = JSON.stringify(Object.keys(data[i]));
+    //console.log(xyz[abc]);
+    let divID = JSON.stringify(Object.keys(data[i]));
+    divID = divID.replace(/[\[\]'"/]+/g,'').toLowerCase() + '-list';
+    //console.log(divID);
+    const sect = document.getElementById(divID);
+  }
+});
+*/

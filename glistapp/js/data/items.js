@@ -1,0 +1,3 @@
+var itemList = [
+  "Produce" = ["Apples", "Pears", "Peaches", "Bananas", "Oranges", "Lemons", "Limes", "Kiwis", "Clementines", "Strawberries", "Blueberries", "Raspberries", "Blackberries", "Honeydew melon", "Watermelon", "Cantaloupe", "Pineapple", "Tomatoes", "Avocados", "Cherry tomatoes", "Sweet peppers", "Beets", "Green beans", "Parsley", "Cilantro", "Fresh dill", "Rosemary", "Sage leaves", "Thyme", "Basil", "Radishes", "Broccoli", "Cauliflower", "Carrots", "Red cabbage", "Fennel", "Leek", "Swiss chard", "Celery", "Scallion", "Lettuce", "Arugula", "Romaine lettuce", "Spinach", "Asparagus", "Zucchini", "Bell pepper", "Corn", "Red onion", "Yellow onion", "Yukon gold potatoes", "Potatoes", "Sweet potatoes", "Garlic cloves", "Ginger"]
+]

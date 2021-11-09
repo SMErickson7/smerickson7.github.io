@@ -1,0 +1,233 @@
+[
+  {
+    "Produce": {
+      "Apples": "Apples",
+      "Pears": "Pears",
+      "Peaches": "Peaches",
+      "Bananas": "Bananas",
+      "Oranges": "Oranges",
+      "Lemons": "Lemons",
+      "Limes": "Limes",
+      "Kiwis": "Kiwis",
+      "Clementines": "Clementines",
+      "Strawberries": "Strawberries",
+      "Blueberries": "Blueberries",
+      "Raspberries": "Raspberries",
+      "Blackberries": "Blackberries",
+      "Honeydew melon": "Honeydew melon",
+      "Watermelon": "Watermelon",
+      "Cantaloupe": "Cantaloupe",
+      "Pineapple": "Pineapple",
+      "Tomatoes": "Tomatoes",
+      "Avocados": "Avocados",
+      "Cherry tomatoes": "Cherry tomatoes",
+      "Sweet peppers": "Sweet peppers",
+      "Beets": "Beets",
+      "Green beans": "Green beans",
+      "Parsley": "Parsley",
+      "Cilantro": "Cilantro",
+      "Fresh dill": "Fresh dill",
+      "Rosemary": "Rosemary",
+      "Sage leaves": "Sage leaves",
+      "Thyme": "Thyme",
+      "Basil": "Basil",
+      "Radishes": "Radishes",
+      "Broccoli": "Broccoli",
+      "Cauliflower": "Cauliflower",
+      "Carrots": "Carrots",
+      "Red cabbage": "Red cabbage",
+      "Fennel": "Fennel",
+      "Leek": "Leek",
+      "Swiss chard": "Swiss chard",
+      "Celery": "Celery",
+      "Scallion": "Scallion",
+      "Lettuce": "Lettuce",
+      "Arugula": "Arugula",
+      "Romaine lettuce": "Romaine lettuce",
+      "Spinach": "Spinach",
+      "Asparagus": "Asparagus",
+      "Zucchini": "Zucchini",
+      "Bell pepper": "Bell pepper",
+      "Corn": "Corn",
+      "Red onion": "Red onion",
+      "Yellow onion": "Yellow onion",
+      "Yukon gold potatoes": "Yukon gold potatoes",
+      "Potatoes": "Potatoes",
+      "Sweet potatoes": "Sweet potatoes",
+      "Garlic cloves": "Garlic cloves",
+      "Ginger": "Ginger"
+    }
+  },
+  {
+    "Deli": {
+      "Giovanni Rana pasta": "Giovanni Rana pasta",
+      "Alfredo sauce": "Alfredo sauce",
+      "Hummus": "Hummus",
+      "Turkey": "Turkey",
+      "Ham": "Ham",
+      "Roast beef": "Roast beef",
+      "Mortadella": "Mortadella",
+      "American cheese": "American cheese",
+      "Swiss cheese": "Swiss cheese",
+      "Pita bread": "Pita bread",
+      "Dried cranberries": "Dried cranberries",
+      "In shell nuts": "In shell nuts",
+      "Sliced almonds": "Sliced almonds",
+      "Walnuts": "Walnuts",
+      "Olives": "Olives",
+      "Feta cheese": "Feta cheese",
+      "Monterey jack cheese": "Monterey jack cheese",
+      "Gorgonzola": "Gorgonzola",
+      "Goat cheese": "Goat cheese",
+      "Gouda": "Gouda",
+      "Grana padano": "Grana padano",
+      "Fig jam": "Fig jam",
+      "Egg salad": "Egg salad",
+      "Chicken salad": "Chicken salad",
+      "Quiche": "Quiche",
+      "Sushi": "Sushi"
+    }
+  },
+  {
+    "Meat": {
+      "Salmon": "Salmon",
+      "White fish": "White fish",
+      "Pork chops": "Pork chops",
+      "Ground beef": "Ground beef",
+      "Meatloaf meat": "Meatloaf meat",
+      "Ground turkey": "Ground turkey",
+      "Chicken": "Chicken",
+      "Hot dogs": "Hot dogs",
+      "Bacon": "Bacon"
+    }
+  },
+  {
+    "Organics": {
+      "Cliff bars": "Cliff bars",
+      "Potato chips": "Potato chips"
+    }
+  },
+  {
+    "Snacks": {
+      "Gum": "Gum",
+      "Snickers": "Snickers",
+      "Graham crackers": "Graham crackers",
+      "Crackers": "Crackers",
+      "Popcorn": "Popcorn"
+    }
+  },
+  {
+    "Breakfast": {
+      "Cereal": "Cereal",
+      "Granola": "Granola",
+      "Peppermint tea": "Peppermint tea",
+      "Earl grey": "Earl grey"
+    }
+  },
+  {
+    "Beverage": {
+      "Powerade": "Powerade",
+      "La croix": "La croix"
+    }
+  },
+  {
+    "Soup/Condiments": {
+      "Peppercorns": "Peppercorns",
+      "Kosher salt": "Kosher salt",
+      "Paprika": "Paprika",
+      "Dried marjoram": "Dried marjoram",
+      "Chili powder": "Chili powder",
+      "Celery seed": "Celery seed",
+      "Cumin": "Cumin",
+      "Sugar": "Sugar",
+      "Light brown sugar": "Light brown sugar",
+      "Flour": "Flour",
+      "Semolina flour": "Semolina flour",
+      "Baking soda": "Baking soda",
+      "Maple syrup": "Maple syrup",
+      "Honey": "Honey",
+      "Apple sauce": "Apple sauce",
+      "Scones mix": "Scones mix"
+    }
+  },
+  {
+    "Spices/Baking": {
+      "Baked beans": "Baked beans",
+      "Pinto beans": "Pinto beans",
+      "Canned salmon": "Canned salmon",
+      "Tuna fish": "Tuna fish",
+      "Dijon mustard": "Dijon mustard",
+      "Mayonnaise": "Mayonnaise",
+      "Ketchup": "Ketchup",
+      "Sriracha": "Sriracha",
+      "Sauerkraut": "Sauerkraut",
+      "Bleu cheese": "Bleu cheese",
+      "Pickles": "Pickles",
+      "Chicken stock": "Chicken stock",
+      "Beef broth": "Beef broth",
+      "Soups": "Soups",
+      "Red wine vinegar": "Red wine vinegar",
+      "White wine vinegar": "White wine vinegar",
+      "Distilled vinegar": "Distilled vinegar",
+      "Rice vinegar": "Rice vinegar",
+      "Miso soup": "Miso soup",
+      "Hoisin sauce": "Hoisin sauce",
+      "Oyster sauce": "Oyster sauce"
+    }
+  },
+  {
+    "International": {
+      "Artichoke hearts": "Artichoke hearts",
+      "Jasmine rice": "Jasmine rice",
+      "Pearl couscous": "Pearl couscous",
+      "Coconut milk": "Coconut milk",
+      "Chickpeas": "Chickpeas",
+      "Tortillas": "Tortillas",
+      "Olive oil": "Olive oil",
+      "Polenta": "Polenta",
+      "Spaghetti": "Spaghetti",
+      "Tomato sauce": "Tomato sauce",
+      "Tomato paste": "Tomato paste",
+      "Pomi": "Pomi"
+    }
+  },
+  {
+    "Pets": {
+      "Cat food": "Cat food"
+    }
+  },
+  {
+    "Frozen": {
+      "Frozen pizza": "Frozen pizza",
+      "Boca Burgers": "Boca Burgers",
+      "Eggos": "Eggos",
+      "Ice cream": "Ice cream",
+      "Frozen fruit": "Frozen fruit"
+    }
+  },
+  {
+    "Dairy": {
+      "Noosa yogurt": "Noosa yogurt",
+      "Yogurt": "Yogurt",
+      "Ricotta cheese": "Ricotta cheese",
+      "Sour cream": "Sour cream",
+      "Oat milk": "Oat milk",
+      "Milk": "Milk",
+      "Heavy cream": "Heavy cream",
+      "Whipped cream": "Whipped cream",
+      "Eggs": "Eggs",
+      "Butter": "Butter"
+    }
+  },
+  {
+    "Bread": {
+      "Peanut butter": "Peanut butter",
+      "Jam": "Jam",
+      "Nutella": "Nutella",
+      "English muffins": "English muffins",
+      "Hot dog buns": "Hot dog buns",
+      "Hamburger buns": "Hamburger buns",
+      "Bread": "Bread"
+    }
+  }
+]
