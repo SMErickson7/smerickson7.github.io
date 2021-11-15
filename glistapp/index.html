@@ -30,7 +30,18 @@
   <main>
     <div class="container">
       <div class="row">
-        <div class="nine columns">
+        <div id="search" class="twelve columns">
+            <h5>Search</h5>
+            <form autocomplete="off">
+              <div class="autocomplete" style="width:300px;">
+                <input id="myInput" type="text" name="myCountry" placeholder="Find an item...">
+              </div>
+            </form>
+            <div id="match-list"></div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="twelve columns">
           <div onclick="toggleList(0)">
             <div class="icon"><i class="toggle" id="toggle0"></i></div>
             <div class="header">
@@ -38,16 +49,6 @@
             </div>
           </div>
           <div id="mydiv" style="display: none;"></div>
-        </div>
-        <div id="search" class="three columns hide">
-          <h5>Search</h5>
-          <form autocomplete="off" action="/action_page.php">
-            <div class="autocomplete" style="width:300px;">
-              <input id="myInput" type="text" name="myCountry" placeholder="Country">
-            </div>
-            <input type="submit">
-          </form>
-          <div id="match-list"></div>
         </div>
       </div>
     </div>
