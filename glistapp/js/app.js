@@ -268,3 +268,9 @@ function toggleList(y, z) {
     }
   }
 }
+
+function toggleSearch(x) {
+  x.classList.toggle("fa-toggle-on")
+let search = document.getElementById("search");
+search.classList.toggle("hide");
+}

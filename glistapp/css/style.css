@@ -704,12 +704,6 @@ there.
 /* Larger than Desktop HD */
 @media (min-width: 1200px) {}
 
-@media (max-width: 1000px) {
-  #search {
-    display: none;
-  }
-}
-
 .hide {
   display: none;
 }
@@ -773,4 +767,13 @@ there.
   /*when navigating through the items using the arrow keys:*/
   background-color: #627D98 !important;
   color: #ffffff;
+}
+
+.top-row {
+  display: inline-block;
+  width: 100%;
+}
+
+.search-toggle {
+  float: right;
 }

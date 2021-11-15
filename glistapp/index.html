@@ -31,21 +31,24 @@
     <div class="container">
       <div class="row">
         <div id="search" class="twelve columns">
-            <h5>Search</h5>
-            <form autocomplete="off">
-              <div class="autocomplete" style="width:300px;">
-                <input id="myInput" type="text" name="myCountry" placeholder="Find an item...">
-              </div>
-            </form>
-            <div id="match-list"></div>
+          <form autocomplete="off">
+            <div class="autocomplete" style="width:300px;">
+              <input id="myInput" type="text" name="myCountry" placeholder="Add an item...">
+            </div>
+          </form>
+          <div id="match-list"></div>
         </div>
       </div>
       <div class="row">
         <div class="twelve columns">
-          <div onclick="toggleList(0)">
-            <div class="icon"><i class="toggle" id="toggle0"></i></div>
-            <div class="header">
-              <h5 id="toggleSwitch">Grocery List</h5>
+          <div class="top-row">
+            <div onclick="toggleList(0)" style="display:inline-block">
+              <div class="icon"><i class="toggle" id="toggle0"></i></div>
+              <div class="header">
+                <h5 id="toggleSwitch">Grocery List</h5>
+              </div>
+            </div>
+            <div id="searchToggle" class="search-toggle">Search <i onclick="toggleSearch(this)" class="fas fa-toggle-off"></i>
             </div>
           </div>
           <div id="mydiv" style="display: none;"></div>
@@ -196,6 +199,7 @@
 <script src="https://www.gstatic.com/firebasejs/4.3.0/firebase.js"></script>
 <script src="js/app.js"></script>
 <script>
-autocomplete(document.getElementById("myInput"), itemsLeftList);
+  autocomplete(document.getElementById("myInput"), itemsLeftList);
 </script>
+
 </html>
