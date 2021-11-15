@@ -30,6 +30,12 @@
   <main>
     <div class="container">
       <div class="row">
+        <div class="twelve columns">
+            <div id="searchToggle" class="search-toggle">Search <i onclick="toggleSearch(this)" class="fas fa-toggle-off"></i>
+            </div>
+        </div>
+      </div>
+      <div class="row">
         <div id="search" class="twelve columns">
           <form autocomplete="off">
             <div class="autocomplete" style="width:300px;">
@@ -41,16 +47,12 @@
       </div>
       <div class="row">
         <div class="twelve columns">
-          <div class="top-row">
             <div onclick="toggleList(0)" style="display:inline-block">
               <div class="icon"><i class="toggle" id="toggle0"></i></div>
               <div class="header">
                 <h5 id="toggleSwitch">Grocery List</h5>
               </div>
             </div>
-            <div id="searchToggle" class="search-toggle">Search <i onclick="toggleSearch(this)" class="fas fa-toggle-off"></i>
-            </div>
-          </div>
           <div id="mydiv" style="display: none;"></div>
         </div>
       </div>
