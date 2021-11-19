@@ -30,19 +30,17 @@
   <main>
     <div class="container">
       <div class="row">
-        <div class="twelve columns">
-            <div id="searchToggle" class="search-toggle">Search <i onclick="toggleSearch(this)" class="search-icon fas fa-toggle-on"></i>
-            </div>
-        </div>
-      </div>
-      <div class="row">
-        <div id="search" class="twelve columns">
+        <div id="search" class="nine columns">
           <form autocomplete="off">
             <div class="autocomplete" style="width:300px;">
               <input id="myInput" type="text" name="myCountry" placeholder="Add an item...">
             </div>
           </form>
           <div id="match-list"></div>
+        </div>
+        <div id="search-div" class="three columns">
+            <div id="searchToggle" class="search-toggle">Search <i onclick="toggleSearch(this)" class="search-icon fas fa-toggle-on"></i>
+            </div>
         </div>
       </div>
       <div class="row">

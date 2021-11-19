@@ -274,5 +274,8 @@ function toggleSearch(x) {
   x.classList.toggle("fa-toggle-off")
   x.classList.toggle("fa-toggle-on")
   let search = document.getElementById("search");
+  let searchDiv = document.getElementById("search-div");
   search.classList.toggle("hide");
+  searchDiv.classList.toggle("twelve");
+  searchDiv.classList.toggle("three");
 }
