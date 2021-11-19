@@ -34,6 +34,7 @@ function autocomplete(inp, arr) {
           inp.value = this.getElementsByTagName("input")[0].value;
           console.log(inp.value);
           addToList(inp.value);
+          inp.value = "";
           /*close the list of autocompleted values,
           (or any other open lists of autocompleted values:*/
           closeAllLists();
@@ -270,7 +271,8 @@ function toggleList(y, z) {
 }
 
 function toggleSearch(x) {
+  x.classList.toggle("fa-toggle-off")
   x.classList.toggle("fa-toggle-on")
-let search = document.getElementById("search");
-search.classList.toggle("hide");
+  let search = document.getElementById("search");
+  search.classList.toggle("hide");
 }

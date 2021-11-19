@@ -1,48 +1,44 @@
-/*
-* Skeleton V2.0.4
-* Copyright 2014, Dave Gamache
-* www.getskeleton.com
-* Free to use under the MIT license.
-* http://www.opensource.org/licenses/mit-license.php
-* 12/29/2014
-*/
-/* Table of contents
-––––––––––––––––––––––––––––––––––––––––––––––––––
-- Grid
-- Base Styles
-- Typography
-- Links
-- Buttons
-- Forms
-- Lists
-- Code
-- Tables
-- Spacing
-- Utilities
-- Clearing
-- Media Queries
-*/
-/* Grid
-–––––––––––––––––––––––––––––––––––––––––––––––––– */
+/**
+ * Skeleton V2.0.4 Copyright 2014, Dave Gamache www.getskeleton.com Free to use
+ * under the MIT license. http://www.opensource.org/licenses/mit-license.php
+ * 12/29/2014
+ */
+/**
+ * Table of contents ––––––––––––––––––––––––––––––––––––––––––––––––––
+ * - Grid
+ * - Base Styles
+ * - Typography
+ * - Links
+ * - Buttons
+ * - Forms
+ * - Lists
+ * - Code
+ * - Tables
+ * - Spacing
+ * - Utilities
+ * - Clearing
+ * - Media Queries
+ */
+/* Grid –––––––––––––––––––––––––––––––––––––––––––––––––– */
 .container {
+  box-sizing: border-box;
   position: relative;
   width: 100%;
-  max-width: 960px;
+  max-width: 1080px;
   margin: 0 auto;
   padding: 0 20px;
-  box-sizing: border-box;
 }
 
 .column,
 .columns {
+  box-sizing: border-box;
   width: 100%;
   float: left;
-  box-sizing: border-box;
   margin-top: 10px;
 }
 
 /* For devices larger than 400px */
-@media (min-width: 400px) {
+@media (min-width : 400px) {
   .container {
     width: 85%;
     padding: 0;
@@ -50,7 +46,7 @@
 }
 
 /* For devices larger than 550px */
-@media (min-width: 550px) {
+@media (min-width : 550px) {
   .container {
     width: 80%;
   }
@@ -199,28 +195,34 @@
   }
 }
 
-/* Base Styles
-–––––––––––––––––––––––––––––––––––––––––––––––––– */
-/* NOTE
-html is set to 62.5% so that all the REM measurements throughout Skeleton
-are based on 10px sizing. So basically 1.5rem = 15px :) */
+/* Base Styles –––––––––––––––––––––––––––––––––––––––––––––––––– */
+/**
+ * NOTE html is set to 62.5% so that all the REM measurements throughout
+ * Skeleton are based on 10px sizing. So basically 1.5rem = 15px :)
+ */
 html {
   font-size: 62.5%;
 }
 
 body {
-  font-size: 1.5em;
-  /* currently ems cause chrome bug misinterpreting rems on body element */
-  line-height: 1.6;
-  font-weight: 400;
-  font-family: 'Open Sans', sans-serif;
   color: #bbbbbb;
   background-color: #222222;
+  font-family: 'Open Sans',
+    sans-serif;
+  font-size: 1.5em;
+  font-weight: 400;
+  line-height: 1.6;
+  /* currently ems cause chrome bug misinterpreting rems on body element */
 }
 
-/* Typography
-–––––––––––––––––––––––––––––––––––––––––––––––––– */
-h1, h2, h3, h4, h5, h6, .toggle {
+/* Typography –––––––––––––––––––––––––––––––––––––––––––––––––– */
+.toggle,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   margin-top: 0;
   margin-bottom: 2rem;
   font-weight: 300;
@@ -250,7 +252,8 @@ h4 {
   letter-spacing: -.08rem;
 }
 
-h5, .toggle {
+.toggle,
+h5 {
   font-size: 1.8rem;
   line-height: 1.5;
   letter-spacing: -.05rem;
@@ -264,7 +267,7 @@ h6 {
 }
 
 /* Larger than phablet */
-@media (min-width: 550px) {
+@media (min-width : 550px) {
   h1 {
     font-size: 5.0rem;
   }
@@ -281,7 +284,8 @@ h6 {
     font-size: 3.0rem;
   }
 
-  h5, .toggle {
+  .toggle,
+  h5 {
     font-size: 2.4rem;
   }
 
@@ -294,8 +298,7 @@ p {
   margin-top: 0;
 }
 
-/* Links
-–––––––––––––––––––––––––––––––––––––––––––––––––– */
+/* Links –––––––––––––––––––––––––––––––––––––––––––––––––– */
 a {
   color: #1EAEDB;
 }
@@ -304,47 +307,46 @@ a:hover {
   color: #0FA0CE;
 }
 
-/* Buttons
-–––––––––––––––––––––––––––––––––––––––––––––––––– */
+/* Buttons –––––––––––––––––––––––––––––––––––––––––––––––––– */
 .button,
 button,
-input[type="submit"],
+input[type="button"],
 input[type="reset"],
-input[type="button"] {
+input[type="submit"] {
   display: inline-block;
+  box-sizing: border-box;
   height: 38px;
   padding: 0 30px;
   color: #BCCCDC;
+  border: 0;
+  border-radius: 0px;
+  background-color: transparent;
+  background-color: #486581;
   text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
   font-size: 11px;
   font-weight: 600;
   line-height: 38px;
   letter-spacing: .1rem;
-  text-transform: uppercase;
-  text-decoration: none;
   white-space: nowrap;
-  background-color: transparent;
-  border-radius: 0px;
-  border: 0;
   cursor: pointer;
-  box-sizing: border-box;
-  background-color: #486581;
 }
 
 #toggleSwitch {
   width: 150px;
 }
 
-.button:hover,
-button:hover,
-input[type="submit"]:hover,
-input[type="reset"]:hover,
-input[type="button"]:hover,
 .button:focus,
+.button:hover,
 button:focus,
-input[type="submit"]:focus,
+button:hover,
+input[type="button"]:focus,
+input[type="button"]:hover,
 input[type="reset"]:focus,
-input[type="button"]:focus {
+input[type="reset"]:hover,
+input[type="submit"]:focus,
+input[type="submit"]:hover {
   color: #fff;
   border-color: #888;
   outline: 0;
@@ -352,66 +354,65 @@ input[type="button"]:focus {
 
 .button.button-primary,
 button.button-primary,
-input[type="submit"].button-primary,
+input[type="button"].button-primary,
 input[type="reset"].button-primary,
-input[type="button"].button-primary {
+input[type="submit"].button-primary {
   color: #FFF;
-  background-color: #33C3F0;
   border-color: #33C3F0;
+  background-color: #33C3F0;
 }
 
-.button.button-primary:hover,
-button.button-primary:hover,
-input[type="submit"].button-primary:hover,
-input[type="reset"].button-primary:hover,
-input[type="button"].button-primary:hover,
 .button.button-primary:focus,
+.button.button-primary:hover,
 button.button-primary:focus,
-input[type="submit"].button-primary:focus,
+button.button-primary:hover,
+input[type="button"].button-primary:focus,
+input[type="button"].button-primary:hover,
 input[type="reset"].button-primary:focus,
-input[type="button"].button-primary:focus {
+input[type="reset"].button-primary:hover,
+input[type="submit"].button-primary:focus,
+input[type="submit"].button-primary:hover {
   color: #FFF;
-  background-color: #1EAEDB;
   border-color: #1EAEDB;
+  background-color: #1EAEDB;
 }
 
 button:disabled {
-  background-color: #ececec !important;
   color: #a4a4a4 !important;
+  background-color: #ececec !important;
 }
 
-/* Forms
-–––––––––––––––––––––––––––––––––––––––––––––––––– */
+/* Forms –––––––––––––––––––––––––––––––––––––––––––––––––– */
 input[type="email"],
 input[type="number"],
-input[type="search"],
-input[type="text"],
-input[type="tel"],
-input[type="url"],
 input[type="password"],
-textarea,
-select {
+input[type="search"],
+input[type="tel"],
+input[type="text"],
+input[type="url"],
+select,
+textarea {
+  box-sizing: border-box;
   height: 38px;
   padding: 6px 10px;
-  /* The 6px vertically centers text on FF, ignored by Webkit */
-  background-color: #fff;
   border: 1px solid #D1D1D1;
   border-radius: 0px;
+  background-color: #fff;
   box-shadow: none;
-  box-sizing: border-box;
+  /* The 6px vertically centers text on FF, ignored by Webkit */
 }
 
 /* Removes awkward default styles on some inputs for iOS */
 input[type="email"],
 input[type="number"],
-input[type="search"],
-input[type="text"],
-input[type="tel"],
-input[type="url"],
 input[type="password"],
+input[type="search"],
+input[type="tel"],
+input[type="text"],
+input[type="url"],
 textarea {
-  -webkit-appearance: none;
   -moz-appearance: none;
+  -webkit-appearance: none;
   appearance: none;
 }
 
@@ -423,13 +424,13 @@ textarea {
 
 input[type="email"]:focus,
 input[type="number"]:focus,
-input[type="search"]:focus,
-input[type="text"]:focus,
-input[type="tel"]:focus,
-input[type="url"]:focus,
 input[type="password"]:focus,
-textarea:focus,
-select:focus {
+input[type="search"]:focus,
+input[type="tel"]:focus,
+input[type="text"]:focus,
+input[type="url"]:focus,
+select:focus,
+textarea:focus {
   border: 1px solid #33C3F0;
   outline: 0;
 }
@@ -463,29 +464,29 @@ label>.label-body {
 }
 
 input[type="checkbox"]:checked+label {
-  text-decoration: line-through;
   color: #969696;
+  text-decoration: line-through;
 }
 
 .container-checkbox {
   display: block;
   position: relative;
-  padding-left: 35px;
   margin-bottom: 12px;
-  cursor: pointer;
-  -webkit-user-select: none;
+  padding-left: 35px;
   -moz-user-select: none;
   -ms-user-select: none;
+  -webkit-user-select: none;
   user-select: none;
+  cursor: pointer;
 }
 
 /* Hide the browser's default checkbox */
 .container-checkbox input {
   position: absolute;
+  width: 0;
+  height: 0;
   opacity: 0;
   cursor: pointer;
-  height: 0;
-  width: 0;
 }
 
 /* Create a custom checkbox */
@@ -493,8 +494,8 @@ input[type="checkbox"]:checked+label {
   position: absolute;
   top: 0;
   left: 0;
-  height: 25px;
   width: 25px;
+  height: 25px;
   background-color: #3B3B3B;
 }
 
@@ -511,8 +512,8 @@ input[type="checkbox"]:checked+label {
 /* Create the checkmark/indicator (hidden when not checked) */
 .checkmark:after {
   content: "";
-  position: absolute;
   display: none;
+  position: absolute;
 }
 
 /* Show the checkmark when checked */
@@ -522,14 +523,14 @@ input[type="checkbox"]:checked+label {
 
 /* Style the checkmark/indicator */
 .container-checkbox .checkmark:after {
-  left: 9px;
   top: 5px;
+  left: 9px;
   width: 5px;
   height: 10px;
   border: solid white;
   border-width: 0 3px 3px 0;
-  -webkit-transform: rotate(45deg);
   -ms-transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
   transform: rotate(45deg);
 }
 
@@ -542,12 +543,11 @@ label {
 }
 
 #thing {
-  background: lightgray;
   padding: 5px;
+  background: lightgray;
 }
 
-/* Lists
-–––––––––––––––––––––––––––––––––––––––––––––––––– */
+/* Lists –––––––––––––––––––––––––––––––––––––––––––––––––– */
 ul {
   list-style: circle inside;
 }
@@ -556,15 +556,16 @@ ol {
   list-style: decimal inside;
 }
 
-ol, ul {
-  padding-left: 0;
+ol,
+ul {
   margin-top: 0;
+  padding-left: 0;
 }
 
-ul ul,
-ul ol,
 ol ol,
-ol ul {
+ol ul,
+ul ol,
+ul ul {
   margin: 1.5rem 0 1.5rem 3rem;
   font-size: 90%;
 }
@@ -573,16 +574,15 @@ li {
   margin-bottom: 1rem;
 }
 
-/* Code
-–––––––––––––––––––––––––––––––––––––––––––––––––– */
+/* Code –––––––––––––––––––––––––––––––––––––––––––––––––– */
 code {
-  padding: .2rem .5rem;
   margin: 0 .2rem;
-  font-size: 90%;
-  white-space: nowrap;
-  background: #F1F1F1;
+  padding: .2rem .5rem;
   border: 1px solid #E1E1E1;
   border-radius: 0px;
+  background: #F1F1F1;
+  font-size: 90%;
+  white-space: nowrap;
 }
 
 pre>code {
@@ -591,66 +591,63 @@ pre>code {
   white-space: pre;
 }
 
-/* Tables
-–––––––––––––––––––––––––––––––––––––––––––––––––– */
-th,
-td {
+/* Tables –––––––––––––––––––––––––––––––––––––––––––––––––– */
+td,
+th {
   padding: 12px 15px;
-  text-align: left;
   border-bottom: 1px solid #E1E1E1;
+  text-align: left;
 }
 
-th:first-child,
-td:first-child {
+td:first-child,
+th:first-child {
   padding-left: 0;
 }
 
-th:last-child,
-td:last-child {
+td:last-child,
+th:last-child {
   padding-right: 0;
 }
 
-/* Spacing
-–––––––––––––––––––––––––––––––––––––––––––––––––– */
+/* Spacing –––––––––––––––––––––––––––––––––––––––––––––––––– */
 i {
   margin-right: .3em;
 }
 
-button,
-.button {
+.button,
+button {
   margin-top: 0rem !important;
   margin-bottom: 1rem !important;
 }
 
+fieldset,
 input,
-textarea,
 select,
-fieldset {
+textarea {
   margin-bottom: 1.5rem;
 }
 
-pre,
 blockquote,
 dl,
 figure,
-table,
-p,
-ul,
+form,
 ol,
-form {
+p,
+pre,
+table,
+ul {
   margin-bottom: 2.5rem;
 }
 
-/* Utilities
-–––––––––––––––––––––––––––––––––––––––––––––––––– */
+/* Utilities –––––––––––––––––––––––––––––––––––––––––––––––––– */
 .u-full-width {
-  width: 100%;
   box-sizing: border-box;
+  width: 100%;
 }
 
 .u-max-full-width {
-  max-width: 100%;
   box-sizing: border-box;
+  max-width: 100%;
 }
 
 .u-pull-right {
@@ -661,17 +658,15 @@ form {
   float: left;
 }
 
-/* Misc
-–––––––––––––––––––––––––––––––––––––––––––––––––– */
+/* Misc –––––––––––––––––––––––––––––––––––––––––––––––––– */
 hr {
   margin-top: 3rem;
   margin-bottom: 3.5rem;
-  border-width: 0;
   border-top: 1px solid #E1E1E1;
+  border-width: 0;
 }
 
-/* Clearing
-–––––––––––––––––––––––––––––––––––––––––––––––––– */
+/* Clearing –––––––––––––––––––––––––––––––––––––––––––––––––– */
 /* Self Clearing Goodness */
 .container:after,
 .row:after,
@@ -681,43 +676,42 @@ hr {
   clear: both;
 }
 
-/* Media Queries
-–––––––––––––––––––––––––––––––––––––––––––––––––– */
-/*
-Note: The best way to structure the use of media queries is to create the queries
-near the relevant code. For example, if you wanted to change the styles for buttons
-on small devices, paste the mobile query code up in the buttons section and style it
-there.
-*/
+/* Media Queries –––––––––––––––––––––––––––––––––––––––––––––––––– */
+/**
+ * Note: The best way to structure the use of media queries is to create the
+ * queries near the relevant code. For example, if you wanted to change the
+ * styles for buttons on small devices, paste the mobile query code up in the
+ * buttons section and style it there.
+ */
 /* Larger than mobile */
-@media (min-width: 400px) {}
+@media (min-width : 400px) {}
 
 /* Larger than phablet (also point when grid becomes active) */
-@media (min-width: 550px) {}
+@media (min-width : 550px) {}
 
 /* Larger than tablet */
-@media (min-width: 750px) {}
+@media (min-width : 750px) {}
 
 /* Larger than desktop */
-@media (min-width: 1000px) {}
+@media (min-width : 1000px) {}
 
 /* Larger than Desktop HD */
-@media (min-width: 1200px) {}
+@media (min-width : 1200px) {}
 
 .hide {
   display: none;
 }
 
 .toggle:before {
-  font-family: "Font Awesome 5 Free";
   content: "\f0da";
+  font-family: "Font Awesome 5 Free";
   font-style: normal;
   font-weight: 900;
 }
 
 .toggle.is-active:before {
-  font-family: "Font Awesome 5 Free";
   content: "\f0d7";
+  font-family: "Font Awesome 5 Free";
   font-weight: 900;
 }
 
@@ -732,41 +726,41 @@ there.
 
 /* Autocomplete search */
 .autocomplete {
-  /*the container must be positioned relative:*/
-  position: relative;
+  /* the container must be positioned relative: */
   display: inline-block;
+  position: relative;
   width: 500px;
 }
 
 .autocomplete-items {
-  position: absolute;
-  border: 1px solid #d4d4d4;
-  color: #2f2f2f;
-  border-bottom: none;
-  border-top: none;
   z-index: 99;
-  /*position the autocomplete items to be the same width as the container:*/
+  position: absolute;
   top: 100%;
-  left: 0;
   right: 0;
+  left: 0;
+  color: #2f2f2f;
+  border: 1px solid #d4d4d4;
+  border-top: none;
+  border-bottom: none;
+  /* position the autocomplete items to be the same width as the container: */
 }
 
 .autocomplete-items div {
   padding: 8px;
-  cursor: pointer;
-  background-color: #fff;
   border-bottom: 1px solid #d4d4d4;
+  background-color: #fff;
+  cursor: pointer;
 }
 
 .autocomplete-items div:hover {
-  /*when hovering an item:*/
+  /* when hovering an item: */
   background-color: #627D98 !important;
 }
 
 .autocomplete-active {
-  /*when navigating through the items using the arrow keys:*/
-  background-color: #627D98 !important;
+  /* when navigating through the items using the arrow keys: */
   color: #ffffff;
+  background-color: #627D98 !important;
 }
 
 .top-row {
@@ -776,4 +770,11 @@ there.
 
 .search-toggle {
   float: right;
+}
+
+.search-icon {
+  color: #627D98;
+  font-size: 1.5em;
+  margin-left: 0.5em;
+  margin-top: 0.5em;
 }
