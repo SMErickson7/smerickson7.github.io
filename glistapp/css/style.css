@@ -729,7 +729,11 @@ hr {
   /* the container must be positioned relative: */
   display: inline-block;
   position: relative;
-  width: 500px;
+  width: 250px;
+}
+
+#myInput {
+  width: 250px;
 }
 
 .autocomplete-items {
