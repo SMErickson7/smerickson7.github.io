@@ -67,7 +67,7 @@
          }
       },
       "status": {
-         "elapsed": null
+         "elapsed": 120
       }
    }
 },
@@ -95,11 +95,11 @@
       "teams": {
          "home": {
             "name": "Philadelphia Union",
-            "winner": null
+            "winner": true
          },
          "away": {
             "name": "New York Red Bulls",
-            "winner": null
+            "winner": false
          }
       },
       "status": {
