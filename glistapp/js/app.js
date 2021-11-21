@@ -124,11 +124,11 @@ var groceryStore = {
   snacks: ["Gum", "Snickers", "Graham crackers", "Crackers", "Popcorn"],
   breakfast: ["Cereal", "Granola", "Peppermint tea", "Earl grey"],
   beverage: ["Powerade", "La croix"],
-  soup_condiments: ["Peppercorns", "Kosher salt", "Paprika", "Dried marjoram", "Chili powder", "Celery seed", "Cumin", "Sugar", "Light brown sugar", "Flour", "Semolina flour", "Baking soda", "Maple syrup", "Honey", "Apple sauce", "Scones mix"],
+  soup_condiments: ["Peppercorns", "Kosher salt", "Paprika", "Dried marjoram", "Dried parsley", "Chili powder", "Celery seed", "Cumin", "Sugar", "Light brown sugar", "Flour", "Semolina flour", "Baking soda", "Maple syrup", "Honey", "Apple sauce", "Scones mix"],
   spices_baking: ["Baked beans", "Pinto beans", "Canned salmon", "Tuna fish", "Dijon mustard", "Mayonnaise", "Ketchup", "Sriracha", "Sauerkraut", "Bleu cheese", "Pickles", "Chicken stock", "Beef broth", "Soups", "Red wine vinegar", "White wine vinegar", "Distilled vinegar", "Rice vinegar", "Miso soup", "Hoisin sauce", "Oyster sauce"],
   international: ["Artichoke hearts", "Jasmine rice", "Pearl couscous", "Coconut milk", "Chickpeas", "Tortillas", "Olive oil", "Polenta", "Spaghetti", "Tomato sauce", "Tomato paste", "Pomi"],
   pets: ["Cat food"],
-  frozen: ["Frozen pizza", "Boca Burgers", "Eggos", "Ice cream", "Frozen fruit"],
+  frozen: ["Frozen peas & carrots", "Frozen corn", "Frozen pizza", "Boca Burgers", "Eggos", "Ice cream", "Frozen fruit"],
   dairy: ["Noosa yogurt", "Yogurt", "Ricotta cheese", "Sour cream", "Cottage cheese", "Oat milk", "Milk", "Heavy cream", "Whipped cream", "Eggs", "Butter"],
   bread: ["Peanut butter", "Jam", "Nutella", "English muffins", "Hot dog buns", "Hamburger buns", "Bread"]
 };
