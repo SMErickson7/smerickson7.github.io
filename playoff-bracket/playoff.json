@@ -59,15 +59,15 @@
       "teams": {
          "home": {
             "name": "New York City FC",
-            "winner": null
+            "winner": true
          },
          "away": {
             "name": "Atlanta United FC",
-            "winner": null
+            "winner": false
          }
       },
       "status": {
-         "elapsed": 120
+         "elapsed": 90
       }
    }
 },
@@ -103,7 +103,7 @@
          }
       },
       "status": {
-         "elapsed": null
+         "elapsed": 120
       }
    }
 },
