@@ -23,15 +23,15 @@
       "teams": {
          "home": {
             "name": "Sporting Kansas City",
-            "winner": null
+            "winner": true
          },
          "away": {
             "name": "Vancouver Whitecaps",
-            "winner": null
+            "winner": false
          }
       },
       "status": {
-         "elapsed": null
+         "elapsed": 90
       }
    }
 },
