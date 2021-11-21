@@ -133,9 +133,9 @@ var groceryStore = {
   bread: ["Peanut butter", "Jam", "Nutella", "English muffins", "Hot dog buns", "Hamburger buns", "Bread"]
 };
 
-var itemPriority = groceryStore.produce.concat(groceryStore.deli, groceryStore.meat, groceryStore.organics, groceryStore.breakfast, groceryStore.beverage, groceryStore.soup_condiments, groceryStore.spices_baking, groceryStore.international, groceryStore.pets, groceryStore.frozen, groceryStore.dairy, groceryStore.bread);
+var itemPriority = groceryStore.produce.concat(groceryStore.deli, groceryStore.meat, groceryStore.organics, groceryStore.snacks, groceryStore.breakfast, groceryStore.beverage, groceryStore.soup_condiments, groceryStore.spices_baking, groceryStore.international, groceryStore.pets, groceryStore.frozen, groceryStore.dairy, groceryStore.bread);
 var groceryList = [];
-var itemsLeftList = groceryStore.produce.concat(groceryStore.deli, groceryStore.meat, groceryStore.organics, groceryStore.breakfast, groceryStore.beverage, groceryStore.soup_condiments, groceryStore.spices_baking, groceryStore.international, groceryStore.pets, groceryStore.frozen, groceryStore.dairy, groceryStore.bread);
+var itemsLeftList = groceryStore.produce.concat(groceryStore.deli, groceryStore.meat, groceryStore.organics, groceryStore.snacks, groceryStore.breakfast, groceryStore.beverage, groceryStore.soup_condiments, groceryStore.spices_baking, groceryStore.international, groceryStore.pets, groceryStore.frozen, groceryStore.dairy, groceryStore.bread);
 
 
 
