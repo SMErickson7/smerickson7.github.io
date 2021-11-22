@@ -5,15 +5,15 @@
       "teams": {
          "home": {
             "name": "Portland Timbers",
-            "winner": null
+            "winner": true
          },
          "away": {
             "name": "Minnesota United FC",
-            "winner": null
+            "winner": false
          }
       },
       "status": {
-         "elapsed": null
+         "elapsed": 90
       }
    }
 },
@@ -116,7 +116,7 @@
             "winner": null
          },
          "away": {
-            "name": "TBD",
+            "name": "Portland Timbers",
             "winner": null
          }
       },
@@ -130,7 +130,7 @@
      "id": 202108,
      "teams": {
         "home": {
-           "name": "TBD",
+           "name": "Sporting Kansas City",
            "winner": null
         },
         "away": {
@@ -152,7 +152,7 @@
             "winner": null
          },
          "away": {
-            "name": "TBD",
+            "name": "New York City FC",
             "winner": null
          }
       },
@@ -166,7 +166,7 @@
       "id": 202110,
       "teams": {
          "home": {
-            "name": "TBD",
+            "name": "Philadelphia Union",
             "winner": null
          },
          "away": {
