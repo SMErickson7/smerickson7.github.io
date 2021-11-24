@@ -41,15 +41,15 @@
       "teams": {
          "home": {
             "name": "Seattle Sounders",
-            "winner": null
+            "winner": false
          },
          "away": {
             "name": "Real Salt Lake",
-            "winner": null
+            "winner": true
          }
       },
       "status": {
-         "elapsed": null
+         "elapsed": 120
       }
    }
 },
@@ -77,15 +77,15 @@
       "teams": {
          "home": {
             "name": "Nashville SC",
-            "winner": null
+            "winner": true
          },
          "away": {
             "name": "Orlando City SC",
-            "winner": null
+            "winner": false
          }
       },
       "status": {
-         "elapsed": null
+         "elapsed": 90
       }
    }
 },
@@ -134,7 +134,7 @@
            "winner": null
         },
         "away": {
-           "name": "TBD",
+           "name": "Real Salt Lake",
            "winner": null
         }
      },
@@ -170,7 +170,7 @@
             "winner": null
          },
          "away": {
-            "name": "TBD",
+            "name": "Nashville SC",
             "winner": null
          }
       },
