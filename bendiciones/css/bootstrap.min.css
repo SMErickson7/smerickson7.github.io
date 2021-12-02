@@ -4974,7 +4974,7 @@ fieldset:disabled .btn {
 }
 
 .navbar-dark .navbar-brand {
-    color: #fff
+    color: var(--bs-pink);
 }
 
 .navbar-dark .navbar-brand:focus,
