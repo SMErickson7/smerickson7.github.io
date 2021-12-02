@@ -4455,7 +4455,7 @@ fieldset:disabled .btn {
 }
 
 .navbar-brand {
-    position: absolute;
+    position: relative;
     left: 50%;
     display: block;
     margin-left: -50px !important;
