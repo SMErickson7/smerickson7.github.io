@@ -123,7 +123,7 @@ var groceryStore = {
     organics: ["Cliff bars", "Potato chips", "Veggie chips", "Chia seeds", "Flax seed"],
     snacks: ["Gum", "Snickers", "Graham crackers", "Crackers", "Popcorn"],
     breakfast: ["Cereal", "Granola", "Peppermint tea", "Earl grey", "Coffee"],
-    beverage: ["Powerade", "La croix"],
+    beverage: ["Cranberry juice", "Powerade", "La croix", "Sparkling mineral water"],
     spices_baking: ["Peppercorns", "Kosher salt", "Paprika", "Dried marjoram", "Dried parsley", "Chili powder", "Celery seed", "Cumin", "Sugar", "Light brown sugar", "Flour", "Semolina flour", "Baking soda", "Maple syrup", "Honey", "Apple sauce", "Canned peaches", "Marshmallow", "Scones mix", "Olive oil"],
     soup_condiments: ["Baked beans", "Pinto beans", "Canned salmon", "Tuna fish", "Dijon mustard", "Mayonnaise", "Ketchup", "Sriracha", "Sauerkraut", "Bleu cheese", "Pickles", "Chicken stock", "Beef broth", "Soups", "Red wine vinegar", "White wine vinegar", "Distilled vinegar", "Rice vinegar", "Miso soup", "Hoisin sauce", "Oyster sauce"],
     international: ["Artichoke hearts", "Jasmine rice", "Pearl couscous", "Coconut milk", "Chickpeas", "Tortillas", "Polenta", "Spaghetti", "Tomato sauce", "Tomato paste", "Pomi"],
