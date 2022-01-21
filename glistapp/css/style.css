@@ -525,10 +525,10 @@ input[type="checkbox"]:checked+label {
 /* Style the checkmark/indicator */
 
 .container-checkbox .checkmark:after {
-    top: 3px;
-    left: 12px;
-    width: 10px;
-    height: 20px;
+    top: 2px;
+    left: 9px;
+    width: 8px;
+    height: 16px;
     border: solid white;
     border-width: 0 5px 5px 0;
     -ms-transform: rotate(45deg);
