@@ -190,7 +190,7 @@ body {
     color: #bbbbbb;
     background-color: #222222;
     font-family: 'Open Sans', sans-serif;
-    font-size: 2.5em;
+    font-size: 2em;
     font-weight: 400;
     line-height: 1.6;
     /* currently ems cause chrome bug misinterpreting rems on body element */
