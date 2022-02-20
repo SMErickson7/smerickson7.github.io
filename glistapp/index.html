@@ -30,23 +30,21 @@
     <main>
         <div class="container">
             <div class="row">
-                <div id="search-div" class="twelve columns">
-                    <div id="searchToggle" class="search-toggle"><i onclick="toggleSearch(this)" class="search-icon fas fa-toggle-on"></i>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div id="search" class="twelve columns">
-                    <form autocomplete="off">
+                <div class="nine columns">
+                    <form autocomplete="off" id="search">
                         <div class="autocomplete">
                             <input id="myInput" type="text" name="myCountry" placeholder="Add an item...">
                         </div>
                     </form>
                     <div id="match-list"></div>
                 </div>
+                <div id="search-div" class="three columns">
+                    <div id="searchToggle" class="search-toggle"><i onclick="toggleSearch(this)" class="search-icon fas fa-toggle-on"></i>
+                    </div>
+                </div>
             </div>
             <div class="row">
-                <div class="twelve columns">
+                <div class="three columns">
                     <div onclick="toggleList(0)" style="display:inline-block">
                         <div class="icon"><i class="toggle" id="toggle0"></i></div>
                         <div class="header">
@@ -197,6 +195,7 @@
             </div>
         </div>
     </main>
+    <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
 </body>
 <script src="https://www.gstatic.com/firebasejs/4.3.0/firebase.js"></script>
 <script src="js/app.js"></script>
