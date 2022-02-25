@@ -1,0 +1,249 @@
+body {
+    background: var(--color-tone-7);
+    color: var(--color-tone-1);
+    text-align: center;
+    text-transform: uppercase;
+}
+
+h1 {
+    font-size: 42px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.cell {
+    width: 60px;
+    height: 60px;
+    line-height: 60px;
+    border: 2px solid var(--color-tone-4);
+    display: inline-block;
+    margin: 8px;
+    font-size: 40px;
+    font-weight: bold;
+}
+
+:host {
+    display: block;
+}
+
+ :host([invalid]) {
+    animation-name: Shake;
+    animation-duration: 600ms;
+}
+
+.row {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-gap: 5px;
+}
+
+.win {
+    animation-name: Bounce;
+    animation-duration: 1000ms;
+}
+
+#error-container {
+    height: 70px;
+}
+
+#error {
+    background: var(--color-tone-2);
+    opacity: 0;
+    color: var(--color-tone-6);
+    text-transform: uppercase;
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+    width: 250px;
+    margin: auto;
+    padding: 10px 0;
+    margin-bottom: 20px;
+    border-radius: 3px;
+}
+
+.elementToFadeInAndOut {
+    -webkit-animation: fadeinout 3s linear forwards;
+    animation: fadeinout 3s linear forwards;
+}
+
+.elementToFadeIn {
+    -webkit-animation: Shake 4s linear forwards;
+    animation: Shake 3s linear forwards;
+}
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 50px;
+    height: 20px;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: var(--color-tone-3);
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 14px;
+    width: 14px;
+    left: 3px;
+    bottom: 3px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+input:checked+.slider {
+    background-color: var(--color-tone-3);
+}
+
+input:focus+.slider {
+    box-shadow: 0 0 1px var(--color-tone-3);
+}
+
+input:checked+.slider:before {
+    -webkit-transform: translateX(30px);
+    -ms-transform: translateX(30x);
+    transform: translateX(30px);
+}
+
+
+/* Rounded sliders */
+
+.slider.round {
+    border-radius: 17px;
+}
+
+.slider.round:before {
+    border-radius: 50%;
+}
+
+@-webkit-keyframes fadeinout {
+    0%,
+    100% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeinout {
+    0%,
+    100% {
+        opacity: 0;
+    }
+    25%,
+    75% {
+        opacity: 1;
+    }
+}
+
+@media screen and (max-width: 550px) {
+    .cell {
+        width: 40px;
+        height: 40px;
+        line-height: 40px;
+        margin: 5px;
+        font-size: 30px;
+    }
+    #error-container {
+        height: 50px;
+    }
+    #error {
+        font-size: 16px;
+        width: 200px;
+        padding: 8px 0;
+        margin-bottom: 15px;
+        border-radius: 3px;
+    }
+}
+
+@media screen and (max-width: 330px) {
+    .cell {
+        width: 30px;
+        height: 30px;
+        line-height: 30px;
+        margin: 5px;
+        font-size: 20px;
+    }
+    #error-container {
+        height: 40px;
+    }
+    #error {
+        font-size: 12px;
+        width: 150px;
+        padding: 8px 0;
+        margin-bottom: 15px;
+        border-radius: 3px;
+    }
+}
+
+@keyframes Bounce {
+    0% {
+        transform: translateY(0);
+        opacity: 0;
+    }
+    20% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+    40% {
+        transform: translateY(-30px);
+    }
+    50% {
+        transform: translateY(5px);
+    }
+    60% {
+        transform: translateY(-15px);
+    }
+    80% {
+        transform: translateY(2px);
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes Shake {
+    0% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    10%,
+    90% {
+        transform: translateY(-8px);
+    }
+    20%,
+    80% {
+        transform: translateY(8px);
+    }
+    30%,
+    50%,
+    70% {
+        transform: translateY(-12px);
+    }
+    40%,
+    60% {
+        transform: translateY(12px);
+    }
+    100% {
+        opacity: 100%;
+    }
+}
