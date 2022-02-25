@@ -128,8 +128,8 @@ var groceryStore = {
     soup_condiments: ["Baked beans", "Pinto beans", "Canned salmon", "Tuna fish", "Dijon mustard", "Mayonnaise", "Ketchup", "Sriracha", "Sauerkraut", "Bleu cheese", "Pickles", "Chicken stock", "Beef broth", "Soups", "Red wine vinegar", "White wine vinegar", "Distilled vinegar", "Rice vinegar", "Miso soup", "Hoisin sauce", "Oyster sauce"],
     international: ["Artichoke hearts", "Jasmine rice", "Pearl couscous", "Coconut milk", "Chickpeas", "Tortillas", "Polenta", "Spaghetti", "Tomato sauce", "Tomato paste", "Pomi"],
     pets: ["Cat food"],
-    frozen: ["Frozen peas & carrots", "Frozen corn", "Frozen pizza", "Boca Burgers", "Eggos", "Ice cream", "Frozen fruit"],
-    dairy: ["Noosa yogurt", "Yogurt", "Ricotta cheese", "Sour cream", "Cottage cheese", "Almond milk", "Oat milk", "Milk", "Heavy cream", "Whipped cream", "Eggs", "Butter"],
+    frozen: ["Frozen peas & carrots", "Frozen corn", "Frozen pizza", "Boca Burgers", "Eggos", "Ice cream", "Frozen fruit medley", "Frozen Strawberries", "Frozen Raspberries"],
+    dairy: ["Noosa yogurt", "Greek Yogurt", "Plain Yogurt", "Ricotta cheese", "Sour cream", "Cottage cheese", "Almond milk", "Oat milk", "Milk", "Heavy cream", "Whipped cream", "Eggs", "Butter"],
     bread: ["Peanut butter", "Jam", "Nutella", "English muffins", "Hot dog buns", "Hamburger buns", "Bread"]
 };
 
@@ -281,18 +281,18 @@ function toggleSearch(x) {
 mybutton = document.getElementById("myBtn");
 
 // When the user scrolls down 20px from the top of the document, show the button
-window.onscroll = function() {scrollFunction()};
+window.onscroll = function() { scrollFunction() };
 
 function scrollFunction() {
-  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-    mybutton.style.display = "block";
-  } else {
-    mybutton.style.display = "none";
-  }
+    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+        mybutton.style.display = "block";
+    } else {
+        mybutton.style.display = "none";
+    }
 }
 
 // When the user clicks on the button, scroll to the top of the document
 function topFunction() {
-  document.body.scrollTop = 0; // For Safari
-  document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+    document.body.scrollTop = 0; // For Safari
+    document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
 }
