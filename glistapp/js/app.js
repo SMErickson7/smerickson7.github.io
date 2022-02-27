@@ -129,7 +129,7 @@ var groceryStore = {
     international: ["Artichoke hearts", "Jasmine rice", "Pearl couscous", "Coconut milk", "Chickpeas", "Tortillas", "Polenta", "Spaghetti", "Tomato sauce", "Tomato paste", "Pomi"],
     pets: ["Cat food"],
     frozen: ["Frozen peas & carrots", "Frozen corn", "Frozen pizza", "Boca Burgers", "Eggos", "Ice cream", "Frozen fruit medley", "Frozen Strawberries", "Frozen Raspberries"],
-    dairy: ["Noosa yogurt", "Greek Yogurt", "Plain Yogurt", "Ricotta cheese", "Sour cream", "Cottage cheese", "Almond milk", "Oat milk", "Milk", "Heavy cream", "Whipped cream", "Eggs", "Butter"],
+    dairy: ["Noosa yogurt", "Greek Yogurt", "Plain Yogurt", "Cream cheese", "Ricotta cheese", "Sour cream", "Cottage cheese", "Almond milk", "Oat milk", "Milk", "Heavy cream", "Whipped cream", "Eggs", "Butter"],
     bread: ["Peanut butter", "Jam", "Nutella", "English muffins", "Hot dog buns", "Hamburger buns", "Bread"]
 };
 
