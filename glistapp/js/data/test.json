@@ -1,0 +1,78 @@
+[{
+        "Produce": [{
+                "item": "Apples",
+                "order": "0"
+            },
+            {
+                "item": "Pears",
+                "order": "1"
+            },
+            {
+                "item": "Peaches",
+                "order": "2"
+            },
+            {
+                "item": "Bananas",
+                "order": "3"
+            },
+            {
+                "item": "Oranges",
+                "order": "4"
+            },
+            {
+                "item": "Lemons",
+                "order": "5"
+            }
+        ]
+    },
+    {
+        "Deli": [{
+                "item": "Giovanni Rana pasta",
+                "order": "0"
+            },
+            {
+                "item": "Alfredo sauce",
+                "order": "1"
+            },
+            {
+                "item": "Hummus",
+                "order": "2"
+            },
+            {
+                "item": "Turkey",
+                "order": "3"
+            },
+            {
+                "item": "Ham",
+                "order": "4"
+            },
+            {
+                "item": "Roast beef",
+                "order": "5"
+            },
+            {
+                "item": "Mortadella",
+                "order": "6"
+            }
+        ]
+    },
+    {
+        "Meat": [{
+                "item": "Salmon",
+                "order": "0"
+            },
+            {
+                "item": "White fish",
+                "order": "1"
+            },
+            {
+                "item": "Pork chops",
+                "order": "2"
+            },
+            {
+                "item": "Ground beef",
+                "order": "3"
+            }
+        ]
+    }
+]
