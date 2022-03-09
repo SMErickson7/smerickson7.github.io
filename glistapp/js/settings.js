@@ -12,7 +12,7 @@ firebase.initializeApp(config);
 
 var ref = firebase.database().ref('test');
 
-function loadSavedList() {
+function loadSavedItemList() {
     firebase.database().ref('test').once('value').then(function(snapshot) {
             var gData = snapshot.val();
             var produceUL = document.getElementById("produce-list");
@@ -29,7 +29,7 @@ function loadSavedList() {
             for (var j = 0; j < array.length; j++) {
                 /* console.log(array[j].fbdata[0].item);*/
                 for (var i = 0; i < array[j].fbdata.length; i++) {
-                    li = $('<li class="ui-state-default" data-category=' + array[j].category + '>' + array[j].fbdata[i].order + ' | ' + array[j].fbdata[i].item + '</li>');
+                    li = $('<li class="ui-state-default" data-category=' + array[j].category + '>' + array[j].fbdata[i].item + '</li>');
                     li.data('d', array[j].fbdata[i])
                     $(array[j].element).append(li);
                 }
@@ -96,12 +96,30 @@ function addtoList(d) {
     firebase.database().ref('test').once('value').then(function(snapshot) {
         var gData = snapshot.val();
         let category = d[0].child;
-        console.log(category);
-        var order = gData.category;
-        console.log(order);
-        var update = [{ item: d[0].item, order: 0 }];
+        switch (category) {
+            case 'Produce':
+                array = gData.Produce;
+                child = 'Produce';
+                ul = document.getElementById('produce-list');
+                break;
+            case 'Deli':
+                array = gData.Deli;
+                child = 'Deli';
+                ul = document.getElementById('deli-list');
+                break;
+            case 'Meat':
+                array = gData.Meat;
+                child = 'Meat';
+                ul = document.getElementById('meat-list');
+                break;
+        }
+        let key = array.length;
+        console.log(array);
+        var update = [{ item: d[0].item }];
         console.log(update);
-        /*firebase.database().ref().child(d[0].child).push(update);*/
-
+        firebase.database().ref('test').child(child).child(key).set({ item: d[0].item });
+        li = $('<li class="ui-state-default" data-category=' + child + '>' + d[0].item + '</li>');
+        li.data('d', update)
+        $(ul).append(li);
     })
 }

@@ -1,6 +1,19 @@
+var config = {
+    apiKey: "AIzaSyD-WoETx4P8BPtfxuKIVvr38tp0x0z7fVM",
+    authDomain: "grocerylist-e012f.firebaseapp.com",
+    databaseURL: "https://grocerylist-e012f-default-rtdb.firebaseio.com",
+    projectId: "grocerylist-e012f",
+    storageBucket: "grocerylist-e012f.appspot.com",
+    messagingSenderId: "320470919045",
+    appId: "1:320470919045:web:8a94b3e93c0290c1b546ec",
+    measurementId: "G-6W4QL6Z2RS"
+};
+firebase.initializeApp(config);
+
 function autocomplete(inp, arr) {
     /*the autocomplete function takes two arguments,
     the text field element and an array of possible autocompleted values:*/
+
     var currentFocus;
     /*execute a function when someone writes in the text field:*/
     inp.addEventListener("input", function(e) {
@@ -138,7 +151,6 @@ var groceryList = [];
 var itemsLeftList = groceryStore.produce.concat(groceryStore.deli, groceryStore.meat, groceryStore.organics, groceryStore.snacks, groceryStore.breakfast, groceryStore.beverage, groceryStore.soup_condiments, groceryStore.spices_baking, groceryStore.international, groceryStore.pets, groceryStore.frozen, groceryStore.dairy, groceryStore.bread);
 
 
-
 function populatePage() {
     for (var i = 0; i < Object.keys(groceryStore).length; i++) {
         const itemContainer = document.getElementById(Object.keys(groceryStore)[i] + "-list");
@@ -165,27 +177,25 @@ function populatePage() {
 populatePage();
 
 
-
-var config = {
-    apiKey: "AIzaSyD-WoETx4P8BPtfxuKIVvr38tp0x0z7fVM",
-    authDomain: "grocerylist-e012f.firebaseapp.com",
-    databaseURL: "https://grocerylist-e012f-default-rtdb.firebaseio.com",
-    projectId: "grocerylist-e012f",
-    storageBucket: "grocerylist-e012f.appspot.com",
-    messagingSenderId: "320470919045",
-    appId: "1:320470919045:web:8a94b3e93c0290c1b546ec",
-    measurementId: "G-6W4QL6Z2RS"
+function autocompleteList() {
+    firebase.database().ref('test').child('Produce').once('value').then(function(snapshot) {
+        const data = snapshot.val();
+        const searchList = [];
+        for (var i = 0; i < data.length; i++) {
+            searchList.push(data[i].item);
+            console.log(searchList);
+        }
+        return searchList;
+    }, function(error) {
+        console.log("Error: " + error.code);
+    });
 };
-firebase.initializeApp(config);
-
-var ref = firebase.database().ref('gList');
 
 function loadSavedList() {
     firebase.database().ref('gList').once('value').then(function(snapshot) {
         var gData = snapshot.val();
         var obj = JSON.stringify(gData);
         if (gData != null) {
-
             for (var i = 0; i < gData.length; i++) {
                 const index = itemsLeftList.indexOf(gData[i]);
                 groceryList.push(gData[i]);

@@ -16,34 +16,49 @@
     <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script src="https://kit.fontawesome.com/74ff93bbed.js" crossorigin="anonymous"></script>
 </head>
 
-<body onload="loadSavedList()">
+<body onload="loadSavedItemList()">
     <main>
         <div class="container">
             <div class="row">
                 <div class="twelve columns">
-                    <h1>Settings</h1>
-                    <button id="my-list-add-btn" class="add btn">Add</button>
+                    <table style="width: 100%;">
+                        <tr>
+                            <td>
+                                <h1>Settings</h1>
+                            </td>
+                            <td><a href="index.html"><i class="search-toggle search-icon fa-solid fa-list"></i></a>
+                            </td>
+                        </tr>
+                    </table>
                 </div>
             </div>
 
         </div>
         <div class="container">
             <div class="row">
-                <div class="four columns">
+                <div class="twelve columns">
+                    <button id="my-list-add-btn" class="add btn">Add</button>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="three columns">
                     <div class="header">
                         <h5>Produce</h5>
                     </div>
                     <ul class="sortable" id="produce-list"></ul>
                 </div>
-                <div class="four columns">
+                <div class="three columns">
                     <div class="header">
                         <h5>Deli</h5>
                     </div>
                     <ul class="sortable" id="deli-list"></ul>
                 </div>
-                <div class="four columns">
+                <div class="three columns">
                     <div class="header">
                         <h5>Meat</h5>
                     </div>
