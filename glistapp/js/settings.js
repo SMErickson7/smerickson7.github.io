@@ -32,7 +32,6 @@ $(document).ready(function() {
             });
             aisleOptions = aisleOptions.join("");
             let aislesIDSelector = aislesID.join(", ");
-            console.log(gData.Aisle);
             for (var j = 0; j < aislesX.length; j++) {
                 aisleName = aislesX[j].item;
                 for (var i = 0; i < gData[aisleName].length; i++) {
@@ -72,7 +71,7 @@ $(".add").click(function(e) {
             var aisles = gData.Aisle;
             var aisleOptions = [];
             $(aisles).each(function(i, e) {
-                aisleOptions.push('<option>' + aisles[i].name + '</option>')
+                aisleOptions.push('<option>' + aisles[i].item + '</option>')
             });
             aisleOptions = aisleOptions.join("");
             var dlg = $("<div>", {
