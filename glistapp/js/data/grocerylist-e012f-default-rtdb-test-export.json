@@ -1,40 +1,320 @@
 {
-
-    "Produce": [{
-        "item": "Apples"
-    }, {
-        "item": "Pears"
-    }, {
-        "item": "Peaches"
-    }, {
-        "item": "Bananas"
-    }, {
-        "item": "Oranges"
-    }, {
-        "item": "Lemons"
-    }],
-    "Deli": [{
-        "item": "Giovanni Rana pasta"
-    }, {
-        "item": "Alfredo sauce"
-    }, {
-        "item": "Hummus"
-    }, {
-        "item": "Turkey"
-    }, {
-        "item": "Ham"
-    }, {
-        "item": "Roast beef"
-    }, {
-        "item": "Mortadella"
-    }],
-    "Meat": [{
-        "item": "Salmon"
-    }, {
-        "item": "White fish"
-    }, {
-        "item": "Pork chops"
-    }, {
-        "item": "Ground beef"
-    }]
+    "Aisle": [
+        { "name": "Produce" },
+        { "name": "Deli" },
+        { "name": "Meat" },
+        { "name": "Organics" },
+        { "name": "Snacks" },
+        { "name": "Breakfast" },
+        { "name": "Beverage" },
+        { "name": "Soup & Condiments" },
+        { "name": "Spices & Baking" },
+        { "name": "International" },
+        { "name": "Pets" },
+        { "name": "Frozen" },
+        { "name": "Dairy" },
+        { "name": "Bread" }
+    ],
+    "Produce": [
+        { "item": "Apples" },
+        { "item": "Pears" },
+        { "item": "Peaches" },
+        { "item": "Bananas" },
+        { "item": "Oranges" },
+        { "item": "Lemons" },
+        { "item": "Limes" },
+        { "item": "Kiwis" },
+        { "item": "Clementines" },
+        { "item": "Strawberries" },
+        { "item": "Blueberries" },
+        { "item": "Raspberries" },
+        { "item": "Blackberries" },
+        { "item": "Honeydew melon" },
+        { "item": "Watermelon" },
+        { "item": "Cantaloupe" },
+        { "item": "Pineapple" },
+        { "item": "Tomatoes" },
+        { "item": "Avocados" },
+        { "item": "Cherry tomatoes" },
+        { "item": "Sweet peppers" },
+        { "item": "Mushrooms" },
+        { "item": "Beets" },
+        { "item": "Green beans" },
+        { "item": "Brussel sprouts" },
+        { "item": "Parsley" },
+        { "item": "Cilantro" },
+        { "item": "Fresh dill" },
+        { "item": "Chives" },
+        { "item": "Rosemary" },
+        { "item": "Sage leaves" },
+        { "item": "Thyme" },
+        { "item": "Basil" },
+        { "item": "Radishes" },
+        { "item": "Broccoli" },
+        { "item": "Cauliflower" },
+        { "item": "Carrots" },
+        { "item": "Red cabbage" },
+        { "item": "Fennel" },
+        { "item": "Leek" },
+        { "item": "Swiss chard" },
+        { "item": "Celery" },
+        { "item": "Cucumber" },
+        { "item": "Scallion" },
+        { "item": "Lettuce" },
+        { "item": "Arugula" },
+        { "item": "Romaine lettuce" },
+        { "item": "Spinach" },
+        { "item": "Asparagus" },
+        { "item": "Zucchini" },
+        { "item": "Bell pepper" },
+        { "item": "Corn" },
+        { "item": "Red onion" },
+        { "item": "Yellow onion" },
+        { "item": "Yukon gold potatoes" },
+        { "item": "Potatoes" },
+        { "item": "Sweet potatoes" },
+        { "item": "Garlic cloves" },
+        { "item": "Ginger" }
+    ],
+    "Deli": [
+        { "item": "Giovanni Rana pasta" },
+        { "item": "Alfredo sauce" },
+        { "item": "Hummus" },
+        { "item": "Turkey" },
+        { "item": "Ham" },
+        { "item": "Roast beef" },
+        { "item": "Mortadella" },
+        { "item": "American cheese" },
+        { "item": "Swiss cheese" },
+        { "item": "Pita bread" },
+        { "item": "Dinner rolls" },
+        { "item": "Dried cranberries" },
+        { "item": "Golden raisins" },
+        { "item": "In shell nuts" },
+        { "item": "Sliced almonds" },
+        { "item": "Walnuts" },
+        { "item": "Pecans" },
+        { "item": "Olives" },
+        { "item": "Feta cheese" },
+        { "item": "Monterey jack cheese" },
+        { "item": "Gorgonzola" },
+        { "item": "Goat cheese" },
+        { "item": "Gouda" },
+        { "item": "Grana padano" },
+        { "item": "Fig jam" },
+        { "item": "Egg salad" },
+        { "item": "Chicken salad" },
+        { "item": "Quiche" },
+        { "item": "Sushi" }
+    ],
+    "Meat": [
+        { "item": "Salmon" },
+        { "item": "Smoked Salmon" },
+        { "item": "White fish" },
+        { "item": "Bratwurst" },
+        { "item": "Pork chops" },
+        { "item": "Ground beef" },
+        { "item": "Meatloaf meat" },
+        { "item": "Ground turkey" },
+        { "item": "Chicken" },
+        { "item": "Hot dogs" },
+        { "item": "Bacon" }
+    ],
+    "Organics": [
+        { "item": "Almond butter" },
+        { "item": "Cliff bars" },
+        { "item": "Potato chips" },
+        { "item": "Veggie chips" },
+        { "item": "Chia seeds" },
+        { "item": "Flax seed" }
+    ],
+    "Snacks": [
+        { "item": "Gum" },
+        { "item": "Snickers" },
+        { "item": "Graham crackers" },
+        { "item": "Crackers" },
+        { "item": "Popcorn" }
+    ],
+    "Breakfast": [
+        { "item": "Cereal" },
+        { "item": "Granola" },
+        { "item": "Peppermint tea" },
+        { "item": "Earl grey" },
+        { "item": "Coffee" }
+    ],
+    "Beverage": [
+        { "item": "Cranberry juice" },
+        { "item": "Powerade" },
+        { "item": "La croix" },
+        { "item": "Sparkling mineral water" }
+    ],
+    "Soup & Condiments": [
+        { "item": "Baked beans" },
+        { "item": "Pinto beans" },
+        { "item": "Canned salmon" },
+        { "item": "Tuna fish" },
+        { "item": "Dijon mustard" },
+        { "item": "Mayonnaise" },
+        { "item": "Ketchup" },
+        { "item": "Sriracha" },
+        { "item": "Sauerkraut" },
+        { "item": "Bleu cheese" },
+        { "item": "Pickles" },
+        { "item": "Chicken stock" },
+        { "item": "Beef broth" },
+        { "item": "Soups" },
+        { "item": "Red wine vinegar" },
+        { "item": "White wine vinegar" },
+        { "item": "Distilled vinegar" },
+        { "item": "Rice vinegar" },
+        { "item": "Miso soup" },
+        { "item": "Hoisin sauce" },
+        { "item": "Oyster sauce" }
+    ],
+    "Spices & Baking": [
+        { "item": "Peppercorns" },
+        { "item": "Kosher salt" },
+        { "item": "Paprika" },
+        { "item": "Dried marjoram" },
+        { "item": "Dried parsley" },
+        { "item": "Chili powder" },
+        { "item": "Celery seed" },
+        { "item": "Cumin" },
+        { "item": "Ground ginger" },
+        { "item": "Sugar" },
+        { "item": "Light brown sugar" },
+        { "item": "Flour" },
+        { "item": "Semolina flour" },
+        { "item": "Baking soda" },
+        { "item": "Maple syrup" },
+        { "item": "Honey" },
+        { "item": "Apple sauce" },
+        { "item": "Canned peaches" },
+        { "item": "Marshmallow" },
+        { "item": "Scones mix" },
+        { "item": "Olive oil" }
+    ],
+    "International": [
+        { "item": "Artichoke hearts" },
+        { "item": "Jasmine rice" },
+        { "item": "Pearl couscous" },
+        { "item": "Coconut milk" },
+        { "item": "Chickpeas" },
+        { "item": "Tortillas" },
+        { "item": "Polenta" },
+        { "item": "Spaghetti" },
+        { "item": "Tomato sauce" },
+        { "item": "Tomato paste" },
+        { "item": "Pomi" }
+    ],
+    "Pets": [
+        { "item": "Cat food" }
+    ],
+    "Frozen": [
+        { "item": "Frozen peas & carrots" },
+        { "item": "Frozen corn" },
+        { "item": "Frozen pizza" },
+        { "item": "Boca Burgers" },
+        { "item": "Eggos" },
+        { "item": "Ice cream" },
+        { "item": "Frozen fruit medley" },
+        { "item": "Frozen Strawberries" },
+        { "item": "Frozen Raspberries" }
+    ],
+    "Dairy": [
+        { "item": "Noosa yogurt" },
+        { "item": "Greek Yogurt" },
+        { "item": "Plain Yogurt" },
+        { "item": "Cream cheese" },
+        { "item": "Ricotta cheese" },
+        { "item": "Sour cream" },
+        { "item": "Cottage cheese" },
+        { "item": "Almond milk" },
+        { "item": "Oat milk" },
+        { "item": "Milk" },
+        { "item": "Heavy cream" },
+        { "item": "Whipped cream" },
+        { "item": "Eggs" },
+        { "item": "Butter" }
+    ],
+    "Bread": [
+        { "item": "Peanut butter" },
+        { "item": "Jam" },
+        { "item": "Nutella" },
+        { "item": "English muffins" },
+        { "item": "Hot dog buns" },
+        { "item": "Hamburger buns" },
+        { "item": "Bread" }
+    ],
+    "Array": [{
+            "category": "Aisle",
+            "element": "aisleUL",
+            "fbdata": "aisle"
+        },
+        {
+            "category": "Beverage",
+            "element": "beverageUL",
+            "fbdata": "beverage"
+        },
+        {
+            "category": "Bread",
+            "element": "breadUL",
+            "fbdata": "bread"
+        },
+        {
+            "category": "Breakfast",
+            "element": "breakfastUL",
+            "fbdata": "breakfast"
+        },
+        {
+            "category": "Dairy",
+            "element": "dairyUL",
+            "fbdata": "dairy"
+        },
+        {
+            "category": "Deli",
+            "element": "deliUL",
+            "fbdata": "deli"
+        },
+        {
+            "category": "Frozen",
+            "element": "frozenUL",
+            "fbdata": "frozen"
+        },
+        {
+            "category": "International",
+            "element": "internationalUL",
+            "fbdata": "international"
+        },
+        {
+            "category": "Meat",
+            "element": "meatUL",
+            "fbdata": "meat"
+        },
+        {
+            "category": "Organics",
+            "element": "organicsUL",
+            "fbdata": "organics"
+        },
+        {
+            "category": "Pets",
+            "element": "petsUL",
+            "fbdata": "pets"
+        },
+        {
+            "category": "Produce",
+            "element": "produceUL",
+            "fbdata": "produce"
+        },
+        {
+            "category": "Snacks",
+            "element": "snacksUL",
+            "fbdata": "snacks"
+        },
+        {
+            "category": "Soup & Condiments",
+            "element": "soup_condimentsUL",
+            "fbdata": "soup_condiments"
+        }
+    ]
 }

@@ -13,13 +13,14 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/74ff93bbed.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <!--<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">-->
+    <link rel="stylesheet" href="css/jquery-ui.css">
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     <script src="https://kit.fontawesome.com/74ff93bbed.js" crossorigin="anonymous"></script>
 </head>
 
-<body onload="loadSavedItemList()">
+<body>
     <main>
         <div class="container">
             <div class="row">
@@ -44,27 +45,7 @@
                 </div>
             </div>
         </div>
-        <div class="container">
-            <div class="row">
-                <div class="three columns">
-                    <div class="header">
-                        <h5>Produce</h5>
-                    </div>
-                    <ul class="sortable" id="produce-list"></ul>
-                </div>
-                <div class="three columns">
-                    <div class="header">
-                        <h5>Deli</h5>
-                    </div>
-                    <ul class="sortable" id="deli-list"></ul>
-                </div>
-                <div class="three columns">
-                    <div class="header">
-                        <h5>Meat</h5>
-                    </div>
-                    <ul class="sortable" id="meat-list"></ul>
-                </div>
-            </div>
+        <div id="groceryAisles" class="container"></div>
     </main>
 </body>
 <script src="https://www.gstatic.com/firebasejs/4.3.0/firebase.js"></script>

@@ -42,6 +42,10 @@
     margin-top: 10px;
 }
 
+.aisle-section {
+    border-top: 1px solid #888;
+}
+
 
 /* For devices larger than 400px */
 
@@ -342,7 +346,6 @@ input[type="button"].button-primary,
 input[type="reset"].button-primary,
 input[type="submit"].button-primary {
     color: #FFF;
-    border-color: #33C3F0;
     background-color: #33C3F0;
 }
 
@@ -357,7 +360,6 @@ input[type="reset"].button-primary:hover,
 input[type="submit"].button-primary:focus,
 input[type="submit"].button-primary:hover {
     color: #FFF;
-    border-color: #1EAEDB;
     background-color: #1EAEDB;
 }
 
@@ -383,8 +385,9 @@ textarea {
     padding: 6px 10px;
     border: 1px solid #D1D1D1;
     border-radius: 0px;
-    background-color: #fff;
+    background-color: rgb(153, 153, 153);
     box-shadow: none;
+    color: #e8e8e8!important;
     /* The 6px vertically centers text on FF, ignored by Webkit */
 }
 
@@ -419,7 +422,6 @@ input[type="text"]:focus,
 input[type="url"]:focus,
 select:focus,
 textarea:focus {
-    border: 1px solid #33C3F0;
     outline: 0;
 }
 
@@ -466,6 +468,22 @@ input[type="checkbox"]:checked+label {
     -webkit-user-select: none;
     user-select: none;
     cursor: pointer;
+}
+
+::placeholder {
+    color: rgb(228, 228, 228);
+    opacity: 1;
+    /* Firefox */
+}
+
+ :-ms-input-placeholder {
+    /* Internet Explorer 10-11 */
+    color: rgb(228, 228, 228);
+}
+
+ ::-ms-input-placeholder {
+    /* Microsoft Edge */
+    color: rgb(228, 228, 228);
 }
 
 
@@ -714,6 +732,11 @@ hr {
     /* Add a dark-grey background on hover */
 }
 
+.bold {
+    color: #222222;
+    font-weight: bold;
+}
+
 
 /* Clearing –––––––––––––––––––––––––––––––––––––––––––––––––– */
 
@@ -752,47 +775,58 @@ hr {
 
 /* Larger than tablet */
 
-@media (min-width: 750px)
-}
+@media (min-width: 750px) {}
+
 
 /* Larger than desktop */
+
 @media (min-width: 1000px) {}
 
+
 /* Larger than Desktop HD */
+
 @media (min-width: 1200px) {}
+
 .hide {
     display: none;
 }
+
 .toggle:before {
-    content: "\f0da";
+    content: "\f0d7";
     font-family: "Font Awesome 5 Free";
     font-style: normal;
     font-weight: 900;
 }
+
 .toggle.is-active:before {
-    content: "\f0d7";
+    content: "\f0da";
     font-family: "Font Awesome 5 Free";
     font-weight: 900;
 }
+
 .icon {
     display: inline-block;
     width: 1.2em;
 }
+
 .header {
     display: inline-block;
 }
 
+
 /* Autocomplete search */
+
 .autocomplete {
     /* the container must be positioned relative: */
-    
     display: inline-block;
     position: relative;
     width: 250px;
 }
-#myInput {
+
+.search-autocomplete-input {
     width: 250px;
 }
+
 .autocomplete-items {
     z-index: 99;
     position: absolute;
@@ -805,33 +839,41 @@ hr {
     border-bottom: none;
     /* position the autocomplete items to be the same width as the container: */
 }
+
 .autocomplete-items div {
     padding: 8px;
     border-bottom: 1px solid #d4d4d4;
     background-color: #fff;
     cursor: pointer;
 }
+
 .autocomplete-items div:hover {
     /* when hovering an item: */
-    
     background-color: #627D98 !important;
 }
+
 .autocomplete-active {
     /* when navigating through the items using the arrow keys: */
-    
     color: #ffffff;
     background-color: #627D98 !important;
 }
+
 .top-row {
     display: inline-block;
     width: 100%;
 }
+
 .search-toggle {
     float: right;
 }
+
 .search-icon {
     color: #627D98;
     font-size: 1.5em;
     margin-left: 0.5em;
     margin-top: 0.5em;
+}
+
+.moving {
+    background: #31926d!important;
 }
