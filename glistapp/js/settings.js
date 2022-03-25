@@ -20,7 +20,7 @@ $(document).ready(function() {
             console.log(aisles.length)
             var aislesID = [];
             var aisleOptions = [];
-
+            console.log(aislesX);
             $(aislesX).each(function(i, e) {
                 if ((i % 4) == 0) {
                     container = $('<div class="row"></div>');
@@ -36,7 +36,7 @@ $(document).ready(function() {
                 aisleName = aislesX[j].item;
                 for (var i = 0; i < gData[aisleName].length; i++) {
 
-                    li = $('<li class="ui-state-default" data-category=' + aisleName + '>' + gData[aisleName][i].item + '</li>');
+                    li = $('<li class="ui-state-default" data-category="' + aisleName + '">' + gData[aisleName][i].item + '</li>');
                     li.data('d', gData[aisleName][i])
                     $('#' + aisleName.toLocaleLowerCase().replace(" & ", "_") + '-list').append(li);
                 }
@@ -69,6 +69,7 @@ $(".add").click(function(e) {
     firebase.database().ref('test').once('value').then(function(snapshot) {
             var gData = snapshot.val();
             var aisles = gData.Aisle;
+            aisles.unshift({ item: 'Aisle' });
             var aisleOptions = [];
             $(aisles).each(function(i, e) {
                 aisleOptions.push('<option>' + aisles[i].item + '</option>')
@@ -120,7 +121,11 @@ function addtoList(d) {
     firebase.database().ref('test').once('value').then(function(snapshot) {
         var gData = snapshot.val();
         let category = d[0].child; // Aisle name, i.e. 'Produce'
-        let key = gData[category].length;
+        if (gData[category] == null) {
+            var key = 0;
+        } else {
+            var key = gData[category].length;
+        }
         var update = [{ item: d[0].item }];
         firebase.database().ref('test').child(category).child(key).set({ item: d[0].item });
         li = $('<li class="ui-state-default" data-category=' + category + '>' + d[0].item + '</li>');

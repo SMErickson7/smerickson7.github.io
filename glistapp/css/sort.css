@@ -10,9 +10,16 @@
     margin: 0 0px 8px 0px;
     padding: 0.4em;
     padding-left: 0.8em;
+    width: 100%
 }
 
 .sortable li span {
     position: absolute;
     margin-left: -1.3em;
+}
+
+@media (max-width: 550px) {
+    .sortable li {
+        width: 80%
+    }
 }
