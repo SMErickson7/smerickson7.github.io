@@ -10,6 +10,7 @@ var config = {
 };
 firebase.initializeApp(config);
 
+
 var termTemplate = "<span class='ui-autocomplete-term'>%s</span>";
 var groceryList = [];
 
