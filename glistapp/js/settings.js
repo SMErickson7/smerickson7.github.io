@@ -26,7 +26,7 @@ $(document).ready(function() {
                     container = $('<div class="row"></div>');
                     $('#groceryAisles').append(container);
                 }
-                $('<div class="three columns"><div class="header"><h5>' + aislesX[i].item + '</h5></div><ul class="sortable" id="' + aislesX[i].item.toLowerCase().replace(" & ", "_") + '-list"></ul></div>').appendTo(container);
+                $('<div class="three columns"><div class="header"><h5>' + aislesX[i].item + '</h5></div><ul class="sortable connectedSortable" id="' + aislesX[i].item.toLowerCase().replace(" & ", "_") + '-list" data-aisle="' + aislesX[i].item + '" ></ul></div>').appendTo(container);
                 aislesID.push('#' + aislesX[i].item.toLowerCase().replace(" & ", "_") + '-list');
                 aisleOptions.push('<option>' + aislesX[i].item + '</option>')
             });
@@ -43,7 +43,7 @@ $(document).ready(function() {
             };
             $(aislesIDSelector).sortable({
                 update: function(event, ui) {
-                    fb_category = $(this).find('li').data('category')
+                    fb_category = $(this).find('li').parent().data('aisle')
                     new_locations = $(this).find('li').map(function(i, el) {
                         return $(el).data('d')
                     }).get()
@@ -55,9 +55,10 @@ $(document).ready(function() {
                 },
                 stop: function(event, ui) {
                     $(ui.item).removeClass("moving");
-                }
+                },
+                connectWith: ".connectedSortable"
 
-            });
+            }).disableSelection();
         },
         function(error) {
             console.log("Error: " + error.code);

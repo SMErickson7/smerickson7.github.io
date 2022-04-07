@@ -57,13 +57,18 @@ $("#tags").click(function() {
                     itemsRemaining.push(y.item);
                 };
             };
-            for (var i = 0; i < gList.length; i++) {
-                const index = itemsRemaining.indexOf(gList[i]);
-                groceryList.push(gList[i]);
-                // copy array
-                itemsRemaining.splice(index, 1);
-                // sort alphabetical
-                itemsRemaining = itemsRemaining.sort();
+            if (gList == null) {
+                itemsRemaining = itemsRemaining;
+
+            } else {
+                for (var i = 0; i < gList.length; i++) {
+                    const index = itemsRemaining.indexOf(gList[i]);
+                    groceryList.push(gList[i]);
+                    // copy array
+                    itemsRemaining.splice(index, 1);
+                    // sort alphabetical
+                    itemsRemaining = itemsRemaining.sort();
+                }
             };
             $(function() {
                 function makeBold(needle, haystack) {
