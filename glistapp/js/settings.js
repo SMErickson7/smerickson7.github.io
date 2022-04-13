@@ -15,18 +15,15 @@ $(document).ready(function() {
             var gData = snapshot.val();
             var aisles = gData.Aisle;
             var aislesX = [...aisles];
-            console.log(aisles.length)
             aislesX.unshift({ item: 'Aisle' });
-            console.log(aisles.length)
             var aislesID = [];
             var aisleOptions = [];
-            console.log(aislesX);
             $(aislesX).each(function(i, e) {
                 if ((i % 4) == 0) {
                     container = $('<div class="row"></div>');
                     $('#groceryAisles').append(container);
                 }
-                $('<div class="three columns"><div class="header"><h5>' + aislesX[i].item + '</h5></div><ul class="sortable connectedSortable" id="' + aislesX[i].item.toLowerCase().replace(" & ", "_") + '-list" data-aisle="' + aislesX[i].item + '" ></ul></div>').appendTo(container);
+                $('<div class="three columns"><div class="header"><h5>' + aislesX[i].item + '</h5></div><ul class="sortable connectedSortable" id="' + aislesX[i].item.toLowerCase().replace(" & ", "_") + '-list"  data-aisle="' + aislesX[i].item + '" ></ul></div>').appendTo(container);
                 aislesID.push('#' + aislesX[i].item.toLowerCase().replace(" & ", "_") + '-list');
                 aisleOptions.push('<option>' + aislesX[i].item + '</option>')
             });
@@ -36,11 +33,22 @@ $(document).ready(function() {
                 aisleName = aislesX[j].item;
                 for (var i = 0; i < gData[aisleName].length; i++) {
 
-                    li = $('<li class="ui-state-default" data-category="' + aisleName + '">' + gData[aisleName][i].item + '</li>');
+                    li = $('<li class="ui-state-default"  data-groceryitem="' + gData[aisleName][i].item + '" data-category="' + aisleName + '">' + gData[aisleName][i].item + '<a href="#" class="clicked" data-item="' + gData[aisleName][i].item + '" data-aisle="' + aisleName + '"><div class="removeItem"><i class="fa-solid fa-xmark"></i></div></a></li>');
                     li.data('d', gData[aisleName][i])
                     $('#' + aisleName.toLocaleLowerCase().replace(" & ", "_") + '-list').append(li);
                 }
             };
+            $('.clicked').click(function() {
+                var removeFromAisle = $(this).data('aisle');
+                var removeItem = $(this).data('item');
+                var aisleID = '#' + removeFromAisle.toLowerCase().replace(" & ", "_") + '-list';
+                var aisleArray = gData[removeFromAisle];
+                var removeItemPosition = aisleArray.map(function(e) { return e.item; }).indexOf(removeItem);
+                $("ul[data-aisle=" + removeFromAisle + "] > li[data-groceryitem=" + removeItem + "]").remove();
+                aisleArray.splice(removeItemPosition, 1);
+                firebase.database().ref('test').child(removeFromAisle).set(aisleArray);
+                confirm("Success");
+            });
             $(aislesIDSelector).sortable({
                 update: function(event, ui) {
                     fb_category = $(this).find('li').parent().data('aisle')
@@ -63,7 +71,9 @@ $(document).ready(function() {
         function(error) {
             console.log("Error: " + error.code);
         });
+
 });
+
 
 
 $(".add").click(function(e) {

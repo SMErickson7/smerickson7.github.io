@@ -177,7 +177,6 @@ function addToList(x) {
                 document.getElementById(x).checked = false;
             };
             console.table(gList);
-            // figure out why this isnt' sorting correctly
             gList.sort(function(j, k) {
                 console.log(j, k);
                 return groceryStore.indexOf(j) - groceryStore.indexOf(k);

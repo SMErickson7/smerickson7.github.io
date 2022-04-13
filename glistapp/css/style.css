@@ -877,3 +877,19 @@ hr {
 .moving {
     background: #31926d!important;
 }
+
+
+/* Remove item list */
+
+.removeItem {
+    display: inline;
+    text-align: center;
+    margin: auto;
+    background: #3f5060;
+    color: rgb(228, 228, 228);
+    float: right;
+    padding-left: 8px;
+    padding-right: 2px;
+    margin-left: 2px;
+    border: #FFFFFF 1px solid;
+}
