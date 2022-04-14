@@ -23,7 +23,7 @@ $(document).ready(function() {
                     container = $('<div class="row"></div>');
                     $('#groceryAisles').append(container);
                 }
-                $('<div class="three columns"><div class="header"><h5>' + aislesX[i].item + '</h5></div><ul class="sortable connectedSortable" id="' + aislesX[i].item.toLowerCase().replace(" & ", "_") + '-list"  data-aisle="' + aislesX[i].item + '" ></ul></div>').appendTo(container);
+                $('<div class="three columns"><div class="header"><h5 contenteditable="true">' + aislesX[i].item + '</h5></div><ul class="sortable connectedSortable" id="' + aislesX[i].item.toLowerCase().replace(" & ", "_") + '-list"  data-aisle="' + aislesX[i].item + '" ></ul></div>').appendTo(container);
                 aislesID.push('#' + aislesX[i].item.toLowerCase().replace(" & ", "_") + '-list');
                 aisleOptions.push('<option>' + aislesX[i].item + '</option>')
             });
@@ -33,7 +33,7 @@ $(document).ready(function() {
                 aisleName = aislesX[j].item;
                 for (var i = 0; i < gData[aisleName].length; i++) {
 
-                    li = $('<li class="ui-state-default"  data-groceryitem="' + gData[aisleName][i].item + '" data-category="' + aisleName + '">' + gData[aisleName][i].item + '<a href="#" class="clicked" data-item="' + gData[aisleName][i].item + '" data-aisle="' + aisleName + '"><div class="removeItem"><i class="fa-solid fa-xmark"></i></div></a></li>');
+                    li = $('<li class="ui-state-default" data-groceryitem="' + gData[aisleName][i].item + '" data-category="' + aisleName + '">' + gData[aisleName][i].item + '<a href="#" class="clicked" data-item="' + gData[aisleName][i].item + '" data-aisle="' + aisleName + '"><div class="removeItem"><i class="fa-solid fa-xmark"></i></div></a></li>');
                     li.data('d', gData[aisleName][i])
                     $('#' + aisleName.toLocaleLowerCase().replace(" & ", "_") + '-list').append(li);
                 }
@@ -49,6 +49,7 @@ $(document).ready(function() {
                 firebase.database().ref('test').child(removeFromAisle).set(aisleArray);
                 confirm("Success");
             });
+
             $(aislesIDSelector).sortable({
                 update: function(event, ui) {
                     fb_category = $(this).find('li').parent().data('aisle')
@@ -64,9 +65,12 @@ $(document).ready(function() {
                 stop: function(event, ui) {
                     $(ui.item).removeClass("moving");
                 },
+                cancel: 'input,textarea,button,select,option,[contenteditable]',
                 connectWith: ".connectedSortable"
 
             }).disableSelection();
+
+
         },
         function(error) {
             console.log("Error: " + error.code);
