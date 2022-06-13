@@ -11254,8 +11254,8 @@ a.contact-item p {
 
 .navbar {
     transition: all 0.3s;
-    padding-top: 1.5rem !important;
-    padding-bottom: 1.5rem !important;
+    padding-top: 0.5rem !important;
+    padding-bottom: 0.5rem !important;
     background: #fff;
 }
 
@@ -11281,7 +11281,7 @@ a.contact-item p {
     justify-content: center;
     color: #aaa;
     transition: all 0.3s;
-    font-size: 0.8rem;
+    font-size: 1.2rem;
 }
 
 .social-link:hover,
