@@ -60,7 +60,7 @@
                 <p class="fw-bold text-primary text-uppercase letter-spacing-3">No more workarounds</p>
                 <h2 class="h3 lined">To boost your creative projects</h2>
             </header>
-            <p class="lead text-muted">I have more than <span id="date"></span> years' experience working for B2B companies in various marketing roles. Below is a quick overview of the skills I have developed and utilized in my professional career.</p>
+            <p class="lead text-muted">I have more than <span id="date"></span> years' experience working for B2B companies in various marketing roles. Throughout my career I've focused on clear messaging, effective design, and building thorough strategies.</p>
             <p class="text-muted">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren,
                 no sea takimata sanctus est. </p>
             <p class="text-muted mb-0">Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.</p>
@@ -215,18 +215,58 @@
                 <h2 class="text-uppercase lined">Contact</h2>
             </header>
             <div class="row gy-4">
-                <div class="col-lg-3 col-md-6"><a class="px-4 py-5 text-center contact-item shadow-sm reset-anchor d-block" href="#!"><i class="fas fa-map-marker-alt fa-2x mb-4"></i>
+                <div class="col-lg-3 col-md-6"><a class="px-4 py-5 text-center contact-item shadow-sm reset-anchor d-block" href="https://www.google.com/maps/place/Plainville,+MA/data=!4m2!3m1!1s0x89e46680f5d1b6b7:0xa5cdad2cf8538839?sa=X&ved=2ahUKEwjDqoGKyrT4AhX0jIkEHZdkD_wQ8gF6BAhvEAE"
+                        target="_blank"><i class="fas fa-map-marker-alt fa-2x mb-4"></i>
               <h4 class="contact-item-title h5 text-uppercase">Location</h4>
               <p class="text-sm mb-0">Plainville, MA</p></a></div>
-                <div class="col-lg-3 col-md-6"><a class="px-4 py-5 text-center contact-item shadow-sm reset-anchor d-block" href="tel:5085790764"><i class="fas fa-map-marker-alt fa-2x mb-4"></i>
+                <div class="col-lg-3 col-md-6"><a class="px-4 py-5 text-center contact-item shadow-sm reset-anchor d-block" href="tel:5085790764"><i class="fas fa-mobile-alt fa-2x mb-4"></i>
               <h4 class="contact-item-title h5 text-uppercase">Phone</h4>
               <p class="text-sm mb-0">508-579-0764</p></a></div>
-                <div class="col-lg-3 col-md-6"><a class="px-4 py-5 text-center contact-item shadow-sm reset-anchor d-block" href="https://www.stevenmerickson.com"><i class="fas fa-map-marker-alt fa-2x mb-4"></i>
-              <h4 class="contact-item-title h5 text-uppercase">Website</h4>
+                <div class="col-lg-3 col-md-6"><a data-bs-target="#modalContactForm" data-bs-toggle="modal" class="px-4 py-5 text-center contact-item shadow-sm reset-anchor d-block" href="#modalContactForm"><i class="fas fa-comment fa-2x mb-4"></i>
+              <h4 class="contact-item-title h5 text-uppercase">Contact form</h4>
               <p class="text-sm mb-0">www.stevenmerickson.com</p></a></div>
-                <div class="col-lg-3 col-md-6"><a class="px-4 py-5 text-center contact-item shadow-sm reset-anchor d-block" href="mailto:steven@stevenmerickson.com"><i class="fas fa-map-marker-alt fa-2x mb-4"></i>
+                <div class="col-lg-3 col-md-6"><a class="px-4 py-5 text-center contact-item shadow-sm reset-anchor d-block" href="mailto:steven@stevenmerickson.com"><i class="fas fa-at fa-2x mb-4"></i>
               <h4 class="contact-item-title h5 text-uppercase">Email</h4>
               <p class="text-sm mb-0">steven@stevenmerickson.com</p></a></div>
+            </div>
+        </div>
+
+        <!-- Modal -->
+        <div class="modal fade" id="modalContactForm" tabindex="-1" role="dialog" aria-labelledby="modalContactFormLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="modalContactFormLabel">Contact Me</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true"></span>
+          </button>
+                    </div>
+                    <div class="modal-body">
+
+                        <form id="contact-form" class="contact-form col-lg-12 mx-lg-auto" method="post" action="https://formspree.io/steven@stevenmerickson.com">
+                            <div class="form-row">
+                                <div class="form-group mb-2">
+                                    <label class="sr-only" for="cname">Name</label>
+                                    <input type="text" class="form-control" id="cname" name="name" placeholder="Name" minlength="2" required="" aria-required="true">
+                                </div>
+                                <div class="form-group mb-2">
+                                    <label class="sr-only" for="cemail">Email</label>
+                                    <input type="email" class="form-control" id="cemail" name="email" placeholder="Email" required="" aria-required="true">
+                                </div>
+                                <div class="form-group">
+                                    <label class="sr-only" for="cmessage">Your message</label>
+                                    <textarea class="form-control" id="cmessage" name="message" placeholder="Enter your message" rows="10" required="" aria-required="true"></textarea>
+                                </div>
+                            </div>
+                            <!--//form-row-->
+                        </form>
+
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <button type="submit" class="btn btn-primary">Send Now</button>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -236,8 +276,7 @@
             <div class="row px-4">
                 <div class="col-lg-7 mx-auto">
                     <h2 class="text-uppercase mb-0">Steven M. Erickson</h2>
-                    <h6 class="text-primary text-uppercase mb-0 letter-spacing-3">Digital Experience Manager</h6>
-                    <p class="text-muted my-4">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore.</p>
+                    <h6 class="text-primary text-uppercase mb-4 letter-spacing-3">Digital Experience Manager</h6>
                     <ul class="list-inline mb-0">
                         <li class="list-inline-item"><a target="_blank" class="social-link" href="#!"><i class="fas fa-language"></i></a></li>
                         <li class="list-inline-item"><a target="_blank" class="social-link" href="https://www.strava.com/athletes/33163193"><i class="fab fa-strava"></i></a></li>
