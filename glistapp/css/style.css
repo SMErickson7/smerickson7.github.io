@@ -865,6 +865,7 @@ hr {
 
 .search-toggle {
     float: right;
+    display:none;
 }
 
 .search-icon {
