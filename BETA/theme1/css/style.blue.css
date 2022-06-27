@@ -21,7 +21,7 @@
  */
 
 :root {
-    --bs-blue: #0064c8;
+    --bs-blue: #0047AB;
     --bs-indigo: #6610f2;
     --bs-purple: #6f42c1;
     --bs-pink: #d63384;
@@ -43,15 +43,15 @@
     --bs-gray-700: #495057;
     --bs-gray-800: #343a40;
     --bs-gray-900: #212529;
-    --bs-primary: #0064c8;
-    --bs-secondary: #6c757d;
+    --bs-primary: var(--bs-blue);
+    --bs-secondary: var(--bs-gray-400);
     --bs-success: #28a745;
     --bs-info: #17a2b8;
     --bs-warning: #ffc107;
     --bs-danger: #dc3545;
     --bs-light: #f8f9fa;
     --bs-dark: #343a40;
-    --bs-primary-rgb: 0, 100, 200;
+    --bs-primary-rgb: 0, 71, 171;
     --bs-secondary-rgb: 108, 117, 125;
     --bs-success-rgb: 40, 167, 69;
     --bs-info-rgb: 23, 162, 184;
@@ -63,14 +63,14 @@
     --bs-black-rgb: 0, 0, 0;
     --bs-body-color-rgb: 46, 51, 73;
     --bs-body-bg-rgb: 255, 255, 255;
-    --bs-font-sans-serif: "Work Sans", sans-serif;
+    --bs-font-sans-serif: "Inter", sans-serif;
     --bs-font-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
     --bs-gradient: linear-gradient(180deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0));
     --bs-body-font-family: var(--bs-font-sans-serif);
     --bs-body-font-size: 1rem;
     --bs-body-font-weight: 400;
     --bs-body-line-height: 1.5;
-    --bs-body-color: #2e3349;
+    --bs-body-color: #1e212e;
     --bs-body-bg: #fff;
 }
 
@@ -971,7 +971,7 @@ progress {
     --bs-gutter-y: 3rem;
 }
 
-@media (min-width: 576px) {
+@media (min-width: 300px) {
     .col-sm {
         flex: 1 0 0%;
     }
@@ -4235,10 +4235,12 @@ fieldset:disabled .btn {
 
 .nav-link {
     display: block;
-    padding: 0.5rem 1rem;
+    margin: 0 0.5rem;
+    padding: 2.2rem 1rem;
     color: var(--bs-primary);
     text-decoration: none;
     transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out;
+    border-top: 4px solid transparent;
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -4249,7 +4251,8 @@ fieldset:disabled .btn {
 
 .nav-link:hover,
 .nav-link:focus {
-    color: #1c669c;
+    color: var(--bs-primary);
+    border-top-color: var(--bs-primary);
 }
 
 .nav-link.disabled {
@@ -4339,8 +4342,8 @@ fieldset:disabled .btn {
     flex-wrap: wrap;
     align-items: center;
     justify-content: space-between;
-    padding-top: 0.5rem;
-    padding-bottom: 0.5rem;
+    padding-top: 0rem;
+    padding-bottom: 0rem;
 }
 
 .navbar>.container,
@@ -4357,8 +4360,8 @@ fieldset:disabled .btn {
 }
 
 .navbar-brand {
-    padding-top: 0.3125rem;
-    padding-bottom: 0.3125rem;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
     margin-right: 1rem;
     font-size: 1.25rem;
     text-decoration: none;
@@ -4791,6 +4794,7 @@ fieldset:disabled .btn {
 .navbar-light .navbar-nav .show>.nav-link,
 .navbar-light .navbar-nav .nav-link.active {
     color: var(--bs-primary);
+    border-top-color: var(--bs-primary);
 }
 
 .navbar-light .navbar-toggler {
@@ -5416,11 +5420,11 @@ fieldset:disabled .btn {
 
 .progress {
     display: flex;
-    height: 1rem;
+    height: 1.5rem;
     overflow: hidden;
     font-size: 0.75rem;
     background-color: #e9ecef;
-    border-radius: 0.25rem;
+    border-radius: 0rem;
 }
 
 .progress-bar {
@@ -5433,6 +5437,33 @@ fieldset:disabled .btn {
     white-space: nowrap;
     background-color: var(--bs-primary);
     transition: width 0.6s ease;
+}
+
+.progress-bar-skill1 {
+    opacity: 0.6;
+}
+
+.progress-bar-skill2 {
+    opacity: 0.7;
+}
+
+.progress-bar-skill3 {
+    opacity: 0.8;
+}
+
+.progress-bar-skill4 {
+    opacity: 0.9;
+}
+
+.progress-bar-skill5 {
+    opacity: 0.7;
+}
+
+.progress-title {
+    font-weight: 300;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -8395,7 +8426,7 @@ fieldset:disabled .btn {
 
 .bg-secondary {
     --bs-bg-opacity: 1;
-    background-color: rgba(var(--bs-secondary-rgb), var(--bs-bg-opacity)) !important;
+    background-color: var(--bs-secondary, var(--bs-bg-opacity)) !important;
 }
 
 .bg-success {
@@ -11254,9 +11285,10 @@ a.contact-item p {
 
 .navbar {
     transition: all 0.3s;
-    padding-top: 0.5rem !important;
-    padding-bottom: 0.5rem !important;
+    padding-top: 0rem !important;
+    padding-bottom: 0rem !important;
     background: #fff;
+    border-bottom: 1px solid var(--bs-gray-300);
 }
 
 .navbar.active {

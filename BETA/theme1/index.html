@@ -8,8 +8,14 @@
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="robots" content="all,follow">
+    <!-- Bootstrap CSS-->
+    <link rel="stylesheet" href="vendor/bootstrap/css/bootstrap.min.css">
     <!-- Google fonts-->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Work+Sans:300,400,800&amp;display=swap">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700;800&display=swap" rel="stylesheet">
+    <!-- animate.css-->
+    <link rel="stylesheet" href="vendor/animate.css/animate.css">
     <!-- theme stylesheet-->
     <link rel="stylesheet" href="css/style.blue.css" id="theme-stylesheet">
     <!-- Custom stylesheet - for your changes-->
@@ -23,15 +29,15 @@
     <header class="header">
         <nav class="navbar navbar-light navbar-expand-lg fixed-top" id="navbar">
             <div class="container">
-                <a class="navbar-brand" href="index.html"><img src="img/head-logo.png" alt="" width="75"></a>
+                <a class="navbar-brand" href="index.html"><img src="img/headlogo.png" alt="" width="75"></a>
                 <button class="navbar-toggler navbar-toggler-end" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><i class="fas fa-bars"></i></button>
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <div id="navbarSupportedContent" class="collapse navbar-collapse">
                     <ul class="navbar-nav ms-auto">
                         <li class="nav-item"><a class="nav-link text-uppercase active" href="#hero">Home <span class="sr-only">(current)</span></a></li>
                         <li class="nav-item"><a class="nav-link link-scroll text-uppercase" href="#about">About</a></li>
-                        <li class="nav-item"><a class="nav-link text-uppercase" href="#expertise">Expertise</a></li>
-                        <li class="nav-item"><a class="nav-link text-uppercase" href="#education">Education</a></li>
                         <li class="nav-item"><a class="nav-link text-uppercase" href="#experience">Experience</a></li>
+                        <li class="nav-item"><a class="nav-link text-uppercase" href="#skills">Skills</a></li>
+                        <li class="nav-item"><a class="nav-link text-uppercase" href="#education">Education</a></li>
                         <li class="nav-item"><a class="nav-link text-uppercase" href="#contact">Contact</a></li>
                     </ul>
                 </div>
@@ -39,10 +45,10 @@
         </nav>
     </header>
     <!-- Hero Section-->
-    <section class="hero bg-cover bg-right py-5" id="hero" style="background: url(img/header-4-a.jpg)">
+    <section class="hero bg-cover bg-right py-5" id="hero" style="background: url(img/headers/header-4-a.jpg)">
         <div class="container py-5 my-5 z-index-20 position-relative">
             <div class="row py-lg-5 mt-5">
-                <div class="col-md-8 text-black">
+                <div class="col-md-6 text-black">
                     <h2 class="h4 text-primary fw-normal mb-0">Hi, I am</h2>
                     <h1 class="text-uppercase text-xl mb-0 my-2">Steven M. <span class="text-primary">Erickson</span></h1>
                     <h2 class="h4 fw-normal mb-4 mt-3">Digital Experience Manager</h2>
@@ -55,23 +61,122 @@
     </section>
     <!-- About Section-->
     <section class="py-5 bg-light" id="about">
-        <div class="container py-5">
+        <div class="container">
             <header class="mb-5">
                 <p class="fw-bold text-primary text-uppercase letter-spacing-3">No more workarounds</p>
-                <h2 class="h3 lined">To boost your creative projects</h2>
+                <h2 class="lined">ABOUT ME</h2>
             </header>
             <p class="lead text-muted">I have more than <span id="date"></span> years' experience working for B2B companies in various marketing roles. Throughout my career I've focused on clear messaging, effective design, and building thorough strategies.</p>
-            <p class="text-muted">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren,
-                no sea takimata sanctus est. </p>
-            <p class="text-muted mb-0">Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.</p>
+            <div class="row">
+                <div class="col-lg-6">
+                    <p class="text-muted">Skills that I developed that had UX in mind (landing pages, emails, complete campaigns, customer research, interviews). Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore
+                        magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est. </p>
+                    <p class="text-muted mb-0">Decision to switch to UX, steps I took (education), and my current role. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam
+                        erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.</p>
+                </div>
+                <div class="col-lg-6">
+                    <div class="mb-2">
+                        <div class="progress-title">PHP</div>
+                        <div class="progress">
+                            <div role="progressbar" style="width: 60%" aria-valuenow="0" aria-valuemin="60" aria-valuemax="100" class="progress-bar progress-bar-striped progress-bar-animated progress-bar-skill1"></div>
+                        </div>
+                    </div>
+                    <div class="mb-2">
+                        <div class="progress-title">Javascript</div>
+                        <div class="progress">
+                            <div role="progressbar" style="width: 70%" aria-valuenow="70" aria-valuemin="60" aria-valuemax="100" class="progress-bar progress-bar-striped progress-bar-animated progress-bar-skill2"></div>
+                        </div>
+                    </div>
+                    <div class="mb-2">
+                        <div class="progress-title">HTML coding</div>
+                        <div class="progress">
+                            <div role="progressbar" style="width: 80%" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" class="progress-bar progress-bar-striped progress-bar-animated progress-bar-skill3"></div>
+                        </div>
+                    </div>
+                    <div class="mb-2">
+                        <div class="progress-title">SEO</div>
+                        <div class="progress">
+                            <div role="progressbar" style="width: 90%" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100" class="progress-bar progress-bar-striped progress-bar-animated progress-bar-skill4"></div>
+                        </div>
+                    </div>
+                    <div class="mb-2">
+                        <div class="progress-title">SEM</div>
+                        <div class="progress">
+                            <div role="progressbar" style="width: 70%" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" class="progress-bar progress-bar-striped progress-bar-animated progress-bar-skill5"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
-    <!-- Expertise Section        -->
-    <section class="py-5" id="expertise">
-        <div class="container py-5">
+    <!-- Experience Section        -->
+    <section class="py-5" id="experience">
+        <div class="container">
             <header class="mb-5 pb-4">
-                <p class="fw-bold text-primary text-uppercase letter-spacing-3">Batman would be jealous.</p>
-                <h2 class="text-uppercase lined">Expertise</h2>
+                <h2 class="text-uppercase lined">Experience</h2>
+            </header>
+            <!--  Timeline -->
+            <ul class="timeline">
+                <!-- Timeline item-->
+                <li class="timeline-item ms-3 pb-4">
+                    <div class="timeline-arrow"></div>
+                    <div class="row gx-0 gy-4">
+                        <div class="col-lg-5">
+                            <h2 class="h5 mb-0 text-uppercase">Lenze Americas</h2>
+                            <p class="mb-2 small text-muted">Uxbridge, MA</p>
+                            <p class="fw-bold mb-0 text-primary text-sm">March 2022 – Present </p>
+                            <p class="text-sm mb-2">Digital Experience Manager</p>
+                            <p class="fw-bold mb-0 text-primary text-sm">July 2018 – March 2022 </p>
+                            <p class="text-sm mb-2">Marketing Programs Specialist</p>
+                        </div>
+                        <div class="col-lg-7">
+                            <p class="text-muted">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita
+                                kasd gubergren, no sea.</p>
+                        </div>
+                    </div>
+                </li>
+                <!-- Timeline item-->
+                <li class="timeline-item ms-3 pb-4">
+                    <div class="timeline-arrow"></div>
+                    <div class="row gx-0 gy-4">
+                        <div class="col-lg-5">
+                            <h2 class="h5 mb-0 text-uppercase">LendingClub</h2>
+                            <p class="mb-2 small text-muted">Westboro, MA</p>
+                            <p class="fw-bold mb-0 text-primary text-sm">April 2016 – June 2018 </p>
+                            <p class="text-sm mb-2">Associate Brand Manager</p>
+                        </div>
+                        <div class="col-lg-7">
+                            <p class="text-muted">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita
+                                kasd gubergren, no sea.</p>
+                        </div>
+                    </div>
+                </li>
+                <!-- Timeline item-->
+                <li class="timeline-item ms-3 pb-4">
+                    <div class="timeline-arrow"></div>
+                    <div class="row gx-0 gy-4">
+                        <div class="col-lg-5">
+                            <h2 class="h5 mb-0 text-uppercase">DENTSPLY Implants</h2>
+                            <p class="mb-2 small text-muted">Waltham, MA</p>
+                            <p class="fw-bold mb-0 text-primary text-sm">April 2014 – April 2016 </p>
+                            <p class="text-sm mb-2">Regional Marketing Coordinator</p>
+                            <p class="fw-bold mb-0 text-primary text-sm">April 2012 – April 2014 </p>
+                            <p class="text-sm mb-2">Associate Marketing Coordinator</p>
+                        </div>
+                        <div class="col-lg-7">
+                            <p class="text-muted">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita
+                                kasd gubergren, no sea.</p>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </section>
+    <!-- Skills Section        -->
+    <section id="skills" class="bg-light">
+        <div class="container py-5">
+            <header class="mb-5">
+                <h2 class="text-uppercase lined">Skills</h2>
             </header>
             <div class="row gy-5">
                 <div class="col-md-6">
@@ -93,11 +198,37 @@
             </div>
         </div>
     </section>
+    <!-- Software Skills-->
+    <section id="software" class="pb-5 bg-light">
+        <div class="container">
+            <div class="col-md-12">
+                <div class="row align-items-center">
+                    <div class="col-lg-2 col-md-4 col-sm-4">
+                        <div class="software-section"><img src="img/software/acc.svg" title="Adobe Creative Cloud" data-placement="bottom" data-toggle="tooltip" alt="" class="img-fluid d-block mx-auto"></div>
+                    </div>
+                    <div class="col-lg-2 col-md-4 col-sm-4">
+                        <div class="software-section"><img src="img/software/figma.svg" title="Figma" data-placement="bottom" data-toggle="tooltip" alt="" class="img-fluid d-block mx-auto"></div>
+                    </div>
+                    <div class="col-lg-2 col-md-4 col-sm-4">
+                        <div class="software-section"><img src="img/software/combo.svg" title="HTML, CSS, JavaScript" data-placement="bottom" data-toggle="tooltip" alt="" class="img-fluid d-block mx-auto"></div>
+                    </div>
+                    <div class="col-lg-2 col-md-4 col-sm-4">
+                        <div class="software-section"><img src="img/software/vsc.svg" title="Visual Studio Code" data-placement="bottom" data-toggle="tooltip" alt="" class="img-fluid d-block mx-auto"></div>
+                    </div>
+                    <div class="col-lg-2 col-md-4 col-sm-4">
+                        <div class="software-section"><img src="img/software/github.svg" title="Github" data-placement="bottom" data-toggle="tooltip" alt="" class="img-fluid d-block mx-auto"></div>
+                    </div>
+                    <div class="col-lg-2 col-md-4 col-sm-4">
+                        <div class="software-section"><img src="img/software/python.svg" title="Python" data-placement="bottom" data-toggle="tooltip" alt="" class="img-fluid d-block mx-auto"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
     <!-- Education Section-->
-    <section class="py-5 bg-light" id="education">
-        <div class="container py-5">
+    <section class="py-5" id="education">
+        <div class="container">
             <header class="mb-5 pb-4">
-                <p class="fw-bold text-primary text-uppercase letter-spacing-3">Lazy isn't in my vocabulary.</p>
                 <h2 class="text-uppercase lined">Education</h2>
             </header>
             <!--  Timeline -->
@@ -150,68 +281,11 @@
             </ul>
         </div>
     </section>
-    <!-- Experience Section        -->
-    <section class="py-5" id="experience">
-        <div class="container py-5">
-            <header class="mb-5 pb-4">
-                <p class="fw-bold text-primary text-uppercase letter-spacing-3">Yes. I've been around.</p>
-                <h2 class="text-uppercase lined">Experience</h2>
-            </header>
-            <!--  Timeline -->
-            <ul class="timeline">
-                <!-- Timeline item-->
-                <li class="timeline-item ms-3 pb-4">
-                    <div class="timeline-arrow"></div>
-                    <div class="row gx-0 gy-4">
-                        <div class="col-lg-5">
-                            <p class="fw-bold mb-2 text-primary text-sm">2014 – Present </p>
-                            <h2 class="h5 mb-0 text-uppercase">Microsoft inc.</h2>
-                            <p class="text-sm mb-0">Senior Interface Designer</p><span class="small text-muted">Portland, OR</span>
-                        </div>
-                        <div class="col-lg-7">
-                            <p class="text-muted">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita
-                                kasd gubergren, no sea.</p>
-                        </div>
-                    </div>
-                </li>
-                <!-- Timeline item-->
-                <li class="timeline-item ms-3 pb-4">
-                    <div class="timeline-arrow"></div>
-                    <div class="row gx-0 gy-4">
-                        <div class="col-lg-5">
-                            <p class="fw-bold mb-2 text-primary text-sm">2014 - 2010 </p>
-                            <h2 class="h5 mb-0 text-uppercase">Facebook inc.</h2>
-                            <p class="text-sm mb-0">Senior Interface Designer</p><span class="small text-muted">Portland, OR</span>
-                        </div>
-                        <div class="col-lg-7">
-                            <p class="text-muted">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita
-                                kasd gubergren, no sea.</p>
-                        </div>
-                    </div>
-                </li>
-                <!-- Timeline item-->
-                <li class="timeline-item ms-3 pb-4">
-                    <div class="timeline-arrow"></div>
-                    <div class="row gx-0 gy-4">
-                        <div class="col-lg-5">
-                            <p class="fw-bold mb-2 text-primary text-sm">2009 - 2010 </p>
-                            <h2 class="h5 mb-0 text-uppercase">Google inc.</h2>
-                            <p class="text-sm mb-0">Senior Interface Designer</p><span class="small text-muted">Portland, OR</span>
-                        </div>
-                        <div class="col-lg-7">
-                            <p class="text-muted">Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita
-                                kasd gubergren, no sea.</p>
-                        </div>
-                    </div>
-                </li>
-            </ul>
-        </div>
-    </section>
-    <!-- Education Section        -->
+
+    <!-- Contact Section        -->
     <section class="bg-light py-5" id="contact">
-        <div class="container py-5">
+        <div class="container">
             <header class="mb-5 pb-4">
-                <p class="fw-bold text-primary text-uppercase letter-spacing-3">Call me, maybe.</p>
                 <h2 class="text-uppercase lined">Contact</h2>
             </header>
             <div class="row gy-4">
@@ -222,7 +296,7 @@
                 <div class="col-lg-3 col-md-6"><a class="px-4 py-5 text-center contact-item shadow-sm reset-anchor d-block" href="tel:5085790764"><i class="fas fa-mobile-alt fa-2x mb-4"></i>
               <h4 class="contact-item-title h5 text-uppercase">Phone</h4>
               <p class="text-sm mb-0">508-579-0764</p></a></div>
-                <div class="col-lg-3 col-md-6"><a data-bs-target="#modalContactForm" data-bs-toggle="modal" class="px-4 py-5 text-center contact-item shadow-sm reset-anchor d-block" href="#modalContactForm"><i class="fas fa-comment fa-2x mb-4"></i>
+                <div class="col-lg-3 col-md-6"><a data-bs-target="#modalContactForm" data-bs-toggle="modal" class="px-4 py-5 text-center contact-item shadow-sm reset-anchor d-block" href="#modalContactForm"><i class="fas fa-comment-alt fa-2x mb-4"></i>
               <h4 class="contact-item-title h5 text-uppercase">Contact form</h4>
               <p class="text-sm mb-0">www.stevenmerickson.com</p></a></div>
                 <div class="col-lg-3 col-md-6"><a class="px-4 py-5 text-center contact-item shadow-sm reset-anchor d-block" href="mailto:steven@stevenmerickson.com"><i class="fas fa-at fa-2x mb-4"></i>
@@ -278,7 +352,7 @@
                     <h2 class="text-uppercase mb-0">Steven M. Erickson</h2>
                     <h6 class="text-primary text-uppercase mb-4 letter-spacing-3">Digital Experience Manager</h6>
                     <ul class="list-inline mb-0">
-                        <li class="list-inline-item"><a target="_blank" class="social-link" href="#!"><i class="fas fa-language"></i></a></li>
+                        <li class="list-inline-item"><a target="_blank" class="social-link" href="https://www.duolingo.com/profile/StevenEric11"><i class="fas fa-language"></i></a></li>
                         <li class="list-inline-item"><a target="_blank" class="social-link" href="https://www.strava.com/athletes/33163193"><i class="fab fa-strava"></i></a></li>
                         <li class="list-inline-item"><a target="_blank" class="social-link" href="https://www.linkedin.com/in/steven-michael-erickson"><i class="fab fa-linkedin-in"></i></a></li>
                         <li class="list-inline-item"><a target="_blank" class="social-link" href="#!"><i class="fab fa-instagram"></i></a></li>
@@ -293,9 +367,17 @@
         </div>
     </footer>
     <!-- JavaScript files-->
+    <script src="vendor/jquery/jquery.min.js"></script>
     <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
     <script src="js/front.js"></script>
     <script src="js/date.js"></script>
+
+    <script src="vendor/jquery.cookie/jquery.cookie.js">
+    </script>
+    <script src="vendor/owl.carousel/owl.carousel.min.js"></script>
+    <script src="vendor/waypoints/lib/jquery.waypoints.min.js"></script>
+    <script src="vendor/jquery.counterup/jquery.counterup.js"></script>
+    <script src="js/front.js"></script>
     <!-- FontAwesome CSS - loading as last, so it doesn't block rendering-->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
 </body>
