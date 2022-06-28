@@ -1,4 +1,4 @@
-$(function () {
+$(function() {
 
     /* =========================================
      * tooltip
@@ -20,7 +20,7 @@ $(function () {
      * Preventing URL update on navigation link click
      *  ==============================================*/
 
-    $('.link-scroll').on('click', function (e) {
+    $('.link-scroll').on('click', function(e) {
         var anchor = $(this);
         $('html, body').stop().animate({
             scrollTop: $(anchor.attr('href')).offset().top
@@ -73,7 +73,7 @@ $(function () {
     /* =========================================
      * parallax
      *  =======================================*/
-    $(window).scroll(function () {
+    $(window).scroll(function() {
 
         var scroll = $(this).scrollTop();
 
@@ -92,7 +92,7 @@ $(function () {
      * filter
      *  =======================================*/
 
-    $('#filter a').click(function (e) {
+    $('#filter a').click(function(e) {
         e.preventDefault();
 
         $('#filter li').removeClass('active');
@@ -100,7 +100,7 @@ $(function () {
 
         var categoryToFilter = $(this).attr('data-filter');
 
-        $('.reference-item').each(function () {
+        $('.reference-item').each(function() {
 
             if ($(this).data('category') === categoryToFilter || categoryToFilter === 'all') {
                 $(this).show();
@@ -115,7 +115,7 @@ $(function () {
     /* =========================================
      * reference functionality
      *  =======================================*/
-    $('.reference a').on('click', function (e) {
+    $('.reference a').on('click', function(e) {
 
         e.preventDefault();
 
@@ -168,7 +168,7 @@ $(function () {
         $('#detail').slideUp();
     }
 
-    $('#filter button, #detail .close').on('click', function () {
+    $('#filter button, #detail .close').on('click', function() {
         closeReference();
     });
 
@@ -179,12 +179,12 @@ $(function () {
 
     delayTime = 0;
 
-    $('[data-animate]').waypoint(function (direction) {
+    $('[data-animate]').waypoint(function(direction) {
         delayTime += 250;
 
         var element = $(this.element);
 
-        $(this.element).delay(delayTime).queue(function (next) {
+        $(this.element).delay(delayTime).queue(function(next) {
             element.toggleClass('animated');
             element.toggleClass(element.data('animate'));
             delayTime = 0;
@@ -196,15 +196,15 @@ $(function () {
     }, {
         offset: '90%'
     });
-    
-    $('[data-animate-hover]').hover(function () {
+
+    $('[data-animate-hover]').hover(function() {
         $(this).css({
             opacity: 1
         });
         $(this).addClass('animated');
         $(this).removeClass($(this).data('animate'));
         $(this).addClass($(this).data('animate-hover'));
-    }, function () {
+    }, function() {
         $(this).removeClass('animated');
         $(this).removeClass($(this).data('animate-hover'));
     });
@@ -221,7 +221,7 @@ $(function () {
         alternateColour.attr("href", $.cookie("theme_csspath"));
     }
 
-    $("#colour").change(function () {
+    $("#colour").change(function() {
 
         if ($(this).val() !== '') {
 
@@ -291,7 +291,7 @@ function map() {
 
         Stamen_TonerLite.addTo(map);
 
-        map.once('focus', function () {
+        map.once('focus', function() {
             map.scrollWheelZoom.enable();
         });
 

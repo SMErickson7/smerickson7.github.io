@@ -971,7 +971,7 @@ progress {
     --bs-gutter-y: 3rem;
 }
 
-@media (min-width: 300px) {
+@media (max-width: 575.99px) {
     .col-sm {
         flex: 1 0 0%;
     }
@@ -6021,7 +6021,7 @@ fieldset:disabled .btn {
 
 .modal-content {
     position: relative;
-    display: flex;
+    display: block!important;
     flex-direction: column;
     width: 100%;
     pointer-events: auto;
@@ -6030,6 +6030,13 @@ fieldset:disabled .btn {
     border: 1px solid rgba(0, 0, 0, 0.2);
     border-radius: 0.3rem;
     outline: 0;
+}
+
+.form-row {
+    display: block!important;
+    flex-wrap: wrap;
+    margin-right: -5px;
+    margin-left: -5px;
 }
 
 .modal-backdrop {
@@ -6318,7 +6325,7 @@ fieldset:disabled .btn {
 .bs-tooltip-auto[data-popper-placement^="top"] .tooltip-arrow::before {
     top: -1px;
     border-width: 0.4rem 0.4rem 0;
-    border-top-color: #000;
+    border-top-color: var(--bs-primary);
 }
 
 .bs-tooltip-end,
@@ -6337,7 +6344,7 @@ fieldset:disabled .btn {
 .bs-tooltip-auto[data-popper-placement^="right"] .tooltip-arrow::before {
     right: -1px;
     border-width: 0.4rem 0.4rem 0.4rem 0;
-    border-right-color: #000;
+    border-right-color: var(--bs-primary);
 }
 
 .bs-tooltip-bottom,
@@ -6354,7 +6361,7 @@ fieldset:disabled .btn {
 .bs-tooltip-auto[data-popper-placement^="bottom"] .tooltip-arrow::before {
     bottom: -1px;
     border-width: 0 0.4rem 0.4rem;
-    border-bottom-color: #000;
+    border-bottom-color: var(--bs-primary);
 }
 
 .bs-tooltip-start,
@@ -6373,16 +6380,22 @@ fieldset:disabled .btn {
 .bs-tooltip-auto[data-popper-placement^="left"] .tooltip-arrow::before {
     left: -1px;
     border-width: 0.4rem 0 0.4rem 0.4rem;
-    border-left-color: #000;
+    border-left-color: var(--bs-primary);
+    background-color: var(--bs-primary);
 }
 
 .tooltip-inner {
     max-width: 200px;
     padding: 0.25rem 0.5rem;
-    color: #fff;
+    color: var(--bs-white);
     text-align: center;
-    background-color: #000;
+    background-color: var(--bs-primary);
     border-radius: 0.25rem;
+}
+
+.bs-tooltip-auto[x-placement^=bottom] .arrow::before,
+.bs-tooltip-bottom .arrow::before {
+    border-bottom-color: var(--bs-primary);
 }
 
 .popover {
@@ -6409,7 +6422,7 @@ fieldset:disabled .btn {
     line-break: auto;
     font-size: 0.875rem;
     word-wrap: break-word;
-    background-color: #fff;
+    background-color: var(--bs-primary);
     background-clip: padding-box;
     border: 1px solid rgba(0, 0, 0, 0.2);
     border-radius: 0.3rem;
@@ -8227,6 +8240,10 @@ fieldset:disabled .btn {
 
 .fs-6 {
     font-size: 1rem !important;
+}
+
+.fs-7 {
+    font-size: 0.85rem !important;
 }
 
 .fst-italic {
