@@ -18,6 +18,7 @@
     <link rel="stylesheet" href="vendor/animate.css/animate.css">
     <!-- theme stylesheet-->
     <link rel="stylesheet" href="css/style.blue.css" id="theme-stylesheet">
+    <!--<link rel="stylesheet" href="../theme2/css/style.default.css" id="theme-stylesheet">-->
     <!-- Custom stylesheet - for your changes-->
     <link rel="stylesheet" href="css/custom.css">
     <!-- Favicon-->
@@ -26,24 +27,26 @@
 
 <body class="scrollspy-example" data-bs-spy="scroll" data-bs-target="#navbar" data-bs-offset="0" tabindex="0">
     <!-- navbar-->
+
     <header class="header">
-        <nav class="navbar navbar-light navbar-expand-lg fixed-top" id="navbar">
+        <nav class="navbar navbar-expand-lg fixed-top">
             <div class="container">
-                <a class="navbar-brand" href="index.html"><img src="img/headlogo.png" alt="" width="75"></a>
-                <button class="navbar-toggler navbar-toggler-end" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><i class="fas fa-bars"></i></button>
-                <div id="navbarSupportedContent" class="collapse navbar-collapse">
+                <a class="navbar-brand scrollTo" href="#hero"><img src="img/headlogo.png" alt="" width="75"></a>
+                <button type="button" data-toggle="collapse" data-target="#navbarcollapse" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler navbar-toggler-right"><span class="fa fa-bars"></span></button>
+                <div id="navbarcollapse" class="collapse navbar-collapse">
                     <ul class="navbar-nav ms-auto">
                         <li class="nav-item"><a class="nav-link text-uppercase active" href="#hero">Home <span class="sr-only">(current)</span></a></li>
                         <li class="nav-item"><a class="nav-link link-scroll text-uppercase" href="#about">About</a></li>
-                        <li class="nav-item"><a class="nav-link text-uppercase" href="#experience">Experience</a></li>
-                        <li class="nav-item"><a class="nav-link text-uppercase" href="#skills">Skills</a></li>
-                        <li class="nav-item"><a class="nav-link text-uppercase" href="#education">Education</a></li>
-                        <li class="nav-item"><a class="nav-link text-uppercase" href="#contact">Contact</a></li>
+                        <li class="nav-item"><a class="nav-link link-scroll text-uppercase" href="#experience">Experience</a></li>
+                        <li class="nav-item"><a class="nav-link link-scroll text-uppercase" href="#skills">Skills</a></li>
+                        <li class="nav-item"><a class="nav-link link-scroll text-uppercase" href="#education">Education</a></li>
+                        <li class="nav-item"><a class="nav-link link-scroll text-uppercase" href="#contact">Contact</a></li>
                     </ul>
                 </div>
             </div>
         </nav>
     </header>
+
     <!-- Hero Section-->
     <section class="hero bg-cover bg-right py-5" id="hero" style="background: url(img/headers/header-4-a.jpg)">
         <div class="container py-5 my-5 z-index-20 position-relative">
@@ -52,9 +55,11 @@
                     <h2 class="h4 text-primary fw-normal mb-0">Hi, I am</h2>
                     <h1 class="text-uppercase text-xl mb-0 my-2">Steven M. <span class="text-primary">Erickson</span></h1>
                     <h2 class="h4 fw-normal mb-4 mt-3">Digital Experience Manager</h2>
-                    <p class="text-shadow">UX designer and marketer. I strive to design positive experiences that keeps users loyal. Through my expertise in researching, developing, executing, and analyzing marketing campaigns, I have defined customer journeys and designed
-                        intuitive functional experiences.</p>
-                    <p class="text-shadow"></p>A UX mantra of mine is “<strong>No more workarounds</strong>”.</p>
+                    <p class="text-shadow hide">UX designer and marketer. I strive to design positive experiences that keeps users loyal. Through my expertise in researching, developing, executing, and analyzing marketing campaigns, I have defined customer journeys and designed
+                        intuitive functional experiences. <br /><br />
+                        <span class="text-shadow">A UX mantra of mine is “<strong>No more workarounds</strong>”.</span>
+                    </p>
+
                 </div>
             </div>
         </div>
@@ -65,43 +70,90 @@
             <header class="mb-5">
                 <h2 class="text-uppercase lined">About Me</h2>
             </header>
-            <p class="lead text-muted">I have more than <span id="date"></span> years' experience working for B2B companies in various marketing roles. Throughout my career I've focused on clear messaging, effective design, and building thorough strategies.</p>
+            <p class="lead text-muted">For more than <span id="date"></span> years' experience I've been working for B2B companies in various marketing roles. These roles, and the knowledge I've gained from them, paved the path to enter into the world of user experience.</p>
             <div class="row">
-                <div class="col-lg-6">
-                    <p class="text-muted">Skills that I developed that had UX in mind (landing pages, emails, complete campaigns, customer research, interviews). Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore
-                        magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est. </p>
-                    <p class="text-muted mb-0">Decision to switch to UX, steps I took (education), and my current role. Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam
-                        erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.</p>
+                <div class="col-lg-6 mt-3 m3-5">
+                    <h6>My professional journey</h6>
+                    <p class="text-muted">I've built numerous marketing campaigns around product launches, educational opportunities, and lead generation. Designing landing pages, writing emails, and analyzing campaigns became second nature to me. I found myself wanting to
+                        know what made customers tick. Why would they open my email, or click my call-to-action button? So, I asked them. A lot of them. I used surveys and met customers face to face, and as a result my marketing campaigns became more
+                        successful.
+                    </p>
+                    <p class="text-muted">One day I woke up and asked myself what direction I am heading towards and what direction do I want to go. I knew I enjoyed conducting research, designing sites and emails, and analyzing my campaigns. Those are my strengths. But the
+                        extra marketing activities (creating ads, writing copy, planning events), not so much.</p>
+                    <p class="text-muted mb-0">The decision to shift my focus to user experience was easy to make. I took online courses for formal training. I took more initiative with my current employer to influence decisions on design for our e-commerce shop and sales tools
+                        our distributors use. This led to a new role for me, Digital Experience Manager.</p>
                 </div>
-                <div class="col-lg-6">
-                    <div class="mb-2">
-                        <div class="progress-title">PHP</div>
-                        <div class="progress">
-                            <div role="progressbar" style="width: 60%" aria-valuenow="0" aria-valuemin="60" aria-valuemax="100" class="progress-bar progress-bar-striped progress-bar-animated progress-bar-skill1"></div>
+                <div class="col-lg-6 mt-3">
+                    <h6>Other factoids about me</h6>
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-6 col-sm-12">
+                                <div class="mb-2"><strong>Dual citizen</strong></div>
+                                <div class="progress-title">US and German citizen</div>
+                                <img class="about-me-svg" src="img/software/us-germany.svg" alt="">
+                            </div>
+
+                            <div class="col-6 col-sm-12">
+                                <div class="mb-2"><strong>Languages</strong></div>
+                                <div class="mb-2">
+                                    <div class="progress-title">English</div>
+                                    <div class="progress">
+                                        <div role="progressbar" style="width: 100%" aria-valuenow="0" aria-valuemin="100" aria-valuemax="100" class="progress-bar progress-bar-striped progress-bar-animated progress-bar-skill1"></div>
+                                    </div>
+                                </div>
+                                <div class="mb-2">
+                                    <div class="progress-title">German</div>
+                                    <div class="progress">
+                                        <div role="progressbar" style="width: 40%" aria-valuenow="40" aria-valuemin="40" aria-valuemax="100" class="progress-bar progress-bar-striped progress-bar-animated progress-bar-skill2"></div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                    </div>
-                    <div class="mb-2">
-                        <div class="progress-title">Javascript</div>
-                        <div class="progress">
-                            <div role="progressbar" style="width: 70%" aria-valuenow="70" aria-valuemin="60" aria-valuemax="100" class="progress-bar progress-bar-striped progress-bar-animated progress-bar-skill2"></div>
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <div class="mt-4 mb-1"><strong>Interests</strong></div>
+                                <div class="row">
+                                    <div class="col-3 col-sm-6 my-2">
+                                        <div class="progress-title">Cycling</div>
+                                        <img class="interests-svg" src="img/software/bicycle.svg" alt="">
+                                    </div>
+                                    <div class="col-3 col-sm-6 my-2">
+                                        <div class="progress-title">Cooking</div>
+                                        <img class="interests-svg" src="img/software/cooking.svg" alt="">
+                                    </div>
+                                    <div class="col-3 col-sm-6 my-2">
+                                        <div class="progress-title">Traveling</div>
+                                        <img class="interests-svg" src="img/software/travel.svg" alt="">
+                                    </div>
+                                    <div class="col-3 col-sm-6 my-2">
+                                        <div class="progress-title">Pizza</div>
+                                        <img class="interests-svg" src="img/software/pizza.svg" alt="">
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                    </div>
-                    <div class="mb-2">
-                        <div class="progress-title">HTML coding</div>
-                        <div class="progress">
-                            <div role="progressbar" style="width: 80%" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" class="progress-bar progress-bar-striped progress-bar-animated progress-bar-skill3"></div>
-                        </div>
-                    </div>
-                    <div class="mb-2">
-                        <div class="progress-title">SEO</div>
-                        <div class="progress">
-                            <div role="progressbar" style="width: 90%" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100" class="progress-bar progress-bar-striped progress-bar-animated progress-bar-skill4"></div>
-                        </div>
-                    </div>
-                    <div class="mb-2">
-                        <div class="progress-title">SEM</div>
-                        <div class="progress">
-                            <div role="progressbar" style="width: 70%" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" class="progress-bar progress-bar-striped progress-bar-animated progress-bar-skill5"></div>
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <div class="mb-1"><strong>Teams</strong></div>
+                                <div class="row">
+                                    <div class="col-3 col-sm-6 my-2">
+                                        <div class="progress-title">New England Revolution</div>
+                                        <img class="interests-svg" src="img/software/New_England_Revolution.svg" alt="">
+                                    </div>
+                                    <div class="col-3 col-sm-6 my-2">
+                                        <div class="progress-title">Boston Celtics</div>
+                                        <img class="interests-svg" src="img/software/Boston_Celtics.svg" alt="">
+                                    </div>
+                                    <div class="col-3 col-sm-6 my-2">
+                                        <div class="progress-title">Inter Milan</div>
+                                        <img class="interests-svg" src="img/software/FC_Internazionale_Milano_2021.svg" alt="">
+                                    </div>
+                                    <div class="col-3 col-sm-6 my-2">
+                                        <div class="progress-title">Mercedes-AMG Petronas</div>
+                                        <img class="interests-svg" src="img/software/Mercedes_AMG_Petronas_F1_Logo.svg" alt="">
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>

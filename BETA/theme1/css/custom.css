@@ -27,6 +27,20 @@ ul.content-list li::before {
     /* Also needed for space (tweak if needed) */
 }
 
+.about-me-svg {
+    min-width: 1rem;
+    max-width: 10rem;
+    padding-right: .5rem;
+    vertical-align: text-top;
+}
+
+.interests-svg {
+    min-width: 1rem;
+    max-width: 6rem;
+    padding-right: .5rem;
+    vertical-align: text-top;
+}
+
 .education-svg {
     max-height: .875rem;
     padding-right: .5rem;
