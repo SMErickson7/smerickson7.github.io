@@ -37,8 +37,7 @@ ul.content-list li::before {
 .interests-svg {
     min-width: 1rem;
     max-width: 6rem;
-    padding-right: .5rem;
-    vertical-align: text-top;
+    vertical-align: bottom;
 }
 
 .education-svg {
@@ -55,4 +54,10 @@ ul.content-list li::before {
 
 .hide {
     display: none;
+}
+
+.center-block {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 }

@@ -4237,7 +4237,7 @@ fieldset:disabled .btn {
     display: block;
     margin: 0 0.5rem;
     padding: 2.2rem 1rem;
-    color: var(--bs-primary);
+    color: var(--bs-dark);
     text-decoration: none;
     transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out, border-color 0.15s ease-in-out;
     border-top: 4px solid transparent;
@@ -5464,6 +5464,14 @@ fieldset:disabled .btn {
     font-size: 0.75rem;
     text-transform: uppercase;
     letter-spacing: 0.1em;
+}
+
+.interests-title {
+    font-weight: 300;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    min-height: 2.5rem;
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -11233,17 +11241,20 @@ ul.timeline:after {
     display: inline-block;
     position: absolute;
     bottom: 0;
-    left: 9px;
-    width: 16px;
-    height: 16px;
+    left: 8px;
+    width: 20px;
+    height: 20px;
     border-radius: 50%;
     border: 3px solid #fff;
     z-index: 400;
 }
 
+
+/*
 li.timeline-item {
-    margin: 20px 0;
+    margin: 10px 0;
 }
+*/
 
 
 /* Timeline item circle marker */
@@ -11251,6 +11262,29 @@ li.timeline-item {
 li.timeline-item::before {
     content: ' ';
     background: var(--bs-primary);
+    display: inline-block;
+    position: absolute;
+    left: 8px;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: 3px solid #fff;
+    z-index: 400;
+}
+
+
+/*
+li.milestone-item {
+    margin: 10px 0;
+}
+*/
+
+
+/* Milestone item circle marker */
+
+li.milestone-item::before {
+    content: ' ';
+    background: rgba(var(--bs-primary-rgb), 0.5);
     display: inline-block;
     position: absolute;
     left: 10px;
@@ -12574,6 +12608,8 @@ nav.navbar .navbar-brand {
     font-family: "Roboto Slab", serif;
 }
 
+
+/*
 nav.navbar a.nav-link {
     text-transform: uppercase;
     letter-spacing: 0.1em;
@@ -12586,6 +12622,7 @@ nav.navbar a.nav-link {
     transition: all 0.3s;
     font-size: 0.875rem;
 }
+*/
 
 @media (max-width: 991.98px) {
     nav.navbar a.nav-link {
@@ -12597,7 +12634,7 @@ nav.navbar a.nav-link {
 
 nav.navbar a.nav-link.active,
 nav.navbar a.nav-link:hover {
-    color: #333;
+    color: var(--bs-primary);
     border-top-color: var(--bs-primary);
 }
 
@@ -12610,14 +12647,6 @@ nav.navbar a.nav-link:hover {
 
 
 /* 1. NAVBAR */
-
-.navbar-brand {
-    display: inline-block;
-    padding-top: 0.3125rem;
-    padding-bottom: 0.3125rem;
-    margin-right: 1rem;
-    font-size: 1.25rem;
-}
 
 .navbar-toggler {
     padding: 0.25rem 0.75rem;
@@ -12714,9 +12743,12 @@ nav.navbar a.nav-link:hover {
 
 /* 8. NAV */
 
+
+/*
 .nav-link {
     padding: 0.5rem 1rem;
 }
+*/
 
 .nav-link.disabled {
     color: #6c757d;
