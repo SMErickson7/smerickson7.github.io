@@ -1,0 +1,63 @@
+/* your styles go here */
+
+.software-section img {
+    padding: 10px;
+    max-width: 80px;
+    max-height: 80px;
+}
+
+ul {
+    list-style: none;
+    /* Remove default bullets */
+}
+
+ul.content-list li::before {
+    content: "\2022";
+    /* Add content: \2022 is the CSS Code/unicode for a bullet */
+    color: var(--bs-primary);
+    /* Change the color */
+    font-weight: bold;
+    font-size: 1.15rem;
+    /* If you want it to be bold */
+    display: inline-block;
+    /* Needed to add space between the bullet and the text */
+    width: 1rem;
+    /* Also needed for space (tweak if needed) */
+    margin-left: -1rem;
+    /* Also needed for space (tweak if needed) */
+}
+
+.about-me-svg {
+    min-width: 1rem;
+    max-width: 10rem;
+    padding-right: .5rem;
+    vertical-align: text-top;
+}
+
+.interests-svg {
+    min-width: 1rem;
+    max-width: 6rem;
+    vertical-align: bottom;
+}
+
+.education-svg {
+    max-height: .875rem;
+    padding-right: .5rem;
+    vertical-align: text-top;
+}
+
+.experience-svg {
+    max-height: 1.75rem;
+    padding-bottom: .25rem;
+    vertical-align: text-top;
+}
+
+.hide {
+    display: none;
+}
+
+.center-block {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
