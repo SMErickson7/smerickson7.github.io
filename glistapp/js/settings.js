@@ -79,11 +79,11 @@ $(document).ready(function () {
             .indexOf(removeItem);
           console.log(removeItemPosition);
           $(
-            "ul[data-aisle=" +
+            'ul[data-aisle="' +
               removeFromAisle +
-              "] > li[data-groceryitem=" +
+              '"] > li[data-groceryitem="' +
               removeItem +
-              "]"
+              '"]'
           ).remove();
           aisleArray.splice(removeItemPosition, 1);
           firebase
