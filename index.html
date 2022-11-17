@@ -22,6 +22,7 @@
     <link rel="stylesheet" href="css/custom.css">
     <!-- Favicon-->
     <link rel="shortcut icon" href="img/favicon.png">
+    <script src="https://kit.fontawesome.com/74ff93bbed.js" crossorigin="anonymous"></script>
 </head>
 
 <body class="scrollspy-example" data-bs-spy="scroll" data-bs-target="#navbar" data-bs-offset="0" tabindex="0">
@@ -30,59 +31,84 @@
     <header class="header">
         <nav class="navbar navbar-expand-lg fixed-top">
             <div class="container">
-                <a class="navbar-brand scrollTo" href="#hero"><img id="headlogo" src="img/headlogo_blue.png" alt="" width="75"></a>
-                <button type="button" data-toggle="collapse" data-target="#navbarcollapse" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler navbar-toggler-right"><span class="fa fa-bars"></span></button>
+                <a class="navbar-brand scrollTo" href="#hero"><img id="headlogo" src="img/headlogo_blue.png" alt=""
+                        width="75"></a>
+                <button type="button" data-toggle="collapse" data-target="#navbarcollapse"
+                    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"
+                    class="navbar-toggler navbar-toggler-right"><span class="fa fa-bars"></span></button>
                 <div id="navbarcollapse" class="collapse navbar-collapse">
                     <ul class="navbar-nav ms-auto">
-                        <li class="nav-item"><a class="nav-link text-uppercase active" href="#hero">Home <span class="sr-only">(current)</span></a></li>
+                        <li class="nav-item"><a class="nav-link text-uppercase active" href="#hero">Home <span
+                                    class="sr-only">(current)</span></a></li>
                         <li class="nav-item"><a class="nav-link link-scroll text-uppercase" href="#about">About</a></li>
-                        <li class="nav-item"><a class="nav-link link-scroll text-uppercase" href="#experience">Experience</a></li>
-                        <li class="nav-item"><a class="nav-link link-scroll text-uppercase" href="#skills">Skills</a></li>
-                        <li class="nav-item"><a class="nav-link link-scroll text-uppercase" href="#education">Education</a></li>
-                        <li class="nav-item"><a class="nav-link link-scroll text-uppercase" href="#contact">Contact</a></li>
-                        <li class="nav-item"><a class="nav-link link-scroll text-uppercase" href="files/StevenMErickson_Resume_2022.pdf" target="_blank">Resumé</a></li>
+                        <li class="nav-item"><a class="nav-link link-scroll text-uppercase"
+                                href="#experience">Experience</a></li>
+                        <li class="nav-item"><a class="nav-link link-scroll text-uppercase"
+                                href="#portfolio">Portfolio</a>
+                        </li>
+                        <li class="nav-item"><a class="nav-link link-scroll text-uppercase"
+                                href="#education">Education</a></li>
+                        <li class="nav-item"><a class="nav-link link-scroll text-uppercase" href="#contact">Contact</a>
+                        </li>
+                        <li class="nav-item"><a class="nav-link link-scroll text-uppercase"
+                                href="files/StevenMErickson_Resume_2022.pdf" target="_blank">Resumé</a></li>
                     </ul>
                 </div>
             </div>
         </nav>
     </header>
     <!-- Style Switcher -->
-    <button type="button" data-toggle="collapse" data-target="#style-switch" id="style-switch-button" class="btn btn-primary btn-sm d-none d-sm-inline-block collapsed" aria-expanded="false"><i class="fa fa-cog fa-2x"></i></button>
+    <button type="button" data-toggle="collapse" data-target="#style-switch" id="style-switch-button"
+        class="btn btn-primary btn-sm d-none d-sm-inline-block collapsed" aria-expanded="false"><i
+            class="fa-solid fa-palette fa-2x mt-2 me-4"></i></button>
     <div id="style-switch" class="collapse" style="">
         <h5>Select theme color</h5>
         <form class="mb-3">
             <div class="container">
                 <div class="row mb-2">
-                    <div class="col-sm-12 mx-auto text-center"><button onclick="setStyleSheet('css/style.blue.css', 'blue')" class="btn btn-secondary btn-block">Default style</button></div>
+                    <div class="col-sm-12 mx-auto text-center"><button
+                            onclick="setStyleSheet('css/style.blue.css', 'blue')"
+                            class="btn btn-secondary btn-block">Default style</button></div>
                 </div>
                 <!-- dark mode<div class="row mb-2">
                     <div class="col-sm-12 mx-auto text-center"><button onclick="setStyleSheet('css/style.blue.css', 'blue')" class="btn btn-secondary btn-block">Dark mode</button></div>
                 </div>
                  -->
                 <div class="row mb-2">
-                    <div class="col-sm-6 text-center"><button onclick="setStyleSheet('css/style.red.css', 'red')" class="btn btn-red btn-secondary btn-block">Red</button></div>
-                    <div class="col-sm-6 text-center"><button onclick="setStyleSheet('css/style.green.css', 'green')" class="btn btn-green btn-secondary btn-block">Green</button></div>
+                    <div class="col-sm-6 text-center"><button onclick="setStyleSheet('css/style.red.css', 'red')"
+                            class="btn btn-red btn-secondary btn-block">Red</button></div>
+                    <div class="col-sm-6 text-center"><button onclick="setStyleSheet('css/style.green.css', 'green')"
+                            class="btn btn-green btn-secondary btn-block">Green</button></div>
                 </div>
                 <div class="row mb-2">
-                    <div class="col-sm-6 text-center"><button onclick="setStyleSheet('css/style.orange.css', 'orange')" class="btn btn-orange btn-secondary btn-block">Orange</button></div>
-                    <div class="col-sm-6 text-center"><button onclick="setStyleSheet('css/style.purple.css', 'purple')" class="btn btn-purple btn-secondary btn-block">Purple</button></div>
+                    <div class="col-sm-6 text-center"><button onclick="setStyleSheet('css/style.orange.css', 'orange')"
+                            class="btn btn-orange btn-secondary btn-block">Orange</button></div>
+                    <div class="col-sm-6 text-center"><button onclick="setStyleSheet('css/style.purple.css', 'purple')"
+                            class="btn btn-purple btn-secondary btn-block">Purple</button></div>
                 </div>
                 <div class="row mb-2">
-                    <div class="col-sm-6 text-center"><button onclick="setStyleSheet('css/style.aqua.css', 'aqua')" class="btn btn-aqua btn-secondary btn-block">Aqua</button></div>
-                    <div class="col-sm-6 text-center"><button onclick="setStyleSheet('css/style.grey.css', 'grey')" class="btn btn-grey btn-secondary btn-block">Grey</button></div>
+                    <div class="col-sm-6 text-center"><button onclick="setStyleSheet('css/style.aqua.css', 'aqua')"
+                            class="btn btn-aqua btn-secondary btn-block">Aqua</button></div>
+                    <div class="col-sm-6 text-center"><button onclick="setStyleSheet('css/style.grey.css', 'grey')"
+                            class="btn btn-grey btn-secondary btn-block">Grey</button></div>
                 </div>
             </div>
         </form>
     </div>
     <!-- Hero Section-->
-    <section class="hero bg-cover bg-right py-5" id="hero" style="background: url(img/headers/header-blue.jpg)">
+    <span class="anchor" id="hero"></span>
+
+    <section class="hero bg-cover bg-right py-5" style="background: url(img/headers/header-blue.jpg)">
         <div class="container py-5 my-5 z-index-20 position-relative">
             <div class="row py-lg-5 mt-5">
                 <div class="col-md-6 text-black">
                     <h2 class="h4 text-primary fw-normal mb-0">Hi, I am</h2>
-                    <h1 class="text-uppercase text-xl mb-0 my-2">Steven M. <span class="text-primary">Erickson</span></h1>
+                    <h1 class="text-uppercase text-xl mb-0 my-2">Steven M. <span class="text-primary">Erickson</span>
+                    </h1>
                     <h2 class="h4 fw-normal mb-4 mt-3">Digital Experience Manager</h2>
-                    <p class="text-shadow hide">UX designer and marketer. I strive to design positive experiences that keeps users loyal. Through my expertise in researching, developing, executing, and analyzing marketing campaigns, I have defined customer journeys and designed
+                    <p class="text-shadow hide">UX designer and marketer. I strive to design positive experiences that
+                        keeps users loyal. Through my expertise in researching, developing, executing, and analyzing
+                        marketing campaigns, I have defined customer journeys and designed
                         intuitive functional experiences. <br /><br />
                         <span class="text-shadow">A UX mantra of mine is “<strong>No more workarounds</strong>”.</span>
                     </p>
@@ -92,22 +118,33 @@
         </div>
     </section>
     <!-- About Section-->
-    <section class="py-5 bg-light" id="about">
+    <span class="anchor" id="about"></span>
+    <section class="py-5 bg-light">
         <div class="container">
             <header class="mb-5">
                 <h2 class="text-uppercase lined">About Me</h2>
             </header>
-            <p class="lead text-muted">For more than <span id="date"></span> years' experience I've been working for B2B companies in various marketing roles. These roles, and the knowledge I've gained from them, paved the path to enter into the world of user experience.</p>
+            <p class="lead text-muted">For more than <span id="date"></span> years' experience I've been working for B2B
+                companies in various marketing roles. These roles, and the knowledge I've gained from them, paved the
+                path to enter into the world of user experience.</p>
             <div class="row">
                 <div class="col-lg-5 mt-3 m3-5">
                     <h6>My professional journey</h6>
-                    <p class="text-muted">I've created and managed numerous marketing campaigns around product launches, educational opportunities, and lead generation. Designing landing pages, writing emails, and analyzing campaigns became second nature to me. I found myself
-                        wanting to know what made customers tick. Why would they open my email, or click my call-to-action button? So, I asked them. A lot of them. I used surveys and met customers face to face, and as a result my marketing campaigns became
+                    <p class="text-muted">I've created and managed numerous marketing campaigns around product launches,
+                        educational opportunities, and lead generation. Designing landing pages, writing emails, and
+                        analyzing campaigns became second nature to me. I found myself
+                        wanting to know what made customers tick. Why would they open my email, or click my
+                        call-to-action button? So, I asked them. A lot of them. I used surveys and met customers face to
+                        face, and as a result my marketing campaigns became
                         more successful.
                     </p>
-                    <p class="text-muted">One day I asked myself what direction am I heading towards and what direction do I want to go. I knew I enjoyed conducting research, designing sites and emails, and analyzing my campaigns. Those are my strengths. But the extra marketing
+                    <p class="text-muted">One day I asked myself what direction am I heading towards and what direction
+                        do I want to go. I knew I enjoyed conducting research, designing sites and emails, and analyzing
+                        my campaigns. Those are my strengths. But the extra marketing
                         activities (creating ads, writing copy, planning events), not so much.</p>
-                    <p class="text-muted mb-0">The decision to shift my focus to user experience was easy to make. I enrolled in online courses for formal training. I took more initiative with my current employer to influence decisions on design for our e-commerce shop and sales
+                    <p class="text-muted mb-0">The decision to shift my focus to user experience was easy to make. I
+                        enrolled in online courses for formal training. I took more initiative with my current employer
+                        to influence decisions on design for our e-commerce shop and sales
                         tools our distributors use. This led to a new role for me, Digital Experience Manager.</p>
                 </div>
                 <div class="col-lg-7 mt-3">
@@ -125,13 +162,19 @@
                                 <div class="mb-2">
                                     <div class="progress-title">English</div>
                                     <div class="progress">
-                                        <div role="progressbar" style="width: 100%" aria-valuenow="0" aria-valuemin="100" aria-valuemax="100" class="progress-bar progress-bar-striped progress-bar-animated progress-bar-skill1"></div>
+                                        <div role="progressbar" style="width: 100%" aria-valuenow="0"
+                                            aria-valuemin="100" aria-valuemax="100"
+                                            class="progress-bar progress-bar-striped progress-bar-animated progress-bar-skill1">
+                                        </div>
                                     </div>
                                 </div>
                                 <div class="mb-2">
                                     <div class="progress-title">German</div>
                                     <div class="progress">
-                                        <div role="progressbar" style="width: 40%" aria-valuenow="40" aria-valuemin="40" aria-valuemax="100" class="progress-bar progress-bar-striped progress-bar-animated progress-bar-skill2"></div>
+                                        <div role="progressbar" style="width: 40%" aria-valuenow="40" aria-valuemin="40"
+                                            aria-valuemax="100"
+                                            class="progress-bar progress-bar-striped progress-bar-animated progress-bar-skill2">
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -173,11 +216,13 @@
                                     </div>
                                     <div class="col-3 col-sm-6 my-2">
                                         <div class="interests-title">Inter Milan</div>
-                                        <img class="interests-svg" src="img/software/FC_Internazionale_Milano_2021.svg" alt="">
+                                        <img class="interests-svg" src="img/software/FC_Internazionale_Milano_2021.svg"
+                                            alt="">
                                     </div>
                                     <div class="col-3 col-sm-6 my-2">
                                         <div class="interests-title">Mercedes-AMG Petronas</div>
-                                        <img class="interests-svg" src="img/software/Mercedes_AMG_Petronas_F1_Logo.svg" alt="">
+                                        <img class="interests-svg" src="img/software/Mercedes_AMG_Petronas_F1_Logo.svg"
+                                            alt="">
                                     </div>
                                 </div>
                             </div>
@@ -188,7 +233,8 @@
         </div>
     </section>
     <!-- Experience Section        -->
-    <section class="py-5" id="experience">
+    <span class="anchor" id="experience"></span>
+    <section class="py-5">
         <div class="container">
             <header class="mb-5 pb-4">
                 <h2 class="text-uppercase lined">Experience</h2>
@@ -214,9 +260,14 @@
                         <div class="col-lg-8">
                             <h5 class="mb-2">Digital Experience Manager</h5>
                             <ul class="text-small text-muted content-list mb-5">
-                                <li>Understand customer needs, perform competitive analysis, user testing and develop insight to aid in the development of the digital customer experience strategy and inform design decisions.</li>
-                                <li>Visualize concepts to represent user journeys, personas, goals and information models.</li>
-                                <li>Collaborate with the marketing team, sales team and product managers to create, implement and optimize an indirect channel ecommerce strategy and other digital sales strategies.</li>
+                                <li>Understand customer needs, perform competitive analysis, user testing and develop
+                                    insight to aid in the development of the digital customer experience strategy and
+                                    inform design decisions.</li>
+                                <li>Visualize concepts to represent user journeys, personas, goals and information
+                                    models.</li>
+                                <li>Collaborate with the marketing team, sales team and product managers to create,
+                                    implement and optimize an indirect channel ecommerce strategy and other digital
+                                    sales strategies.</li>
                                 <li>Assisting with the organization's digital transformation efforts.</li>
                             </ul>
                         </div>
@@ -230,11 +281,15 @@
                         </div>
                         <div class="col-lg-8">
                             <h5 class="mb-2">Marketing Programs Specialist</h5>
-                            <p class="text-small text-muted mb-0">Responsible for identifying, developing, and managing the integrated marketing programs that support the development and execution of the North American Sales and Marketing plan. Main focus on development and support of Lenze's
+                            <p class="text-small text-muted mb-0">Responsible for identifying, developing, and managing
+                                the integrated marketing programs that support the development and execution of the
+                                North American Sales and Marketing plan. Main focus on development and support of
+                                Lenze's
                                 large network of distributors.</p>
                             <ul class="text-small text-muted content-list mb-5">
                                 <li>Maintained and enhanced key tools for distribution network.</li>
-                                <li>Developed and executed digital marketing campaigns for lead generation and brand awareness</li>
+                                <li>Developed and executed digital marketing campaigns for lead generation and brand
+                                    awareness</li>
                                 <li>Led team in Americas market to relaunch e-commerce store.</li>
                             </ul>
                         </div>
@@ -258,12 +313,17 @@
                         </div>
                         <div class="col-lg-8">
                             <h5 class="mb-2">Associate Brand Manager</h5>
-                            <p class="text-muted text-small mb-0">Managed the lead generation efforts for LendingClub Patient Solution's dental business.</p>
+                            <p class="text-muted text-small mb-0">Managed the lead generation efforts for LendingClub
+                                Patient Solution's dental business.</p>
                             <ul class="text-small text-muted content-list mb-5">
-                                <li>Gathered industry data and trends to support strategic development of lead generation marketing campaigns</li>
-                                <li>Managed launches and longer-term maintenance of marketing campaigns in various channels</li>
-                                <li>Leveraged internal data, lead primary market research initiatives, and accessed secondary research</li>
-                                <li>Identified opportunities and recommended new media sources, product, process, and pricing improvements</li>
+                                <li>Gathered industry data and trends to support strategic development of lead
+                                    generation marketing campaigns</li>
+                                <li>Managed launches and longer-term maintenance of marketing campaigns in various
+                                    channels</li>
+                                <li>Leveraged internal data, lead primary market research initiatives, and accessed
+                                    secondary research</li>
+                                <li>Identified opportunities and recommended new media sources, product, process, and
+                                    pricing improvements</li>
                             </ul>
                         </div>
                     </div>
@@ -286,10 +346,12 @@
                         </div>
                         <div class="col-lg-8">
                             <h5 class="mb-2">Regional Marketing Coordinator</h5>
-                            <p class="text-small text-muted mb-0">Provided education, co-marketing, and collateral support to 40+ sales representatives for their accounts.</p>
+                            <p class="text-small text-muted mb-0">Provided education, co-marketing, and collateral
+                                support to 40+ sales representatives for their accounts.</p>
                             <ul class="text-small text-muted content-list mb-5">
                                 <li>Organized local educational programs, tradeshow activities and facility tours</li>
-                                <li>Developed targeted marketing collateral for sales reps consistent with the corporate brand</li>
+                                <li>Developed targeted marketing collateral for sales reps consistent with the corporate
+                                    brand</li>
                                 <li>Provided practice development and co-marketing support for key accounts</li>
                             </ul>
                         </div>
@@ -303,7 +365,8 @@
                         </div>
                         <div class="col-lg-8">
                             <h5 class="mt-2">Associate Marketing Coordinator</h5>
-                            <p class="text-small text-muted mb-0">Assisted Regional Marketing Coordinators in their efforts to support the sales team.</p>
+                            <p class="text-small text-muted mb-0">Assisted Regional Marketing Coordinators in their
+                                efforts to support the sales team.</p>
                             <ul class="text-small text-muted content-list mb-5">
                                 <li>Supported local continuing education programs</li>
                                 <li>Developed custom marketing collateral for key accounts</li>
@@ -314,29 +377,70 @@
             </ul>
         </div>
     </section>
+    <!-- Portfolio Section-->
+    <span class="anchor" id="portfolio"></span>
+    <section class="pb-5 bg-light">
+        <div class="container pt-5">
+            <header class="mb-3">
+                <h2 class="text-uppercase lined">Portfolio</h2>
+            </header>
+            <p><i class="fa-solid fa-helmet-safety text-primary pe-2"></i>Coming soon...</p>
+            <div class="hide">
+                <!-- Strava -->
+                <div class="col-md-12 my-4 mx-sm-0 bg-strava">
+                    <div class="">
+                        <div class="col-md-5 p-lg-3 mx-2 my-2">
+                            <span class="display-6 fw-bold">Strava</span>
+                            <p class="fw-normal mt-3">A pet project researching and re-designing key features of the
+                                bike
+                                ride tracking experience..</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- New England Revolution -->
+                <div class="col-md-12 my-4 mx-sm-0 bg-revs">
+                    <div class="">
+                        <div class="col-md-5 p-lg-3 mx-2 my-2 text-light">
+                            <span class="display-6 fw-bold">New England Revolution</span>
+                            <p class="fw-normal mt-3">Udacity project applying reseach findings, design fundamentals,
+                                and iterateing prototypes.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
     <!-- Skills Section        -->
-    <section id="skills" class="bg-light">
-        <div class="container py-5">
-            <header class="mb-5">
-                <h2 class="text-uppercase lined">Skills</h2>
+    <section id="skills" class="bg-light pb-5">
+        <div class="container">
+            <header class="mb-3">
+                <h3 class="text-capitalized lined">Skills</h3>
             </header>
             <div class="row gy-5">
                 <div class="col-md-6">
                     <h3 class="h4"><span class="text-primary me-2">01</span>User Research</h3>
-                    <p class="text-muted text-sm ms-4 ps-3">High proficiency with preparing and conducting customer interviews, questionnaires, and surveys. Capable of combining industry data and trends with individual behaviors to understand user needs and market gaps.</p>
+                    <p class="text-muted text-sm ms-4 ps-3">High proficiency with preparing and conducting customer
+                        interviews, questionnaires, and surveys. Capable of combining industry data and trends with
+                        individual behaviors to understand user needs and market gaps.</p>
                 </div>
                 <div class="col-md-6">
                     <h3 class="h4"><span class="text-primary me-2">02</span>Prototyping</h3>
-                    <p class="text-muted text-sm ms-4 ps-3">Advanced proficiency with Figma and Adobe XD for wireframing and high-fidelity prototypes. Experience with components, animating content, and creating clickable prototypes. Additionally advanced proficiency with Adobe Illustrator,
+                    <p class="text-muted text-sm ms-4 ps-3">Advanced proficiency with Figma and Adobe XD for wireframing
+                        and high-fidelity prototypes. Experience with components, animating content, and creating
+                        clickable prototypes. Additionally advanced proficiency with Adobe Illustrator,
                         InDesign, and Photoshop to create logos, icons, images, and other graphical assets.</p>
                 </div>
                 <div class="col-md-6">
                     <h3 class="h4"><span class="text-primary me-2">03</span>Usability Testing</h3>
-                    <p class="text-muted text-sm ms-4 ps-3">Moderate experience with planning, recruiting, and conducting unbiased usability tests. High proficiency with analyzing testing results and reporting them into actionable items.</p>
+                    <p class="text-muted text-sm ms-4 ps-3">Moderate experience with planning, recruiting, and
+                        conducting unbiased usability tests. High proficiency with analyzing testing results and
+                        reporting them into actionable items.</p>
                 </div>
                 <div class="col-md-6">
                     <h3 class="h4"><span class="text-primary me-2">04</span>Coding</h3>
-                    <p class="text-muted text-sm ms-4 ps-3">Have 20+ years of HTML, CSS, and JavaScript experience. Currently learning Python for API calls and web scraping.</p>
+                    <p class="text-muted text-sm ms-4 ps-3">Have 20+ years of HTML, CSS, and JavaScript experience.
+                        Currently learning Python for API calls and web scraping.</p>
                 </div>
             </div>
         </div>
@@ -344,35 +448,49 @@
     <!-- Software Skills-->
     <section id="software" class="pb-5 bg-light">
         <div class="container">
-            <header class="mb-5">
+            <header class="mb-3">
                 <h3 class="text-capitalized lined">Proficiencies</h3>
             </header>
             <div class="col-md-12">
                 <div class="row align-items-center">
                     <div class="col-lg-2 col-md-4 col-sm-4">
-                        <div class="software-section"><img src="img/software/figma.svg" title="Figma" data-placement="bottom" data-toggle="tooltip" alt="" class="img-fluid d-block mx-auto"></div>
+                        <div class="software-section"><img src="img/software/figma.svg" title="Figma"
+                                data-placement="bottom" data-toggle="tooltip" alt="" class="img-fluid d-block mx-auto">
+                        </div>
                     </div>
                     <div class="col-lg-2 col-md-4 col-sm-4">
-                        <div class="software-section"><img src="img/software/acc.svg" title="Adobe Creative Cloud" data-placement="bottom" data-toggle="tooltip" alt="" class="img-fluid d-block mx-auto"></div>
+                        <div class="software-section"><img src="img/software/acc.svg" title="Adobe Creative Cloud"
+                                data-placement="bottom" data-toggle="tooltip" alt="" class="img-fluid d-block mx-auto">
+                        </div>
                     </div>
                     <div class="col-lg-2 col-md-4 col-sm-4">
-                        <div class="software-section"><img src="img/software/vsc.svg" title="Visual Studio Code" data-placement="bottom" data-toggle="tooltip" alt="" class="img-fluid d-block mx-auto"></div>
+                        <div class="software-section"><img src="img/software/vsc.svg" title="Visual Studio Code"
+                                data-placement="bottom" data-toggle="tooltip" alt="" class="img-fluid d-block mx-auto">
+                        </div>
                     </div>
                     <div class="col-lg-2 col-md-4 col-sm-4">
-                        <div class="software-section"><img src="img/software/github.svg" title="Github" data-placement="bottom" data-toggle="tooltip" alt="" class="img-fluid d-block mx-auto"></div>
+                        <div class="software-section"><img src="img/software/github.svg" title="Github"
+                                data-placement="bottom" data-toggle="tooltip" alt="" class="img-fluid d-block mx-auto">
+                        </div>
                     </div>
                     <div class="col-lg-2 col-md-4 col-sm-4">
-                        <div class="software-section"><img src="img/software/combo.svg" title="HTML, CSS, JavaScript" data-placement="bottom" data-toggle="tooltip" alt="" class="img-fluid d-block mx-auto"></div>
+                        <div class="software-section"><img src="img/software/combo.svg" title="HTML, CSS, JavaScript"
+                                data-placement="bottom" data-toggle="tooltip" alt="" class="img-fluid d-block mx-auto">
+                        </div>
                     </div>
                     <div class="col-lg-2 col-md-4 col-sm-4">
-                        <div class="software-section"><img src="img/software/python.svg" title="Python" data-placement="bottom" data-toggle="tooltip" alt="" class="img-fluid d-block mx-auto"></div>
+                        <div class="software-section"><img src="img/software/python.svg" title="Python"
+                                data-placement="bottom" data-toggle="tooltip" alt="" class="img-fluid d-block mx-auto">
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
+
     <!-- Education Section-->
-    <section class="py-5" id="education">
+    <span class="anchor" id="education"></span>
+    <section class="py-5">
         <div class="container">
             <header class="mb-5 pb-4">
                 <h2 class="text-uppercase lined">Education</h2>
@@ -387,11 +505,18 @@
                             <p class="fw-bold mb-2 text-primary text-sm">April 2020 - July 2020 </p>
                             <h2 class="h5 mb-0 text-uppercase">Nanodegree, User Experience</h2>
 
-                            <p class="text-sm mb-0"><img class="education-svg" src="img/software/udacity.svg">Udacity</p><span class="small text-muted">Online</span>
+                            <p class="text-sm mb-0"><img class="education-svg" src="img/software/udacity.svg">Udacity
+                            </p><span class="small text-muted">Online</span>
                         </div>
                         <div class="col-lg-7">
-                            <p class="text-muted">Learned how to create a digital user experience that is ready to be handed off for development. Built familiarity and fluency with design research fundamentals to identify the user and the solutions they need. Synthesize research,
-                                and use design sprints to take an idea from concept to low-fidelity prototype. Learned how to turn low-fidelity prototype into a high-fidelity design, and improve its performance based on data.</p>
+                            <p class="text-muted">Learned how to create a digital user experience that is ready to
+                                be
+                                handed off for development. Built familiarity and fluency with design research
+                                fundamentals to identify the user and the solutions they need. Synthesize research,
+                                and use design sprints to take an idea from concept to low-fidelity prototype.
+                                Learned
+                                how to turn low-fidelity prototype into a high-fidelity design, and improve its
+                                performance based on data.</p>
                         </div>
                     </div>
                 </li>
@@ -403,11 +528,17 @@
                             <p class="fw-bold mb-2 text-primary text-sm">April 2020</p>
                             <h2 class="h5 mb-0 text-uppercase">UX Design Theory</h2>
 
-                            <p class="text-sm mb-0"><img class="education-svg" src="img/software/udemy-icon.svg">Udemy</p><span class="small text-muted">Online</span>
+                            <p class="text-sm mb-0"><img class="education-svg" src="img/software/udemy-icon.svg">Udemy
+                            </p><span class="small text-muted">Online</span>
                         </div>
                         <div class="col-lg-7">
-                            <p class="text-muted">Crash course teaching the difference between UI and UX and the responsibilities of a UX designer. An introduction to creating wireframes and building prototypes with InVision, and reporting user testing results. Additionally,
-                                the course covers user experience research, user testing, and building user profiles and personas.</p>
+                            <p class="text-muted">Crash course teaching the difference between UI and UX and the
+                                responsibilities of a UX designer. An introduction to creating wireframes and
+                                building
+                                prototypes with InVision, and reporting user testing results. Additionally,
+                                the course covers user experience research, user testing, and building user profiles
+                                and
+                                personas.</p>
                         </div>
                     </div>
                 </li>
@@ -418,7 +549,9 @@
                         <div class="col-lg-5">
                             <p class="fw-bold mb-2 text-primary text-sm">2011 - 2014 </p>
                             <h2 class="h5 mb-0 text-uppercase">Bachelor's degree - Marketing</h2>
-                            <p class="text-sm mb-0"><img class="education-svg" src="img/software/snhu.svg">Southern New Hampshire University</p><span class="small text-muted">Manchester, NH</span>
+                            <p class="text-sm mb-0"><img class="education-svg" src="img/software/snhu.svg">Southern
+                                New
+                                Hampshire University</p><span class="small text-muted">Manchester, NH</span>
                         </div>
                         <div class="col-lg-7">
                             <p class="text-muted">GPA: 3.89, Magna Cum Laude<br />Honor society: Delta Mu Delta</p>
@@ -430,54 +563,73 @@
     </section>
 
     <!-- Contact Section        -->
-    <section class="bg-light py-5" id="contact">
+    <span class="anchor" id="contact"></span>
+    <section class="bg-light py-5">
         <div class="container">
             <header class="mb-5 pb-4">
                 <h2 class="text-uppercase lined">Contact</h2>
             </header>
             <div class="row gy-4">
-                <div class="col-lg-3 col-md-6"><a class="px-4 py-5 text-center contact-item shadow-sm reset-anchor d-block" href="https://www.google.com/maps/place/Plainville,+MA/data=!4m2!3m1!1s0x89e46680f5d1b6b7:0xa5cdad2cf8538839?sa=X&ved=2ahUKEwjDqoGKyrT4AhX0jIkEHZdkD_wQ8gF6BAhvEAE"
+                <div class="col-lg-3 col-md-6"><a
+                        class="px-4 py-5 text-center contact-item shadow-sm reset-anchor d-block"
+                        href="https://www.google.com/maps/place/Plainville,+MA/data=!4m2!3m1!1s0x89e46680f5d1b6b7:0xa5cdad2cf8538839?sa=X&ved=2ahUKEwjDqoGKyrT4AhX0jIkEHZdkD_wQ8gF6BAhvEAE"
                         target="_blank"><i class="fas fa-map-marker-alt fa-2x mb-4"></i>
-              <h4 class="contact-item-title h5 text-uppercase">Location</h4>
-              <p class="text-sm mb-0">Plainville, MA</p></a></div>
-                <div class="col-lg-3 col-md-6"><a class="px-4 py-5 text-center contact-item shadow-sm reset-anchor d-block" href="sms:5085790764"><i class="fas fa-mobile-alt fa-2x mb-4"></i>
-              <h4 class="contact-item-title h5 text-uppercase">Phone</h4>
-              <p class="text-sm mb-0">508-579-0764</p></a></div>
-                <div class="col-lg-3 col-md-6"><a data-target="#modalContactForm" data-toggle="modal" class="px-4 py-5 text-center contact-item shadow-sm reset-anchor d-block" href="#modalContactForm"><i class="fas fa-comment-alt fa-2x mb-4"></i>
-              <h4 class="contact-item-title h5 text-uppercase">Contact form</h4>
-              <p class="text-sm mb-0">Send me a note</p></a></div>
-                <div class="col-lg-3 col-md-6"><a class="px-4 py-5 text-center contact-item shadow-sm reset-anchor d-block" href="mailto:steven@stevenmerickson.com"><i class="fas fa-envelope fa-2x mb-4"></i>
-              <h4 class="contact-item-title h5 text-uppercase">Email</h4>
-              <p class="text-sm mb-0">steven@stevenmerickson.com</p></a></div>
+                        <h4 class="contact-item-title h5 text-uppercase">Location</h4>
+                        <p class="text-sm mb-0">Plainville, MA</p>
+                    </a></div>
+                <div class="col-lg-3 col-md-6"><a
+                        class="px-4 py-5 text-center contact-item shadow-sm reset-anchor d-block"
+                        href="sms:5085790764"><i class="fa-solid fa-mobile-screen fa-2x mb-4"></i>
+                        <h4 class="contact-item-title h5 text-uppercase">Phone</h4>
+                        <p class="text-sm mb-0">508-579-0764</p>
+                    </a></div>
+                <div class="col-lg-3 col-md-6"><a data-target="#modalContactForm" data-toggle="modal"
+                        class="px-4 py-5 text-center contact-item shadow-sm reset-anchor d-block"
+                        href="#modalContactForm"><i class="fa-solid fa-message fa-2x mb-4"></i>
+                        <h4 class="contact-item-title h5 text-uppercase">Contact form</h4>
+                        <p class="text-sm mb-0">Send me a note</p>
+                    </a></div>
+                <div class="col-lg-3 col-md-6"><a
+                        class="px-4 py-5 text-center contact-item shadow-sm reset-anchor d-block"
+                        href="mailto:steven@stevenmerickson.com"><i class="fa-solid fa-at fa-2x mb-4"></i>
+                        <h4 class="contact-item-title h5 text-uppercase">Email</h4>
+                        <p class="text-sm mb-0">steven@stevenmerickson.com</p>
+                    </a></div>
             </div>
         </div>
 
         <!-- Modal -->
-        <div class="modal fade" id="modalContactForm" tabindex="-1" role="dialog" aria-labelledby="modalContactFormLabel" aria-hidden="true">
+        <div class="modal fade" id="modalContactForm" tabindex="-1" role="dialog"
+            aria-labelledby="modalContactFormLabel" aria-hidden="true">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
                         <h5 class="modal-title" id="modalContactFormLabel">Contact Me</h5>
                         <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true"></span>
-          </button>
+                            <span aria-hidden="true"></span>
+                        </button>
                     </div>
-                    <form id="contact-form" class="contact-form col-lg-12 mx-lg-auto" action="https://formspree.io/f/moqrzpby" method="POST">
+                    <form id="contact-form" class="contact-form col-lg-12 mx-lg-auto"
+                        action="https://formspree.io/f/moqrzpby" method="POST">
                         <div class="modal-body">
 
 
                             <div class="form-row">
                                 <div class="form-group mb-2">
                                     <label class="sr-only" for="full-name">Name</label>
-                                    <input type="text" class="form-control" id="full-name" name="name" placeholder="Name" minlength="2" required="" aria-required="true">
+                                    <input type="text" class="form-control" id="full-name" name="name"
+                                        placeholder="Name" minlength="2" required="" aria-required="true">
                                 </div>
                                 <div class="form-group mb-2">
                                     <label class="sr-only" type="email" for="email">Email</label>
-                                    <input type="email" class="form-control" id="email" name="email" placeholder="Email" required="" aria-required="true">
+                                    <input type="email" class="form-control" id="email" name="email" placeholder="Email"
+                                        required="" aria-required="true">
                                 </div>
                                 <div class="form-group">
                                     <label class="sr-only" for="message">Your message</label>
-                                    <textarea class="form-control" id="message" name="message" placeholder="Enter your message" rows="10" required="" aria-required="true"></textarea>
+                                    <textarea class="form-control" id="message" name="message"
+                                        placeholder="Enter your message" rows="10" required=""
+                                        aria-required="true"></textarea>
                                 </div>
                             </div>
 
@@ -501,17 +653,27 @@
                     <h2 class="text-uppercase mb-0">Steven M. Erickson</h2>
                     <h6 class="text-primary text-uppercase mb-4 letter-spacing-3">Digital Experience Manager</h6>
                     <ul class="list-inline mb-0">
-                        <li class="list-inline-item"><a target="_blank" class="social-link" href="https://www.duolingo.com/profile/StevenEric11"><i class="fas fa-language"></i></a></li>
-                        <li class="list-inline-item"><a target="_blank" class="social-link" href="https://www.strava.com/athletes/33163193"><i class="fab fa-strava"></i></a></li>
-                        <li class="list-inline-item"><a target="_blank" class="social-link" href="https://www.linkedin.com/in/steven-michael-erickson"><i class="fab fa-linkedin-in"></i></a></li>
-                        <li class="list-inline-item"><a target="_blank" class="social-link" href="#!"><i class="fab fa-instagram"></i></a></li>
+                        <li class="list-inline-item"><a target="_blank" class="social-link"
+                                href="https://www.duolingo.com/profile/StevenMErickson7"><i
+                                    class="fas fa-language"></i></a>
+                        </li>
+                        <li class="list-inline-item"><a target="_blank" class="social-link"
+                                href="https://www.strava.com/athletes/33163193"><i class="fab fa-strava"></i></a>
+                        </li>
+                        <li class="list-inline-item"><a target="_blank" class="social-link"
+                                href="https://www.linkedin.com/in/steven-michael-erickson"><i
+                                    class="fab fa-linkedin-in"></i></a></li>
+                        <li class="list-inline-item"><a target="_blank" class="social-link"
+                                href="https://www.instagram.com/stevenmerickson/"><i class="fab fa-instagram"></i></a>
+                        </li>
                     </ul>
                 </div>
             </div>
         </div>
         <div class="copyrights px-4">
             <div class="container py-4 border-top text-center">
-                <p class="mb-0 text-muted py-2">&copy; All rights reserved. Template designed by <a href="https://bootstrapious.com/p/bootstrap-resume">Bootstrapious</a>. </p>
+                <p class="mb-0 text-muted py-2">&copy; All rights reserved. Template designed by <a
+                        href="https://bootstrapious.com/p/bootstrap-resume" target="_blank">Bootstrapious</a>. </p>
             </div>
         </div>
     </footer>
@@ -529,7 +691,8 @@
     <script src="vendor/jquery.counterup/jquery.counterup.js"></script>
     <script src="js/front.js"></script>
     <!-- FontAwesome CSS - loading as last, so it doesn't block rendering-->
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css"
+        integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
 
     <!-- Theme switcher-->
     <script src="js/js-cookie.js"></script>
