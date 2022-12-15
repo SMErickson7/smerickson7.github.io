@@ -1,144 +1,260 @@
 /* your styles go here */
 
+:root {
+  --bs-strava: #fc5200;
+}
+
 .software-section img {
-    padding: 10px;
-    max-width: 80px;
-    max-height: 80px;
+  padding: 10px;
+  max-width: 80px;
+  max-height: 80px;
 }
 
 ul {
-    list-style: none;
-    /* Remove default bullets */
+  list-style: none;
+  /* Remove default bullets */
 }
 
 ul.content-list li::before {
-    content: "\2022";
-    /* Add content: \2022 is the CSS Code/unicode for a bullet */
-    color: var(--bs-primary);
-    /* Change the color */
-    font-weight: bold;
-    font-size: 1.15rem;
-    /* If you want it to be bold */
-    display: inline-block;
-    /* Needed to add space between the bullet and the text */
-    width: 1rem;
-    /* Also needed for space (tweak if needed) */
-    margin-left: -1rem;
-    /* Also needed for space (tweak if needed) */
+  content: "\2022";
+  /* Add content: \2022 is the CSS Code/unicode for a bullet */
+  color: var(--bs-primary);
+  /* Change the color */
+  font-weight: bold;
+  font-size: 1.15rem;
+  /* If you want it to be bold */
+  display: inline-block;
+  /* Needed to add space between the bullet and the text */
+  width: 1rem;
+  /* Also needed for space (tweak if needed) */
+  margin-left: -1rem;
+  /* Also needed for space (tweak if needed) */
 }
 
 .about-me-svg {
-    min-width: 1rem;
-    max-width: 10rem;
-    padding-right: .5rem;
-    vertical-align: text-top;
+  min-width: 1rem;
+  max-width: 10rem;
+  padding-right: 0.5rem;
+  vertical-align: text-top;
 }
 
 .interests-svg {
-    min-width: 1rem;
-    max-width: 6rem;
-    vertical-align: bottom;
+  min-width: 1rem;
+  max-width: 6rem;
+  vertical-align: bottom;
 }
 
 .education-svg {
-    max-height: .875rem;
-    padding-right: .5rem;
-    vertical-align: text-top;
+  max-height: 0.875rem;
+  padding-right: 0.5rem;
+  vertical-align: text-top;
 }
 
 .experience-svg {
-    max-height: 1.75rem;
-    padding-bottom: .25rem;
-    vertical-align: text-top;
+  max-height: 1.75rem;
+  padding-bottom: 0.25rem;
+  vertical-align: text-top;
 }
 
 .hide {
-    display: none;
+  display: none;
 }
 
 .center-block {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
-.anchor{
-    display:block;
-    height:95px!important; /* this is the height of your header */
-    margin-top:-95px!important; /* this is again negative value of the height of your header */
-    visibility:hidden;
- }
- @media (max-width: 991.98px) {
-    .anchor{
-        display:block;
-        height:91px!important; /* this is the height of your header */
-        margin-top:-91px!important; /* this is again negative value of the height of your header */
-        visibility:hidden;
-     }
+.anchor {
+  display: block;
+  height: 95px !important; /* this is the height of your header */
+  margin-top: -95px !important; /* this is again negative value of the height of your header */
+  visibility: hidden;
+}
+@media (max-width: 991.98px) {
+  .anchor {
+    display: block;
+    height: 91px !important; /* this is the height of your header */
+    margin-top: -91px !important; /* this is again negative value of the height of your header */
+    visibility: hidden;
+  }
 }
 .product-device {
-    position: absolute;
-    right: 10%;
-    bottom: -30%;
-    width: 300px;
-    height: 540px;
-    background-color: #333;
-    border-radius: 21px;
-    transform: rotate(30deg);
-  }
-  
-  .product-device::before {
-    position: absolute;
-    top: 10%;
-    right: 10px;
-    bottom: 10%;
-    left: 10px;
-    content: "";
-    background-color: rgba(255, 255, 255, .1);
-    border-radius: 5px;
-  }
-  
-  .product-device-2 {
-    top: -25%;
-    right: auto;
-    bottom: 0;
-    left: 5%;
-    background-color: #e5e5e5;
-  }
+  position: absolute;
+  right: 10%;
+  bottom: -30%;
+  width: 300px;
+  height: 540px;
+  background-color: #333;
+  border-radius: 21px;
+  transform: rotate(30deg);
+}
 
-  .bg-strava {
-    --bs-bg-opacity: 1;
+.product-device::before {
+  position: absolute;
+  top: 10%;
+  right: 10px;
+  bottom: 10%;
+  left: 10px;
+  content: "";
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 5px;
+}
 
-    background-color: rgba(252,82,0, var(--bs-bg-opacity)) !important;
+.product-device-2 {
+  top: -25%;
+  right: auto;
+  bottom: 0;
+  left: 5%;
+  background-color: #e5e5e5;
+}
+
+.bg-strava {
+  --bs-bg-opacity: 1;
+
+  background-color: rgba(252, 82, 0, var(--bs-bg-opacity)) !important;
 }
 
 .bg-revs {
-    --bs-bg-opacity: 1;
+  --bs-bg-opacity: 1;
 
-    background-color: rgba(14,35,63, var(--bs-bg-opacity)) !important;
+  background-color: rgba(14, 35, 63, var(--bs-bg-opacity)) !important;
 }
 
-.bg-strava:hover, .bg-revs:hover {
-    transition-timing-function: ease-in;
-    transition: transform .3s;
-    transform: scale(1.006,1.006);
+.bg-strava:hover,
+.bg-revs:hover {
+  transition-timing-function: ease-in;
+  transition: transform 0.3s;
+  transform: scale(1.006, 1.006);
 }
 
 @media (min-width: 991.98px) {
-    .bg-strava {
-        --bs-bg-opacity: 1;
-        background-image: url("/img/site-banner.png");
-        background-repeat: no-repeat;
-        background-position-x: right;
-        background-position-y: center;
-        background-color: rgba(252,82,0, var(--bs-bg-opacity)) !important;
-     }
-     .bg-revs {
-        --bs-bg-opacity: 1;
-        background-image: url("/img/site-banner-2.png");
-        background-repeat: no-repeat;
-        background-position-x: right;
-        background-position-y: center;
-        background-color: rgba(14,35,63, var(--bs-bg-opacity)) !important;
-     }
+  .bg-strava {
+    --bs-bg-opacity: 1;
+    background-image: url("/img/site-banner.png");
+    background-repeat: no-repeat;
+    background-position-x: right;
+    background-position-y: center;
+    background-color: rgba(252, 82, 0, var(--bs-bg-opacity)) !important;
+  }
+  .bg-revs {
+    --bs-bg-opacity: 1;
+    background-image: url("/img/site-banner-2.png");
+    background-repeat: no-repeat;
+    background-position-x: right;
+    background-position-y: center;
+    background-color: rgba(14, 35, 63, var(--bs-bg-opacity)) !important;
+  }
 }
 
+.lined-strava {
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  color: #fff;
+  background-color: var(--bs-strava);
+}
+ul.case-study li::before {
+  font-family: "Font Awesome 5 Free";
+  content: "\f0da";
+  /* Add content: \2022 is the CSS Code/unicode for a bullet */
+  color: var(--bs-strava);
+  /* Change the color */
+  font-weight: bold;
+  font-size: 1.15rem;
+  /* If you want it to be bold */
+  display: inline-block;
+  /* Needed to add space between the bullet and the text */
+  width: 1rem;
+  /* Also needed for space (tweak if needed) */
+  margin-left: -1rem;
+  /* Also needed for space (tweak if needed) */
+}
+
+.thumb {
+  cursor: pointer;
+}
+
+.modal {
+  background-color: rgb(0, 0, 0); /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.9); /* Black w/ opacity */
+}
+
+.modal-content {
+  width: 85%;
+}
+
+.strava-header {
+  color: var(--bs-strava);
+  margin-bottom: 0px;
+}
+
+.flex-container {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+
+  -webkit-flex-flow: row wrap;
+  justify-content: flex-start;
+}
+
+.flex-figure-item {
+  margin-right: 10px;
+  display: flex;
+  flex-direction: column;
+  width: 150px;
+}
+
+figure > img {
+  width: 150px;
+}
+
+figcaption {
+  color: #6c757d !important;
+  font-size: 0.85rem;
+  padding: 5px;
+  text-align: center;
+}
+
+#strava-interactive-image {
+  position: relative;
+  width: 340px;
+  height: 715px;
+  background-image: url("../img/portfolio/strava/Map-speed.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.hover-image:hover > strong {
+  color: var(--bs-strava);
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(0.85);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+.hover-image-spot {
+  border: 4px solid var(--bs-strava);
+
+  display: none;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  position: absolute;
+  animation: pulse 0.85s ease-in-out infinite;
+}
