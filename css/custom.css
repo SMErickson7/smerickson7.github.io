@@ -71,14 +71,7 @@ ul.content-list li::before {
   margin-top: -95px !important; /* this is again negative value of the height of your header */
   visibility: hidden;
 }
-@media (max-width: 991.98px) {
-  .anchor {
-    display: block;
-    height: 91px !important; /* this is the height of your header */
-    margin-top: -91px !important; /* this is again negative value of the height of your header */
-    visibility: hidden;
-  }
-}
+
 .product-device {
   position: absolute;
   right: 10%;
@@ -225,36 +218,71 @@ figcaption {
   position: relative;
   width: 340px;
   height: 715px;
-  background-image: url("../img/portfolio/strava/Map-speed.png");
-  background-repeat: no-repeat;
-  background-size: cover;
 }
 
 .hover-image:hover > strong {
-  color: var(--bs-strava);
+  color: var(--bs-strava) !important;
 }
 
 @keyframes pulse {
   0% {
+    opacity: 0.3;
     transform: scale(1);
   }
 
   50% {
+    opacity: 1;
     transform: scale(0.85);
   }
 
   100% {
+    opacity: 0.3;
     transform: scale(1);
   }
 }
 
 .hover-image-spot {
   border: 4px solid var(--bs-strava);
-
   display: none;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   position: absolute;
   animation: pulse 0.85s ease-in-out infinite;
+}
+
+.hover-image-spot:hover {
+  opacity: 1 !important;
+}
+
+.test-hover:hover {
+  border: 4px solid var(--bs-strava) !important;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  animation: pulse 0.85s ease-in-out infinite;
+}
+
+.strava-new {
+  color: var(--bs-strava);
+  font-style: italic;
+  font-weight: 700;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+}
+
+.strava-image {
+  max-width: 100%;
+  position: absolute;
+  bottom: 0;
+}
+
+@media (max-width: 991.98px) {
+  .anchor {
+    display: block;
+    height: 91px !important; /* this is the height of your header */
+    margin-top: -91px !important; /* this is again negative value of the height of your header */
+    visibility: hidden;
+  }
+  .strava-image {
+    position: relative;
+  }
 }

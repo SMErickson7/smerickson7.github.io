@@ -20,8 +20,6 @@
     <link rel="stylesheet" href="vendor/animate.css/animate.css">
     <!-- theme stylesheet-->
     <link rel="stylesheet" href="css/style.blue.css" id="theme-stylesheet">
-    <!-- interactive image-->
-    <link rel="stylesheet" href="css/interactive-image.min.css" id="interactive-image-stylesheet">
     <!-- Custom stylesheet - for your changes-->
     <link rel="stylesheet" href="css/custom.css">
     <!-- Favicon-->
@@ -31,7 +29,6 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
         crossorigin="anonymous"></script>
-    <script type="text/javascript" src="js/interactive-image.min.js"></script>
     <script type="text/javascript" src="js/hover-image.js"></script>
 </head>
 
@@ -67,33 +64,28 @@
         </div>
     </nav>
 </header>
-<section class="pt-5">
-    <div class="container">
-        <header class="mt-5 mb-3 pt-3">
-            <h2 class="text-uppercase"><span class="lined-strava">Strava</span></h2>
-        </header>
-        <p class="lead text-muted">I started cycling in the summer of 2018 after a couple of friends talked about their
-            rides together. For 20+ years I played soccer to keep the extra pounds off, but it was taking a toll on my
-            body. I was looking for a new, fun, and low impact activity. And if I could do it with my friends, even
-            better. I didn't know much about cycling (I did know how to ride a bike), so through the advice of my close
-            friends, I was able to purchase my first road bike, acquire the right gear, and download Strava.
-        </p>
-        <div class="row">
-            <div class="col-lg-8 mt-3 m3-5">
-                <p class="text-muted">Strava is a social network for athletes and weekend warriors to track, measure,
-                    analyze, and share their physical exercise activities. Their platform has over 30 types of
-                    activities and its social network features has created the largest sports community in the world. It
-                    is the leading service to record and upload cycling rides through its mobile app or via a
-                    third-party GPS bike computer. Each ride records time, speed, distance, and elevation. Additional
-                    features, like user-generated “segments”, brings a competitive spirit to the social networking side
-                    of Strava.
-
-                </p>
-                <p class="text-muted">As of November, 2022, I have used Strava to track 149 bike rides. Throughout the
-                    last four years, a list of pain points has been compiled via personal experience and conversation
-                    with my friends who use Strava.
+<section class="mt-5">
+    <div class="container pt-4">
+        <div class="row mt-5">
+            <div class="col-lg-8">
+                <header class="mb-3">
+                    <h2 class="text-uppercase"><span class="lined-strava">Strava</span></h2>
+                </header>
+                <p class="lead text-muted">I started cycling in the summer of 2018 after a couple of friends talked
+                    about their
+                    rides together. For 20+ years I played soccer to keep the extra pounds off, but it was taking a toll
+                    on my
+                    body. I was looking for a new, fun, and low impact activity. And if I could do it with my friends,
+                    even
+                    better. I didn't know much about cycling (I did know how to ride a bike), so through the advice of
+                    my close
+                    friends, I was able to purchase my first road bike, acquire the right gear, and download Strava.
                 </p>
             </div>
+            <div class="col-lg-4" style="position:relative"><img class="strava-image" src="img/cycling-small.jpg"
+                    alt="Halfway through a 48 mile ride."></div>
+        </div>
+        <div class="row">
             <div class="col-lg-4 mt-3">
                 <table class="table table-sm table-striped mb-1 fs-7">
                     <thead class="thead-dark">
@@ -129,6 +121,22 @@
                 </table>
                 <p style="font-size: 0.75rem !important;" class="text-muted text-right mb-0">As of November 2022</p>
             </div>
+            <div class="col-lg-8 mt-3 m3-5">
+                <p class="text-muted">Strava is a social network for athletes and weekend warriors to track, measure,
+                    analyze, and share their physical exercise activities. Their platform has over 30 types of
+                    activities and its social network features has created the largest sports community in the world. It
+                    is the leading service to record and upload cycling rides through its mobile app or via a
+                    third-party GPS bike computer. Each ride records time, speed, distance, and elevation. Additional
+                    features, like user-generated “segments”, brings a competitive spirit to the social networking side
+                    of Strava.
+
+                </p>
+                <p class="text-muted">As of November, 2022, I have used Strava to track 149 bike rides. Throughout the
+                    last four years, a list of pain points has been compiled via personal experience and conversation
+                    with my friends who use Strava.
+                </p>
+            </div>
+
         </div>
     </div>
 </section>
@@ -136,7 +144,7 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-12 mt-3 m3-5">
-                <h5>Pain points</h5>
+                <strong>Pain points</strong>
                 <ul class="case-study">
                     <li>Switching screens during a ride to see different metrics</li>
                     <li>Map doesn't auto-rotate to my direction of travel (Strava solved this in summer of 2022)</li>
@@ -144,12 +152,88 @@
                     <li>Route visibility</li>
                 </ul>
 
-                <h5>Additionally, there are features that I believe would enhance the experience</h5>
+                <strong>Additionally, there are features that I believe would enhance the experience</strong>
                 <ul class="case-study">
                     <li>Creating checkpoints</li>
                     <li>Dark mode</li>
                 </ul>
-                <hr>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="py-1">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 mt m3-5">
+                <h4 class="strava-header mb-3">Experience during an activity</h4>
+                <div onmouseover="highlightMapOn('point1', '23px','70px','140px', '60px', '30px')"
+                    onmouseout="highlightMapOff('point1')" class="hover-image">
+                    <strong id="pointheader1">Secondary view options</strong>
+                    <p>Moved secondary view options to top left to avoid
+                        accidental selection.</p>
+                </div>
+                <div onmouseover="highlightMapOn('point2','262px','78px','80px','80px','50px')"
+                    onmouseout="highlightMapOff('point2')" class="hover-image">
+                    <strong id="pointheader2">Auto-rotate</strong>
+                    <p>Auto-rotate was moved to top right, increased size.</p>
+                </div>
+                <div onmouseover="highlightMapOn('point3','150px','120px','50px','150px','20px')"
+                    onmouseout="highlightMapOff('point3')" class="hover-image">
+                    <strong id="pointheader3">Checkpoint</strong>
+                    <p>Checkpoint feature allows rider to designated a location on the
+                        map as a checkpoint.</p>
+                </div>
+                <div onmouseover="highlightMapOn('point4','179px','297px','80px','80px','50px')"
+                    onmouseout="highlightMapOff('point4')" class="hover-image">
+                    <strong id="pointheader4">Route color</strong>
+                    <p>Route color was changed to blue and orange for greater
+                        discrepancy. Blue represents the part of the route completed, orange represents part of the
+                        route not completed.</p>
+                </div>
+                <div onmouseover="highlightMapOn('point5','261px','382px','80px','80px','50px')"
+                    onmouseout="highlightMapOff('point5')" class="hover-image">
+                    <strong id="pointheader5">Location icon</strong>
+                    <p>Location icon now stands alone at the bottom right of the
+                        map. The icon is larger and not as close to the edge of the screen.</p>
+                </div>
+                <div onmouseover="highlightMapOn('point6','10px','460px','220px','350px','50px')"
+                    onmouseout="highlightMapOff('point6')" class="hover-image">
+                    <strong id="pointheader6">Ride metrics</strong>
+                    <p>Ride metrics are now visible on the map view.</p>
+                </div>
+            </div>
+            <div class="col-lg-4 mt m3-5">
+                <img id="strava-interactive-image" src="img/portfolio/strava/Map-speed.png" alt="">
+                <div class="test-hover" onmouseover="changeHeaderOn('pointheader1')"
+                    onmouseout="changeHeaderOff('pointheader1')"
+                    style="position: absolute; left:23px; top:70px; height:140px; width:60px; border-radius: 30px; border: 0px">
+                </div>
+                <div id="point1" class="hover-image-spot"></div>
+                <div class="test-hover" onmouseover="changeHeaderOn('pointheader2')"
+                    onmouseout="changeHeaderOff('pointheader2')"
+                    style="position: absolute; left:262px; top:78px; height:80px; width:80px; border-radius: 50px; border: 0px">
+                </div>
+                <div id="point2" class="hover-image-spot"></div>
+                <div class="test-hover" onmouseover="changeHeaderOn('pointheader3')"
+                    onmouseout="changeHeaderOff('pointheader3')"
+                    style="position: absolute; left:150px; top:120px; height:50px; width:150px; border-radius: 20px; border: 0px">
+                </div>
+                <div id="point3" class="hover-image-spot"></div>
+                <div class="test-hover" onmouseover="changeHeaderOn('pointheader4')"
+                    onmouseout="changeHeaderOff('pointheader4')"
+                    style="position: absolute; left:179px; top:297px; height:80px; width:80px; border-radius: 50px; border: 0px">
+                </div>
+                <div id="point4" class="hover-image-spot"></div>
+                <div class="test-hover" onmouseover="changeHeaderOn('pointheader5')"
+                    onmouseout="changeHeaderOff('pointheader5')"
+                    style="position: absolute; left:261px; top:382px; height:80px; width:80px; border-radius: 50px; border: 0px">
+                </div>
+                <div id="point5" class="hover-image-spot"></div>
+                <div class="test-hover" onmouseover="changeHeaderOn('pointheader6')"
+                    onmouseout="changeHeaderOff('pointheader6')"
+                    style="position: absolute; left:10px; top:460px; height:220px; width:350px; border-radius: 50px; border: 0px">
+                </div>
+                <div id="point6" class="hover-image-spot"></div>
             </div>
         </div>
     </div>
@@ -190,7 +274,8 @@
                     <figure class="flex-figure-item">
                         <img src="img/portfolio/strava/Map-speed.png" alt="" data-bs-toggle="modal"
                             data-bs-target="#exampleModal" class="thumb">
-                        <figcaption>Map with time, speed, and distance view</figcaption>
+                        <figcaption>Map with time, speed, and distance view<br /><span class="strava-new">New</span>
+                        </figcaption>
                     </figure>
                     <figure class="flex-figure-item">
                         <img src="img/portfolio/strava/Speed.png" alt="" data-bs-toggle="modal"
@@ -249,7 +334,8 @@
                     <figure class="flex-figure-item">
                         <img src="img\portfolio\strava\Map-speed-dark.png" alt="" data-bs-toggle="modal"
                             data-bs-target="#exampleModal" class="thumb">
-                        <figcaption>Map with time, speed, and distance view</figcaption>
+                        <figcaption>Map with time, speed, and distance view<br /><span class="strava-new">New</span>
+                        </figcaption>
                     </figure>
                     <figure class="flex-figure-item">
                         <img src="img\portfolio\strava\Speed-dark.png" alt="" data-bs-toggle="modal"
@@ -266,60 +352,7 @@
         </div>
     </div>
 </section>
-<section class="py-1">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-8 mt m3-5">
-                <h5 class="strava-header mb-3">Header</h5>
-                <div onmouseover="highlightMapOn('point1', '23px','70px','140px', '60px', '30px')"
-                    onmouseout="highlightMapOff('point1')" class="hover-image">
-                    <strong>Secondary view options</strong>
-                    <p>Moved secondary view options to top left to avoid
-                        accidental selection.</p>
-                </div>
-                <div onmouseover="highlightMapOn('point2','262px','78px','80px','80px','50px')"
-                    onmouseout="highlightMapOff('point2')" class="hover-image">
-                    <strong>Auto-rotate</strong>
-                    <p>Auto-rotate was moved to top right, increased size.</p>
-                </div>
-                <div onmouseover="highlightMapOn('point3','150px','120px','50px','150px','20px')"
-                    onmouseout="highlightMapOff('point3')" class="hover-image">
-                    <strong>Checkpoint</strong>
-                    <p>Checkpoint feature allows rider to designated a location on the
-                        map as a checkpoint.</p>
-                </div>
-                <div onmouseover="highlightMapOn('point4','180px','300px','80px','80px','50px')"
-                    onmouseout="highlightMapOff('point4')" class="hover-image">
-                    <strong>Route color</strong>
-                    <p>Route color was changed to blue and orange for greater
-                        discrepancy. Blue represents the part of the route completed, orange represents part of the
-                        route not completed.</p>
-                </div>
-                <div onmouseover="highlightMapOn('point5','262px','382px','80px','80px','50px')"
-                    onmouseout="highlightMapOff('point5')" class="hover-image">
-                    <strong>Location icon</strong>
-                    <p>Location icon now stands alone at the bottom right of the
-                        map. The icon is larger and not as close to the edge of the screen.</p>
-                </div>
-                <div onmouseover="highlightMapOn('point6','10px','460px','220px','350px','50px')"
-                    onmouseout="highlightMapOff('point6')" class="hover-image">
-                    <strong>Ride metrics</strong>
-                    <p>Ride metrics are now visible on the map view.</p>
-                </div>
-            </div>
-            <div class="col-lg-4 mt m3-5">
-                <div id="strava-interactive-image"></div>
 
-                <div id="point1" class="hover-image-spot"></div>
-                <div id="point2" class="hover-image-spot"></div>
-                <div id="point3" class="hover-image-spot"></div>
-                <div id="point4" class="hover-image-spot"></div>
-                <div id="point5" class="hover-image-spot"></div>
-                <div id="point6" class="hover-image-spot"></div>
-            </div>
-        </div>
-    </div>
-</section>
 <!-- Modal -->
 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
