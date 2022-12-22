@@ -163,6 +163,10 @@ ul.case-study li::before {
   /* Also needed for space (tweak if needed) */
 }
 
+ul.case-study li {
+  font-weight: bold;
+}
+
 .thumb {
   cursor: pointer;
 }
@@ -170,10 +174,6 @@ ul.case-study li::before {
 .modal {
   background-color: rgb(0, 0, 0); /* Fallback color */
   background-color: rgba(0, 0, 0, 0.9); /* Black w/ opacity */
-}
-
-.modal-content {
-  width: 85%;
 }
 
 .strava-header {
@@ -261,14 +261,6 @@ figcaption {
   animation: pulse 0.85s ease-in-out infinite;
 }
 
-.strava-new {
-  color: var(--bs-strava);
-  font-style: italic;
-  font-weight: 700;
-  font-size: 0.85rem;
-  text-transform: uppercase;
-}
-
 .strava-image {
   max-width: 100%;
   position: absolute;
@@ -285,4 +277,14 @@ figcaption {
   .strava-image {
     position: relative;
   }
+}
+
+.badge-strava {
+  background-color: var(--bs-strava);
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.bg-strava-demo {
+  background-color: var(--bs-gray-500);
 }
