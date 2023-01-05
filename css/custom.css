@@ -242,7 +242,7 @@ figcaption {
 }
 
 .hover-image-spot {
-  border: 4px solid var(--bs-strava);
+  border: 4px solid var(--bs-teal);
   display: none;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
   -webkit-font-smoothing: antialiased;
@@ -256,7 +256,7 @@ figcaption {
 }
 
 .test-hover:hover {
-  border: 4px solid var(--bs-strava) !important;
+  border: 4px solid var(--bs-teal) !important;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
   animation: pulse 0.85s ease-in-out infinite;
 }
@@ -287,4 +287,78 @@ figcaption {
 
 .bg-strava-demo {
   background-color: var(--bs-gray-500);
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+  width: 7%;
+  opacity: 100%;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  height: 100px;
+  width: 100px;
+  outline: black;
+  background-size: 100%, 100%;
+  border-radius: 50%;
+  background-image: none;
+}
+
+.carousel-control-next-icon:after {
+  content: ">";
+  font-size: 55px;
+  color: var(--bs-strava);
+}
+
+.carousel-control-prev-icon:after {
+  content: "<";
+  font-size: 55px;
+  color: var(--bs-strava);
+}
+
+.strava-comparison-image {
+  display: inline-block;
+  position: relative;
+}
+
+.comparison-list:before {
+  font-family: "Font Awesome 5 Free";
+  content: "\f101";
+  font-weight: bold;
+  font-size: 1rem;
+}
+.comparison-list:after {
+  font-family: "Font Awesome 5 Free";
+  content: "\f100";
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+.comparison-list:before,
+.comparison-list:after {
+  color: var(--bs-strava);
+  position: relative;
+  margin: 5px;
+  top: 0em;
+  left: 0em;
+  opacity: 0;
+}
+
+.comparison-list:hover:before,
+.comparison-list:hover:after {
+  opacity: 1;
+}
+
+#notAvailable {
+  display: none;
+}
+
+@media (max-width: 991px) {
+  #carouselExampleIndicators {
+    display: none;
+  }
+  #notAvailable {
+    display: block;
+  }
 }
