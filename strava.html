@@ -30,6 +30,9 @@
         integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
         crossorigin="anonymous"></script>
     <script type="text/javascript" src="js/hover-image.js"></script>
+    <script src="js/date-strava.js"></script>
+
+
 </head>
 
 <body class="scrollspy-example" data-bs-spy="scroll" data-bs-target="#navbar" data-bs-offset="0" tabindex="0"></body>
@@ -71,6 +74,7 @@
                 <header class="mb-3">
                     <h2 class="text-uppercase"><span class="lined-strava">Strava</span></h2>
                 </header>
+
                 <p class="lead text-muted">I started cycling in the summer of 2018 after a couple of friends talked
                     about their
                     rides together. For 20+ years I played soccer to keep the extra pounds off, but it was taking a toll
@@ -80,6 +84,7 @@
                     better. I didn't know much about cycling (I did know how to ride a bike), so through the advice of
                     my close
                     friends, I was able to purchase my first road bike, acquire the right gear, and download Strava.
+                    <span id="date"></span>
                 </p>
             </div>
             <div class="col-lg-4" style="position:relative"><img class="strava-image" src="img/cycling-small.jpg"
@@ -87,52 +92,65 @@
         </div>
         <div class="row">
             <div class="col-lg-4 mt-3">
-                <table class="table table-sm table-striped mb-1 fs-7">
-                    <thead class="thead-dark">
-                        <tr>
-                            <th colspan="2">Personal all-time metrics</th>
-                        </tr>
-                    </thead>
-                    <tr>
-                        <th scope="row">Activites</th>
-                        <td>149</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">Distance</th>
-                        <td>3,363.3 miles</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">Elevation Gain</th>
-                        <td>107,627 ft</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">Time</th>
-                        <td>224 hours 35 minutes</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">Longest Ride</th>
-                        <td>70.8 miles</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">Biggest Climb</th>
-                        <td>507 ft</td>
-                    </tr>
-                    </tr>
-                </table>
-                <p style="font-size: 0.75rem !important;" class="text-muted text-left mb-0">As of November 2022</p>
+                <div id="json">Loading stats...</div>
+                <script>
+                    var id = '1HpMowcG-Ll-oQF_2U0mlNvRer2Pm9xnTF9w8Oo128us';
+                    var gid = '1222046636';
+                    var url = 'https://docs.google.com/spreadsheets/d/' + id + '/gviz/tq?tqx=out:json&tq&gid=' + gid;
+                    fetch(url)
+                        .then(response => response.text())
+                        .then(data => document.getElementById("json").innerHTML = myItems(data.substring(47).slice(0, -2))
+                        );
+
+                    function myItems(jsonString) {
+                        var json = JSON.parse(jsonString);
+                        var array = []
+                        var table = '<table class="table table-sm table-striped mb-1 fs-7"><thead class="thead-dark"><tr><th colspan="2">Personal all-time metrics</th><tr></thead>'
+                        json.table.rows.forEach(row => {
+                            table += '<tr>'
+                            row.c.forEach(cell => {
+                                try { var value = cell.f ? cell.f : cell.v }
+                                catch (e) { var value = '' }
+                                table += '<td>' + value + '</td>'
+                                array.push(value)
+
+                            }
+                            )
+                            table += '</tr>'
+                        }
+                        )
+                        table += '</table>'
+                        var rides = array[1]
+                        document.getElementById("rides").innerText = rides;
+                        return table
+
+                    }
+
+                </script>
+
+                <p style="font-size: 0.75rem !important;" class="text-muted text-left mb-0 ms-1">As of
+                    <span id="table-date"></span>
+                </p>
             </div>
-            <div class="col-lg-8 mt-3 m3-5">
-                <p class="text-muted">Strava is a social network for athletes and weekend warriors to track, measure,
+            <div class="col-lg-8 mt-3">
+                <p class="text-muted">Strava is a social network for athletes and weekend warriors to track,
+                    measure,
                     analyze, and share their physical exercise activities. Their platform has over 30 types of
-                    activities and its social network features has created the largest sports community in the world. It
+                    activities and its social network features has created the largest sports community in the
+                    world. It
                     is the leading service to record and upload cycling rides through its mobile app or via a
-                    third-party GPS bike computer. Each ride records time, speed, distance, and elevation. Additional
-                    features, like user-generated “segments”, brings a competitive spirit to the social networking side
+                    third-party GPS bike computer. Each ride records time, speed, distance, and elevation.
+                    Additional
+                    features, like user-generated “segments”, brings a competitive spirit to the social networking
+                    side
                     of Strava.
 
                 </p>
-                <p class="text-muted">As of November, 2022, I have used Strava to track 149 bike rides. Throughout the
-                    last four years, a list of pain points has been compiled via personal experience and conversation
+                <p class="text-muted">As of <span id="p-date"></span>, I have used Strava to
+                    track <span id="rides"></span> bike rides. Throughout
+                    the
+                    last four years, a list of pain points has been compiled via personal experience and
+                    conversation
                     with my friends who use Strava.
                 </p>
             </div>
@@ -318,7 +336,7 @@
                     data-bs-interval="false">
 
                     <div class="carousel-inner">
-                        <div class="carousel-item p-3 bg-light">
+                        <div class="carousel-item active p-3 bg-light">
                             <div class="row text-center">
 
                                 <div class="col-lg-4">
@@ -434,7 +452,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="carousel-item p-3 bg-light active">
+                        <div class="carousel-item p-3 bg-light">
                             <div class="row text-center">
                                 <div class="col-lg-4 col-md-5">
                                     <div class="strava-comparison-image">
@@ -472,26 +490,43 @@
                                         <img src="img/portfolio/strava/Speed.png" style="max-width:220px" alt=""
                                             data-bs-toggle="modal" data-bs-target="#exampleModal" class="thumb">
                                         <div id="point-new-3" class="hover-image-spot"></div>
+
                                     </div>
                                 </div>
                             </div>
                         </div>
                         <div class="carousel-item p-3 bg-light">
                             <div class="row text-center">
-                                <div class="col-lg-2 col-md-5">
-                                    <img src="img/portfolio/strava/OG-Post-ride.png" style="max-width:220px" alt=""
-                                        data-bs-toggle="modal" data-bs-target="#exampleModal" class="thumb">
+                                <div class="col-lg-5">
+                                    <div class="strava-comparison-image">
+                                        <img src="img/portfolio/strava/OG-Post-ride.png" style="max-width:200px" alt=""
+                                            data-bs-toggle="modal" data-bs-target="#exampleModal" class="thumb">
+                                        <div id="point-old-4" class="hover-image-spot"></div>
+                                    </div>
+                                    <div class="strava-comparison-image">
+
+                                        <img src="img/portfolio/strava/OG-Post-ride-2.png" style="max-width:200px"
+                                            alt="" data-bs-toggle="modal" data-bs-target="#exampleModal" class="thumb">
+                                        <div id="point-old-4a" class="hover-image-spot"></div>
+                                    </div>
                                 </div>
-                                <div class="col-lg-2 col-md-5">
-                                    <img src="img/portfolio/strava/OG-Post-ride-2.png" style="max-width:220px" alt=""
-                                        data-bs-toggle="modal" data-bs-target="#exampleModal" class="thumb">
+                                <div class="col-lg-4">
+                                    <h4 class="strava-header mb-3">Post activity view</h4>
+                                    <h5 class="mb-3 text-muted">Changed</h5>
+                                    <p class="text-start fs-7">I condensesd the post activity view into one screen. I
+                                        removed some redundant fields (type of activity and equipment) as these fields
+                                        were used in the set up of the activity. Additionally, I brought in features
+                                        (percieved exertion and correct distance) to this screen that were only
+                                        available when editing the activity (and in the case of correct distance, only
+                                        the web version).
+                                    </p>
                                 </div>
-                                <div class="col-lg-4 col-md-2">
-                                    <p>Comparison text</p>
-                                </div>
-                                <div class="col-lg-4 col-md-5">
-                                    <img src="img/portfolio/strava/Post-ride.png" style="max-width:220px" alt=""
-                                        data-bs-toggle="modal" data-bs-target="#exampleModal" class="thumb">
+                                <div class="col-lg-3">
+                                    <div class="strava-comparison-image">
+                                        <img src="img/portfolio/strava/Post-ride.png" style="max-width:200px" alt=""
+                                            data-bs-toggle="modal" data-bs-target="#exampleModal" class="thumb">
+                                        <div id="point-new-4" class="hover-image-spot"></div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -611,6 +646,7 @@
 <script src="vendor/owl.carousel/owl.carousel.min.js"></script>
 <script src="vendor/waypoints/lib/jquery.waypoints.min.js"></script>
 <script src="vendor/jquery.counterup/jquery.counterup.js"></script>
+<script src="js/date-strava.js"></script>
 
 <!-- FontAwesome CSS - loading as last, so it doesn't block rendering-->
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css"
