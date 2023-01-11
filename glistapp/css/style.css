@@ -736,7 +736,17 @@ hr {
 
 /* Larger than mobile */
 
-@media (min-width: 400px) {
+@media (max-width: 480px) {
+  body {
+    font-size: 4em;
+  }
+  .container-checkbox .checkmark::after {
+    top: 5px;
+    left: 18px;
+    width: 18px;
+    height: 32px;
+    border-width: 0 7px 7px 0;
+  }
 }
 
 /* Larger than phablet (also point when grid becomes active) */
