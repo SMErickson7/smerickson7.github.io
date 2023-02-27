@@ -1,0 +1,1062 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Steven M. Erickson | Digital Experience Manager</title>
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="robots" content="all,follow" />
+    <!-- Bootstrap CSS-->
+    <link rel="stylesheet" href="vendor/bootstrap/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous" />
+    <!-- Google fonts-->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700;800&display=swap" rel="stylesheet" />
+    <!-- animate.css-->
+    <link rel="stylesheet" href="vendor/animate.css/animate.css" />
+    <!-- theme stylesheet-->
+    <link rel="stylesheet" href="css/style.blue.css" id="theme-stylesheet" />
+    <!-- Custom stylesheet - for your changes-->
+    <link rel="stylesheet" href="css/custom.css" />
+    <!-- Favicon-->
+    <link rel="shortcut icon" href="img/favicon.png" />
+    <script src="https://kit.fontawesome.com/74ff93bbed.js" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="js/strava.js"></script>
+    <script src="js/date-strava.js"></script>
+  </head>
+
+  <body class="scrollspy-example" data-bs-spy="scroll" data-bs-target="#navbar" data-bs-offset="0" tabindex="0">
+    <header class="header">
+      <nav class="navbar navbar-expand-lg fixed-top">
+        <div class="container">
+          <a class="navbar-brand scrollTo" href="index.html#hero"><img id="headlogo" src="img/headlogo_blue.png" alt="" width="75" /></a>
+          <button type="button" data-toggle="collapse" data-target="#navbarcollapse" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler navbar-toggler-right">
+            <span class="fa fa-bars"></span>
+          </button>
+          <div id="navbarcollapse" class="collapse navbar-collapse">
+            <ul class="navbar-nav ms-auto">
+              <li class="nav-item">
+                <a class="nav-link text-uppercase" href="index.html#hero">Home <span class="sr-only">(current)</span> </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link link-scroll text-uppercase" href="index.html#about">About</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link link-scroll text-uppercase" href="index.html#experience">Experience</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link link-scroll text-uppercase" href="index.html#portfolio">Portfolio</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link link-scroll text-uppercase" href="index.html#education">Education</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link link-scroll text-uppercase" href="index.html#contact">Contact</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link link-scroll text-uppercase" href="files/StevenMErickson_Resume_2022.pdf" target="_blank">Resumé</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <section class="mt-5 mb-4">
+      <div class="container pt-4">
+        <div class="row mt-5">
+          <div class="col-lg-10">
+            <header class="mb-3">
+              <h2 class="text-uppercase">
+                <span class="lined-strava">Strava</span>
+              </h2>
+            </header>
+          </div>
+          <div class="col-lg-2">
+            <span class="text-small float-end text-decoration-none pointer" data-bs-toggle="collapse" data-bs-target="#collapseOne">
+              <i class="fa fa-plus strava-orange"></i>
+              What is Strava?</span
+            >
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-lg-12">
+            <div class="accordion" id="accordionExample">
+              <div class="card">
+                <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                  <div class="card-body text-small text-muted py-0">
+                    <hr />
+                    <p>
+                      Strava is a social network for athletes and weekend warriors to track, measure, analyze, and share their physical exercise activities. Their platform has over 30 types of activities and its social network features has created the largest sports community in the world. It is the
+                      leading service to record and upload cycling rides through its mobile app or via a third-party GPS bike computer. Each ride records time, speed, distance, and elevation. Additional features, like user-generated “segments”, brings a competitive spirit to the social networking
+                      side of Strava.
+                    </p>
+                    <hr />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-lg-10">
+            <h4 class="strava-header mb-2">Overview</h4>
+            <h5 class="strava-subheader">Problem:</h5>
+            <p class="lead">Strava's experience for cyclists created usability issues that could potentially put the cyclist in danger.</p>
+            <p>User feedback indicated that cyclists found certain aspects of Strava's experience frustrating and created anxiety. Buttons (placement, padding, and size), flow, and color scheme are the top areas of concern for cyclists.</p>
+            <h5 class="strava-subheader">Goal:</h5>
+            <ol>
+              <li>Reduce the amount of app interactions during a bike ride</li>
+              <li>Condense important information into one view during a bike ride</li>
+              <li>Create a clearer andvibrant bike ride experience by redesigning existing components and introducing new components and features</li>
+            </ol>
+          </div>
+          <div class="col-lg-2 position-relative">
+            <div class="card strava-card">
+              <div class="card-body">
+                <p class="card-text text-small text-muted">Are you curious why I chose Strava? I'll tell you how I got into cycling and the progress I've made.</p>
+                <a href="#cyclingStory" data-bs-toggle="modal" data-bs-target="#cyclingStory" class="btn btn-strava w-100">Read about my journey</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-1 mb-4">
+      <div class="container">
+        <div class="row">
+          <h4 class="strava-header">Current in-ride map experience</h4>
+          <div class="col-lg-7 mt-3 m3-5">
+            <img src="img/portfolio/strava/current_problems.png" alt="Current problems with Strava" class="img-fluid" data-bs-toggle="modal" data-bs-target="#exampleModal" />
+          </div>
+          <div class="col-lg-5 mt-3 m3-5">
+            <h5 class="strava-subheader">Pain-points</h5>
+            <ul class="case-study">
+              <li class="route-bullet">Improve readability on route visibility</li>
+              <p class="fs-7">Strava uses two shades of blue to visualize the route and the cyclist's progress. A more contrasting color palette is needed to improve readability on route visibility and cyclist's safety.</p>
+              <li class="button-bullet">Improve button placement, size, and padding</li>
+              <p class="fs-7">
+                The cluster of icons on the map are small and too close together, especially during a ride. To accommodate <a href="#useCaseModal" data-bs-toggle="modal" data-bs-target="#useCaseModal" style="color: #fc5200">different use cases,</a> the buttons need to be bigger with more padding
+                around them, and placed in more accessible areas.
+              </p>
+              <li class="rotate-bullet">Enable auto-rotate map to keep direction of travel up</li>
+              <p class="fs-7">
+                In map view, the map does not rotate in the cyclist's direction of travel. Enable auto-rotate to prevent cyclists from manually rotating the map to keep their direction of travel up while cycling.<br />
+                <span class="text-small text-decoration-none pointer text-muted" data-bs-toggle="collapse" data-bs-target="#collapseTwo"><i class="fa fa-plus strava-orange"></i> Read the update</span>
+              </p>
+              <div class="accordion" id="stravaUpdate">
+                <div class="card">
+                  <div id="collapseTwo" class="collapse" aria-labelledby="headingOne" data-bs-parent="#stravaUpdate">
+                    <div class="alert alert-info fs-7">
+                      <h6>Update:</h6>
+                      Strava solved this in summer of 2022. However, when the ride is auto-paused, the compass will default back to "north up". The cyclist has to tap the compass icon to change back to "auto-rotate".
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <li class="screens-bullet">Condense map and ride metrics to one view</li>
+              <p class="fs-7">To see speed, distance traveled, or time elapsed, a cyclist must tap the small icon in the bottom right. Give the cyclist an option to view metrics and map on one view.</p>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-1 mb-4">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 mt m3-5">
+            <h4 class="strava-header">Changes</h4>
+            <h5 class="strava-subheader my-3">Proposed fixes</h5>
+            <div id="textoverlay1" class="text-gray-overlay my-2" onmouseover="highlightMapOn('point1')" onmouseout="highlightMapOff('point1')">
+              <div class="hover-image">
+                <strong id="pointheader1">Secondary view options</strong>
+                <p class="mb-0">Moved secondary view options to top left to avoid accidental selection. Additionally increased the size and padding of the icons.</p>
+              </div>
+            </div>
+            <div id="textoverlay2" class="text-gray-overlay my-2" onmouseover="highlightMapOn('point2')" onmouseout="highlightMapOff('point2')">
+              <div class="hover-image">
+                <strong id="pointheader2">Auto-rotate</strong>
+                <p class="mb-0">Auto-rotate was moved to top right, increased size and padding. The icon was changed to a universal style icon that would be familiar to riders.</p>
+              </div>
+            </div>
+            <div id="textoverlay4" class="text-gray-overlay my-2" onmouseover="highlightMapOn('point4')" onmouseout="highlightMapOff('point4')">
+              <div class="hover-image">
+                <strong id="pointheader4">Route color</strong>
+                <p class="mb-0">Route color was changed to blue and orange for greater discrepancy. Blue represents the part of the route completed, orange represents part of the route not completed.</p>
+              </div>
+            </div>
+            <div id="textoverlay5" class="text-gray-overlay my-2" onmouseover="highlightMapOn('point5')" onmouseout="highlightMapOff('point5')">
+              <div class="hover-image">
+                <strong id="pointheader5">Location icon</strong>
+                <p class="mb-0">Location icon now stands alone at the bottom right of the map. The icon is larger and not as close to the edge of the screen.</p>
+              </div>
+            </div>
+            <h5 class="strava-subheader my-3">New features</h5>
+            <div id="textoverlay3" class="text-gray-overlay my-2" onmouseover="highlightMapOn('point3')" onmouseout="highlightMapOff('point3')">
+              <div class="hover-image">
+                <strong id="pointheader3"
+                  >Checkpoint
+                  <span class="badge badge-strava">New</span>
+                </strong>
+                <p class="mb-0">
+                  While drawing a route, I would add a feature that allows the cyclist to designate a waypoint on the route as a "checkpoint". The checkpoint would be visable on the map during an activity. This would be beneficial to riders who divide their rides into segments and would use
+                  checkpoints as mile markers or breaks.
+                </p>
+              </div>
+            </div>
+            <div id="textoverlay6" class="text-gray-overlay my-2" onmouseover="highlightMapOn('point6')" onmouseout="highlightMapOff('point6')">
+              <div class="hover-image">
+                <strong id="pointheader6"
+                  >Distance traveled
+                  <span class="badge badge-strava">New</span>
+                </strong>
+                <p class="mb-0">Distance traveled is now visible on the map view. The cyclist has three static options (distance remaining, distance total, and progress visual) and an option to auto rotate through the three options. The three options can be viewed using the buttons below.</p>
+                <div class="btn-group mt-2">
+                  <a id="remaining" href="#" onclick="changeDistanceImage('remaining');return false;" title="Distance remaining" class="btn btn-strava active" aria-current="page">Distance remaining</a>
+                  <a id="total" href="#" onclick="changeDistanceImage('total');return false;" title="Distance total" class="btn btn-strava">Distance total</a>
+                  <a id="progressbar" href="#" onclick="changeDistanceImage('progressbar');return false;" title="Progress visual" class="btn btn-strava">Progress visual</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 mt m3-5">
+            <img id="map-remaining" src="img/portfolio/strava/new/redesign-map-remaining.png" alt="" data-bs-toggle="modal" data-bs-target="#exampleModal" />
+
+            <?xml version="1.0" encoding="utf-8"?>
+            <!-- 3D & Layer Buttons-->
+            <div id="point1" class="gray-overlay">
+              <?xml
+                        version="1.0" encoding="utf-8"?>
+              <!-- Generator: Adobe Illustrator 27.2.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)-->
+              <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 680 1430" style="enable-background: new 0 0 680 1430" xml:space="preserve">
+                <style type="text/css">
+                  .st0 {
+                    display: none;
+                  }
+
+                  .st1 {
+                    display: inline;
+                    fill-opacity: 0.7;
+                  }
+
+                  .st2 {
+                    fill-opacity: 0.7;
+                  }
+                </style>
+                <g id="Layer_2" class="st0">
+                  <path
+                    class="st1"
+                    d="M632.2,6H47.8C26.1,6,8.4,23.6,8.4,45.4v1336.2c0,21.8,17.6,39.4,39.4,39.4h584.3c21.8,0,39.4-17.6,39.4-39.4
+                                V45.4C671.6,23.6,653.9,6,632.2,6z M655.3,1325.5H24.7V957.1h630.6V1325.5z"
+                  />
+                </g>
+                <g id="Layer_3" class="st0">
+                  <path
+                    class="st1"
+                    d="M628.8,6H44.4C22.7,6,5,23.6,5,45.4v1336.2c0,21.8,17.6,39.4,39.4,39.4h584.3c21.8,0,39.4-17.6,39.4-39.4V45.4
+                                C668.2,23.6,650.5,6,628.8,6z M578.2,905.1c-34,0-61.6-27.6-61.6-61.6s27.6-61.6,61.6-61.6s61.6,27.6,61.6,61.6
+                                S612.3,905.1,578.2,905.1z"
+                  />
+                </g>
+                <g id="Layer_4" class="st0">
+                  <path
+                    class="st1"
+                    d="M628.8,6H44.4C22.7,6,5,23.6,5,45.4v1336.2c0,21.8,17.6,39.4,39.4,39.4h584.3c21.8,0,39.4-17.6,39.4-39.4V45.4
+                                C668.2,23.6,650.5,6,628.8,6z M415.6,740.4c-36.8,0-66.7-29.9-66.7-66.7c0-36.8,29.9-66.7,66.7-66.7c36.8,0,66.7,29.9,66.7,66.7
+                                C482.3,710.5,452.4,740.4,415.6,740.4z"
+                  />
+                </g>
+                <g id="Layer_5" class="st0">
+                  <path
+                    class="st1"
+                    d="M628.8,6H44.4C22.7,6,5,23.6,5,45.4v1336.2c0,21.8,17.6,39.4,39.4,39.4h584.3c21.8,0,39.4-17.6,39.4-39.4V45.4
+                                C668.2,23.6,650.5,6,628.8,6z M578.4,298.5c-34.3,0-62.1-27.8-62.1-62.1c0-34.3,27.8-62.1,62.1-62.1c34.3,0,62.1,27.8,62.1,62.1
+                                C640.5,270.7,612.7,298.5,578.4,298.5z"
+                  />
+                </g>
+                <g id="Layer_6" class="st0">
+                  <path
+                    class="st1"
+                    d="M628.8,6H44.4C22.7,6,5,23.6,5,45.4v1336.2c0,21.8,17.6,39.4,39.4,39.4h584.3c21.8,0,39.4-17.6,39.4-39.4V45.4
+                                C668.2,23.6,650.5,6,628.8,6z M553,295.5c0,21.3-17.4,38.7-38.7,38.7H331.4c-21.3,0-38.7-17.4-38.7-38.7v-9.1
+                                c0-21.3,17.4-38.7,38.7-38.7h182.9c21.3,0,38.7,17.4,38.7,38.7V295.5z"
+                  />
+                </g>
+                <g id="Layer_7">
+                  <path
+                    class="st2"
+                    d="M628.8,6H44.4C22.7,6,5,23.6,5,45.4v1336.2c0,21.8,17.6,39.4,39.4,39.4h584.3c21.8,0,39.4-17.6,39.4-39.4V45.4
+                                C668.2,23.6,650.5,6,628.8,6z M122.1,354.3c0,6.6-5.4,12-12,12H35.2c-6.6,0-12-5.4-12-12V172.6c0-6.6,5.4-12,12-12h74.9
+                                c6.6,0,12,5.4,12,12V354.3z"
+                  />
+                </g>
+                <g id="Layer_1" class="st0">
+                  <image style="overflow: visible; opacity: 0.48" width="680" height="1430" xlink:href="../../../Users/erickson/Documents/smerickson7.github.io/img/portfolio/strava/Map-speed.png"></image>
+                  <path
+                    class="st2"
+                    d="M628.8,1420.9H44.4c-21.8,0-39.4-17.6-39.4-39.4V45.4C5,23.6,22.7,6,44.4,6h584.3c21.8,0,39.4,17.6,39.4,39.4
+                                    v1336.2C668.2,1403.3,650.5,1420.9,628.8,1420.9z"
+                  />
+
+                  <image style="display: inline; overflow: visible; opacity: 0.52" width="1508" height="3198" xlink:href="../../../Users/erickson/Documents/smerickson7.github.io/img/portfolio/strava/new/redesign-map-metric.png" transform="matrix(0.4472 0 0 0.4472 2.7368 0)"></image>
+                </g>
+              </svg>
+            </div>
+            <!-- Compass -->
+            <div id="point2" class="gray-overlay">
+              <?xml
+                        version="1.0" encoding="utf-8"?>
+              <!-- Generator: Adobe Illustrator 27.2.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)-->
+              <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 680 1430" style="enable-background: new 0 0 680 1430" xml:space="preserve">
+                <style type="text/css">
+                  .st0 {
+                    display: none;
+                  }
+
+                  .st1 {
+                    display: inline;
+                    fill-opacity: 0.7;
+                  }
+
+                  .st2 {
+                    fill-opacity: 0.7;
+                  }
+                </style>
+                <g id="Layer_2" class="st0">
+                  <path
+                    class="st1"
+                    d="M632.2,6H47.8C26.1,6,8.4,23.6,8.4,45.4v1336.2c0,21.8,17.6,39.4,39.4,39.4h584.3c21.8,0,39.4-17.6,39.4-39.4
+                                V45.4C671.6,23.6,653.9,6,632.2,6z M655.3,1325.5H24.7V957.1h630.6V1325.5z"
+                  />
+                </g>
+                <g id="Layer_3" class="st0">
+                  <path
+                    class="st1"
+                    d="M628.8,6H44.4C22.7,6,5,23.6,5,45.4v1336.2c0,21.8,17.6,39.4,39.4,39.4h584.3c21.8,0,39.4-17.6,39.4-39.4V45.4
+                                C668.2,23.6,650.5,6,628.8,6z M578.2,905.1c-34,0-61.6-27.6-61.6-61.6s27.6-61.6,61.6-61.6s61.6,27.6,61.6,61.6
+                                S612.3,905.1,578.2,905.1z"
+                  />
+                </g>
+                <g id="Layer_4" class="st0">
+                  <path
+                    class="st1"
+                    d="M628.8,6H44.4C22.7,6,5,23.6,5,45.4v1336.2c0,21.8,17.6,39.4,39.4,39.4h584.3c21.8,0,39.4-17.6,39.4-39.4V45.4
+                                C668.2,23.6,650.5,6,628.8,6z M415.6,740.4c-36.8,0-66.7-29.9-66.7-66.7c0-36.8,29.9-66.7,66.7-66.7c36.8,0,66.7,29.9,66.7,66.7
+                                C482.3,710.5,452.4,740.4,415.6,740.4z"
+                  />
+                </g>
+                <g id="Layer_5">
+                  <path
+                    class="st2"
+                    d="M628.8,6H44.4C22.7,6,5,23.6,5,45.4v1336.2c0,21.8,17.6,39.4,39.4,39.4h584.3c21.8,0,39.4-17.6,39.4-39.4V45.4
+                                C668.2,23.6,650.5,6,628.8,6z M579.5,288c-34.8,0-63.1-28.2-63.1-63.1s28.2-63.1,63.1-63.1s63.1,28.2,63.1,63.1
+                                S614.4,288,579.5,288z"
+                  />
+                </g>
+                <g id="Layer_6" class="st0">
+                  <path
+                    class="st1"
+                    d="M628.8,6H44.4C22.7,6,5,23.6,5,45.4v1336.2c0,21.8,17.6,39.4,39.4,39.4h584.3c21.8,0,39.4-17.6,39.4-39.4V45.4
+                                C668.2,23.6,650.5,6,628.8,6z M448.4,282.7c0,6.6-5.4,12-12,12H227.3c-6.6,0-12-5.4-12-12v-65.8c0-6.6,5.4-12,12-12h209.1
+                                c6.6,0,12,5.4,12,12V282.7z"
+                  />
+                </g>
+                <g id="Layer_7" class="st0">
+                  <path
+                    class="st1"
+                    d="M628.8,6H44.4C22.7,6,5,23.6,5,45.4v1336.2c0,21.8,17.6,39.4,39.4,39.4h584.3c21.8,0,39.4-17.6,39.4-39.4V45.4
+                                C668.2,23.6,650.5,6,628.8,6z M122.1,354.3c0,6.6-5.4,12-12,12H35.2c-6.6,0-12-5.4-12-12V172.6c0-6.6,5.4-12,12-12h74.9
+                                c6.6,0,12,5.4,12,12V354.3z"
+                  />
+                </g>
+                <g id="Layer_1" class="st0">
+                  <image style="overflow: visible; opacity: 0.48" width="680" height="1430" xlink:href="../../../Users/erickson/Documents/smerickson7.github.io/img/portfolio/strava/Map-speed.png"></image>
+                  <path
+                    class="st2"
+                    d="M628.8,1420.9H44.4c-21.8,0-39.4-17.6-39.4-39.4V45.4C5,23.6,22.7,6,44.4,6h584.3c21.8,0,39.4,17.6,39.4,39.4
+                                    v1336.2C668.2,1403.3,650.5,1420.9,628.8,1420.9z"
+                  />
+
+                  <image style="display: inline; overflow: visible; opacity: 0.52" width="1508" height="3198" xlink:href="../../../Users/erickson/Documents/smerickson7.github.io/img/portfolio/strava/new/redesign-map-metric.png" transform="matrix(0.4472 0 0 0.4472 2.7368 0)"></image>
+                </g>
+              </svg>
+            </div>
+            <!-- Checkpoint-->
+            <div id="point3" class="gray-overlay">
+              <?xml
+                        version="1.0" encoding="utf-8"?>
+              <!-- Generator: Adobe Illustrator 27.2.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)-->
+              <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 680 1430" style="enable-background: new 0 0 680 1430" xml:space="preserve">
+                <style type="text/css">
+                  .st0 {
+                    display: none;
+                  }
+
+                  .st1 {
+                    display: inline;
+                    fill-opacity: 0.7;
+                  }
+
+                  .st2 {
+                    fill-opacity: 0.7;
+                  }
+                </style>
+                <g id="Layer_2" class="st0">
+                  <path
+                    class="st1"
+                    d="M632.2,6H47.8C26.1,6,8.4,23.6,8.4,45.4v1336.2c0,21.8,17.6,39.4,39.4,39.4h584.3c21.8,0,39.4-17.6,39.4-39.4
+                                		V45.4C671.6,23.6,653.9,6,632.2,6z M655.3,1325.5H24.7V957.1h630.6V1325.5z"
+                  />
+                </g>
+                <g id="Layer_3" class="st0">
+                  <path
+                    class="st1"
+                    d="M628.8,6H44.4C22.7,6,5,23.6,5,45.4v1336.2c0,21.8,17.6,39.4,39.4,39.4h584.3c21.8,0,39.4-17.6,39.4-39.4V45.4
+                                		C668.2,23.6,650.5,6,628.8,6z M578.2,905.1c-34,0-61.6-27.6-61.6-61.6s27.6-61.6,61.6-61.6s61.6,27.6,61.6,61.6
+                                		S612.3,905.1,578.2,905.1z"
+                  />
+                </g>
+                <g id="Layer_4" class="st0">
+                  <path
+                    class="st1"
+                    d="M628.8,6H44.4C22.7,6,5,23.6,5,45.4v1336.2c0,21.8,17.6,39.4,39.4,39.4h584.3c21.8,0,39.4-17.6,39.4-39.4V45.4
+                                		C668.2,23.6,650.5,6,628.8,6z M415.6,740.4c-36.8,0-66.7-29.9-66.7-66.7c0-36.8,29.9-66.7,66.7-66.7c36.8,0,66.7,29.9,66.7,66.7
+                                		C482.3,710.5,452.4,740.4,415.6,740.4z"
+                  />
+                </g>
+                <g id="Layer_5" class="st0">
+                  <path
+                    class="st1"
+                    d="M628.8,6H44.4C22.7,6,5,23.6,5,45.4v1336.2c0,21.8,17.6,39.4,39.4,39.4h584.3c21.8,0,39.4-17.6,39.4-39.4V45.4
+                                		C668.2,23.6,650.5,6,628.8,6z M578.4,298.5c-34.3,0-62.1-27.8-62.1-62.1c0-34.3,27.8-62.1,62.1-62.1c34.3,0,62.1,27.8,62.1,62.1
+                                		C640.5,270.7,612.7,298.5,578.4,298.5z"
+                  />
+                </g>
+                <g id="Layer_6">
+                  <path
+                    class="st2"
+                    d="M628.8,6H44.4C22.7,6,5,23.6,5,45.4v1336.2c0,21.8,17.6,39.4,39.4,39.4h584.3c21.8,0,39.4-17.6,39.4-39.4V45.4
+                                		C668.2,23.6,650.5,6,628.8,6z M448.4,282.7c0,6.6-5.4,12-12,12H227.3c-6.6,0-12-5.4-12-12v-65.8c0-6.6,5.4-12,12-12h209.1
+                                		c6.6,0,12,5.4,12,12V282.7z"
+                  />
+                </g>
+                <g id="Layer_7" class="st0">
+                  <path
+                    class="st1"
+                    d="M628.8,6H44.4C22.7,6,5,23.6,5,45.4v1336.2c0,21.8,17.6,39.4,39.4,39.4h584.3c21.8,0,39.4-17.6,39.4-39.4V45.4
+                                		C668.2,23.6,650.5,6,628.8,6z M122.1,354.3c0,6.6-5.4,12-12,12H35.2c-6.6,0-12-5.4-12-12V172.6c0-6.6,5.4-12,12-12h74.9
+                                		c6.6,0,12,5.4,12,12V354.3z"
+                  />
+                </g>
+                <g id="Layer_1" class="st0">
+                  <image style="overflow: visible; opacity: 0.48" width="680" height="1430" xlink:href="../../../Users/erickson/Documents/smerickson7.github.io/img/portfolio/strava/Map-speed.png"></image>
+                  <path
+                    class="st2"
+                    d="M628.8,1420.9H44.4c-21.8,0-39.4-17.6-39.4-39.4V45.4C5,23.6,22.7,6,44.4,6h584.3c21.8,0,39.4,17.6,39.4,39.4
+                                    		v1336.2C668.2,1403.3,650.5,1420.9,628.8,1420.9z"
+                  />
+
+                  <image style="display: inline; overflow: visible; opacity: 0.52" width="1508" height="3198" xlink:href="../../../Users/erickson/Documents/smerickson7.github.io/img/portfolio/strava/new/redesign-map-metric.png" transform="matrix(0.4472 0 0 0.4472 2.7368 0)"></image>
+                </g>
+              </svg>
+            </div>
+            <!-- Route Color -->
+            <div id="point4" class="gray-overlay">
+              <?xml
+                        version="1.0" encoding="utf-8"?>
+              <!-- Generator: Adobe Illustrator 27.2.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)-->
+              <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 680 1430" style="enable-background: new 0 0 680 1430" xml:space="preserve">
+                <style type="text/css">
+                  .st0 {
+                    display: none;
+                  }
+
+                  .st1 {
+                    display: inline;
+                    fill-opacity: 0.7;
+                  }
+
+                  .st2 {
+                    fill-opacity: 0.7;
+                  }
+                </style>
+                <g id="Layer_2" class="st0">
+                  <path
+                    class="st1"
+                    d="M632.2,6H47.8C26.1,6,8.4,23.6,8.4,45.4v1336.2c0,21.8,17.6,39.4,39.4,39.4h584.3c21.8,0,39.4-17.6,39.4-39.4
+                                V45.4C671.6,23.6,653.9,6,632.2,6z M655.3,1325.5H24.7V957.1h630.6V1325.5z"
+                  />
+                </g>
+                <g id="Layer_3" class="st0">
+                  <path
+                    class="st1"
+                    d="M628.8,6H44.4C22.7,6,5,23.6,5,45.4v1336.2c0,21.8,17.6,39.4,39.4,39.4h584.3c21.8,0,39.4-17.6,39.4-39.4V45.4
+                                C668.2,23.6,650.5,6,628.8,6z M578.2,905.1c-34,0-61.6-27.6-61.6-61.6s27.6-61.6,61.6-61.6s61.6,27.6,61.6,61.6
+                                S612.3,905.1,578.2,905.1z"
+                  />
+                </g>
+                <g id="Layer_4">
+                  <path
+                    class="st2"
+                    d="M628.8,6H44.4C22.7,6,5,23.6,5,45.4v1336.2c0,21.8,17.6,39.4,39.4,39.4h584.3c21.8,0,39.4-17.6,39.4-39.4V45.4
+                                C668.2,23.6,650.5,6,628.8,6z M441.4,907.7l2.6,29.4h-35.1l-2.2-25.1c-29.4-4.8-51.9-30.3-51.9-61.1c0-22.5,12-42.2,29.9-53.1
+                                l-1-3.9L242.5,329l-21-179.4h35.2l20.1,172.2l140.7,462.8l0.1,0.5l0.9,3.8c33.4,1,60.1,28.3,60.1,61.9
+                                C478.7,876.3,463.4,898.1,441.4,907.7z"
+                  />
+                </g>
+                <g id="Layer_5" class="st0">
+                  <path
+                    class="st1"
+                    d="M628.8,6H44.4C22.7,6,5,23.6,5,45.4v1336.2c0,21.8,17.6,39.4,39.4,39.4h584.3c21.8,0,39.4-17.6,39.4-39.4V45.4
+                                C668.2,23.6,650.5,6,628.8,6z M579.5,288c-34.8,0-63.1-28.2-63.1-63.1s28.2-63.1,63.1-63.1s63.1,28.2,63.1,63.1
+                                S614.4,288,579.5,288z"
+                  />
+                </g>
+                <g id="Layer_6" class="st0">
+                  <path
+                    class="st1"
+                    d="M628.8,6H44.4C22.7,6,5,23.6,5,45.4v1336.2c0,21.8,17.6,39.4,39.4,39.4h584.3c21.8,0,39.4-17.6,39.4-39.4V45.4
+                                C668.2,23.6,650.5,6,628.8,6z M448.4,282.7c0,6.6-5.4,12-12,12H227.3c-6.6,0-12-5.4-12-12v-65.8c0-6.6,5.4-12,12-12h209.1
+                                c6.6,0,12,5.4,12,12V282.7z"
+                  />
+                </g>
+                <g id="Layer_7" class="st0">
+                  <path
+                    class="st1"
+                    d="M628.8,6H44.4C22.7,6,5,23.6,5,45.4v1336.2c0,21.8,17.6,39.4,39.4,39.4h584.3c21.8,0,39.4-17.6,39.4-39.4V45.4
+                                C668.2,23.6,650.5,6,628.8,6z M122.1,354.3c0,6.6-5.4,12-12,12H35.2c-6.6,0-12-5.4-12-12V172.6c0-6.6,5.4-12,12-12h74.9
+                                c6.6,0,12,5.4,12,12V354.3z"
+                  />
+                </g>
+                <g id="Layer_1" class="st0">
+                  <image style="overflow: visible; opacity: 0.48" width="680" height="1430" xlink:href="../../../Users/erickson/Documents/smerickson7.github.io/img/portfolio/strava/Map-speed.png"></image>
+                  <path
+                    class="st2"
+                    d="M628.8,1420.9H44.4c-21.8,0-39.4-17.6-39.4-39.4V45.4C5,23.6,22.7,6,44.4,6h584.3c21.8,0,39.4,17.6,39.4,39.4
+                                    v1336.2C668.2,1403.3,650.5,1420.9,628.8,1420.9z"
+                  />
+
+                  <image style="display: inline; overflow: visible; opacity: 0.52" width="1508" height="3198" xlink:href="../../../Users/erickson/Documents/smerickson7.github.io/img/portfolio/strava/new/redesign-map-metric.png" transform="matrix(0.4472 0 0 0.4472 2.7368 0)"></image>
+                </g>
+              </svg>
+            </div>
+            <!-- Location -->
+            <div id="point5" class="gray-overlay">
+              <?xml
+                        version="1.0" encoding="utf-8"?>
+              <!-- Generator: Adobe Illustrator 27.2.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)-->
+              <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 680 1430" style="enable-background: new 0 0 680 1430" xml:space="preserve">
+                <style type="text/css">
+                  .st0 {
+                    display: none;
+                  }
+
+                  .st1 {
+                    display: inline;
+                    fill-opacity: 0.7;
+                  }
+
+                  .st2 {
+                    fill-opacity: 0.7;
+                  }
+                </style>
+                <g id="Layer_2" class="st0">
+                  <path
+                    class="st1"
+                    d="M632.2,6H47.8C26.1,6,8.4,23.6,8.4,45.4v1336.2c0,21.8,17.6,39.4,39.4,39.4h584.3c21.8,0,39.4-17.6,39.4-39.4
+                                V45.4C671.6,23.6,653.9,6,632.2,6z M655.3,1325.5H24.7V957.1h630.6V1325.5z"
+                  />
+                </g>
+                <g id="Layer_3">
+                  <path
+                    class="st2"
+                    d="M628.8,6H44.4C22.7,6,5,23.6,5,45.4v1336.2c0,21.8,17.6,39.4,39.4,39.4h584.3c21.8,0,39.4-17.6,39.4-39.4V45.4
+                                C668.2,23.6,650.5,6,628.8,6z M579.2,932.4c-32.6,0-59.1-26.5-59.1-59.1c0-32.6,26.5-59.1,59.1-59.1s59.1,26.5,59.1,59.1
+                                C638.4,905.9,611.9,932.4,579.2,932.4z"
+                  />
+                </g>
+                <g id="Layer_4" class="st0">
+                  <path
+                    class="st1"
+                    d="M628.8,6H44.4C22.7,6,5,23.6,5,45.4v1336.2c0,21.8,17.6,39.4,39.4,39.4h584.3c21.8,0,39.4-17.6,39.4-39.4V45.4
+                                C668.2,23.6,650.5,6,628.8,6z M441.4,907.7l2.6,29.4h-35.1l-2.2-25.1c-29.4-4.8-51.9-30.3-51.9-61.1c0-22.5,12-42.2,29.9-53.1
+                                l-1-3.9L242.5,329l-21-179.4h35.2l20.1,172.2l140.7,462.8l0.1,0.5l0.9,3.8c33.4,1,60.1,28.3,60.1,61.9
+                                C478.7,876.3,463.4,898.1,441.4,907.7z"
+                  />
+                </g>
+                <g id="Layer_5" class="st0">
+                  <path
+                    class="st1"
+                    d="M628.8,6H44.4C22.7,6,5,23.6,5,45.4v1336.2c0,21.8,17.6,39.4,39.4,39.4h584.3c21.8,0,39.4-17.6,39.4-39.4V45.4
+                                C668.2,23.6,650.5,6,628.8,6z M579.5,288c-34.8,0-63.1-28.2-63.1-63.1s28.2-63.1,63.1-63.1s63.1,28.2,63.1,63.1
+                                S614.4,288,579.5,288z"
+                  />
+                </g>
+                <g id="Layer_6" class="st0">
+                  <path
+                    class="st1"
+                    d="M628.8,6H44.4C22.7,6,5,23.6,5,45.4v1336.2c0,21.8,17.6,39.4,39.4,39.4h584.3c21.8,0,39.4-17.6,39.4-39.4V45.4
+                                C668.2,23.6,650.5,6,628.8,6z M448.4,282.7c0,6.6-5.4,12-12,12H227.3c-6.6,0-12-5.4-12-12v-65.8c0-6.6,5.4-12,12-12h209.1
+                                c6.6,0,12,5.4,12,12V282.7z"
+                  />
+                </g>
+                <g id="Layer_7" class="st0">
+                  <path
+                    class="st1"
+                    d="M628.8,6H44.4C22.7,6,5,23.6,5,45.4v1336.2c0,21.8,17.6,39.4,39.4,39.4h584.3c21.8,0,39.4-17.6,39.4-39.4V45.4
+                                C668.2,23.6,650.5,6,628.8,6z M122.1,354.3c0,6.6-5.4,12-12,12H35.2c-6.6,0-12-5.4-12-12V172.6c0-6.6,5.4-12,12-12h74.9
+                                c6.6,0,12,5.4,12,12V354.3z"
+                  />
+                </g>
+                <g id="Layer_1" class="st0">
+                  <image style="overflow: visible; opacity: 0.48" width="680" height="1430" xlink:href="../../../Users/erickson/Documents/smerickson7.github.io/img/portfolio/strava/Map-speed.png"></image>
+                  <path
+                    class="st2"
+                    d="M628.8,1420.9H44.4c-21.8,0-39.4-17.6-39.4-39.4V45.4C5,23.6,22.7,6,44.4,6h584.3c21.8,0,39.4,17.6,39.4,39.4
+                                    v1336.2C668.2,1403.3,650.5,1420.9,628.8,1420.9z"
+                  />
+
+                  <image style="display: inline; overflow: visible; opacity: 0.52" width="1508" height="3198" xlink:href="../../../Users/erickson/Documents/smerickson7.github.io/img/portfolio/strava/new/redesign-map-metric.png" transform="matrix(0.4472 0 0 0.4472 2.7368 0)"></image>
+                </g>
+              </svg>
+            </div>
+            <!-- Ride metrics -->
+            <div id="point6" class="gray-overlay">
+              <?xml
+                        version="1.0" encoding="utf-8"?>
+              <!-- Generator: Adobe Illustrator 27.2.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)-->
+              <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 680 1430" style="enable-background: new 0 0 680 1430" xml:space="preserve">
+                <style type="text/css">
+                  .st0 {
+                    display: none;
+                  }
+
+                  .st1 {
+                    fill-opacity: 0.7;
+                  }
+
+                  .st2 {
+                    display: inline;
+                  }
+
+                  .st3 {
+                    display: inline;
+                    fill-opacity: 0.7;
+                  }
+                </style>
+                <g id="Layer_2" class="st0">
+                  <path class="st1" d="M23.2,934.8H653h18.6V45.4c0-21.8-17.6-39.4-39.4-39.4H47.8C26.1,6,8.4,23.6,8.4,45.4v889.4H23.2z" />
+                  <rect class="st2" width="680" height="934.8" />
+                </g>
+                <g id="Layer_3" class="st0">
+                  <path
+                    class="st3"
+                    d="M628.8,6H44.4C22.7,6,5,23.6,5,45.4v1336.2c0,21.8,17.6,39.4,39.4,39.4h584.3c21.8,0,39.4-17.6,39.4-39.4V45.4
+                                C668.2,23.6,650.5,6,628.8,6z M579.2,932.4c-32.6,0-59.1-26.5-59.1-59.1c0-32.6,26.5-59.1,59.1-59.1s59.1,26.5,59.1,59.1
+                                C638.4,905.9,611.9,932.4,579.2,932.4z"
+                  />
+                </g>
+                <g id="Layer_3_copy">
+                  <path
+                    class="st1"
+                    d="M628.8,6H44.4C22.7,6,5,23.6,5,45.4v1336.2c0,21.8,17.6,39.4,39.4,39.4h584.3c21.8,0,39.4-17.6,39.4-39.4V45.4
+                                C668.2,23.6,650.5,6,628.8,6z M655.3,1333.2c0,6.6-5.4,12-12,12H30.7c-6.6,0-12-5.4-12-12V938.8c0-6.6,5.4-12,12-12h612.6
+                                c6.6,0,12,5.4,12,12V1333.2z"
+                  />
+                </g>
+                <g id="Layer_4" class="st0">
+                  <path
+                    class="st3"
+                    d="M628.8,6H44.4C22.7,6,5,23.6,5,45.4v1336.2c0,21.8,17.6,39.4,39.4,39.4h584.3c21.8,0,39.4-17.6,39.4-39.4V45.4
+                                C668.2,23.6,650.5,6,628.8,6z M441.4,907.7l2.6,29.4h-35.1l-2.2-25.1c-29.4-4.8-51.9-30.3-51.9-61.1c0-22.5,12-42.2,29.9-53.1
+                                l-1-3.9L242.5,329l-21-179.4h35.2l20.1,172.2l140.7,462.8l0.1,0.5l0.9,3.8c33.4,1,60.1,28.3,60.1,61.9
+                                C478.7,876.3,463.4,898.1,441.4,907.7z"
+                  />
+                </g>
+                <g id="Layer_5" class="st0">
+                  <path
+                    class="st3"
+                    d="M628.8,6H44.4C22.7,6,5,23.6,5,45.4v1336.2c0,21.8,17.6,39.4,39.4,39.4h584.3c21.8,0,39.4-17.6,39.4-39.4V45.4
+                                C668.2,23.6,650.5,6,628.8,6z M579.5,288c-34.8,0-63.1-28.2-63.1-63.1s28.2-63.1,63.1-63.1s63.1,28.2,63.1,63.1
+                                S614.4,288,579.5,288z"
+                  />
+                </g>
+                <g id="Layer_6" class="st0">
+                  <path
+                    class="st3"
+                    d="M628.8,6H44.4C22.7,6,5,23.6,5,45.4v1336.2c0,21.8,17.6,39.4,39.4,39.4h584.3c21.8,0,39.4-17.6,39.4-39.4V45.4
+                                C668.2,23.6,650.5,6,628.8,6z M448.4,282.7c0,6.6-5.4,12-12,12H227.3c-6.6,0-12-5.4-12-12v-65.8c0-6.6,5.4-12,12-12h209.1
+                                c6.6,0,12,5.4,12,12V282.7z"
+                  />
+                </g>
+                <g id="Layer_7" class="st0">
+                  <path
+                    class="st3"
+                    d="M628.8,6H44.4C22.7,6,5,23.6,5,45.4v1336.2c0,21.8,17.6,39.4,39.4,39.4h584.3c21.8,0,39.4-17.6,39.4-39.4V45.4
+                                C668.2,23.6,650.5,6,628.8,6z M122.1,354.3c0,6.6-5.4,12-12,12H35.2c-6.6,0-12-5.4-12-12V172.6c0-6.6,5.4-12,12-12h74.9
+                                c6.6,0,12,5.4,12,12V354.3z"
+                  />
+                </g>
+                <g id="Layer_1" class="st0">
+                  <image style="overflow: visible; opacity: 0.48" width="680" height="1430" xlink:href="../../../Users/erickson/Documents/smerickson7.github.io/img/portfolio/strava/Map-speed.png"></image>
+                  <path
+                    class="st1"
+                    d="M628.8,1420.9H44.4c-21.8,0-39.4-17.6-39.4-39.4V45.4C5,23.6,22.7,6,44.4,6h584.3c21.8,0,39.4,17.6,39.4,39.4
+                                    v1336.2C668.2,1403.3,650.5,1420.9,628.8,1420.9z"
+                  />
+
+                  <image style="display: inline; overflow: visible; opacity: 0.52" width="1508" height="3198" xlink:href="../../../Users/erickson/Documents/smerickson7.github.io/img/portfolio/strava/new/redesign-map-metric.png" transform="matrix(0.4472 0 0 0.4472 2.7368 0)"></image>
+                </g>
+              </svg>
+            </div>
+            <div class="position-relative h-100">
+              <div class="position-">
+                <a id="toggleMapRedesign" onclick="toggleDarkModeMap();return false;" title="Dark mode" class="dark-mode-toggle my-2" aria-current="page"><i id="mapDarkModeToggle" class="fas fa-toggle-on"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-1 mb-3">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12 mt-2 m3-5">
+            <h4 class="strava-header mb-3">Activity redesign comparisons</h4>
+            <div id="notAvailable">These comparisons are best viewed on a larger screen size.</div>
+            <div id="carouselExampleIndicators" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="5000">
+              <div class="carousel-inner">
+                <div class="carousel-item active p-3 bg-light">
+                  <div class="row text-center">
+                    <div class="col-lg-4">
+                      <div class="strava-comparison-image">
+                        <img src="img/portfolio/strava/new/current-map.png" style="max-width: 220px" alt="" data-bs-toggle="modal" data-bs-target="#exampleModal" class="thumb strava-comparison-image" />
+                        <div id="point-old" class="hover-image-spot-old"></div>
+                        <div id="point-old-1" class="hover-image-spot-old"></div>
+                      </div>
+                    </div>
+                    <div class="col-lg-4">
+                      <h4 class="strava-header mb-3">Map view</h4>
+                      <h5 class="mb-3 text-muted">Changed</h5>
+                      <div class="mb-3">
+                        <div
+                          onmouseover="highlightMapOn('point-old', '179px','300px','35px','35px', '30px'),highlightMapOn('point-old-1', '179px','348px','35px','35px', '30px'), highlightMapOn('point-new', '7px','45px','90px','40px', '30px')"
+                          onmouseout="highlightMapOff('point-old'), highlightMapOff('point-old-1'), highlightMapOff('point-new')"
+                          class="hover-image"
+                        >
+                          <strong class="comparison-list py-3">Secondary view options</strong>
+                        </div>
+                      </div>
+                      <div class="mb-3">
+                        <div onmouseover="highlightMapOn('point-old', '179px','324px','35px','35px', '30px'), highlightMapOn('point-new', '160px','314px','55px','55px', '30px')" onmouseout="highlightMapOff('point-old'), highlightMapOff('point-new')" class="hover-image">
+                          <strong class="comparison-list py-3">Location icon</strong>
+                        </div>
+                      </div>
+                      <div class="mb-3">
+                        <div onmouseover="highlightMapOn('point-old', '151px','385px','40px','40px', '30px'), highlightMapOn('point-new', '149px','378px','55px','55px', '30px')" onmouseout="highlightMapOff('point-old'), highlightMapOff('point-new')" class="hover-image">
+                          <strong class="comparison-list py-3">"Switch to metrics view" icon</strong>
+                        </div>
+                      </div>
+                      <div class="mb-3">
+                        <div onmouseover="highlightMapOn('point-old', '85px','205px','50px','50px', '30px'), highlightMapOn('point-new', '108px','260px','55px','55px', '30px')" onmouseout="highlightMapOff('point-old'), highlightMapOff('point-new')" class="hover-image">
+                          <strong class="comparison-list py-3">Route color</strong>
+                        </div>
+                      </div>
+                      <h5 class="mb-3 text-muted">New</h5>
+                      <div class="mb-3">
+                        <div onmouseover="highlightMapOn('point-new', '160px','49px','55px','55px', '30px')" onmouseout="highlightMapOff('point-new')" class="hover-image">
+                          <strong class="comparison-list py-3">Auto-rotate icon</strong>
+                        </div>
+                      </div>
+                      <div class="mb-3">
+                        <div onmouseover="highlightMapOn('point-new', '8px','375px','55px','80px', '20px')" onmouseout="highlightMapOff('point-new')" class="hover-image">
+                          <strong class="comparison-list py-3">Distance metrics</strong>
+                        </div>
+                      </div>
+                      <div class="mb-3">
+                        <div onmouseover="highlightMapOn('point-new', '80px','140px','70px','110px', '20px')" onmouseout="highlightMapOff('point-new')" class="hover-image">
+                          <strong class="comparison-list py-3">Checkpoints</strong>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-lg-4">
+                      <div class="strava-comparison-image">
+                        <img src="img/portfolio/strava/new/redesign-map-remaining.png" style="max-width: 220px" alt="" data-bs-toggle="modal" data-bs-target="#exampleModal" class="thumb strava-comparison-image" />
+                        <div id="point-new" class="hover-image-spot"></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="carousel-item p-3 bg-light">
+                  <div class="row text-center">
+                    <div class="col-lg-4 col-md-5">
+                      <div class="strava-comparison-image">
+                        <img src="img/portfolio/strava/new/" style="max-width: 220px" alt="" data-bs-toggle="modal" data-bs-target="#exampleModal" class="thumb strava-comparison-image" />
+                        <div id="point-old-2" class="hover-image-spot-old"></div>
+                      </div>
+                    </div>
+                    <div class="col-lg-4 col-md-2">
+                      <h4 class="strava-header mb-3">Map and metrics view</h4>
+                      <h5 class="mb-3 text-muted">New</h5>
+                      <p class="text-start fs-7">Strava currently doesn't have a map and metrics view. The changes are based on the paused view that shows the map and metrics of the ride.</p>
+                      <div class="mb-3">
+                        <div onmouseover="highlightMapOn('point-old-2', '0px','250px','200px','220px', '30px'), highlightMapOn('point-new-2', '0px','250px','200px','220px', '30px')" onmouseout="highlightMapOff('point-old-2'), highlightMapOff('point-new-2')" class="hover-image">
+                          <strong class="comparison-list py-3">New metrics</strong>
+                          <p class="text-start fs-7">In this new view, current speed is added next to average speed. For rides that use a predefined route, distance traveled and overall distance is displayed. Time is moved to the lower left corner.</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-lg-4 col-md-5">
+                      <div class="strava-comparison-image">
+                        <img src="img/portfolio/strava/new/redesign-dark-mode-map-metric.png" style="max-width: 220px" alt="" data-bs-toggle="modal" data-bs-target="#exampleModal" class="thumb" />
+                        <div id="point-new-2" class="hover-image-spot"></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="carousel-item p-3 bg-light">
+                  <div class="row text-center">
+                    <div class="col-lg-4 col-md-5">
+                      <div class="strava-comparison-image">
+                        <img src="img/portfolio/strava/new/current-speed.png" style="max-width: 220px" alt="" data-bs-toggle="modal" data-bs-target="#exampleModal" class="thumb strava-comparison-image" />
+                        <div id="point-old-3" class="hover-image-spot-old"></div>
+                      </div>
+                    </div>
+                    <div class="col-lg-4 col-md-2">
+                      <h4 class="strava-header mb-3">Metrics view</h4>
+                      <h5 class="mb-3 text-muted">Changed</h5>
+                      <p class="text-start fs-7">Strava currently doesn't have a map and metrics view. The changes are based on the paused view that shows the map and metrics of the ride.</p>
+                      <div class="mb-3">
+                        <div onmouseover="highlightMapOn('point-old-3', '0px','280px','80px','220px', '30px'), highlightMapOn('point-new-3', '0px','250px','120px','220px', '30px')" onmouseout="highlightMapOff('point-old-3'), highlightMapOff('point-new-3')" class="hover-image">
+                          <strong class="comparison-list py-3">Additional distance metric</strong>
+                          <p class="text-start fs-7">For rides that use a predefined route, distance traveled and overall distance is displayed.</p>
+                        </div>
+                        <div
+                          onmouseover="highlightMapOn('point-old-3','151px','385px','40px','40px', '30px'), highlightMapOn('point-new-3', '146px','376px','55px','55px', '30px')"
+                          onmouseout="highlightMapOff('point-old-3'),
+                                                                    highlightMapOff('point-new-3')"
+                          class="hover-image"
+                        >
+                          <strong class="comparison-list py-3">"Switch to map view" icon</strong>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-5">
+                      <div class="strava-comparison-image">
+                        <img src="img/portfolio/strava/new/redesign-map-metric.png" style="max-width: 220px" alt="" data-bs-toggle="modal" data-bs-target="#exampleModal" class="thumb" />
+                        <div id="point-new-3" class="hover-image-spot"></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="carousel-item p-3 bg-light">
+                  <div class="row text-center">
+                    <div class="col-lg-5">
+                      <div class="strava-comparison-image">
+                        <img src="img/portfolio/strava/new/current-post-top.png" style="max-width: 200px" alt="" data-bs-toggle="modal" data-bs-target="#exampleModal" class="thumb" />
+                        <div id="point-old-4" class="hover-image-spot-old"></div>
+                      </div>
+                      <div class="strava-comparison-image">
+                        <img src="img/portfolio/strava/new/current-post-bottom.png" style="max-width: 200px" alt="" data-bs-toggle="modal" data-bs-target="#exampleModal" class="thumb" />
+                        <div id="point-old-4a" class="hover-image-spot-old"></div>
+                      </div>
+                    </div>
+                    <div class="col-lg-4">
+                      <h4 class="strava-header mb-3">Post activity view</h4>
+                      <h5 class="mb-3 text-muted">Changed</h5>
+                      <p class="text-start fs-7">
+                        I condensesd the post activity view into one screen. I removed some redundant fields (type of activity and equipment) as these fields were used in the set up of the activity. Additionally, I brought in features (percieved exertion and correct distance) to this screen that
+                        were only available when editing the activity (and in the case of correct distance, only the web version).
+                      </p>
+                    </div>
+                    <div class="col-lg-3">
+                      <div class="strava-comparison-image">
+                        <img src="img/portfolio/strava/new/redesign-post.png" style="max-width: 200px" alt="" data-bs-toggle="modal" data-bs-target="#exampleModal" class="thumb" />
+                        <div id="point-new-4" class="hover-image-spot"></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+              </a>
+              <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-1">
+      <div class="container">
+        <div class="row">
+          <h4 class="strava-header">Dark mode</h4>
+          <div class="col-lg-12 mt-3 m3-5">
+            <p>Redesigns in dark mode</p>
+            <div class="flex-container">
+              <figure class="flex-figure-item">
+                <img src="img/portfolio/strava/Map-dark.png" alt="" data-bs-toggle="modal" data-bs-target="#exampleModal" class="thumb" />
+                <figcaption>Map view</figcaption>
+              </figure>
+              <figure class="flex-figure-item">
+                <img src="img\portfolio\strava\Map-speed-dark.png" alt="" data-bs-toggle="modal" data-bs-target="#exampleModal" class="thumb" />
+                <figcaption>Map with time, speed, and distance view<br /><span class="badge badge-strava">New</span></figcaption>
+              </figure>
+              <figure class="flex-figure-item">
+                <img src="img\portfolio\strava\Speed-dark.png" alt="" data-bs-toggle="modal" data-bs-target="#exampleModal" class="thumb" />
+                <figcaption>Time, speed, and distance view</figcaption>
+              </figure>
+              <figure class="flex-figure-item">
+                <img src="img\portfolio\strava\Post-Ride-dark.png" alt="" data-bs-toggle="modal" data-bs-target="#exampleModal" class="thumb" />
+                <figcaption>Post ride view</figcaption>
+              </figure>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Modal for my story getting into cycling -->
+    <div class="modal fade" id="cyclingStory" tabindex="-1" role="dialog" aria-labelledby="cyclingStory" aria-hidden="true">
+      <div class="modal-dialog modal-xl" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h6 class="mb-0 ms-3">My cycling story</h6>
+            <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <div class="container">
+              <div class="row">
+                <div class="col-lg-12">
+                  <p class="lead text-muted">
+                    I started cycling in the summer of 2018 after a couple of friends talked about their rides. For over 20 years I played soccer to keep the extra pounds off, but it was taking a toll on my body. My knees and lower back were sore and strained from playing on artifical turf. I was
+                    looking for a new, fun, and low impact activity. And if I could do it with my friends, even better. I didn't know much about cycling (I did know how to ride a bike), so through the advice of my close friends, I purchased my first road bike, acquire the right gear, and downloaded
+                    Strava.
+                  </p>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-lg-6">
+                  <img class="img-fluid" src="img/cycling-small.jpg" alt="Halfway through a 48 mile ride." />
+                </div>
+                <div class="col-lg-6">
+                  <div id="json">Loading stats...</div>
+                  <script>
+                    var id = "1HpMowcG-Ll-oQF_2U0mlNvRer2Pm9xnTF9w8Oo128us";
+                    var gid = "1222046636";
+                    var url = "https://docs.google.com/spreadsheets/d/" + id + "/gviz/tq?tqx=out:json&tq&gid=" + gid;
+                    fetch(url)
+                      .then((response) => response.text())
+                      .then((data) => (document.getElementById("json").innerHTML = myItems(data.substring(47).slice(0, -2))));
+
+                    function myItems(jsonString) {
+                      var json = JSON.parse(jsonString);
+                      var array = [];
+                      var table = '<table class="table table-sm table-striped mb-1 fs-7"><thead class="thead-dark"><tr><th colspan="2">Personal all-time metrics</th><tr></thead>';
+                      json.table.rows.forEach((row) => {
+                        table += "<tr>";
+                        row.c.forEach((cell) => {
+                          try {
+                            var value = cell.f ? cell.f : cell.v;
+                          } catch (e) {
+                            var value = "";
+                          }
+                          table += "<td>" + value + "</td>";
+                          array.push(value);
+                        });
+                        table += "</tr>";
+                      });
+                      table += "</table>";
+
+                      return table;
+                    }
+                  </script>
+                  <p style="font-size: 0.75rem !important" class="text-muted text-left mb-0 ms-1">
+                    As of
+                    <span id="table-date"></span>
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal for additional use cases for Strava -->
+    <div class="modal fade" id="useCaseModal" tabindex="-1" role="dialog" aria-labelledby="useCaseModal" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <p>Additional use cases Strava should consider</p>
+            <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <div class="container">
+              <div class="row">
+                <div class="col-lg-6">
+                  <img src="img/cycling-gloves.jpg" style="height: 200px" />
+                </div>
+                <div class="col-lg-6">
+                  <p>Full tip fingered gloves for cold weather riding makes tapping small icons and icons located on the edge of the display difficult.</p>
+                </div>
+              </div>
+              <div class="row">
+                <hr />
+                <div class="col-lg-6 text-center">
+                  <img src="img/phone-case.jpg" style="height: 200px" />
+                </div>
+                <div class="col-lg-6">
+                  <p>Phone mounts for bikes makes icons on the outer edge of the display difficult to interact with. This pouch mount makes the outer edge even more inaccessible.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Modal for images -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered modal-lg" style="height: 85%; max-width: 100%">
+        <div class="modal-body">
+          <div class="item row justify-content-center">
+            <img id="modalImage" class="img-fluid align-items-center" style="height: 90vh; width: auto !important" />
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      const exampleModalEl = document.getElementById("exampleModal");
+      exampleModalEl.addEventListener("show.bs.modal", function (event) {
+        document.getElementById("modalImage").src = event.relatedTarget.src;
+      });
+    </script>
+  </body>
+  <script src="js/front.js"></script>
+  <script src="vendor/jquery.cookie/jquery.cookie.js"></script>
+  <script src="vendor/owl.carousel/owl.carousel.min.js"></script>
+  <script src="vendor/waypoints/lib/jquery.waypoints.min.js"></script>
+  <script src="vendor/jquery.counterup/jquery.counterup.js"></script>
+  <script src="js/date-strava.js"></script>
+
+  <!-- FontAwesome CSS - loading as last, so it doesn't block rendering-->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous" />
+</html>

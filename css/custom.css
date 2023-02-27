@@ -2,6 +2,17 @@
 
 :root {
   --bs-strava: #fc5200;
+  --bs-strava-blue: #4b90e2;
+  --bs-strava-rust: #cc4200;
+  --bs-strava-icicle: #f0f0f5;
+}
+
+.strava-orange {
+  color: var(--bs-strava);
+}
+
+.pointer {
+  cursor: pointer !important;
 }
 
 .software-section img {
@@ -146,21 +157,45 @@ ul.content-list li::before {
   color: #fff;
   background-color: var(--bs-strava);
 }
+
+ul.case-study {
+  list-style-position: inside;
+}
+
 ul.case-study li::before {
   font-family: "Font Awesome 5 Free";
-  content: "\f0da";
+  content: "\f0c8";
   /* Add content: \2022 is the CSS Code/unicode for a bullet */
-  color: var(--bs-strava);
-  /* Change the color */
   font-weight: bold;
-  font-size: 1.15rem;
+  font-size: 1.2rem;
   /* If you want it to be bold */
   display: inline-block;
   /* Needed to add space between the bullet and the text */
-  width: 1rem;
+  width: 1.4rem;
   /* Also needed for space (tweak if needed) */
-  margin-left: -1rem;
+  margin-left: 0rem;
   /* Also needed for space (tweak if needed) */
+  padding-right: 1.4rem;
+}
+
+li.screens-bullet:before {
+  color: rgb(246, 210, 87);
+}
+
+li.button-bullet:before {
+  color: rgb(136, 177, 75);
+}
+
+li.route-bullet::before {
+  color: rgb(85, 135, 162);
+}
+
+li.rotate-bullet:before {
+  color: rgb(239, 206, 197);
+}
+
+ul.case-study {
+  padding-left: 0rem;
 }
 
 ul.case-study li {
@@ -179,6 +214,10 @@ ul.case-study li {
 .strava-header {
   color: var(--bs-strava);
   margin-bottom: 0px;
+}
+
+.strava-subheader {
+  color: var(--bs-strava-rust);
 }
 
 .flex-container {
@@ -214,14 +253,14 @@ figcaption {
   text-align: center;
 }
 
-#strava-interactive-image {
+#map-remaining {
   position: relative;
   width: 340px;
   height: 715px;
 }
 
 .hover-image:hover > strong {
-  color: var(--bs-strava) !important;
+  color: var(--bs-strava-blue) !important;
 }
 
 @keyframes pulse {
@@ -242,7 +281,7 @@ figcaption {
 }
 
 .hover-image-spot {
-  border: 4px solid var(--bs-teal);
+  border: 4px solid var(--bs-green);
   display: none;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
   -webkit-font-smoothing: antialiased;
@@ -251,12 +290,23 @@ figcaption {
   animation: pulse 0.85s ease-in-out infinite;
 }
 
-.hover-image-spot:hover {
+.hover-image-spot-old {
+  border: 4px solid var(--bs-red);
+  display: none;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  position: absolute;
+  animation: pulse 0.85s ease-in-out infinite;
+}
+
+.hover-image-spot:hover,
+.hover-image-spot-old:hover {
   opacity: 1 !important;
 }
 
-.test-hover:hover {
-  border: 4px solid var(--bs-teal) !important;
+.hover-indicator:hover {
+  border: 4px solid var(--bs-green) !important;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
   animation: pulse 0.85s ease-in-out infinite;
 }
@@ -361,4 +411,93 @@ figcaption {
   #notAvailable {
     display: block;
   }
+}
+
+.gray-overlay {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 340px;
+  height: 715px;
+  margin-right: calc(var(--bs-gutter-x) * 0.5);
+  margin-left: calc(var(--bs-gutter-x) * 0.5);
+  margin-top: var(--bs-gutter-y);
+  opacity: 0;
+
+  transition: all 0.4s;
+}
+
+.gray-overlay.change {
+  opacity: 1;
+
+  transition: all 0.4s;
+}
+
+.text-gray-overlay {
+  background-color: rgba(0, 0, 0, 0);
+  transition: all 0.4s;
+}
+
+.text-gray-overlay.change {
+  opacity: 20%;
+  /*filter: blur(2px);*/
+  transition: all 0.4s;
+}
+
+.strava-text-opacity {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.accordion .fa {
+  margin-right: 0.5rem;
+}
+.accordion button,
+.accordion button:hover,
+.accordion button:focus {
+  text-decoration: none;
+}
+
+.btn-strava {
+  color: var(--bs-strava);
+  background-color: var(--bs-white);
+  border-color: var(--bs-strava);
+  font-weight: 400;
+  font-size: 0.9rem;
+}
+
+.btn-strava:hover {
+  color: var(--bs-strava-rust);
+  background-color: var(--bs-white);
+  border-color: var(--bs-strava-rust);
+}
+
+.btn-primary:active,
+.btn-strava.active,
+.show > .btn-strava.dropdown-toggle {
+  color: var(--bs-white);
+  background-color: var(--bs-strava-rust);
+  border: 1;
+  border-color: var(--bs-strava-rust);
+}
+
+.btn-strava:focus {
+  box-shadow: none;
+}
+
+.strava-card {
+  border: 1px solid var(--bs-strava) !important;
+}
+
+.strava-image-frame {
+  padding: 2rem;
+  background-color: #fff;
+  border: 2px solid var(--bs-gray-600);
+  max-width: 100%;
+  height: auto;
+}
+
+.dark-mode-toggle {
+  font-size: 2.5rem;
+  color: var(--bs-strava-rust);
+  cursor: pointer;
 }
