@@ -1,7 +1,7 @@
 function setStyleSheet(url, color) {
   var stylesheet = document.getElementById("theme-stylesheet");
   var headlogo = document.getElementById("headlogo");
-  var hero = document.getElementById("hero");
+  var hero = document.getElementById("headerIMG");
   stylesheet.setAttribute("href", url);
   headlogo.setAttribute("src", "img/headlogo_" + color + ".png");
   hero.setAttribute(
@@ -21,7 +21,7 @@ $(document).ready(function () {
       var theme = Cookies.get("theme");
       $("#theme-stylesheet").attr("href", "css/style." + theme + ".css");
       $("#headlogo").attr("src", "img/headlogo_" + theme + ".png");
-      $("#hero").attr(
+      $("#headerIMG").attr(
         "style",
         "background: url(img/headers/header-" + theme + ".jpg)"
       );
