@@ -77,52 +77,44 @@
               </h2>
             </header>
           </div>
-          <div class="col-lg-2">
-            <span class="text-small float-end text-decoration-none pointer" data-bs-toggle="collapse" data-bs-target="#collapseOne">
-              <i class="fa fa-plus strava-orange"></i>
-              What is Strava?</span
-            >
-          </div>
         </div>
         <div class="row">
           <div class="col-lg-12">
-            <div class="accordion" id="accordionExample">
-              <div class="card">
-                <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
-                  <div class="card-body text-small text-muted py-0">
-                    <hr />
-                    <p>
-                      Strava is a social network for athletes and weekend warriors to track, measure, analyze, and share their physical exercise activities. Their platform has over 30 types of activities and its social network features has created the largest sports community in the world. It is the
-                      leading service to record and upload cycling rides through its mobile app or via a third-party GPS bike computer. Each ride records time, speed, distance, and elevation. Additional features, like user-generated “segments”, brings a competitive spirit to the social networking
-                      side of Strava.
-                    </p>
-                    <hr />
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-lg-10">
-            <h4 class="strava-header mb-2">Overview</h4>
-            <h5 class="strava-subheader">Problem:</h5>
+            <h3 class="mb-2">THE PROBLEM</h3>
             <p class="lead">Strava's experience for cyclists created usability issues that could potentially put the cyclist in danger.</p>
             <p>User feedback indicated that cyclists found certain aspects of Strava's experience frustrating and created anxiety. Buttons (placement, padding, and size), flow, and color scheme are the top areas of concern for cyclists.</p>
-            <h5 class="strava-subheader">Goal:</h5>
-            <ol>
+          </div>
+          <div class="col-lg-10">
+            <h5 class="strava-subheader">GOALS</h5>
+            <ol class="ms-4">
               <li>Reduce the amount of app interactions during a bike ride</li>
               <li>Condense important information into one view during a bike ride</li>
               <li>Create a clearer and vibrant bike ride experience by redesigning existing components and introducing new components and features</li>
             </ol>
-          </div>
-          <div class="col-lg-2 position-relative">
-            <div class="card strava-card">
-              <div class="card-body">
-                <p class="card-text text-small text-muted">Are you curious why I chose Strava? I'll tell you how I got into cycling and the progress I've made.</p>
-                <a href="#cyclingStory" data-bs-toggle="modal" data-bs-target="#cyclingStory" class="btn btn-strava w-100">Read about my journey</a>
+            </div>
+            <div class="col-lg-2">
+              <h5 class="strava-subheader">BACKGROUND</h5>
+              <span class="text-small text-decoration-none pointer" data-bs-toggle="modal" data-bs-target="#whatisstrava">
+                <i class="fa fa-plus strava-orange pe-1 ms-1"></i>What is Strava?</span><br>
+                <span class="text-small text-decoration-none pointer"data-bs-toggle="modal" data-bs-target="#cyclingStory">
+                  <i class="fa fa-plus strava-orange pe-1 ms-1"></i>How and why I got into cycling</span>
+            </div>
+            <div class="col-lg-10">
+            <h5 class="strava-subheader">SCOPE</h5>
+            <p>I only focused on redesigning Strava’s cycling in-ride and post ride experience on the Android app. </p>
+            </div>
+            <div class="col-lg-2">
+              <h5 class="strava-subheader">TOOLS</h5>
+              <ul class="ms-0 text-small" style="list-style:disc">
+                <li>Figma</li>
+                <li>Miro</li>
+                <li>Strava brand guidelines</li>
+                <li>Adobe Illustrator</li>
+                <li>Adobe InDesign</li>
+              </ul>
               </div>
             </div>
+
           </div>
         </div>
       </div>
@@ -130,6 +122,9 @@
 
     <section class="py-1 mb-4">
       <div class="container">
+        <div class="row">
+          <h3>THE PROCESS</h3>
+        </div>
         <div class="row">
           <h4 class="strava-header">Current in-ride map experience</h4>
           <div class="col-lg-7 mt-3 m3-5">
@@ -247,6 +242,8 @@
           <div class="col-lg-12 mt-2 m3-5">
             <h4 class="strava-header mb-3">Activity redesign comparisons</h4>
             <div id="notAvailable">These comparisons are best viewed on a larger screen size.</div>
+            
+            
             <div class="row text-center">
               <div class="col-lg-4">
                 <div class="strava-comparison-image">
@@ -473,6 +470,34 @@
         </div>
       </div>
     </section>
+
+    <!-- Modal for What is Strava -->
+    <div class="modal fade" id="whatisstrava" tabindex="-1" role="dialog" aria-labelledby="whatisstrava" aria-hidden="true">
+      <div class="modal-dialog modal-xl" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h6 class="mb-0 ms-3">What is Strava?</h6>
+            <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <div class="container">
+              <div class="row">
+                <div class="col-lg-12">
+                  <p class="lead text-muted">
+                    Strava is a social network for athletes and weekend warriors to track, measure, analyze, and share their physical exercise activities. Their platform has over 30 types of activities and its social network features has created the largest sports community in the world. It is the
+                    leading service to record and upload cycling rides through its mobile app or via a third-party GPS bike computer. Each ride records time, speed, distance, and elevation. Additional features, like user-generated “segments”, brings a competitive spirit to the social networking
+                    side of Strava.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
 
     <!-- Modal for my story getting into cycling -->
     <div class="modal fade" id="cyclingStory" tabindex="-1" role="dialog" aria-labelledby="cyclingStory" aria-hidden="true">
