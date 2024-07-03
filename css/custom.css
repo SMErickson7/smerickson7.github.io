@@ -509,17 +509,17 @@ h5 {
 }
 
 .remainingRoute {
-  width: 150px;
-  height: 50px;
+  width: 100px;
+  height: 40px;
   background-color: var(--bs-strava);
-  border: 10px solid var(--bs-strava-rust);
-  margin: 15px;
+  border: 6px solid var(--bs-strava-rust);
+
 }
 
 .completedRoute {
-  width: 150px;
-  height: 50px;
+  width: 100px;
+  height: 40px;
   background-color: var(--bs-strava-blue);
-  border: 10px solid var(--bs-strava-darkblue);
-  margin: 15px;
+  border: 6px solid var(--bs-strava-darkblue);
+
 }
