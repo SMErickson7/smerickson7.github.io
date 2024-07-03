@@ -57,33 +57,33 @@ function toggleDarkModeMap() {
   switch (src) {
     case "/portfolio/strava/new/redesign-map-remaining.png":
       document.getElementById("map-remaining").src = "img/portfolio/strava/new/redesign-dark-mode-map-remaining.png";
-      document.getElementById("mapDarkModeToggle").classList.remove("fa-toggle-on");
-      document.getElementById("mapDarkModeToggle").classList.add("fa-toggle-off");
+      document.getElementById("mapDarkModeToggle").classList.remove("fa-toggle-off");
+      document.getElementById("mapDarkModeToggle").classList.add("fa-toggle-on");
       break;
     case "/portfolio/strava/new/redesign-map-total.png":
       document.getElementById("map-remaining").src = "img/portfolio/strava/new/redesign-dark-mode-map-total.png";
-      document.getElementById("mapDarkModeToggle").classList.remove("fa-toggle-on");
-      document.getElementById("mapDarkModeToggle").classList.add("fa-toggle-off");
+      document.getElementById("mapDarkModeToggle").classList.remove("fa-toggle-off");
+      document.getElementById("mapDarkModeToggle").classList.add("fa-toggle-on");
       break;
     case "/portfolio/strava/new/redesign-map-progressbar.png":
       document.getElementById("map-remaining").src = "img/portfolio/strava/new/redesign-dark-mode-map-progressbar.png";
-      document.getElementById("mapDarkModeToggle").classList.remove("fa-toggle-on");
-      document.getElementById("mapDarkModeToggle").classList.add("fa-toggle-off");
+      document.getElementById("mapDarkModeToggle").classList.remove("fa-toggle-off");
+      document.getElementById("mapDarkModeToggle").classList.add("fa-toggle-on");
       break;
     case "/portfolio/strava/new/redesign-dark-mode-map-remaining.png":
       document.getElementById("map-remaining").src = "img/portfolio/strava/new/redesign-map-remaining.png";
-      document.getElementById("mapDarkModeToggle").classList.remove("fa-toggle-off");
-      document.getElementById("mapDarkModeToggle").classList.add("fa-toggle-on");
+      document.getElementById("mapDarkModeToggle").classList.remove("fa-toggle-on");
+      document.getElementById("mapDarkModeToggle").classList.add("fa-toggle-off");
       break;
     case "/portfolio/strava/new/redesign-dark-mode-map-total.png":
       document.getElementById("map-remaining").src = "img/portfolio/strava/new/redesign-map-total.png";
-      document.getElementById("mapDarkModeToggle").classList.remove("fa-toggle-off");
-      document.getElementById("mapDarkModeToggle").classList.add("fa-toggle-on");
+      document.getElementById("mapDarkModeToggle").classList.remove("fa-toggle-on");
+      document.getElementById("mapDarkModeToggle").classList.add("fa-toggle-off");
       break;
     case "/portfolio/strava/new/redesign-dark-mode-map-progressbar.png":
       document.getElementById("map-remaining").src = "img/portfolio/strava/new/redesign-map-progressbar.png";
-      document.getElementById("mapDarkModeToggle").classList.remove("fa-toggle-off");
-      document.getElementById("mapDarkModeToggle").classList.add("fa-toggle-on");
+      document.getElementById("mapDarkModeToggle").classList.remove("fa-toggle-on");
+      document.getElementById("mapDarkModeToggle").classList.add("fa-toggle-off");
       break;
     default:
       console.log("it didn't work");
