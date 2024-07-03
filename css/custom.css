@@ -3,6 +3,7 @@
 :root {
   --bs-strava: #fc5200;
   --bs-strava-blue: #4b90e2;
+  --bs-strava-darkblue: #2A59A2;
   --bs-strava-rust: #cc4200;
   --bs-strava-icicle: #f0f0f5;
 }
@@ -500,4 +501,25 @@ figcaption {
   font-size: 2.5rem;
   color: var(--bs-strava-rust);
   cursor: pointer;
+}
+
+h5 {
+  text-transform: uppercase;
+  color: var(--bs-strava-rust);
+}
+
+.remainingRoute {
+  width: 150px;
+  height: 50px;
+  background-color: var(--bs-strava);
+  border: 10px solid var(--bs-strava-rust);
+  margin: 15px;
+}
+
+.completedRoute {
+  width: 150px;
+  height: 50px;
+  background-color: var(--bs-strava-blue);
+  border: 10px solid var(--bs-strava-darkblue);
+  margin: 15px;
 }
