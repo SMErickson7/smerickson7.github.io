@@ -1,0 +1,107 @@
+:root {
+  --bs-strava: #fc5200;
+  --bs-strava-blue: #4b90e2;
+  --bs-strava-darkblue: #2a59a2;
+  --bs-strava-rust: #cc4200;
+  --bs-strava-icicle: #f0f0f5;
+}
+
+.strava-orange {
+  color: var(--bs-strava);
+}
+
+.btn-strava {
+  color: var(--bs-strava);
+  background-color: var(--bs-white);
+  border-color: var(--bs-strava);
+  font-weight: 400;
+  font-size: 0.9rem;
+}
+
+.btn-strava:hover {
+  color: var(--bs-strava-rust);
+  background-color: var(--bs-white);
+  border-color: var(--bs-strava-rust);
+}
+
+.btn-primary:active,
+.btn-strava.active,
+.show > .btn-strava.dropdown-toggle {
+  color: var(--bs-white);
+  background-color: var(--bs-strava-rust);
+  border: 1;
+  border-color: var(--bs-strava-rust);
+}
+
+.btn-strava:focus {
+  box-shadow: none;
+}
+
+.strava-card {
+  border: 1px solid var(--bs-strava) !important;
+}
+
+.strava-image-frame {
+  padding: 2rem;
+  background-color: #fff;
+  border: 2px solid var(--bs-gray-600);
+  max-width: 100%;
+  height: auto;
+}
+
+.dark-mode-toggle {
+  font-size: 2.5rem;
+  line-height: 0;
+  color: var(--bs-strava-rust);
+  cursor: pointer;
+}
+
+h3 {
+  text-transform: uppercase;
+}
+
+h5 {
+  text-transform: uppercase;
+  color: var(--bs-strava-rust);
+  margin-top: 2rem !important;
+}
+
+.remainingRoute {
+  width: 100px;
+  height: 40px;
+  background-color: var(--bs-strava);
+  border: 6px solid var(--bs-strava-rust);
+}
+
+.completedRoute {
+  width: 100px;
+  height: 40px;
+  background-color: var(--bs-strava-blue);
+  border: 6px solid var(--bs-strava-darkblue);
+}
+
+.originalLocate {
+  width: 52px;
+  height: 52px;
+}
+.redesignLocate {
+  width: 75px;
+  height: 75px;
+}
+
+.redesignIMG {
+  max-width: 300px;
+}
+
+.anchor {
+  display: block;
+  position: relative;
+  visibility: hidden;
+  top: -50px;
+}
+
+.nav-link:hover,
+.nav-link:focus {
+  color: var(--bs-strava);
+  border-top-color: var(--bs-strava);
+}
