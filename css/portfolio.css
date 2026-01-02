@@ -4,7 +4,7 @@
   --bs-strava-darkblue: #2a59a2;
   --bs-strava-rust: #cc4200;
   --bs-strava-icicle: #f0f0f5;
-  --bs-sspr: #0b2d8e;
+  --bs-sspr: #0c7226;
 }
 
 .lined-strava {
@@ -119,10 +119,16 @@ h5 {
   top: -50px;
 }
 
-.nav-link:hover,
-.nav-link:focus {
+.strava-page .nav-link:hover,
+.strava-page .nav-link:focus {
   color: var(--bs-strava);
   border-top-color: var(--bs-strava);
+}
+
+.sspr-page .nav-link:hover,
+.sspr-page .nav-link:focus {
+  color: var(--bs-sspr);
+  border-top-color: var(--bs-sspr);
 }
 
 ul.list li::before {

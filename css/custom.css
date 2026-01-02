@@ -110,7 +110,7 @@ ul.content-list li::before {
 
 .bg-sspr {
   --bs-bg-opacity: 1;
-  background-color: rgba(11, 45, 142, var(--bs-bg-opacity)) !important;
+  background-color: rgba(12, 114, 38, var(--bs-bg-opacity)) !important;
 }
 
 .bg-strava:hover,
@@ -131,12 +131,20 @@ ul.content-list li::before {
   }
   .bg-sspr {
     --bs-bg-opacity: 1;
-    background-image: url("/img/site-banner-2.png");
+    background-image: url("/img/sspr-banner.png");
     background-repeat: no-repeat;
     background-position-x: right;
     background-position-y: center;
-    background-color: rgba(14, 35, 63, var(--bs-bg-opacity)) !important;
+    background-color: rgba(12, 114, 38, var(--bs-bg-opacity)) !important;
   }
+}
+
+.bg-sspr p {
+  background-color: rgba(12, 114, 38, 0.25);
+}
+
+.bg-strava p {
+  background-color: rgba(252, 82, 0, 0.75);
 }
 
 ul.case-study {
@@ -440,4 +448,9 @@ figcaption {
 
 .uppercase {
   text-transform: uppercase;
+}
+
+.bg-sspr,
+.bg-strava {
+  min-height: 220px;
 }
