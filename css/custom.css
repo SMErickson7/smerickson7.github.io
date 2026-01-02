@@ -108,14 +108,13 @@ ul.content-list li::before {
   background-color: rgba(252, 82, 0, var(--bs-bg-opacity)) !important;
 }
 
-.bg-revs {
+.bg-sspr {
   --bs-bg-opacity: 1;
-
-  background-color: rgba(14, 35, 63, var(--bs-bg-opacity)) !important;
+  background-color: rgba(11, 45, 142, var(--bs-bg-opacity)) !important;
 }
 
 .bg-strava:hover,
-.bg-revs:hover {
+.bg-sspr:hover {
   transition-timing-function: ease-in;
   transition: transform 0.3s;
   transform: scale(1.006, 1.006);
@@ -130,7 +129,7 @@ ul.content-list li::before {
     background-position-y: center;
     background-color: rgba(252, 82, 0, var(--bs-bg-opacity)) !important;
   }
-  .bg-revs {
+  .bg-sspr {
     --bs-bg-opacity: 1;
     background-image: url("/img/site-banner-2.png");
     background-repeat: no-repeat;
@@ -138,13 +137,6 @@ ul.content-list li::before {
     background-position-y: center;
     background-color: rgba(14, 35, 63, var(--bs-bg-opacity)) !important;
   }
-}
-
-.lined-strava {
-  padding-left: 0.5rem;
-  padding-right: 0.5rem;
-  color: #fff;
-  background-color: var(--bs-strava);
 }
 
 ul.case-study {
@@ -444,4 +436,8 @@ figcaption {
 .accordion button:hover,
 .accordion button:focus {
   text-decoration: none;
+}
+
+.uppercase {
+  text-transform: uppercase;
 }

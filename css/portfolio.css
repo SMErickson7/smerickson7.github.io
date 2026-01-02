@@ -4,6 +4,21 @@
   --bs-strava-darkblue: #2a59a2;
   --bs-strava-rust: #cc4200;
   --bs-strava-icicle: #f0f0f5;
+  --bs-sspr: #0b2d8e;
+}
+
+.lined-strava {
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  color: #fff;
+  background-color: var(--bs-strava);
+}
+
+.lined-sspr {
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  color: #fff;
+  background-color: var(--bs-sspr);
 }
 
 .strava-orange {
@@ -66,6 +81,10 @@ h5 {
   margin-top: 2rem !important;
 }
 
+.ssrp-h5 {
+  color: var(--bs-sspr);
+}
+
 .remainingRoute {
   width: 100px;
   height: 40px;
@@ -104,4 +123,25 @@ h5 {
 .nav-link:focus {
   color: var(--bs-strava);
   border-top-color: var(--bs-strava);
+}
+
+ul.list li::before {
+  content: "\2022";
+  /* Add content: \2022 is the CSS Code/unicode for a bullet */
+  color: var(--bs-primary);
+  /* Change the color */
+  font-weight: bold;
+  font-size: 1.25rem;
+  /* If you want it to be bold */
+  display: inline-block;
+  /* Needed to add space between the bullet and the text */
+  width: 1rem;
+  /* Also needed for space (tweak if needed) */
+  margin-left: -1rem;
+  /* Also needed for space (tweak if needed) */
+}
+
+ul.sspr li::before {
+  color: var(--bs-sspr);
+  /* Change the color */
 }

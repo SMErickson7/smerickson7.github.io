@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>From Chaos to Conversion: Automating the Sales Sample Request Workflow</title>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-L3H86C604W"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-L3H86C604W');
+    </script>
+    <!-- Bootstrap CSS-->
+    <link rel="stylesheet" href="vendor/bootstrap/css/bootstrap.min.css">
+    <!-- Google fonts-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700;800&display=swap" rel="stylesheet">
+    <!-- animate.css-->
+    <link rel="stylesheet" href="vendor/animate.css/animate.css">
+    <!-- theme stylesheet-->
+    <link rel="stylesheet" href="css/style.blue.css" id="theme-stylesheet">
+    <!-- Custom stylesheet - for your changes-->
+    <link rel="stylesheet" href="css/custom.css">
+    <link rel="stylesheet" href="css/portfolio.css" />
+    <!-- Favicon-->
+    <link rel="shortcut icon" href="img/favicon.png">
+    <script src="https://kit.fontawesome.com/74ff93bbed.js" crossorigin="anonymous"></script>
+</head>
+
+<body class="scrollspy-example" data-bs-spy="scroll" data-bs-target="#navbar" data-bs-offset="0" tabindex="0">
+    <header class="header">
+        <nav class="navbar navbar-expand-lg fixed-top">
+            <div class="container">
+                <a class="navbar-brand scrollTo" href="index.html#hero"><img id="headlogo" src="img/headlogo_blue.png"
+                        alt="" width="75"></a>
+                <button type="button" data-toggle="collapse" data-target="#navbarcollapse"
+                    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"
+                    class="navbar-toggler navbar-toggler-right">
+                    <span class="fa fa-bars"></span>
+                </button>
+                <div id="navbarcollapse" class="collapse navbar-collapse">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link text-uppercase" href="index.html#hero">Home <span
+                                    class="sr-only">(current)</span></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link link-scroll text-uppercase" href="index.html#experience">Experience</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link link-scroll text-uppercase" href="index.html#portfolio">Portfolio</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link link-scroll text-uppercase" href="index.html#education">Education</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link link-scroll text-uppercase" href="index.html#contact">Contact</a>
+                        </li>
+                        <li class="nav-item"><a class="nav-link link-scroll text-uppercase"
+                                href="files/StevenmMEricksonResume.pdf" target="_blank">Resumé</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <section class="mt-5 mb-4">
+        <div class="container pt-4">
+            <div class="row mt-5">
+                <div class="col-lg-12">
+                    <header class="mb-5">
+                        <h2 class="">
+                            <span class="lined-sspr text-uppercase">From Chaos to Conversion</span>
+                            <p class="mt-3 fs-4 fw-normal">Automating the Sales Sample
+                                Request Workflow</p>
+                        </h2>
+                        <p class="text-muted">Published December 30, 2025</p>
+
+                        <ul class="nav nav-tabs text-uppercase">
+                            <li class="nav-item">
+                                <a href="#problem" class="nav-link active py-3">The Problem</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="#product-approach" class="nav-link py-3">The Product Approach</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="#solution" class="nav-link py-3">The Solution</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="#results" class="nav-link py-3">The Results</a>
+                            </li>
+                        </ul>
+                    </header>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="container">
+        <section id="problem">
+            <h3>The Problem</h3>
+            <p>The Sales team relies on sending free product samples to close deals, but the request process was a
+                manual bottleneck. Sales Engineers (SEs) used a static PDF form that allowed for incomplete data,
+                missing project IDs, and bypassed approval limits.</p>
+        </section>
+
+        <section>
+            <h5 class="ssrp-h5">Friction</h5>
+            <p><strong>The "Data Janitor" Problem:</strong> Customer Service (CS) spent hours chasing SEs to fix errors
+                or gather missing addresses instead of processing orders.</p>
+            <p><strong>Shadow Spend:</strong> High-value requests often skipped the required manager approval because
+                the "rules" lived in a policy document, not the form logic.</p>
+            <p><strong>Zero ROI Tracking:</strong> Requests were trapped in PDFs and emails, making it impossible to
+                correlate "Samples Sent" to "Deals Closed."</p>
+        </section>
+        <section class="mb-5">
+            <h5 class="ssrp-h5">Goals</h5>
+            <ol>
+                <li><strong>Drive Process Transparency and Compliance:</strong> Establish a clear, auditable workflow to
+                    ensure all requests adhere to the defined approval policy, eliminating unauthorized requests and
+                    "shadow spend."</li>
+                <li><strong>Eliminate Manual Data Validation:</strong> Drastically reduce human interference by
+                    requiring project IDs, product IDs, prices, and customer information, and routing requests for
+                    approval based on calculated total costs.</li>
+                <li><strong>Enable Strategic ROI Tracking:</strong> Create a structured data pipeline that links sample
+                    requests directly to active CRM projects, providing management with clear, quantifiable insights
+                    into sample spend and closed deals.</li>
+            </ol>
+        </section>
+
+        <section id="product-approach" class="mb-5">
+            <h3>The Product Approach</h3>
+            <h5 class="ssrp-h5">Role</h5>
+            <p><strong>Product Owner & Developer</strong></p>
+            <h5 class="ssrp-h5">Stakeholder Discovery</h5>
+            <p>Before building a single flow, I treated this as an internal product launch. I interviewed Sales (the
+                users), Customer Service (the processors), and Management (the approvers) to map the disconnects and
+                align the solution with their core needs.</p>
+            <ul class="list sspr">
+                <li><strong>Sales (The Users):</strong> Their primary requirement was <strong>speed</strong>. They were
+                    frustrated by the static PDF form that frequently led to back-and-forth communication with Customer
+                    Service regarding missing Project IDs or incomplete shipping data. The ideal state for them was a
+                    fast, frictionless process that moved their deal forward without administrative roadblocks.</li>
+                <li><strong>Customer Service (The Processors):</strong> Their core pain point was the <strong>"data
+                        janitor" problem</strong>. They were spending up to 30% of their time manually validating data,
+                    chasing Sales Engineers for missing information, and ensuring the request had the correct approval.
+                    Their goal was to receive "clean" and complete requests that were ready for immediate entry.</li>
+                <li><strong>Management (The Approvers):</strong> Their main objective was <strong>control and
+                        insight</strong>. The policy for high-value approvals was bypassed, creating "Shadow Spend."
+                    They needed a clear, auditable trail that guaranteed compliance and, most importantly, structured
+                    data that could correlate sample costs directly to successful deals for ROI analysis.</li>
+            </ul>
+            <h5 class="ssrp-h5">Aligning the Stakeholder Triad</h5>
+            <p>The legacy process created friction because the three key groups had conflicting needs. My goal was to
+                design a workflow that didn't just "compromise," but actually solved the core pain point for each group:
+            </p>
+            <ul class="list sspr">
+                <li><strong>Sales (Need: Speed)</strong> They viewed the old process as a "waste of time" that kept them
+                    from selling.
+                    They needed a frictionless way to request samples without manual paperwork.</li>
+                <li><strong>Management (Need: Control)</strong> They felt the old process was "leaky" and lacked
+                    oversight. They needed strict adherence to the approval hierarchy to prevent unauthorized spending
+                    and overall transparency to all requests being submitted.</li>
+                <li><strong>Customer Service (Need: Efficiency)</strong> This group was suffering the most. They were
+                    acting as "Data Janitors", constantly pausing their actual work to hunt down missing addresses,
+                    verify approval
+                    policies manually, and chase managers for signatures. They bore the entire mental load of
+                    communicating status updates to stakeholders.</li>
+            </ul>
+        </section>
+
+        <section id="solution" class="mb-5">
+            <h3>The Solution</h3>
+            <h5 class="ssrp-h5">Front-End (Data Integrity)</h5>
+            <p>I replaced the PDF with a dynamic <strong>Microsoft Form</strong>. I implemented
+                "Required Fields" validation, forcing Sales Engineers to provide all necessary Project IDs and
+                customer information upfront. This eliminated the back-and-forth for Customer Service.</p>
+            <h5 class="ssrp-h5">The Logic Engine (Conditional Governance)</h5>
+            <p>This was the core engineering challenge. I didn't just want a simple approval; I needed a smart logic
+                gate. I built a Power Automate flow that:
+            <ul class="list sspr">
+                <li><strong>Calculates Value:</strong> It reads the requested items and calculates the total
+                    monetary value.</li>
+                <li><strong>Applies the "$1K Threshold":</strong> I engineered a conditional split:
+                    <ul>
+                        <li><strong>Under $1,000:</strong> The request is auto-approved and routed directly to
+                            Customer Care,
+                            drastically reducing cycle time for low-risk requests.</li>
+                        <li><strong>Over $1,000:</strong> The system triggers a dynamic approval workflow. It
+                            queries the
+                            <strong>Authorization Matrix</strong> (hosted in SharePoint) to route the request to
+                            the specific
+                            Manager, Director, or C-Level executive required, based strictly on the Requestor's
+                            Role and the Total Request Value.
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+            </p>
+            <h5 class="ssrp-h5">Back-End (The Single Source of Truth)</h5>
+            <p>All requests are logged automatically to a SharePoint List. I designed the data schema to align with our
+                ERP structure (including fields for <strong>SAP Material IDs</strong> and <strong>SD Document
+                    IDs</strong>), ensuring the data is structured correctly for manual entry now and ready for
+                integration in the future. </p>
+        </section>
+
+        <section id="results" class="mb-5">
+            <h3>The Results</h3>
+            <h5 class="ssrp-h5">Reduced Cycle Time</h5>
+            <p>The Customer Service no longer manually validates data; they receive "clean," pre-approved orders ready
+                for entry.</p>
+            <h5 class="ssrp-h5">100% Policy Compliance</h5>
+            <p>The system prevents requests from skipping the approval hierarchy.</p>
+            <h5 class="ssrp-h5">Data Visibility</h5>
+            <p>We moved from "black box" PDF attachments to a structured database, enabling us to finally track the
+                volume of samples against closed deals.</p>
+        </section>
+
+        <section class="mb-5">
+            <h3>Future Roadmap</h3>
+            <p>While the current MVP successfully standardized the workflow, Phase 2 will migrate the front-end from
+                Microsoft Forms to a custom <strong>Power App</strong> to enable deep data integration and advanced
+                governance.</p>
+            <h5 class="ssrp-h5">Data Lake Integration (Automated Validation)</h5>
+            <p>I will connect the Power App directly to our internal Data Lake. This will allow real-time validation of
+                <strong>customer information, project IDs</strong>, and <strong>material IDs</strong> against the master
+                data. Crucially, it will automatically fetch <strong>list prices</strong>, significantly reducing the
+                number of manual fields the user needs to complete.
+            </p>
+            <h5 class="ssrp-h5">Role-Based Management Dashboards</h5>
+            <p>I am designing a "Manager View" within the app that features <strong>Row-Level Security (RLS)</strong>.
+                This ensures data governance by filtering views based on hierarchy:</p>
+            <ul class="list sspr">
+                <li><em>Regional Managers</em> will only see requests from their specific territory (e.g., US East).
+                </li>
+                <li><em>Directors</em> will have a consolidated view of all regions under their purview.</li>
+            </ul>
+            <h5 class="ssrp-h5">Pipeline Velocity & Conversion Analytics</h5>
+            <p>I will implement stage-tracking analytics to measure how fast opportunities move through the sales cycle
+                after a sample is received. This view will explicitly highlight "Stalled Projects" (opportunities that
+                failed to progress post-sample) allowing leadership to calculate the true ROI of sales samples.</p>
+            <h5 class="ssrp-h5">Product Demand Intelligence</h5>
+            <p>A separate trend dashboard will aggregate request data to visualize which product series and categories
+                are in highest demand. This provides Product Management with data on prospective customers testing their
+                products.</p>
+        </section>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+    <script>mermaid.initialize({ startOnLoad: true });</script>
+</body>
+
+</html>
