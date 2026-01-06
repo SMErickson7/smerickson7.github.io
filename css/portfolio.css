@@ -151,3 +151,9 @@ ul.sspr li::before {
   color: var(--bs-sspr);
   /* Change the color */
 }
+
+@media (max-width: 767px) {
+  .nav-tabs {
+    display: none;
+  }
+}
