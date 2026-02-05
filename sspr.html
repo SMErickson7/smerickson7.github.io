@@ -181,33 +181,44 @@
             <p>I replaced the PDF with a dynamic <strong>Microsoft Form</strong>. I implemented
                 "Required Fields" validation, forcing Sales Engineers to provide all necessary Project IDs and
                 customer information upfront. This eliminated the back-and-forth for Customer Service.</p>
-            <h5 class="ssrp-h5">The Logic Engine (Conditional Governance)</h5>
-            <p>This was the core engineering challenge. I didn't just want a simple approval; I needed a smart logic
-                gate. I built a Power Automate flow that:
-            <ul class="list sspr">
-                <li><strong>Calculates Value:</strong> It reads the requested items and calculates the total
-                    monetary value.</li>
-                <li><strong>Applies the "$1K Threshold":</strong> I engineered a conditional split:
-                    <ul>
-                        <li><strong>Under $1,000:</strong> The request is auto-approved and routed directly to
-                            Customer Care,
-                            drastically reducing cycle time for low-risk requests.</li>
-                        <li><strong>Over $1,000:</strong> The system triggers a dynamic approval workflow. It
-                            queries the
-                            <strong>Authorization Matrix</strong> (hosted in SharePoint) to route the request to
-                            the specific
-                            Manager, Director, or C-Level executive required, based strictly on the Requestor's
-                            Role and the Total Request Value.
+            <div class="row">
+                <div class="col-lg-8">
+                    <h5 class="ssrp-h5">The Logic Engine (Conditional Governance)</h5>
+                    <p>This was the core engineering challenge. I didn't just want a simple approval; I needed a smart
+                        logic
+                        gate. I built a Power Automate flow that:
+                    <ul class="list sspr">
+                        <li><strong>Calculates Value:</strong> It reads the requested items and calculates the total
+                            monetary value.</li>
+                        <li><strong>Applies the "$1K Threshold":</strong> I engineered a conditional split:
+                            <ul>
+                                <li><strong>Under $1,000:</strong> The request is auto-approved and routed directly to
+                                    Customer Care,
+                                    drastically reducing cycle time for low-risk requests.</li>
+                                <li><strong>Over $1,000:</strong> The system triggers a dynamic approval workflow. It
+                                    queries the
+                                    <strong>Authorization Matrix</strong> (hosted in SharePoint) to route the request to
+                                    the specific
+                                    Manager, Director, or C-Level executive required, based strictly on the Requestor's
+                                    Role and the Total Request Value.
+                                </li>
+                            </ul>
                         </li>
                     </ul>
-                </li>
-            </ul>
-            </p>
-            <h5 class="ssrp-h5">Back-End (The Single Source of Truth)</h5>
-            <p>All requests are logged automatically to a SharePoint List. I designed the data schema to align with our
-                ERP structure (including fields for <strong>SAP Material IDs</strong> and <strong>SD Document
-                    IDs</strong>), ensuring the data is structured correctly for manual entry now and ready for
-                integration in the future. </p>
+                    </p>
+                    <h5 class="ssrp-h5">Back-End (The Single Source of Truth)</h5>
+                    <p>All requests are logged automatically to a SharePoint List. I designed the data schema to align
+                        with our
+                        ERP structure (including fields for <strong>SAP Material IDs</strong> and <strong>SD Document
+                            IDs</strong>), ensuring the data is structured correctly for manual entry now and ready for
+                        integration in the future. </p>
+                </div>
+                <div class="col-lg-4">
+                    <img src="img/portfolio/sspr/sspr_flow.jpg" alt="SSPR Flow" class="img-fluid shadow-sm rounded"
+                        data-toggle="modal" data-target="#imageModal" style="cursor: pointer;">
+                    <p class="text-center mt-2 text-muted small">Process Flow Map</p>
+                </div>
+            </div>
         </section>
 
         <section id="results" class="mb-5">
@@ -252,11 +263,31 @@
         </section>
     </div>
 
+    <!-- Modal -->
+    <div class="modal fade" id="imageModal" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-xl">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <img id="modalImage" src="" class="img-fluid" alt="Enlarged workflow">
+                    <p class="text-center mt-2 text-muted">Process Flow Map</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!-- Bootstrap JS -->
     <script src="vendor/jquery/jquery.min.js"></script>
     <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
     <script>mermaid.initialize({ startOnLoad: true });</script>
+    <script>
+        $('#imageModal').on('show.bs.modal', function (event) {
+            var button = $(event.relatedTarget);
+            var src = button.attr('src');
+            var modal = $(this);
+            modal.find('#modalImage').attr('src', src);
+        });
+    </script>
 </body>
 
 </html>
