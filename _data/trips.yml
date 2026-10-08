@@ -1,0 +1,18 @@
+# Trips shown on the /travel/ timeline, newest first (sorted by `date`).
+#
+# date:      "YYYY-MM" or "YYYY". Used for sorting and shown on the timeline.
+# title:     Short name for the trip.
+# countries: List of countries visited on this trip (match the names in stamps.yml).
+# places:    Optional. Cities or regions, shown under the title.
+# note:      Optional. A sentence or two about the trip.
+# post:      Optional. URL of a related blog post, e.g. /writing/my-post/
+#
+# Example:
+# - date: "2024-06"
+#   title: Summer in Bavaria
+#   countries: [Germany, Austria]
+#   places: Munich, Garmisch, Salzburg
+#   note: Biergartens, mountain rides, and one very long train delay.
+#   post: /writing/summer-in-bavaria/
+
+[]

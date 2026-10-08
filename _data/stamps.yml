@@ -1,6 +1,6 @@
 # "Stamps collected" section on the homepage. Edit freely; empty lists are hidden.
 
-# style: round, solid, dashed, or pill
+# style: round, solid, dashed, pill, tab, banner, framed, or square
 teams:
   - name: Inter Milan
     style: round
@@ -11,19 +11,60 @@ teams:
   - name: Formula 1
     style: pill
 
-# level: shown on the right. Leave it as "" to hide it.
-languages:
-  - name: English
-    level: Native
-  - name: Deutsch
-    level: ""
-  - name: Italiano
-    level: ""
+# Passport stamps: countries visited and how many times.
+# flag: file name in /assets/img/flags/ (country code, e.g. de for Germany).
+# style: round, solid, dashed, pill, tab, banner, framed, or square (same stamp styles as teams). Keep round and square for short names.
+# The same list shows on the homepage and the /travel/ page.
+countries:
+  - name: Canada
+    flag: ca
+    visits: 3
+    style: round
+  - name: Mexico
+    flag: mx
+    visits: 2
+    style: tab
+  - name: Colombia
+    flag: co
+    visits: 2
+    style: banner
+  - name: England
+    flag: gb-eng
+    visits: 3
+    style: pill
+  - name: France
+    flag: fr
+    visits: 1
+    style: framed
+  - name: Netherlands
+    flag: nl
+    visits: 1
+    style: dashed
+  - name: Germany
+    flag: de
+    visits: 13
+    style: square
+  - name: Italy
+    flag: it
+    visits: 9
+    style: solid
+  - name: Vatican City
+    flag: va
+    visits: 1
+    style: dashed
+  - name: Czechia
+    flag: cz
+    visits: 1
+    style: round
+  - name: Ukraine
+    flag: ua
+    visits: 1
+    style: banner
 
 clubs:
   - name: Boylston Schul-Verein
     description: Volunteer helping run festivals and the adult language school.
-    since: ""
+    since: "August 2021"
     role: Volunteer
 
 activities_photo: /assets/img/about-ride.jpg

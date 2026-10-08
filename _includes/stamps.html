@@ -9,12 +9,11 @@
   </div>
   {% endif %}
 
-  {% if s.languages.size > 0 %}
-  <div class="stamp-panel">
-    <p class="label label--muted">Language visas</p>
-    <div class="visas">
-      {% for l in s.languages %}<div class="visa visa--{{ forloop.index }}"><span class="visa__name">{{ l.name }}</span>{% if l.level != "" %}<span class="visa__level">{{ l.level }}</span>{% endif %}</div>{% endfor %}
-    </div>
+  {% if s.countries.size > 0 %}
+  <div class="stamp-panel stamp-panel--passport">
+    <p class="label label--muted">Passport stamps</p>
+    {% include passport-stamps.html %}
+    <a class="stamp-panel__link" href="/travel/">Travel timeline →</a>
   </div>
   {% endif %}
 
@@ -23,7 +22,8 @@
     <p class="label">Member card</p>
     <p class="member__name">{{ c.name }}</p>
     <p class="member__text">{{ c.description }}</p>
-    <div class="member__meta">{% if c.since != "" %}<span>Since {{ c.since }}</span>{% endif %}{% if c.role != "" %}<span>{{ c.role }}</span>{% endif %}</div>
+    <div class="member__meta">{% if c.since != "" %}<span>Since {{ c.since }}</span>{% endif %}{% if c.role != ""
+      %}<span>{{ c.role }}</span>{% endif %}</div>
   </div>
   {% endfor %}
 

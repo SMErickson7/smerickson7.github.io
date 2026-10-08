@@ -1,0 +1,53 @@
+---
+layout: default
+title: Travel
+section: travel
+permalink: /travel/
+description: Countries I've visited and a timeline of my trips.
+---
+{% assign countries = site.data.stamps.countries %}
+{% assign total_visits = 0 %}{% for c in countries %}{% assign total_visits = total_visits | plus: c.visits %}{% endfor %}
+<section class="page-head">
+  <div class="container">
+    <p class="label label--light">Passport</p>
+    <h1 class="display display--xxl">Travel</h1>
+    <p class="page-head__lead">{{ countries.size }} countries, {{ total_visits }} visits, and counting. Every stamp below, plus a timeline of the trips behind them.</p>
+  </div>
+</section>
+
+<section class="section container" aria-labelledby="stamps-heading">
+  <div class="section-head">
+    <h2 id="stamps-heading" class="display display--xl">Stamps</h2>
+    <span class="section-head__aside">{{ countries.size }} countries</span>
+  </div>
+  <div class="passport-page">
+    {% include passport-stamps.html %}
+  </div>
+</section>
+
+<section class="section section--flush-top container" aria-labelledby="timeline-heading">
+  <div class="section-head">
+    <h2 id="timeline-heading" class="display display--xl">Timeline</h2>
+    <span class="section-head__aside">Newest first</span>
+  </div>
+  {% assign trips = site.data.trips | sort: "date" | reverse %}
+  {% if trips.size > 0 %}
+  <ol class="timeline">
+    {% for trip in trips %}
+    <li class="timeline__item">
+      {% assign d = trip.date | append: "" %}{% if d.size == 7 %}{% assign d = d | append: "-01" %}{% endif %}
+      <p class="timeline__date">{% if d.size == 10 %}{{ d | date: "%b %Y" }}{% else %}{{ d }}{% endif %}</p>
+      <div class="timeline__body">
+        <h3 class="timeline__title">{{ trip.title }}</h3>
+        {% if trip.places %}<p class="timeline__places">{{ trip.places }}</p>{% endif %}
+        {% if trip.countries.size > 0 %}<div class="pills">{% for c in trip.countries %}<span class="pill">{{ c }}</span>{% endfor %}</div>{% endif %}
+        {% if trip.note %}<p class="timeline__note">{{ trip.note }}</p>{% endif %}
+        {% if trip.post %}<a class="timeline__link" href="{{ trip.post }}">Read the trip report →</a>{% endif %}
+      </div>
+    </li>
+    {% endfor %}
+  </ol>
+  {% else %}
+  <p class="empty-note">The trip timeline is on its way.</p>
+  {% endif %}
+</section>
