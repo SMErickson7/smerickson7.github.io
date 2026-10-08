@@ -1,0 +1,45 @@
+# Site settings for the redesigned stevenmerickson.com
+title: Steven M. Erickson
+description: Marketer by trade, tinkerer by habit. Writing about what I learn from building side projects and taking products apart.
+url: https://www.stevenmerickson.com
+author: Steven M. Erickson
+email: steven@stevenmerickson.com
+
+# While the redesign is in preview, the new homepage lives at /new/.
+# When it replaces the old index.html, change this to "/".
+home_path: /new/
+
+resume: /files/Steven_Erickson_Resume.pdf
+google_analytics: G-L3H86C604W
+
+social:
+  linkedin: https://www.linkedin.com/in/steven-michael-erickson
+  strava: https://www.strava.com/athletes/33163193
+  instagram: https://www.instagram.com/stevenmerickson/
+
+# Topics used to label and filter posts. A post sets `topic:` to one of these slugs.
+topics:
+  - slug: marketing
+    name: Marketing
+  - slug: building
+    name: Building
+  - slug: cycling
+    name: Cycling
+  - slug: 3d-printing
+    name: 3D printing
+
+# Blog posts live in _posts/ and are published at /writing/<post-title>/
+permalink: /writing/:title/
+markdown: kramdown
+kramdown:
+  input: GFM
+plugins:
+  - jekyll-feed
+feed:
+  path: feed.xml
+
+# Keep editor and local tooling files out of the published site.
+# Underscore folders such as _tools are already skipped by Jekyll.
+exclude:
+  - .vscode
+  - Desktop.ini

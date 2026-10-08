@@ -1,0 +1,8 @@
+# Workshop projects, newest first. The homepage shows the first three.
+# image: path to a 16:10 image (about 1000 x 625 px works well)
+# url: the project's write-up page
+- title: Strava, redesigned
+  kind: UX audit
+  summary: A self-initiated audit of the ride-tracking experience, finding where it adds friction and redesigning the screens to remove it.
+  image: /assets/img/strava-card.jpg
+  url: /strava.html

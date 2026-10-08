@@ -1,0 +1,28 @@
+---
+layout: default
+title: Workshop
+section: workshop
+permalink: /workshop/
+description: Side projects I build because I'm curious how things work.
+---
+<section class="page-intro container">
+  <p class="eyebrow">Side projects</p>
+  <h1 class="section__title section__title--xl">Workshop</h1>
+  <p class="page-intro__lead">Things I build because I'm curious how they work. Some are design exercises, some are data experiments, and some come off the 3D printer.</p>
+</section>
+
+<section class="section container" aria-label="Projects">
+  <div class="workshop-list">
+    {% for project in site.data.projects %}
+    <a class="workshop-item" href="{{ project.url }}">
+      <img class="workshop-item__image" src="{{ project.image }}" alt="">
+      <div class="workshop-item__text">
+        <span class="meta meta--brand">{{ project.kind }}</span>
+        <span class="workshop-item__title">{{ project.title }}</span>
+        <span class="workshop-item__summary">{{ project.summary }}</span>
+        <span class="arrow-link">Read the case study →</span>
+      </div>
+    </a>
+    {% endfor %}
+  </div>
+</section>

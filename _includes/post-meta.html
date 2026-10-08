@@ -1,0 +1,1 @@
+{% assign words = include.post.content | number_of_words %}{% assign minutes = words | divided_by: 200 | plus: 1 %}<span class="meta">{{ include.post.date | date: "%b %-d, %Y" }}{% for t in site.topics %}{% if t.slug == include.post.topic %} · {{ t.name }}{% endif %}{% endfor %}{% if include.readtime %} · {{ minutes }} min read{% endif %}</span>

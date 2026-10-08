@@ -1,0 +1,10 @@
+# The "Now" panel on the homepage. Update this whenever things change.
+# Any item with an empty `text` is hidden automatically.
+updated: October 2026
+items:
+  - label: Building
+    text: This website and a content repurposing engine
+  - label: Riding
+    text: ""
+  - label: Learning
+    text: ""

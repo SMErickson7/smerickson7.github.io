@@ -1,0 +1,5 @@
+<a class="post-row" href="{{ include.post.url }}" data-topic="{{ include.post.topic }}">
+  {% include post-meta.html post=include.post %}
+  <span class="post-row__title">{{ include.post.title }}</span>
+  {% if include.excerpt and include.post.description %}<span class="post-row__excerpt">{{ include.post.description }}</span>{% endif %}
+</a>

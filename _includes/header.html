@@ -1,0 +1,13 @@
+<header class="site-header">
+  <div class="container site-header__inner">
+    <a class="site-logo" href="{{ site.home_path }}" aria-label="{{ site.title }}, home">
+      <img src="/assets/img/avatar.png" alt="" width="48" height="48">
+    </a>
+    <nav class="site-nav" aria-label="Main">
+      <a href="/writing/"{% if page.section == 'writing' %} aria-current="page"{% endif %}>Writing</a>
+      <a href="/workshop/"{% if page.section == 'workshop' %} aria-current="page"{% endif %}>Workshop</a>
+      <a href="/about/"{% if page.section == 'about' %} aria-current="page"{% endif %}>About</a>
+      <a class="btn btn--small" href="{{ site.resume }}">Resume</a>
+    </nav>
+  </div>
+</header>
