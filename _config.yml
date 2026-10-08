@@ -27,6 +27,15 @@ topics:
     name: Cycling
   - slug: 3d-printing
     name: 3D printing
+  - slug: travel
+    name: Travel
+
+# Workshop project reports live in _projects/ and are published at /workshop/<file-name>/
+# Projects are listed in the order set by `order:` in each file (1 shows first).
+collections:
+  projects:
+    output: true
+    permalink: /workshop/:name/
 
 # Blog posts live in _posts/ and are published at /writing/<post-title>/
 permalink: /writing/:title/

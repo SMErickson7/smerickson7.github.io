@@ -1,5 +1,7 @@
-<a class="post-row" href="{{ include.post.url }}" data-topic="{{ include.post.topic }}">
-  {% include post-meta.html post=include.post %}
-  <span class="post-row__title">{{ include.post.title }}</span>
-  {% if include.excerpt and include.post.description %}<span class="post-row__excerpt">{{ include.post.description }}</span>{% endif %}
+{% assign words = include.post.content | number_of_words %}{% assign minutes = words | divided_by: 200 | plus: 1 %}
+<a class="fixture" href="{{ include.post.url }}" data-topic="{{ include.post.topic }}">
+  <span class="fixture__date">{{ include.post.date | date: "%b %d" }}</span>
+  <span class="fixture__topic">{% for t in site.topics %}{% if t.slug == include.post.topic %}{{ t.name }}{% endif %}{% endfor %}</span>
+  <span class="fixture__title">{{ include.post.title }}{% if include.excerpt and include.post.description %}<span class="fixture__excerpt">{{ include.post.description }}</span>{% endif %}</span>
+  <span class="fixture__time">{{ minutes }} min</span>
 </a>

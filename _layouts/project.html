@@ -1,0 +1,37 @@
+---
+layout: default
+section: workshop
+---
+<article class="report">
+  <header class="report__head">
+    <div class="container">
+      <a class="back-link" href="/workshop/">← All projects</a>
+      <p class="report__bar"><span>Project {% if page.order < 10 %}0{% endif %}{{ page.order }}</span><span>{{ page.kind }}</span></p>
+      <h1 class="display display--xxl">{{ page.title }}</h1>
+      <p class="page-head__lead">{{ page.summary }}</p>
+    </div>
+  </header>
+
+  <div class="container report__overview">
+    <div class="report__visual">{% include project-visual.html project=page %}</div>
+    <div class="report__spec">
+      <p class="label label--brand">At a glance</p>
+      {% include project-spec.html project=page %}
+      {% if page.tags %}<div class="pills">{% for t in page.tags %}<span class="pill">{{ t }}</span>{% endfor %}</div>{% endif %}
+    </div>
+  </div>
+
+  <div class="container container--narrow prose report__body">
+    {{ content }}
+  </div>
+
+  {% assign projects = site.projects | sort: "order" %}
+  <nav class="container container--narrow report__more" aria-label="More projects">
+    <p class="label label--brand">More from the workshop</p>
+    <div class="report__more-list">
+      {% for p in projects %}{% if p.url != page.url %}
+      <a href="{% if p.external_url %}{{ p.external_url }}{% else %}{{ p.url }}{% endif %}"><span class="label">{{ p.kind }}</span><span>{{ p.title }}</span></a>
+      {% endif %}{% endfor %}
+    </div>
+  </nav>
+</article>

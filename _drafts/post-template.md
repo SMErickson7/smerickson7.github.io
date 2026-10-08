@@ -10,7 +10,7 @@
 layout: post
 title: "Post title goes here"
 description: "One or two sentences that tell a reader what they'll get from the post. Shown on the homepage, the Writing page, and link previews."
-topic: building   # one of: marketing, building, cycling, 3d-printing
+topic: building   # one of: marketing, building, cycling, 3d-printing, travel
 image: /assets/img/posts/example.jpg   # optional; 16:10 works best. Delete this line if there's no image.
 image_alt: "Describe the image for screen readers"
 ---

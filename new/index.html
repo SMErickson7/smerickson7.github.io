@@ -1,105 +1,82 @@
 ---
 layout: default
 permalink: /new/
+body_class: home
 description: Marketer by trade, tinkerer by habit. Writing about what I learn from building side projects and taking products apart.
 ---
-<section class="hero container">
-  <div class="hero__text">
-    <p class="eyebrow">Hi, I am</p>
-    <h1 class="hero__name">Steven<br>M.<br><span class="text-brand">Erickson</span></h1>
-    <p class="hero__intro">Marketer by trade, tinkerer by habit. I write about what I learn from building side projects and taking products apart.</p>
-    <div class="button-row">
-      <a class="btn" href="/writing/">Read the latest</a>
-      <a class="btn btn--outline" href="/about/">About me</a>
+<section class="hero">
+  <div class="container hero__inner">
+    <div class="hero__text">
+      <div class="hero__tags">
+        {% for tag in site.data.profile.tags %}<span class="hero__tag{% if forloop.last %} hero__tag--dark{% endif %}">{{ tag }}</span>{% endfor %}
+      </div>
+      <h1 class="hero__name">Steven<br>Erickson</h1>
+      <p class="hero__intro">{{ site.data.profile.intro }}</p>
     </div>
-  </div>
-  <div class="hero__photo">
-    <img src="/assets/img/portrait.jpg" alt="Steven M. Erickson" width="720" height="900">
+    {% include holder-card.html %}
   </div>
 </section>
 
-<div class="container">
-  <aside class="now" aria-label="What I'm doing now">
-    <p class="now__label">Now · {{ site.data.now.updated }}</p>
-    {% for item in site.data.now.items %}{% if item.text != "" %}
-    <div class="now__item">
-      <span class="now__item-label">{{ item.label }}</span>
-      <span>{{ item.text }}</span>
-    </div>
-    {% endif %}{% endfor %}
-  </aside>
+<div class="ticker" aria-hidden="true">
+  <div class="container ticker__inner">
+    {% for item in site.data.profile.ticker %}{% if forloop.index > 1 %}<span class="ticker__sep">/</span>{% endif %}<span>{{ item }}</span>{% endfor %}
+  </div>
 </div>
 
 <section class="section container" aria-labelledby="writing-heading">
-  <div class="section__head">
-    <div>
-      <p class="eyebrow">Latest</p>
-      <h2 id="writing-heading" class="section__title section__title--xl">Writing</h2>
-    </div>
-    <nav class="chips" aria-label="Topics">
-      <a class="chip chip--active" href="/writing/">All</a>
-      {% for t in site.topics %}<a class="chip" href="/writing/#{{ t.slug }}">{{ t.name }}</a>{% endfor %}
-    </nav>
+  <div class="section-head">
+    <h2 id="writing-heading" class="display display--xl">Writing</h2>
+    <span class="section-head__aside">Latest from the blog</span>
   </div>
 
   {% if site.posts.size > 0 %}
-  <div class="writing-grid">
-    {% for post in site.posts limit:1 %}
-    <a class="feature-post" href="{{ post.url }}">
-      {% if post.image %}
-      <img class="feature-post__image" src="{{ post.image }}" alt="{{ post.image_alt }}">
-      {% else %}
-      <div class="feature-post__image feature-post__image--blank" aria-hidden="true"><span>{% for t in site.topics %}{% if t.slug == post.topic %}{{ t.name }}{% endif %}{% endfor %}</span></div>
-      {% endif %}
-      {% include post-meta.html post=post readtime=true %}
-      <span class="feature-post__title">{{ post.title }}</span>
-      {% if post.description %}<span class="feature-post__excerpt">{{ post.description }}</span>{% endif %}
-    </a>
-    {% endfor %}
-    <div class="post-list">
-      {% for post in site.posts limit:4 offset:1 %}
-      {% include post-row.html post=post %}
-      {% endfor %}
-      <a class="arrow-link" href="/writing/">All posts →</a>
+  {% for post in site.posts limit:1 %}
+  <a class="featured" href="{{ post.url }}">
+    {% if post.image %}
+    <img class="featured__image" src="{{ post.image }}" alt="{{ post.image_alt }}">
+    {% else %}
+    <div class="featured__image featured__image--blank" aria-hidden="true"><span>{% for t in site.topics %}{% if t.slug == post.topic %}{{ t.name }}{% endif %}{% endfor %}</span></div>
+    {% endif %}
+    <div class="featured__text">
+      <span class="label label--brand">Featured · {% include post-meta.html post=post %}</span>
+      <span class="featured__title">{{ post.title }}</span>
+      {% if post.description %}<span class="featured__excerpt">{{ post.description }}</span>{% endif %}
     </div>
+  </a>
+  {% endfor %}
+  <div class="fixtures">
+    {% for post in site.posts limit:4 offset:1 %}
+    {% include post-row.html post=post %}
+    {% endfor %}
   </div>
+  <a class="more-link" href="/writing/">Full archive →</a>
   {% else %}
   <p class="empty-note">The first posts are on their way.</p>
   {% endif %}
 </section>
 
-<section class="section container" aria-labelledby="workshop-heading">
-  <div class="section__head section__head--ruled">
-    <h2 id="workshop-heading" class="section__title">From the workshop</h2>
-    <a class="arrow-link" href="/workshop/">All projects →</a>
-  </div>
-  <div class="card-grid">
-    {% for project in site.data.projects limit:3 %}
-    <a class="project-card" href="{{ project.url }}">
-      <img class="project-card__image" src="{{ project.image }}" alt="">
-      <span class="meta meta--brand">{{ project.kind }}</span>
-      <span class="project-card__title">{{ project.title }}</span>
-    </a>
-    {% endfor %}
+<section class="workshop-band" aria-labelledby="workshop-heading">
+  <div class="container">
+    <div class="section-head section-head--light">
+      <h2 id="workshop-heading" class="display display--xl">Workshop</h2>
+      <span class="section-head__aside">Project reports · built out of curiosity</span>
+    </div>
+    {% assign projects = site.projects | sort: "order" %}
+    <div class="report-grid">
+      {% for project in projects limit:4 %}
+      {% include project-card.html project=project %}
+      {% endfor %}
+    </div>
+    {% if projects.size > 4 %}<a class="more-link more-link--light" href="/workshop/">All projects →</a>{% endif %}
   </div>
 </section>
 
-<div class="container">
-  <section class="about-panel" aria-labelledby="about-heading">
-    <div class="about-panel__text">
-      <p class="eyebrow">A little more</p>
-      <h2 id="about-heading" class="section__title section__title--lg">About <span class="text-brand">me</span></h2>
-      <p>My approach to everything is the same: before I can explain why something matters, I need a ground-level understanding of how it works and why people choose it. Once I have that, the ideas come flooding in.</p>
-      <p>Professionally, that's meant {{ site.time | date: "%Y" | minus: 2012 }} years in B2B marketing, bridging the gap between "we built it" and "they bought it," most recently as Digital Enablement Manager at Lenze Americas.</p>
-      <p>Away from the desk, you'll find me logging miles on the bike, designing parts for the 3D printer, or helping the Boylston Schul-Verein run its festivals and adult language school.</p>
-      <div class="button-row">
-        <a class="btn" href="/about/">Read the full story</a>
-        <a class="btn btn--outline" href="{{ site.resume }}">Download resume</a>
-      </div>
+<section id="stamps" class="stamps-band" aria-labelledby="stamps-heading">
+  <div class="container">
+    <div class="section-head">
+      <h2 id="stamps-heading" class="display display--xl">Stamps collected</h2>
+      <span class="section-head__aside">Teams, languages, clubs, pastimes</span>
     </div>
-    <div class="about-panel__aside">
-      <img class="about-panel__photo" src="/assets/img/about-ride.jpg" alt="Steven on a ride, smiling in cycling sunglasses next to his bike" width="682" height="384">
-      {% include facts.html %}
-    </div>
-  </section>
-</div>
+    {% include stamps.html %}
+  </div>
+</section>

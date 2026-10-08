@@ -1,0 +1,39 @@
+{% assign s = site.data.stamps %}
+<div class="stamps">
+  {% if s.teams.size > 0 %}
+  <div class="stamp-panel">
+    <p class="label label--muted">Teams</p>
+    <div class="team-stamps">
+      {% for t in s.teams %}<span class="team-stamp team-stamp--{{ t.style }}">{{ t.name }}</span>{% endfor %}
+    </div>
+  </div>
+  {% endif %}
+
+  {% if s.languages.size > 0 %}
+  <div class="stamp-panel">
+    <p class="label label--muted">Language visas</p>
+    <div class="visas">
+      {% for l in s.languages %}<div class="visa visa--{{ forloop.index }}"><span class="visa__name">{{ l.name }}</span>{% if l.level != "" %}<span class="visa__level">{{ l.level }}</span>{% endif %}</div>{% endfor %}
+    </div>
+  </div>
+  {% endif %}
+
+  {% for c in s.clubs %}
+  <div class="stamp-panel stamp-panel--member">
+    <p class="label">Member card</p>
+    <p class="member__name">{{ c.name }}</p>
+    <p class="member__text">{{ c.description }}</p>
+    <div class="member__meta">{% if c.since != "" %}<span>Since {{ c.since }}</span>{% endif %}{% if c.role != "" %}<span>{{ c.role }}</span>{% endif %}</div>
+  </div>
+  {% endfor %}
+
+  {% if s.activities.size > 0 %}
+  <div class="stamp-panel stamp-panel--photo">
+    {% if s.activities_photo %}<img src="{{ s.activities_photo }}" alt="{{ s.activities_photo_alt }}">{% endif %}
+    <div class="stamp-panel__inner">
+      <p class="label label--muted">Activities</p>
+      <div class="pills">{% for a in s.activities %}<span class="pill">{{ a }}</span>{% endfor %}</div>
+    </div>
+  </div>
+  {% endif %}
+</div>

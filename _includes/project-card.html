@@ -1,0 +1,11 @@
+{% assign p = include.project %}
+<article class="report-card">
+  <div class="report-card__bar"><span>Project {% if p.order < 10 %}0{% endif %}{{ p.order }}</span><span>{{ p.kind }}</span></div>
+  {% include project-visual.html project=p %}
+  <div class="report-card__body">
+    <h3 class="report-card__title"><a href="{% if p.external_url %}{{ p.external_url }}{% else %}{{ p.url }}{% endif %}">{{ p.title }}</a></h3>
+    <p class="report-card__summary">{{ p.summary }}</p>
+    {% include project-spec.html project=p %}
+    <span class="report-card__link" aria-hidden="true">{% if p.link_label %}{{ p.link_label }}{% else %}Read the report{% endif %} →</span>
+  </div>
+</article>

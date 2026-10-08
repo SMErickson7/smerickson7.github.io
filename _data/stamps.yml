@@ -1,0 +1,36 @@
+# "Stamps collected" section on the homepage. Edit freely; empty lists are hidden.
+
+# style: round, solid, dashed, or pill
+teams:
+  - name: Inter Milan
+    style: round
+  - name: Celtics
+    style: solid
+  - name: NE Revolution
+    style: dashed
+  - name: Formula 1
+    style: pill
+
+# level: shown on the right. Leave it as "" to hide it.
+languages:
+  - name: English
+    level: Native
+  - name: Deutsch
+    level: ""
+  - name: Italiano
+    level: ""
+
+clubs:
+  - name: Boylston Schul-Verein
+    description: Volunteer helping run festivals and the adult language school.
+    since: ""
+    role: Volunteer
+
+activities_photo: /assets/img/about-ride.jpg
+activities_photo_alt: Steven on a ride, smiling in cycling sunglasses
+activities:
+  - Cycling
+  - 3D printing
+  - Filmmaking
+  - Travel
+  - Pizza

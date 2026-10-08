@@ -50,6 +50,8 @@ def liquid_to_jinja(src):
 
     src = re.sub(r"{%\s*for\s+(\w+)\s+in\s+([\w.]+)(.*?)%}", loop, src)
     src = re.sub(r"{%\s*assign\s", "{% set ", src)
+    src = re.sub(r"{%\s*elsif\s", "{% elif ", src)
+    src = re.sub(r"\bforloop\.", "loop.", src)
     src = re.sub(r"([\w.]+)\.size\b", r"(\1|length)", src)
     src = re.sub(r"\|\s*(\w+):\s*(\"[^\"]*\"|'[^']*'|[\w.]+)", r"| \1(\2)", src)
     src = re.sub(r"\btrue\b", "True", src)
@@ -82,6 +84,7 @@ def env_for():
         plus=lambda a, b: int(a) + int(b),
         divided_by=lambda a, b: int(a) // int(b),
         number_of_words=lambda s: len(re.findall(r"\S+", re.sub(r"<[^>]+>", " ", s or ""))),
+        sort=lambda v, key=None: sorted(v, key=(lambda x: x.get(key, 0)) if key else None),
     )
     return env
 
@@ -135,7 +138,20 @@ def main():
         p["next"] = posts[i - 1] if i > 0 else None
         p["previous"] = posts[i + 1] if i + 1 < len(posts) else None
 
-    site = dict(config, data=data, posts=posts, time=dt.datetime.now())
+    projects = []
+    jdir = os.path.join(ROOT, "_projects")
+    if os.path.isdir(jdir):
+        for fn in sorted(os.listdir(jdir)):
+            if fn.startswith("_") or not fn.endswith(".md"):
+                continue
+            fm, body = read(os.path.join(jdir, fn))
+            if fm.get("published") is False:
+                continue
+            fm["url"] = f"/workshop/{fn[:-3]}/"
+            fm["content"] = md.reset().convert(body)
+            projects.append(fm)
+
+    site = dict(config, data=data, posts=posts, projects=projects, time=dt.datetime.now())
 
     def render_layout(name, content, page):
         fm, src = read(os.path.join(ROOT, "_layouts", name + ".html"))
@@ -156,17 +172,17 @@ def main():
     os.makedirs(out)
     # Static files: link every top-level entry Jekyll would copy.
     for entry in os.listdir(ROOT):
-        if entry.startswith(("_", ".")) or entry in ("new", "writing", "workshop", "about"):
+        if entry.startswith(("_", ".")) or entry in ("new", "writing", "workshop"):
             continue
         os.symlink(os.path.join(ROOT, entry), os.path.join(out, entry))
 
-    for folder in ("new", "writing", "workshop", "about"):
+    for folder in ("new", "writing", "workshop"):
         fm, src = read(os.path.join(ROOT, folder, "index.html"))
         page = dict(fm, url=fm.get("permalink", f"/{folder}/"))
         body = env.from_string(liquid_to_jinja(src)).render(site=site, page=page)
         write(page["url"], render_layout(fm["layout"], body, page))
 
-    for p in posts:
+    for p in posts + projects:
         write(p["url"], render_layout(p["layout"], p["content"], p))
     print(f"built {len(posts)} posts into {out}")
 

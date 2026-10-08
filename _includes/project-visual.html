@@ -1,0 +1,20 @@
+{% assign v = include.project.visual %}
+{% if v.type == "image" %}
+<img class="visual visual--image" src="{{ v.src }}" alt="{{ v.alt }}">
+{% elsif v.type == "flow" %}
+<div class="visual visual--flow" aria-label="Workflow">
+  {% for step in v.steps %}{% if forloop.index > 1 %}<span class="visual__arrow" aria-hidden="true">→</span>{% endif %}<span class="flow-step flow-step--{{ forloop.index }}">{{ step }}</span>{% endfor %}
+</div>
+{% elsif v.type == "film" %}
+<div class="visual visual--film">
+  <div class="film-holes" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
+  <div class="film-stills">
+    {% for still in v.stills %}{% if still.image %}<img src="{{ still.image }}" alt="{{ still.alt }}">{% else %}<span class="film-still--empty">{{ still.label }}</span>{% endif %}{% endfor %}
+  </div>
+  <div class="film-holes" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div>
+</div>
+{% elsif v.type == "iterations" %}
+<div class="visual visual--iterations">
+  {% for step in v.steps %}<div class="iteration iteration--{{ forloop.index }}{% if forloop.last %} iteration--final{% endif %}"><span class="iteration__block"></span><span class="iteration__label">{{ step }}</span></div>{% endfor %}
+</div>
+{% endif %}

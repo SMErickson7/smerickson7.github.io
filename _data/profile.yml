@@ -1,0 +1,34 @@
+# Homepage hero and the "About the holder" card.
+intro: Marketer by trade, tinkerer by habit. I write about what I learn from building side projects and taking products apart, and spend the rest of my time on the bike, at the printer, or in the stands.
+
+# Small labels above the name
+tags:
+  - Personal site · US · DE
+  - Plainville, MA
+
+card:
+  number: No. SME-2012
+  fields:
+    - label: Home base
+      value: Plainville, MA
+    - label: Citizenship
+      value: US and German
+    - label: Occupation
+      value: B2B marketer
+    - label: Side quests
+      value: Bikes, printers, film
+  # Rubber-stamp badges along the bottom of the card. style: solid, round, or dashed
+  badges:
+    - text: EN · DE · IT
+      style: solid
+    - text: Forza Inter
+      style: round
+
+# The scrolling band under the hero
+ticker:
+  - Writing
+  - Workshop
+  - 3D printing
+  - Agents
+  - Film
+  - Forza Inter

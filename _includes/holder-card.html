@@ -1,0 +1,17 @@
+{% assign card = site.data.profile.card %}
+<aside class="holder" aria-label="About the holder">
+  <div class="holder__top">
+    <span class="holder__heading">About the holder</span>
+    <span class="holder__number">{{ card.number }}</span>
+  </div>
+  <div class="holder__main">
+    <img class="holder__photo" src="/assets/img/portrait.jpg" alt="Steven M. Erickson" width="150" height="190">
+    <dl class="holder__fields">
+      <div class="holder__field holder__field--wide"><dt>Name</dt><dd class="holder__name">{{ site.title }}</dd></div>
+      {% for f in card.fields %}<div class="holder__field"><dt>{{ f.label }}</dt><dd>{{ f.value }}</dd></div>{% endfor %}
+    </dl>
+  </div>
+  <div class="holder__badges">
+    {% for b in card.badges %}<span class="badge badge--{{ b.style }}">{{ b.text }}</span>{% endfor %}
+  </div>
+</aside>

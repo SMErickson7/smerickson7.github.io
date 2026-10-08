@@ -3,26 +3,23 @@ layout: default
 title: Workshop
 section: workshop
 permalink: /workshop/
-description: Side projects I build because I'm curious how things work.
+description: Project reports on things I build because I'm curious how they work.
 ---
-<section class="page-intro container">
-  <p class="eyebrow">Side projects</p>
-  <h1 class="section__title section__title--xl">Workshop</h1>
-  <p class="page-intro__lead">Things I build because I'm curious how they work. Some are design exercises, some are data experiments, and some come off the 3D printer.</p>
+<section class="page-head">
+  <div class="container">
+    <p class="label label--light">Project reports</p>
+    <h1 class="display display--xxl">Workshop</h1>
+    <p class="page-head__lead">Things I build because I'm curious how they work: printed parts, agentic workflows, films, and product teardowns.</p>
+  </div>
 </section>
 
-<section class="section container" aria-label="Projects">
-  <div class="workshop-list">
-    {% for project in site.data.projects %}
-    <a class="workshop-item" href="{{ project.url }}">
-      <img class="workshop-item__image" src="{{ project.image }}" alt="">
-      <div class="workshop-item__text">
-        <span class="meta meta--brand">{{ project.kind }}</span>
-        <span class="workshop-item__title">{{ project.title }}</span>
-        <span class="workshop-item__summary">{{ project.summary }}</span>
-        <span class="arrow-link">Read the case study →</span>
-      </div>
-    </a>
-    {% endfor %}
+<section class="workshop-band workshop-band--page" aria-label="Projects">
+  <div class="container">
+    {% assign projects = site.projects | sort: "order" %}
+    <div class="report-grid">
+      {% for project in projects %}
+      {% include project-card.html project=project %}
+      {% endfor %}
+    </div>
   </div>
 </section>
