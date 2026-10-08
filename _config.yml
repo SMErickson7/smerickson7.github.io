@@ -43,3 +43,6 @@ feed:
 exclude:
   - .vscode
   - Desktop.ini
+  - Gemfile
+  - Gemfile.lock
+  - vendor/bundle/
