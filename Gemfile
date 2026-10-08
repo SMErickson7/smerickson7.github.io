@@ -12,6 +12,14 @@ source "https://rubygems.org"
 gem "github-pages", group: :jekyll_plugins
 gem "webrick"
 
+# Newer Ruby versions (3.4 and up) no longer bundle these libraries,
+# but the Jekyll version GitHub Pages uses still expects them.
+gem "csv"
+gem "base64"
+gem "bigdecimal"
+gem "logger"
+gem "ostruct"
+
 # Windows needs these for time zones and file watching.
 platforms :mingw, :x64_mingw, :mswin, :jruby do
   gem "tzinfo", ">= 1", "< 3"
