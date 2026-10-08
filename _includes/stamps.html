@@ -1,11 +1,24 @@
 {% assign s = site.data.stamps %}
 <div class="stamps">
   {% if s.teams.size > 0 %}
-  <div class="stamp-panel">
-    <p class="label label--muted">Teams</p>
-    <div class="team-stamps">
-      {% for t in s.teams %}<span class="team-stamp team-stamp--{{ t.style }}">{{ t.name }}</span>{% endfor %}
+  {% assign sports = s.teams | map: "sport" | uniq %}
+  <div class="stamp-panel stamp-panel--teams">
+    <div class="teams__head">
+      <p class="teams__title">Teams I follow</p>
+      <p class="teams__count">{{ s.teams.size }} clubs · {{ sports.size }} sports</p>
     </div>
+    <table class="teams-table">
+      <thead><tr><th scope="col">Code</th><th scope="col">Team</th><th scope="col" class="teams-table__sport">Sport</th></tr></thead>
+      <tbody>
+        {% for t in s.teams %}
+        <tr>
+          <td><span class="team-code{% if t.tag %} team-code--tag{% endif %}" style="color: {{ t.color }};{% if t.tag %} background: {{ t.tag }};{% endif %}">{{ t.code }}</span></td>
+          <th scope="row">{{ t.name }}</th>
+          <td class="teams-table__sport">{% include sport-icon.html sport=t.sport %}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
   </div>
   {% endif %}
 

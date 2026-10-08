@@ -1,19 +1,57 @@
 # "Stamps collected" section on the homepage. Edit freely; empty lists are hidden.
 
-# style: round, solid, dashed, pill, tab, banner, framed, or square
+# Teams I follow, shown as a league table.
+# code:  short code in the left column (keep it to 2 to 4 characters)
+# color: the team's primary color as a hex code; colors the code
+# tag:   optional background color behind the code, for light colors
+#        that are hard to read on white (like the Bruins' gold)
+# sport: soccer, basketball, baseball, football, hockey, or motorsport (sets the icon)
 teams:
-  - name: Inter Milan
-    style: round
-  - name: Celtics
-    style: solid
-  - name: NE Revolution
-    style: dashed
-  - name: Formula 1
-    style: pill
+  - code: INT
+    name: Inter Milan
+    sport: soccer
+    color: "#0068A8"
+  - code: BSC
+    name: Hertha BSC
+    sport: soccer
+    color: "#005CA9"
+  - code: USA
+    name: USMNT
+    sport: soccer
+    color: "#0A3161"
+  - code: REV
+    name: New England Revolution
+    sport: soccer
+    color: "#C8102E"
+  - code: RIFC
+    name: Rhode Island FC
+    sport: soccer
+    color: "#1B365D"
+  - code: CEL
+    name: Boston Celtics
+    sport: basketball
+    color: "#007A33"
+  - code: RSX
+    name: Boston Red Sox
+    sport: baseball
+    color: "#BD3039"
+  - code: PAT
+    name: New England Patriots
+    sport: football
+    color: "#002244"
+  - code: BRU
+    name: Boston Bruins
+    sport: hockey
+    color: "#FFB81C"
+    tag: "#111111"
+  - code: F1
+    name: Formula 1
+    sport: motorsport
+    color: "#E10600"
 
 # Passport stamps: countries visited and how many times.
 # flag: file name in /assets/img/flags/ (country code, e.g. de for Germany).
-# style: round, solid, dashed, pill, tab, banner, framed, or square (same stamp styles as teams). Keep round and square for short names.
+# style: round, solid, dashed, pill, tab, banner, framed, or square. Keep round and square for short names.
 # The same list shows on the homepage and the /travel/ page.
 countries:
   - name: Canada
