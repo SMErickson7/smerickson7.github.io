@@ -1,0 +1,86 @@
+---
+layout: default
+section: travel
+---
+{% assign trip = page %}
+{% assign stamps = site.data.stamps.countries %}
+{% assign has_map = false %}{% for p in trip.places %}{% if site.data.places[p] %}{% assign has_map = true %}{% endif %}{% endfor %}
+<article class="trip">
+  <header class="trip__head{% if trip.cover %} trip__head--cover{% endif %}"{% if trip.cover %} style="background-image: linear-gradient(rgba(30, 33, 46, 0.35), rgba(30, 33, 46, 0.8)), url('{{ trip.cover }}');"{% endif %}>
+    <div class="container">
+      <a class="back-link" href="/travel/">← All trips</a>
+      <p class="report__bar"><span>{% include trip-dates.html trip=trip %}</span><span>{{ trip.countries | join: " · " }}</span></p>
+      <h1 class="display display--xxl">{{ trip.title }}</h1>
+      {% if trip.note %}<p class="page-head__lead">{{ trip.note }}</p>{% endif %}
+    </div>
+  </header>
+
+  <div class="container trip__overview{% unless has_map %} trip__overview--no-map{% endunless %}">
+    {% if has_map %}<div class="trip__map travel-map" data-travel-map="trip-map-data" role="region" aria-label="Map of {{ trip.title }}"></div>{% endif %}
+    <dl class="trip__facts">
+      <div><dt class="label label--brand">When</dt><dd>{% include trip-dates.html trip=trip %}</dd></div>
+      {% if trip.countries.size > 0 %}<div><dt class="label label--brand">Countries</dt><dd class="trip__countries">{% for c in trip.countries %}{% assign stamp = stamps | where: "name", c | first %}<span class="trip__country">{% if stamp.flag %}<img src="/assets/img/flags/{{ stamp.flag }}.svg" alt="" width="24" height="16">{% endif %}{{ c }}</span>{% endfor %}</dd></div>{% endif %}
+      {% if trip.places.size > 0 %}<div><dt class="label label--brand">Places</dt><dd>{{ trip.places | join: ", " }}</dd></div>{% endif %}
+      {% if trip.days.size > 0 %}<div><dt class="label label--brand">Documented</dt><dd>{{ trip.days.size }} {% if trip.days.size == 1 %}day{% else %}days{% endif %}</dd></div>{% endif %}
+      {% if trip.post %}<div><dt class="label label--brand">Trip report</dt><dd><a href="{{ trip.post }}">Read the post →</a></dd></div>{% endif %}
+    </dl>
+  </div>
+
+  {% assign story = content | strip %}
+  {% if story != "" %}
+  <div class="container container--narrow prose trip__story">
+    {{ content }}
+  </div>
+  {% endif %}
+
+  {% if trip.days.size > 0 %}
+  <section class="container trip__days" aria-labelledby="days-heading">
+    <div class="section-head">
+      <h2 id="days-heading" class="display display--xl">Day by day</h2>
+      <span class="section-head__aside">{{ trip.days.size }} {% if trip.days.size == 1 %}day{% else %}days{% endif %}</span>
+    </div>
+    <ol class="days">
+      {% for day in trip.days %}
+      <li class="day">
+        <div class="day__marker">
+          <span class="day__number">Day {{ forloop.index }}</span>
+          {% if day.date %}<span class="day__date">{{ day.date | date: "%a %-d %b" }}</span>{% endif %}
+        </div>
+        <div class="day__body">
+          {% if day.title %}<h3 class="day__title">{{ day.title }}</h3>{% endif %}
+          {% if day.place %}<p class="timeline__places">{{ day.place }}</p>{% endif %}
+          {% if day.text %}<div class="day__text">{{ day.text | markdownify }}</div>{% endif %}
+          {% if day.sights.size > 0 %}<div class="pills">{% for s in day.sights %}<span class="pill">{{ s.name }}</span>{% endfor %}</div>{% endif %}
+          {% if day.photos.size > 0 %}{% include trip-photos.html photos=day.photos %}{% endif %}
+        </div>
+      </li>
+      {% endfor %}
+    </ol>
+  </section>
+  {% endif %}
+
+  {% if trip.photos.size > 0 %}
+  <section class="container trip__gallery" aria-labelledby="photos-heading">
+    <div class="section-head">
+      <h2 id="photos-heading" class="display display--xl">Photos</h2>
+      <span class="section-head__aside">{{ trip.photos.size }} {% if trip.photos.size == 1 %}photo{% else %}photos{% endif %}</span>
+    </div>
+    {% include trip-photos.html photos=trip.photos %}
+  </section>
+  {% endif %}
+
+  {% assign trips = site.trips | sort: "date" %}
+  {% for t in trips %}{% if t.url == page.url %}{% assign i = forloop.index0 %}{% endif %}{% endfor %}
+  {% assign older_i = i | minus: 1 %}{% assign newer_i = i | plus: 1 %}
+  <nav class="container trip__nav" aria-label="More trips">
+    {% if older_i >= 0 %}{% assign older = trips[older_i] %}<a class="trip__nav-link" href="{{ older.url }}"><span class="label label--muted">← Older trip</span><span>{{ older.title }}</span></a>{% else %}<span></span>{% endif %}
+    {% if newer_i < trips.size %}{% assign newer = trips[newer_i] %}<a class="trip__nav-link trip__nav-link--next" href="{{ newer.url }}"><span class="label label--muted">Newer trip →</span><span>{{ newer.title }}</span></a>{% endif %}
+  </nav>
+</article>
+
+{% if has_map %}
+<script type="application/json" id="trip-map-data">
+{"mode":"trip","coords":{{ site.data.places | jsonify }},"places":{{ trip.places | jsonify }},"sights":[{% assign first = true %}{% for day in trip.days %}{% for s in day.sights %}{% if s.lat and s.lng %}{% unless first %},{% endunless %}{% assign first = false %}{"name":{{ s.name | jsonify }},"lat":{{ s.lat }},"lng":{{ s.lng }},"day":"Day {{ forloop.parentloop.index }}"}{% endif %}{% endfor %}{% endfor %}]}
+</script>
+{% include map-assets.html %}
+{% endif %}

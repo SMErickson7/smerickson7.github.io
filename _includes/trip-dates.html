@@ -1,0 +1,5 @@
+{%- assign t = include.trip -%}
+{%- if t.end_date -%}
+  {%- assign start_m = t.date | date: "%b %Y" -%}{%- assign end_m = t.end_date | date: "%b %Y" -%}
+  {%- if start_m == end_m -%}{{ t.date | date: "%-d" }}–{{ t.end_date | date: "%-d %b %Y" }}{%- else -%}{{ t.date | date: "%-d %b" }} – {{ t.end_date | date: "%-d %b %Y" }}{%- endif -%}
+{%- else -%}{{ t.date | date: "%b %Y" }}{%- endif -%}

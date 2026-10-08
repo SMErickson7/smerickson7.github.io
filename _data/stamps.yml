@@ -10,44 +10,53 @@ teams:
   - code: INT
     name: Inter Milan
     sport: soccer
-    color: "#0068A8"
-  - code: BSC
-    name: Hertha BSC
-    sport: soccer
-    color: "#005CA9"
-  - code: USA
-    name: USMNT
-    sport: soccer
-    color: "#0A3161"
-  - code: REV
+    color: "#FFFFFF"
+    tag: "#010E80"
+  - code: NER
     name: New England Revolution
     sport: soccer
-    color: "#C8102E"
-  - code: RIFC
-    name: Rhode Island FC
-    sport: soccer
-    color: "#1B365D"
+    color: "#CE0E2D"
+    tag: "#0A2240"
   - code: CEL
     name: Boston Celtics
     sport: basketball
     color: "#007A33"
-  - code: RSX
+    tag: "#111111"
+  - code: SOX
     name: Boston Red Sox
     sport: baseball
-    color: "#BD3039"
-  - code: PAT
+    color: "#FFFFFF"
+    tag: "#BD3039"
+  - code: FER
+    name: Lewis Hamilton (Ferrari)
+    sport: motorsport
+    color: "#FFFFFF"
+    tag: "#E8002D"
+  - code: RIFC
+    name: Rhode Island FC
+    sport: soccer
+    color: "#071A35"
+    tag: "#F9A50D"
+  - code: PATS
     name: New England Patriots
     sport: football
-    color: "#002244"
+    color: "#B0B7BC"
+    tag: "#002244"
+  - code: USA
+    name: USMNT
+    sport: soccer
+    color: "#ffffff"
+    tag: "#BB2533"
+  - code: BSC
+    name: Hertha BSC
+    sport: soccer
+    color: "#ffffff"
+    tag: "#004D9E"
   - code: BRU
     name: Boston Bruins
     sport: hockey
     color: "#FFB81C"
     tag: "#111111"
-  - code: F1
-    name: Formula 1
-    sport: motorsport
-    color: "#E10600"
 
 # Passport stamps: countries visited and how many times.
 # flag: file name in /assets/img/flags/ (country code, e.g. de for Germany).

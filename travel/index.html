@@ -3,19 +3,29 @@ layout: default
 title: Travel
 section: travel
 permalink: /travel/
-description: Countries I've visited and a timeline of my trips.
+description: Countries I've visited, a map of where I've been, and a timeline of my trips.
 ---
 {% assign countries = site.data.stamps.countries %}
 {% assign total_visits = 0 %}{% for c in countries %}{% assign total_visits = total_visits | plus: c.visits %}{% endfor %}
+{% assign trips = site.trips | sort: "date" | reverse %}
+{% assign place_names = "" | split: "" %}{% for t in trips %}{% assign place_names = place_names | concat: t.places %}{% endfor %}{% assign place_names = place_names | uniq %}
 <section class="page-head">
   <div class="container">
     <p class="label label--light">Passport</p>
     <h1 class="display display--xxl">Travel</h1>
-    <p class="page-head__lead">{{ countries.size }} countries, {{ total_visits }} visits, and counting. Every stamp below, plus a timeline of the trips behind them.</p>
+    <p class="page-head__lead">{{ countries.size }} countries, {{ total_visits }} visits, and counting. A map of where I've been, every stamp, and the trips behind them.</p>
   </div>
 </section>
 
-<section class="section container" aria-labelledby="stamps-heading">
+<section class="section container" aria-labelledby="map-heading">
+  <div class="section-head">
+    <h2 id="map-heading" class="display display--xl">Where I've been</h2>
+    <span class="section-head__aside">{{ place_names.size }} places · {{ trips.size }} trips</span>
+  </div>
+  <div class="travel-map travel-map--all" data-travel-map="travel-map-data" role="region" aria-label="Map of every place I've traveled to"></div>
+</section>
+
+<section class="section section--flush-top container" aria-labelledby="stamps-heading">
   <div class="section-head">
     <h2 id="stamps-heading" class="display display--xl">Stamps</h2>
     <span class="section-head__aside">{{ countries.size }} countries</span>
@@ -30,19 +40,21 @@ description: Countries I've visited and a timeline of my trips.
     <h2 id="timeline-heading" class="display display--xl">Timeline</h2>
     <span class="section-head__aside">Newest first</span>
   </div>
-  {% assign trips = site.data.trips | sort: "date" | reverse %}
   {% if trips.size > 0 %}
   <ol class="timeline">
     {% for trip in trips %}
     <li class="timeline__item">
-      {% assign d = trip.date | append: "" %}{% if d.size == 7 %}{% assign d = d | append: "-01" %}{% endif %}
-      <p class="timeline__date">{% if d.size == 10 %}{{ d | date: "%b %Y" }}{% else %}{{ d }}{% endif %}</p>
-      <div class="timeline__body">
-        <h3 class="timeline__title">{{ trip.title }}</h3>
-        {% if trip.places %}<p class="timeline__places">{{ trip.places }}</p>{% endif %}
-        {% if trip.countries.size > 0 %}<div class="pills">{% for c in trip.countries %}<span class="pill">{{ c }}</span>{% endfor %}</div>{% endif %}
-        {% if trip.note %}<p class="timeline__note">{{ trip.note }}</p>{% endif %}
-        {% if trip.post %}<a class="timeline__link" href="{{ trip.post }}">Read the trip report →</a>{% endif %}
+      <p class="timeline__date">{{ trip.date | date: "%b %Y" }}</p>
+      <div class="timeline__body{% if trip.cover %} timeline__body--cover{% endif %}">
+        <div class="timeline__text">
+          <h3 class="timeline__title"><a href="{{ trip.url }}">{{ trip.title }}</a></h3>
+          {% if trip.places.size > 0 %}<p class="timeline__places">{{ trip.places | join: ", " }}</p>{% endif %}
+          {% if trip.countries.size > 0 %}<div class="pills">{% for c in trip.countries %}<span class="pill">{{ c }}</span>{% endfor %}</div>{% endif %}
+          {% if trip.note %}<p class="timeline__note">{{ trip.note }}</p>{% endif %}
+          {% assign photo_count = trip.photos.size | default: 0 %}{% for day in trip.days %}{% assign photo_count = photo_count | plus: day.photos.size %}{% endfor %}
+          <p class="timeline__meta"><a class="timeline__link" href="{{ trip.url }}">Trip details →</a>{% if trip.days.size > 0 %}<span>{{ trip.days.size }} {% if trip.days.size == 1 %}day{% else %}days{% endif %}</span>{% endif %}{% if photo_count > 0 %}<span>{{ photo_count }} {% if photo_count == 1 %}photo{% else %}photos{% endif %}</span>{% endif %}</p>
+        </div>
+        {% if trip.cover %}<a class="timeline__cover" href="{{ trip.url }}" tabindex="-1" aria-hidden="true"><img src="{{ trip.cover }}" alt="" loading="lazy"></a>{% endif %}
       </div>
     </li>
     {% endfor %}
@@ -51,3 +63,8 @@ description: Countries I've visited and a timeline of my trips.
   <p class="empty-note">The trip timeline is on its way.</p>
   {% endif %}
 </section>
+
+<script type="application/json" id="travel-map-data">
+{"mode":"all","coords":{{ site.data.places | jsonify }},"trips":[{% for t in trips %}{"title":{{ t.title | jsonify }},"url":{{ t.url | jsonify }},"when":{{ t.date | date: "%b %Y" | jsonify }},"places":{{ t.places | jsonify }}}{% unless forloop.last %},{% endunless %}{% endfor %}]}
+</script>
+{% include map-assets.html %}

@@ -36,6 +36,10 @@ collections:
   projects:
     output: true
     permalink: /workshop/:name/
+  # Trips live in _trips/ as YYYY-MM-DD-short-name.md and are published at /travel/short-name/
+  trips:
+    output: true
+    permalink: /travel/:slug/
 
 # Blog posts live in _posts/ and are published at /writing/<post-title>/
 permalink: /writing/:title/
@@ -55,3 +59,10 @@ exclude:
   - Gemfile
   - Gemfile.lock
   - vendor/bundle/
+
+# Every trip uses the trip layout, so trip files don't need to set it.
+defaults:
+  - scope:
+      type: trips
+    values:
+      layout: trip

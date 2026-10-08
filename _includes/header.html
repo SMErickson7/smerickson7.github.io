@@ -1,12 +1,11 @@
 <header class="site-header">
   <div class="container site-header__inner">
     <a class="site-logo" href="{{ site.home_path }}" aria-label="{{ site.title }}, home">
-      <img src="/assets/img/avatar.png" alt="" width="44" height="44">
-      <span>SME</span>
+      <img src="/assets/img/signature-white_logo.svg" alt="" width="194" height="40">
     </a>
     <nav class="site-nav" aria-label="Main">
-      <a href="/writing/"{% if page.section == 'writing' %} aria-current="page"{% endif %}>Writing</a>
-      <a href="/workshop/"{% if page.section == 'workshop' %} aria-current="page"{% endif %}>Workshop</a>
+      <a href="/writing/" {% if page.section=='writing' %} aria-current="page" {% endif %}>Writing</a>
+      <a href="/workshop/" {% if page.section=='workshop' %} aria-current="page" {% endif %}>Workshop</a>
       <a href="{{ site.home_path }}#stamps">Stamps</a>
       <a class="site-nav__resume" href="{{ site.resume }}">Resume</a>
     </nav>
