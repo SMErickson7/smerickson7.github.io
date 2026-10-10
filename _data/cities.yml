@@ -1,0 +1,23 @@
+# Cities shown as markers on the travel maps (/travel/ and each trip page).
+# A trip's `places` list is matched against `name` here, so the spelling must be identical.
+# country: the country name used in the trips (shown in the marker tooltip).
+# lat/lon: decimal degrees. Right-click a spot in Google Maps to copy them (lat first).
+
+- { name: Amsterdam, country: Netherlands, lat: 52.3676, lon: 4.9041 }
+- { name: Berlin, country: Germany, lat: 52.5200, lon: 13.4050 }
+- { name: Bogotá, country: Colombia, lat: 4.7110, lon: -74.0721 }
+- { name: Bremen, country: Germany, lat: 53.0793, lon: 8.8017 }
+- { name: Cancun, country: Mexico, lat: 21.1619, lon: -86.8515 }
+- { name: Como, country: Italy, lat: 45.8081, lon: 9.0852 }
+- { name: Hamburg, country: Germany, lat: 53.5511, lon: 9.9937 }
+- { name: Kyiv, country: Ukraine, lat: 50.4501, lon: 30.5234 }
+- { name: London, country: England, lat: 51.5072, lon: -0.1276 }
+- { name: Milan, country: Italy, lat: 45.4642, lon: 9.1900 }
+- { name: Montreal, country: Canada, lat: 45.5019, lon: -73.5674 }
+- { name: Munich, country: Germany, lat: 48.1351, lon: 11.5820 }
+- { name: Paris, country: France, lat: 48.8566, lon: 2.3522 }
+- { name: Prague, country: Czechia, lat: 50.0755, lon: 14.4378 }
+- { name: Riale, country: Italy, lat: 46.4196, lon: 8.4300 }
+- { name: Rome, country: Italy, lat: 41.9028, lon: 12.4964 }
+- { name: Toronto, country: Canada, lat: 43.6532, lon: -79.3832 }
+- { name: Vatican City, country: Vatican City, lat: 41.9029, lon: 12.4534 }

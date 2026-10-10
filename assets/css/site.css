@@ -246,15 +246,37 @@ a:hover { color: var(--brand); }
 .timeline__note { margin: 0; color: var(--body); }
 .timeline__link { font-weight: 600; color: var(--brand); }
 
-/* Travel maps (Leaflet) */
-.travel-map { height: 360px; border-radius: 18px; overflow: hidden; background: var(--surface); z-index: 0; }
-.travel-map--all { margin-top: 32px; height: 480px; }
-.map-popup__title { margin: 0; font-family: var(--display); font-weight: 900; font-size: 20px; text-transform: uppercase; color: var(--ink); }
-.map-popup__meta { margin: 2px 0 0; font-family: var(--mono); font-size: 11px; text-transform: uppercase; color: var(--muted); }
-.map-popup__list { list-style: none; margin: 8px 0 0; padding: 0; max-height: 180px; overflow-y: auto; font-family: var(--font); font-size: 14px; }
-.map-popup__list li + li { margin-top: 4px; }
-.map-popup__list a { color: var(--brand); font-weight: 600; }
-.map-popup__list span { color: var(--muted); font-size: 12px; }
+/* Travel maps (D3, see assets/js/travel-map.js) */
+.travel-map { position: relative; height: 360px; border-radius: 18px; overflow: hidden; background: var(--surface); }
+.travel-map--all { margin-top: 32px; height: 520px; }
+.map-stage { position: absolute; inset: 0; }
+.map-svg { position: absolute; inset: 0; width: 100%; height: 100%; display: block; cursor: grab; touch-action: pan-x pan-y; }
+.map-svg:active { cursor: grabbing; }
+.map-svg--markers { pointer-events: none; cursor: default; }
+.map-country { fill: var(--line); stroke: var(--white); stroke-width: 0.6; vector-effect: non-scaling-stroke; }
+.map-country:hover { fill: #C2C8D6; }
+.map-country--visited { fill: var(--brand); }
+.map-country--visited:hover { fill: var(--brand-dark); }
+.map-marker { fill: var(--ink); stroke: var(--white); pointer-events: auto; cursor: pointer; }
+.map-marker:focus { outline: none; }
+.map-marker:focus-visible { stroke: var(--brand-tint); }
+.map-marker--sight { fill: var(--muted); }
+.map-tip { position: absolute; z-index: 2; transform: translate(-50%, calc(-100% - 10px)); pointer-events: none; background: var(--ink); color: var(--white); border-radius: 8px; padding: 6px 10px; font-size: 14px; line-height: 1.3; white-space: nowrap; display: flex; flex-direction: column; box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2); }
+.map-tip span { font-family: var(--mono); font-size: 11px; text-transform: uppercase; color: var(--brand-tint); }
+.map-error { margin: 0; padding: 24px; color: var(--muted); }
+.map-controls { position: absolute; z-index: 3; top: 12px; right: 12px; display: flex; flex-direction: column; gap: 6px; }
+.map-control { min-width: 40px; height: 40px; padding: 0 10px; border: 2px solid var(--ink); background: var(--white); color: var(--ink); font-family: var(--display); font-weight: 800; font-size: 22px; line-height: 1; cursor: pointer; }
+.map-control:hover { border-color: var(--brand); color: var(--brand); }
+.map-control--reset { font-size: 14px; letter-spacing: 0.06em; text-transform: uppercase; }
+.map-legend { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 20px; margin-top: 12px; font-family: var(--mono); font-size: 12px; text-transform: uppercase; color: var(--muted); }
+.map-legend__item { display: inline-flex; align-items: center; gap: 8px; }
+.map-legend__swatch { width: 18px; height: 12px; border-radius: 2px; background: var(--line); }
+.map-legend__swatch--visited { background: var(--brand); }
+.map-legend__dot { width: 10px; height: 10px; border-radius: 50%; background: var(--ink); box-shadow: 0 0 0 1.5px var(--white), 0 0 0 2.5px var(--line); }
+.map-legend__hint { margin-left: auto; text-transform: none; font-family: var(--font); font-size: 13px; }
+.map-list { margin-top: 12px; font-size: 15px; }
+.map-list summary { cursor: pointer; font-weight: 600; color: var(--ink); }
+.map-list ul { margin: 8px 0 0; padding-left: 1.3em; columns: 3 160px; }
 
 /* Trip page */
 .trip__head { background: var(--brand); color: var(--white); padding-top: 48px; padding-bottom: 64px; }
@@ -385,7 +407,11 @@ a:hover { color: var(--brand); }
   .timeline__date { padding-left: 31px; }
   .timeline__body--cover { grid-template-columns: minmax(0, 1fr); }
   .timeline__cover { order: -1; }
-  .travel-map, .travel-map--all { height: 340px; }
+  .travel-map, .travel-map--all { height: auto; aspect-ratio: 3 / 2; }
+  .map-controls { top: 8px; right: 8px; gap: 4px; }
+  .map-control { min-width: 32px; height: 32px; font-size: 18px; padding: 0 6px; }
+  .map-control--reset { font-size: 12px; }
+  .map-legend__hint { margin-left: 0; }
   .trip__overview { grid-template-columns: minmax(0, 1fr); padding-top: 40px; }
   .trip__head--cover { padding-top: 80px; }
   .day { grid-template-columns: minmax(0, 1fr); gap: 8px; }
@@ -398,3 +424,38 @@ a:hover { color: var(--brand); }
 
 /* If the display font fails to load, long words wrap instead of widening the page */
 .display, .hero__name, .post__title, .featured__title, .report-card__title, .member__name, .site-footer__title { overflow-wrap: break-word; }
+
+/* Case study pieces used inside project reports (Strava) */
+.case-meta { font-family: var(--mono); font-size: 13px; text-transform: uppercase; color: var(--muted); }
+.case-nav { display: flex; flex-wrap: wrap; gap: 8px; }
+.case-nav .chip { text-decoration: none; }
+.prose .case-nav a { color: var(--ink); }
+.case-figure { margin: 1.6em 0 0; }
+.case-figure img, .case-compare img, .case-usecase img { margin: 0; width: 100%; border-radius: 10px; }
+.case-figure figcaption, .case-compare figcaption, .case-usecase figcaption, .case-swatches figcaption, .case-locate figcaption { margin-top: 8px; font-size: 14px; line-height: 1.5; color: var(--muted); }
+.case-more { border: 2px solid var(--line); border-radius: 10px; padding: 14px 18px; }
+.case-more + .case-more { margin-top: 12px; }
+.case-more summary { cursor: pointer; font-weight: 700; color: var(--ink); }
+.case-more p { margin: 12px 0 0; }
+.case-note { background: var(--surface); border-left: 6px solid var(--brand); padding: 14px 18px; font-size: 16px; }
+.case-usecases { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 240px), 1fr)); gap: 24px; }
+.case-usecase { margin: 0; }
+.prose .case-usecase img { width: auto; max-width: 100%; height: 300px; object-fit: contain; }
+.case-swatches, .case-locate { display: flex; flex-wrap: wrap; gap: 32px; align-items: flex-end; }
+.case-swatches figure, .case-locate figure { margin: 0; display: flex; flex-direction: column; align-items: center; text-align: center; }
+.case-swatch { display: block; width: 100px; height: 40px; }
+.case-swatch--remaining { background: #FC5200; border: 6px solid #CC4200; }
+.case-swatch--completed { background: #4B90E2; border: 6px solid #2A59A2; }
+.prose .case-locate img { margin: 0; }
+.case-viewer { display: flex; flex-direction: column; gap: 16px; align-items: center; background: var(--surface); border-radius: 18px; padding: 24px; }
+.case-viewer__controls { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px 16px; }
+.case-viewer__controls .chips { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; margin: 0; }
+.prose .case-viewer__image { margin: 0; width: auto; max-width: 100%; max-height: 640px; border-radius: 10px; }
+.case-compare { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; }
+.case-compare--three { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.case-compare--four { grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 16px; }
+.case-compare figure { margin: 0; text-align: center; }
+.prose .case-compare img { width: auto; max-width: 100%; max-height: 560px; margin: 0 auto; }
+@media (max-width: 560px) {
+  .case-compare--three, .case-compare--four { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}

@@ -6,7 +6,7 @@ title: Short Trip Name
 date: 2025-12-01
 end_date: 2025-12-12          # Optional. Shows the trip length.
 countries: [Italy, Germany]   # Names must match _data/stamps.yml to show flags.
-places: [Rome, Berlin]        # Map markers. Names must match _data/places.yml.
+places: [Rome, Berlin]        # Map markers. Names must match _data/cities.yml.
 note: One or two sentences shown on the timeline and at the top of the trip page.
 cover: /assets/img/trips/short-name/cover.jpg   # Optional. Wide photo for the timeline and page header.
 post: /writing/my-post/       # Optional. Related blog post.
