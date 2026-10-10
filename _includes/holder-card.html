@@ -1,7 +1,7 @@
 {% assign card = site.data.profile.card %}
-<aside class="holder" aria-label="About the holder">
+<aside class="holder" aria-label="At a glance">
   <div class="holder__top">
-    <span class="holder__heading">About the holder</span>
+    <span class="holder__heading">At a Glance</span>
     <span class="holder__number">{{ card.number }}</span>
   </div>
   <div class="holder__main">
@@ -12,6 +12,6 @@
     </dl>
   </div>
   <div class="holder__badges">
-    {% for b in card.badges %}<span class="badge badge--{{ b.style }}">{{ b.text }}</span>{% endfor %}
+    {% for b in card.badges %}{% include holder-badge.html badge=b %}{% endfor %}
   </div>
 </aside>

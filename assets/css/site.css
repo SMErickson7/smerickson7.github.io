@@ -30,6 +30,7 @@ a { color: var(--ink); }
 a:hover { color: var(--brand); }
 :focus-visible { outline: 3px solid var(--brand-tint); outline-offset: 3px; }
 [hidden] { display: none !important; }
+.visually-hidden { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0; }
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
 
 .skip-link { position: absolute; left: 16px; top: -60px; background: var(--white); color: var(--brand); padding: 10px 16px; z-index: 10; font-weight: 700; }
@@ -95,6 +96,8 @@ a:hover { color: var(--brand); }
 .badge--solid { color: var(--brand); border: 2px solid var(--brand); border-radius: 6px; transform: rotate(3deg); }
 .badge--round { color: var(--ink); border: 2px solid var(--ink); border-radius: 999px; padding: 6px 12px; transform: rotate(-4deg); }
 .badge--dashed { color: var(--brand); border: 2px dashed var(--brand); border-radius: 6px; transform: rotate(2deg); }
+.badge--icon { display: inline-flex; align-items: center; gap: 6px; }
+.badge__icon { flex: none; display: block; }
 
 /* Ticker */
 .ticker { background: var(--ink); color: var(--white); }

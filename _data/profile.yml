@@ -1,4 +1,4 @@
-# Homepage hero and the "About the holder" card.
+# Homepage hero and the "At a Glance" card.
 intro: Marketer by trade, tinkerer by habit. I write about what I learn from building side projects and taking products apart, and spend the rest of my time on the bike, at the printer, or in the stands.
 
 # Small labels above the name
@@ -7,7 +7,7 @@ tags:
   - Plainville, MA
 
 card:
-  number: No. SME-2012
+  number: No. SME-07
   fields:
     - label: Home base
       value: Plainville, MA
@@ -16,11 +16,15 @@ card:
     - label: Occupation
       value: B2B marketer
     - label: Side quests
-      value: Bikes, printers, film
+      value: Soccer, Cycling, Traveling
   # Rubber-stamp badges along the bottom of the card. style: solid, round, or dashed
+  # icon: optional, "globe" adds a globe icon before the text.
+  # label: optional, what screen readers say in place of the text.
   badges:
-    - text: EN · DE · IT
-      style: solid
+    - text: 11 & counting
+      icon: globe
+      label: 11 countries visited and counting
+      style: round
     - text: Forza Inter
       style: round
 
