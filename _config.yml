@@ -60,6 +60,8 @@ exclude:
   - Gemfile.lock
   - vendor/bundle/
   - wrangler.jsonc
+  - img/headers/Erickson_headshot.psd
+  - "**/*.psd"
 
 # Every trip uses the trip layout, so trip files don't need to set it.
 defaults:
