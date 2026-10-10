@@ -5,9 +5,7 @@ url: https://www.stevenmerickson.com
 author: Steven M. Erickson
 email: steven@stevenmerickson.com
 
-# While the redesign is in preview, the new homepage lives at /new/.
-# When it replaces the old index.html, change this to "/".
-home_path: /new/
+home_path: /
 
 resume: /files/Steven_Erickson_Resume.pdf
 google_analytics: G-L3H86C604W
