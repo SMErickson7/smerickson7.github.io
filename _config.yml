@@ -59,6 +59,7 @@ exclude:
   - Gemfile
   - Gemfile.lock
   - vendor/bundle/
+  - wrangler.jsonc
 
 # Every trip uses the trip layout, so trip files don't need to set it.
 defaults:
