@@ -3,8 +3,8 @@ layout: post
 title: "A Layoff, a Rebuild, and a First Post"
 description: "Getting laid off in August pushed me to rebuild this site with Claude. What I took from the layoff, why I'm excited to get back into marketing, and what this space is for."
 topic: projects
-# image: /assets/img/posts/layoff-rebuild-first-post/hero.png   # uncomment once the hero image is added
-# image_alt: "Cobalt and ink matchday-program style graphic with a tilted passport stamp reading NEW CHAPTER"
+image: /assets/img/posts/layoff-rebuild-first-post/hero.jpg
+image_alt: "An open passport on a cobalt background with a ticket stub tucked inside and a tilted stamp reading NEW CHAPTER"
 ai_assisted: true
 ---
 
