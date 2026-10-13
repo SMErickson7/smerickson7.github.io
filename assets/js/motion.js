@@ -8,7 +8,8 @@
   var SELECTOR = [
     '.section-head', '.featured', '.fixture', '.report-grid', '.stamp-panel', '.post-nav__link',
     '.timeline__item', '.day', '.photo-grid__item', '.travel-map', '.passport-page',
-    '.report__overview', '.trip__overview', '.case-figure', '.case-compare', '.case-viewer'
+    '.report__overview', '.trip__overview', '.case-figure', '.case-compare', '.case-viewer',
+    '.bike', '.cycling-story', '.carousel', '.metrics', '.case-callout'
   ].join(',');
 
   var observer = new IntersectionObserver(function (entries) {

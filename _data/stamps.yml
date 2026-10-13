@@ -114,11 +114,4 @@ clubs:
     since: "August 2021"
     role: Volunteer
 
-activities_photo: /assets/img/about-ride.jpg
-activities_photo_alt: Steven on a ride, smiling in cycling sunglasses
-activities:
-  - Cycling
-  - 3D printing
-  - Filmmaking
-  - Travel
-  - Pizza
+# The Cycling card (last in the row) reads from _data/cycling.yml.

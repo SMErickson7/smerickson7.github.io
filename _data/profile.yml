@@ -1,5 +1,5 @@
 # Homepage hero and the "At a Glance" card.
-intro: Marketer by trade, tinkerer by habit. I write about what I learn from building side projects and taking products apart, and spend the rest of my time on the bike, at the printer, or in the stands.
+intro: "Musings of a marketer, cyclist, traveler, Lego builder, soccer fanatic, and techie. Rarely in that order, never without an\u00A0opinion."
 
 # Small labels above the name
 tags:
@@ -30,9 +30,14 @@ card:
 
 # The scrolling band under the hero
 ticker:
-  - Writing
-  - Workshop
-  - 3D printing
-  - Agents
-  - Film
   - Forza Inter
+  - Lego builds
+  - Travel
+  - Cycling
+  - Tech
+  - Glühwein
+  - Go Revs
+  - Film
+  - 3D printing
+  - Formula 1
+  - Side projects

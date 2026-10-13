@@ -1,0 +1,112 @@
+---
+layout: default
+title: Cycling
+section: cycling
+permalink: /cycling/
+description: My bikes, how I got into cycling, photos from my rides, and my all-time Strava numbers.
+---
+{% assign cy = site.data.cycling %}
+{% assign rides_stat = cy.stats | where: "label", "Rides" | first %}
+{% assign distance_stat = cy.stats | where: "label", "Distance" | first %}
+{% assign case_study = site.projects | where_exp: "p", "p.url contains 'strava-redesign'" | first %}
+<section class="page-head">
+  <div class="container">
+    <p class="label label--light">On two wheels</p>
+    <h1 class="display display--xxl">Cycling</h1>
+    <p class="page-head__lead">{{ rides_stat.value }} rides and {{ distance_stat.value }} on Strava since I started riding in 2018. Here are the bikes, the story, and the numbers.</p>
+  </div>
+</section>
+
+<section class="section container" aria-labelledby="garage-heading">
+  <div class="section-head">
+    <h2 id="garage-heading" class="display display--xl">The garage</h2>
+    <span class="section-head__aside">{{ cy.bikes.size }} bikes</span>
+  </div>
+  <div class="bikes">
+    {% for bike in cy.bikes %}
+    <article class="bike">
+      {% if bike.photo %}
+      <img class="bike__photo" src="{{ bike.photo }}" alt="{{ bike.photo_alt | default: bike.name }}" loading="lazy">
+      {% else %}
+      <div class="bike__photo bike__photo--blank" aria-hidden="true">{% include icons/bike.html %}<span>Photo coming soon</span></div>
+      {% endif %}
+      <div class="bike__body">
+        <p class="label label--brand">{{ bike.year }}</p>
+        <h3 class="bike__name">{{ bike.name }}</h3>
+        <dl class="ride-stats">
+          <div><dt>Rides</dt><dd>{{ bike.rides }}</dd></div>
+          <div><dt>Miles</dt><dd>{{ bike.miles }}</dd></div>
+        </dl>
+      </div>
+    </article>
+    {% endfor %}
+  </div>
+</section>
+
+<section class="section section--flush-top container" aria-labelledby="story-heading">
+  <div class="section-head">
+    <h2 id="story-heading" class="display display--xl">How I got into cycling</h2>
+    <span class="section-head__aside">Summer 2018</span>
+  </div>
+  <div class="cycling-story cycling-story--text">
+    <div class="prose">
+      <p>I started cycling in the summer of 2018 after a couple of friends talked about their rides. For over 20 years I played soccer to keep the extra pounds off, but it was taking a toll on my body. My knees and lower back were sore and strained from playing on artificial turf.</p>
+      <p>I was looking for a new, fun, and low impact activity. And if I could do it with my friends, even better. I didn't know much about cycling (I did know how to ride a bike), so through the advice of my close friends, I purchased my first road bike, acquired the right gear, and downloaded Strava.</p>
+    </div>
+  </div>
+</section>
+
+{% if cy.rides.size > 0 %}
+<section class="section section--flush-top container" aria-labelledby="rides-heading">
+  <div class="section-head">
+    <h2 id="rides-heading" class="display display--xl">Out on the road</h2>
+    <span class="section-head__aside">{{ cy.rides.size }} {% if cy.rides.size == 1 %}photo{% else %}photos{% endif %}</span>
+  </div>
+  <div class="carousel" data-carousel role="region" aria-roledescription="carousel" aria-label="Ride photos">
+    <div class="carousel__track" data-carousel-track tabindex="0" aria-label="Ride photos, scroll sideways or use the buttons">
+      {% for photo in cy.rides %}
+      <figure class="carousel__slide" role="group" aria-roledescription="slide" aria-label="{{ forloop.index }} of {{ cy.rides.size }}">
+        <img src="{{ photo.src }}" alt="{{ photo.alt }}" loading="lazy">
+        {% if photo.caption %}<figcaption>{{ photo.caption }}</figcaption>{% endif %}
+      </figure>
+      {% endfor %}
+    </div>
+    {% if cy.rides.size > 1 %}<div class="carousel__controls">
+      <button type="button" class="map-control" data-carousel-prev aria-label="Previous photo">&larr;</button>
+      <span class="carousel__count" data-carousel-count aria-live="polite">1 / {{ cy.rides.size }}</span>
+      <button type="button" class="map-control" data-carousel-next aria-label="Next photo">&rarr;</button>
+    </div>{% endif %}
+  </div>
+</section>
+{% endif %}
+
+<section class="section section--flush-top container" aria-labelledby="numbers-heading">
+  <div class="section-head">
+    <h2 id="numbers-heading" class="display display--xl">By the numbers</h2>
+    <span class="section-head__aside">All time on Strava</span>
+  </div>
+  <div class="metrics">
+    <table class="teams-table metrics-table">
+      <caption class="visually-hidden">All-time cycling stats from Strava</caption>
+      <thead><tr><th scope="col">Metric</th><th scope="col">All time</th></tr></thead>
+      <tbody>
+        {% for st in cy.stats %}<tr><th scope="row">{{ st.label }}</th><td>{{ st.value }}</td></tr>{% endfor %}
+        {% for bike in cy.bikes %}<tr><th scope="row">{{ bike.name }}</th><td>{{ bike.rides }} rides, {{ bike.miles }} miles</td></tr>{% endfor %}
+      </tbody>
+    </table>
+    <p class="metrics__note">Updated {{ cy.updated }}. Follow along on <a href="{{ site.social.strava }}">Strava</a>.</p>
+  </div>
+</section>
+
+{% if case_study %}
+<section class="section section--flush-top container" aria-label="Related case study">
+  <a class="case-callout" href="{{ case_study.url }}">
+    <span class="label">From the workshop</span>
+    <span class="case-callout__title">{{ case_study.title }}</span>
+    <span class="case-callout__text">{{ case_study.summary }}</span>
+    <span class="case-callout__link">Read the case study →</span>
+  </a>
+</section>
+{% endif %}
+
+<script src="/assets/js/carousel.js?v={{ site.time | date: '%s' }}" defer></script>

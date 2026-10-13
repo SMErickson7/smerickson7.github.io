@@ -31,8 +31,8 @@
     </div>
     <div class="stamp-panel__body">
       {% include passport-stamps.html %}
-      <a class="stamp-panel__link" href="/travel/">Travel timeline <svg class="stamp-panel__icon" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path fill="currentColor" d="M21 16v-2l-8-5V3.5c0-.83-.67-1.5-1.5-1.5S10 2.67 10 3.5V9l-8 5v2l8-2.5V19l-2 1.5V22l3.5-1 3.5 1v-1.5L13 19v-5.5l8 2.5z"/></svg></a>
     </div>
+    <a class="card-stub" href="/travel/"><span>Travel timeline</span><span class="card-stub__icon card-stub__icon--plane">{% include icons/plane.html %}</span></a>
   </div>
   {% endif %}
 
@@ -46,13 +46,15 @@
   </div>
   {% endfor %}
 
-  {% if s.activities.size > 0 %}
-  <div class="stamp-panel stamp-panel--photo">
-    {% if s.activities_photo %}<img src="{{ s.activities_photo }}" alt="{{ s.activities_photo_alt }}">{% endif %}
+  {% assign cy = site.data.cycling %}
+  {% if cy %}
+  <div class="stamp-panel stamp-panel--photo stamp-panel--cycling">
+    {% if cy.photo %}<img src="{{ cy.photo }}" alt="{{ cy.photo_alt }}">{% endif %}
     <div class="stamp-panel__inner">
-      <p class="label label--muted">Activities</p>
-      <div class="pills">{% for a in s.activities %}<span class="pill">{{ a }}</span>{% endfor %}</div>
+      <p class="label label--muted">Cycling</p>
+      <dl class="ride-stats">{% for st in cy.stats %}{% if st.card %}<div><dt>{{ st.label }}</dt><dd>{{ st.value }}</dd></div>{% endif %}{% endfor %}</dl>
     </div>
+    <a class="card-stub" href="/cycling/"><span>Cycling page</span><span class="card-stub__icon card-stub__icon--bike">{% include icons/bike.html %}</span></a>
   </div>
   {% endif %}
 </div>

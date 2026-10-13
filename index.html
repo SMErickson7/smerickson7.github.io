@@ -17,9 +17,10 @@ description: Marketer by trade, tinkerer by habit. Writing about what I learn fr
   </div>
 </section>
 
+{% comment %}The list repeats inside each group so it fills wide screens, and the two identical groups make the loop seamless.{% endcomment %}
 <div class="ticker" aria-hidden="true">
-  <div class="container ticker__inner">
-    {% for item in site.data.profile.ticker %}{% if forloop.index > 1 %}<span class="ticker__sep">/</span>{% endif %}<span>{{ item }}</span>{% endfor %}
+  <div class="ticker__track">
+    {% for copy in (1..2) %}<div class="ticker__group">{% for pass in (1..3) %}{% for item in site.data.profile.ticker %}<span>{{ item }}</span><span class="ticker__sep">/</span>{% endfor %}{% endfor %}</div>{% endfor %}
   </div>
 </div>
 
@@ -75,7 +76,7 @@ description: Marketer by trade, tinkerer by habit. Writing about what I learn fr
   <div class="container">
     <div class="section-head">
       <h2 id="stamps-heading" class="display display--xl">Stamps collected</h2>
-      <span class="section-head__aside">Teams, travels, clubs, pastimes</span>
+      <span class="section-head__aside">Teams, travels, clubs, cycling</span>
     </div>
     {% include stamps.html %}
   </div>

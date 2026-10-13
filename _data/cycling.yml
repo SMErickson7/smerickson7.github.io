@@ -1,0 +1,46 @@
+# Cycling: the "Cycling" card in Stamps collected and the /cycling/ page.
+
+# Card photo on the homepage
+photo: /assets/img/about-ride.jpg
+photo_alt: Steven on a ride, smiling in cycling sunglasses
+
+# All-time Strava stats. Copied from the Google Sheet the old Strava page read live.
+# Update the numbers and `updated` whenever you refresh them.
+# `card: true` also shows that stat on the homepage card (keep it to three).
+updated: October 2026
+stats:
+  - label: Rides
+    value: "238"
+    card: true
+  - label: Distance
+    value: "5,878.4 miles"
+    card: true
+  - label: Elevation gain
+    value: "187,928 ft"
+    card: true
+  - label: Time in the saddle
+    value: 390 hours, 15 minutes
+  - label: Longest ride
+    value: "81.11 miles"
+  - label: Biggest climb
+    value: "232 ft"
+
+# The garage. photo is optional; without one the card shows a placeholder.
+# Put bike photos in /assets/img/cycling/ and add photo: and photo_alt: lines.
+bikes:
+  - name: Trek Domane SL 5 Gen 4
+    year: "2023"
+    rides: "55"
+    miles: "1,642.8"
+  - name: Fuji Sportif 2.3
+    year: "2016"
+    rides: "183"
+    miles: "4,235.6"
+
+# Ride photo carousel. Add as many as you like; they show in this order.
+# The arrow buttons appear once there are two or more photos.
+# Put new photos in /assets/img/cycling/ and add src:, alt:, and caption: lines.
+rides:
+  - src: /img/cycling-small.jpg
+    alt: Steven stopped with his bike halfway through a ride
+    caption: Halfway through a 48 mile ride.
