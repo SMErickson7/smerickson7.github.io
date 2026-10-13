@@ -66,8 +66,10 @@ a:hover { color: var(--brand); }
 .site-footer__title { margin: 0 0 8px; font-family: var(--display); font-weight: 900; font-size: 56px; line-height: 0.9; text-transform: uppercase; }
 .site-footer a { color: var(--white); }
 .site-footer__contact a { font-size: 18px; }
-.site-footer__social { display: flex; flex-wrap: wrap; gap: 8px 24px; }
-.site-footer__social a { font-family: var(--display); font-weight: 800; font-size: 20px; letter-spacing: 0.06em; text-transform: uppercase; }
+.site-footer__social { display: flex; flex-wrap: wrap; align-items: center; gap: 12px 20px; }
+.site-footer__social a { display: inline-flex; padding: 4px; border-radius: 6px; transition: opacity 0.15s; }
+.site-footer__social a:hover { opacity: 0.75; }
+.social-icon { width: 26px; height: 26px; display: block; }
 
 /* Hero */
 .hero { background: var(--brand); color: var(--white); }
@@ -458,4 +460,36 @@ a:hover { color: var(--brand); }
 .prose .case-compare img { width: auto; max-width: 100%; max-height: 560px; margin: 0 auto; }
 @media (max-width: 560px) {
   .case-compare--three, .case-compare--four { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+/* Motion. Kept short and small so it supports the content without pulling focus.
+   Everything here is skipped when the visitor's system asks for reduced motion.
+   Reveals use the `translate` property so they never override the tilted stamps' `transform`. */
+@media (prefers-reduced-motion: no-preference) {
+  /* Page to page: a quick crossfade, with the header held still (supported browsers only) */
+  @view-transition { navigation: auto; }
+  .site-header { view-transition-name: site-header; }
+  ::view-transition-old(root), ::view-transition-new(root) { animation-duration: 200ms; animation-timing-function: ease-out; }
+
+  /* On load: hero and page headers rise in */
+  @keyframes rise-in { from { opacity: 0; translate: 0 12px; } to { opacity: 1; translate: 0 0; } }
+  .hero__text, .holder, .page-head .container, .report__head .container, .trip__head .container {
+    animation: rise-in 0.6s cubic-bezier(0.2, 0.7, 0.2, 1) both;
+  }
+  .holder { animation-delay: 0.12s; }
+
+  /* On scroll: below the fold blocks fade up once (classes added by assets/js/motion.js) */
+  .reveal { opacity: 0; translate: 0 16px; transition: opacity 0.5s ease-out, translate 0.5s cubic-bezier(0.2, 0.7, 0.2, 1); transition-delay: var(--reveal-delay, 0ms); }
+  .reveal.is-visible { opacity: 1; translate: 0 0; }
+
+  /* Hover and focus: colors ease instead of snapping, cards lift slightly */
+  a, .chip, .map-control, .stamp-panel__link, .post-nav__link, .site-nav a,
+  .featured__title, .fixture__title, .report-card__title, .report__more-list a, .trip__nav-link, .timeline__title a {
+    transition: color 0.15s ease, background-color 0.15s ease, border-color 0.15s ease, box-shadow 0.15s ease, opacity 0.15s ease;
+  }
+  .report-card { transition: translate 0.2s ease, box-shadow 0.2s ease; }
+  .report-card:hover { translate: 0 -3px; box-shadow: 0 12px 28px rgba(30, 33, 46, 0.18); }
+  .timeline__cover, .photo-grid__item a { display: block; overflow: hidden; border-radius: 10px; }
+  .timeline__cover img, .photo-grid__item img { transition: scale 0.3s ease; }
+  .timeline__cover:hover img, .photo-grid__item a:hover img { scale: 1.03; }
 }
