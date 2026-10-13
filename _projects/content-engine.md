@@ -1,9 +1,11 @@
 ---
 # MOCK PROJECT: replace the bracketed text with real details before launch.
+# Hidden until the project is ready. Delete the next line to publish it.
+published: false
 layout: project
 title: The content repurposing engine
 kind: Agentic workflow
-order: 1
+order: 2
 summary: An AI-assisted workflow that turns one long-form post into drafts for LinkedIn, a newsletter, and short video scripts, with a human approval step before anything goes out.
 goal: Publish everywhere without rewriting everything
 built_with: Claude, [automation tool], GitHub

@@ -443,9 +443,70 @@ a:hover {
 @media (prefers-reduced-motion: no-preference) {
   .ticker__track { animation: ticker-scroll 65s linear infinite; }
   .ticker:hover .ticker__track { animation-play-state: paused; }
+  .ticker--off .ticker__track { animation-play-state: paused; }
 }
 @media (prefers-reduced-motion: reduce) {
   .ticker__track { padding-left: 24px; }
+}
+/* "Turn this annoying ticker off" switch, right-aligned under the ticker (_includes/ticker.html).
+   Hidden when reduced motion is on, because the ticker already stands still. */
+.ticker-toggle {
+  display: flex;
+  justify-content: flex-end;
+  padding-top: 10px;
+}
+.ticker-toggle__button {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 4px 0;
+  border: 0;
+  background: none;
+  font-family: var(--mono);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--muted);
+  cursor: pointer;
+}
+.ticker-toggle__button:hover {
+  color: var(--ink);
+}
+.ticker-toggle__button:focus-visible {
+  outline: 2px solid var(--brand-tint);
+  outline-offset: 3px;
+}
+.ticker-toggle__switch {
+  position: relative;
+  flex: none;
+  width: 30px;
+  height: 16px;
+  border-radius: 999px;
+  background: var(--line);
+  transition: background-color 0.15s ease;
+}
+.ticker-toggle__switch::after {
+  content: "";
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--white);
+  transition: translate 0.15s ease;
+}
+.ticker-toggle__button[aria-checked="true"] .ticker-toggle__switch {
+  background: var(--brand);
+}
+.ticker-toggle__button[aria-checked="true"] .ticker-toggle__switch::after {
+  translate: 14px 0;
+}
+@media (prefers-reduced-motion: reduce) {
+  .ticker-toggle {
+    display: none;
+  }
 }
 
 /* Sections */

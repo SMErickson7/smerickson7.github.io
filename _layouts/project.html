@@ -26,6 +26,7 @@ section: workshop
   </div>
 
   {% assign projects = site.projects | sort: "order" %}
+  {% if projects.size > 1 %}
   <nav class="container container--narrow report__more" aria-label="More projects">
     <p class="label label--brand">More from the workshop</p>
     <div class="report__more-list">
@@ -34,4 +35,5 @@ section: workshop
       {% endif %}{% endfor %}
     </div>
   </nav>
+  {% endif %}
 </article>
