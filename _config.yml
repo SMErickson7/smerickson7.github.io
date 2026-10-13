@@ -14,19 +14,20 @@ social:
   linkedin: https://www.linkedin.com/in/steven-michael-erickson
   strava: https://www.strava.com/athletes/33163193
   instagram: https://www.instagram.com/stevenmerickson/
+  tiktok: https://www.tiktok.com/@steven_ma720
 
 # Topics used to label and filter posts. A post sets `topic:` to one of these slugs.
 topics:
-  - slug: marketing
-    name: Marketing
-  - slug: building
-    name: Building
-  - slug: cycling
-    name: Cycling
-  - slug: 3d-printing
-    name: 3D printing
-  - slug: travel
-    name: Travel
+  - slug: observations
+    name: Observations
+  - slug: news
+    name: In the News
+  - slug: experiences
+    name: Experiences
+  - slug: projects
+    name: Projects
+  - slug: events-travel
+    name: Events & Travel
 
 # Workshop project reports live in _projects/ and are published at /workshop/<file-name>/
 # Projects are listed in the order set by `order:` in each file (1 shows first).

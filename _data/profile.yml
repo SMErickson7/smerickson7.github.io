@@ -3,14 +3,14 @@ intro: Marketer by trade, tinkerer by habit. I write about what I learn from bui
 
 # Small labels above the name
 tags:
-  - Personal site · US · DE
-  - Plainville, MA
+  - Personal site
+  - Massachusetts
 
 card:
   number: No. SME-07
   fields:
     - label: Home base
-      value: Plainville, MA
+      value: Massachusetts
     - label: Citizenship
       value: US & German
     - label: Occupation
