@@ -1,0 +1,43 @@
+# Homepage hero and the "At a Glance" card.
+intro: "Musings of a marketer, cyclist, traveler, Lego builder, soccer fanatic, and techie. Rarely in that order, never without an\u00A0opinion."
+
+# Small labels above the name
+tags:
+  - Personal site
+  - Massachusetts
+
+card:
+  number: No. SME-07
+  fields:
+    - label: Home base
+      value: Massachusetts
+    - label: Citizenship
+      value: US & German
+    - label: Occupation
+      value: B2B marketer
+    - label: Side quests
+      value: Soccer, Cycling, Traveling
+  # Rubber-stamp badges along the bottom of the card. style: solid, round, or dashed
+  # icon: optional, "globe" adds a globe icon before the text.
+  # label: optional, what screen readers say in place of the text.
+  badges:
+    - text: 11 & counting
+      icon: globe
+      label: 11 countries visited and counting
+      style: round
+    - text: Forza Inter
+      style: round
+
+# The scrolling band under the hero
+ticker:
+  - Forza Inter
+  - Lego builds
+  - Travel
+  - Cycling
+  - Tech
+  - Glühwein
+  - Go Revs
+  - Film
+  - 3D printing
+  - Formula 1
+  - Side projects

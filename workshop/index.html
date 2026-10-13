@@ -1,0 +1,25 @@
+---
+layout: default
+title: Workshop
+section: workshop
+permalink: /workshop/
+description: Project reports on things I build because I'm curious how they work.
+---
+<section class="page-head">
+  <div class="container">
+    <p class="label label--light">Project reports</p>
+    <h1 class="display display--xxl">Workshop</h1>
+    <p class="page-head__lead">Things I build because I'm curious how they work: printed parts, agentic workflows, films, and product teardowns.</p>
+  </div>
+</section>
+
+<section class="workshop-band workshop-band--page" aria-label="Projects">
+  <div class="container">
+    {% assign projects = site.projects | sort: "order" %}
+    <div class="report-grid">
+      {% for project in projects %}
+      {% include project-card.html project=project %}
+      {% endfor %}
+    </div>
+  </div>
+</section>

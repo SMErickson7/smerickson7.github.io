@@ -1,0 +1,60 @@
+{% assign s = site.data.stamps %}
+<div class="stamps">
+  {% if s.teams.size > 0 %}
+  {% assign sports = s.teams | map: "sport" | uniq %}
+  <div class="stamp-panel stamp-panel--teams">
+    <div class="teams__head">
+      <p class="teams__title">Teams I follow</p>
+      <p class="teams__count">{{ s.teams.size }} clubs · {{ sports.size }} sports</p>
+    </div>
+    <table class="teams-table">
+      <thead><tr><th scope="col">Code</th><th scope="col">Team</th><th scope="col" class="teams-table__sport">Sport</th></tr></thead>
+      <tbody>
+        {% for t in s.teams %}
+        <tr>
+          <td><span class="team-code{% if t.tag %} team-code--tag{% endif %}" style="color: {{ t.color }};{% if t.tag %} background: {{ t.tag }};{% endif %}">{{ t.code }}</span></td>
+          <th scope="row">{{ t.name }}</th>
+          <td class="teams-table__sport">{% include sport-icon.html sport=t.sport %}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+  {% endif %}
+
+  {% if s.countries.size > 0 %}
+  {% assign total_visits = 0 %}{% for c in s.countries %}{% assign total_visits = total_visits | plus: c.visits %}{% endfor %}
+  <div class="stamp-panel stamp-panel--passport">
+    <div class="panel-head">
+      <p class="panel-head__title">Passport stamps</p>
+      <p class="panel-head__count">{{ s.countries.size }} countries · {{ total_visits }} visits</p>
+    </div>
+    <div class="stamp-panel__body">
+      {% include passport-stamps.html %}
+    </div>
+    <a class="card-stub" href="/travel/"><span>Travel timeline</span><span class="card-stub__icon card-stub__icon--plane">{% include icons/plane.html %}</span></a>
+  </div>
+  {% endif %}
+
+  {% for c in s.clubs %}
+  <div class="stamp-panel stamp-panel--member">
+    <p class="label">Member card</p>
+    <p class="member__name">{{ c.name }}</p>
+    <p class="member__text">{{ c.description }}</p>
+    <div class="member__meta">{% if c.since != "" %}<span>Since {{ c.since }}</span>{% endif %}{% if c.role != ""
+      %}<span>{{ c.role }}</span>{% endif %}</div>
+  </div>
+  {% endfor %}
+
+  {% assign cy = site.data.cycling %}
+  {% if cy %}
+  <div class="stamp-panel stamp-panel--photo stamp-panel--cycling">
+    {% if cy.photo %}<img src="{{ cy.photo }}" alt="{{ cy.photo_alt }}">{% endif %}
+    <div class="stamp-panel__inner">
+      <p class="label label--muted">Cycling</p>
+      <dl class="ride-stats">{% for st in cy.stats %}{% if st.card %}<div><dt>{{ st.label }}</dt><dd>{{ st.value }}</dd></div>{% endif %}{% endfor %}</dl>
+    </div>
+    <a class="card-stub" href="/cycling/"><span>Cycling page</span><span class="card-stub__icon card-stub__icon--bike">{% include icons/bike.html %}</span></a>
+  </div>
+  {% endif %}
+</div>

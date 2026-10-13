@@ -1,0 +1,117 @@
+# "Stamps collected" section on the homepage. Edit freely; empty lists are hidden.
+
+# Teams I follow, shown as a league table.
+# code:  short code in the left column (keep it to 2 to 4 characters)
+# color: the team's primary color as a hex code; colors the code
+# tag:   optional background color behind the code, for light colors
+#        that are hard to read on white (like the Bruins' gold)
+# sport: soccer, basketball, baseball, football, hockey, or motorsport (sets the icon)
+teams:
+  - code: INT
+    name: Inter Milan
+    sport: soccer
+    color: "#FFFFFF"
+    tag: "#010E80"
+  - code: NER
+    name: New England Revolution
+    sport: soccer
+    color: "#CE0E2D"
+    tag: "#0A2240"
+  - code: CEL
+    name: Boston Celtics
+    sport: basketball
+    color: "#007A33"
+    tag: "#111111"
+  - code: SOX
+    name: Boston Red Sox
+    sport: baseball
+    color: "#FFFFFF"
+    tag: "#BD3039"
+  - code: FER
+    name: Lewis Hamilton (Ferrari)
+    sport: motorsport
+    color: "#FFFFFF"
+    tag: "#E8002D"
+  - code: RIFC
+    name: Rhode Island FC
+    sport: soccer
+    color: "#071A35"
+    tag: "#F9A50D"
+  - code: PATS
+    name: New England Patriots
+    sport: football
+    color: "#B0B7BC"
+    tag: "#002244"
+  - code: USA
+    name: USMNT
+    sport: soccer
+    color: "#ffffff"
+    tag: "#BB2533"
+  - code: BSC
+    name: Hertha BSC
+    sport: soccer
+    color: "#ffffff"
+    tag: "#004D9E"
+  - code: BRU
+    name: Boston Bruins
+    sport: hockey
+    color: "#FFB81C"
+    tag: "#111111"
+
+# Passport stamps: countries visited and how many times.
+# flag: file name in /assets/img/flags/ (country code, e.g. de for Germany).
+# style: round, solid, dashed, pill, tab, banner, framed, or square. Keep round and square for short names.
+# The same list shows on the homepage and the /travel/ page.
+countries:
+  - name: Canada
+    flag: ca
+    visits: 3
+    style: round
+  - name: Mexico
+    flag: mx
+    visits: 2
+    style: tab
+  - name: Colombia
+    flag: co
+    visits: 2
+    style: banner
+  - name: England
+    flag: gb-eng
+    visits: 3
+    style: pill
+  - name: France
+    flag: fr
+    visits: 1
+    style: framed
+  - name: Netherlands
+    flag: nl
+    visits: 1
+    style: dashed
+  - name: Germany
+    flag: de
+    visits: 13
+    style: square
+  - name: Italy
+    flag: it
+    visits: 9
+    style: solid
+  - name: Vatican City
+    flag: va
+    visits: 1
+    style: dashed
+  - name: Czechia
+    flag: cz
+    visits: 1
+    style: round
+  - name: Ukraine
+    flag: ua
+    visits: 1
+    style: banner
+
+clubs:
+  - name: Boylston Schul-Verein
+    description: Volunteer helping run festivals and the adult language school.
+    since: "August 2021"
+    role: Volunteer
+
+# The Cycling card (last in the row) reads from _data/cycling.yml.

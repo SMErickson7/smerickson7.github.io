@@ -1,0 +1,35 @@
+---
+layout: default
+section: writing
+---
+<article class="post">
+  <header class="page-head page-head--post">
+    <div class="container container--narrow">
+      <a class="back-link" href="/writing/">← All writing</a>
+      <p>{% include post-meta.html post=page %}</p>
+      <h1 class="post__title">{{ page.title }}</h1>
+      {% if page.description %}<p class="page-head__lead">{{ page.description }}</p>{% endif %}
+    </div>
+  </header>
+  {% if page.image %}
+  <figure class="container post__hero">
+    <img src="{{ page.image }}" alt="{{ page.image_alt }}">
+  </figure>
+  {% endif %}
+  <div class="container container--narrow prose">
+    {{ content }}
+  </div>
+  <footer class="container container--narrow post__footer">
+    <div class="author-card">
+      <img src="/assets/img/avatar.png" alt="" width="64" height="64">
+      <div>
+        <p class="author-card__name">Written by Steven M. Erickson</p>
+        <p class="author-card__bio">Marketer by trade, tinkerer by habit. <a href="{{ site.home_path }}#stamps">More about me</a>.</p>
+      </div>
+    </div>
+    <nav class="post-nav" aria-label="More posts">
+      {% if page.previous %}<a class="post-nav__link" href="{{ page.previous.url }}"><span class="label">Older</span><span>{{ page.previous.title }}</span></a>{% endif %}
+      {% if page.next %}<a class="post-nav__link post-nav__link--next" href="{{ page.next.url }}"><span class="label">Newer</span><span>{{ page.next.title }}</span></a>{% endif %}
+    </nav>
+  </footer>
+</article>

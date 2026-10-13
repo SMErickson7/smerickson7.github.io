@@ -1,0 +1,70 @@
+---
+layout: default
+title: Travel
+section: travel
+permalink: /travel/
+description: Countries I've visited, a map of where I've been, and a timeline of my trips.
+---
+{% assign countries = site.data.stamps.countries %}
+{% assign total_visits = 0 %}{% for c in countries %}{% assign total_visits = total_visits | plus: c.visits %}{% endfor %}
+{% assign trips = site.trips | sort: "date" | reverse %}
+{% assign place_names = "" | split: "" %}{% assign visited_countries = "" | split: "" %}{% for t in trips %}{% assign place_names = place_names | concat: t.places %}{% assign visited_countries = visited_countries | concat: t.countries %}{% endfor %}{% assign place_names = place_names | uniq %}{% assign visited_countries = visited_countries | uniq | sort %}
+<section class="page-head">
+  <div class="container">
+    <p class="label label--light">Passport</p>
+    <h1 class="display display--xxl">Travel</h1>
+    <p class="page-head__lead">{{ countries.size }} countries, {{ total_visits }} visits, and counting. A map of where I've been, every stamp, and the trips behind them.</p>
+  </div>
+</section>
+
+<section class="section container" aria-labelledby="map-heading">
+  <div class="section-head">
+    <h2 id="map-heading" class="display display--xl">Where I've been</h2>
+    <span class="section-head__aside">{{ place_names.size }} places · {{ trips.size }} trips</span>
+  </div>
+  {% capture map_label %}World map with the {{ visited_countries.size }} countries I have visited shaded in blue and markers for {{ place_names.size }} cities.{% endcapture %}
+  {% include travel-map.html data_id="travel-map-data" label=map_label countries=visited_countries modifier="travel-map--all" %}
+</section>
+
+<section class="section section--flush-top container" aria-labelledby="stamps-heading">
+  <div class="section-head">
+    <h2 id="stamps-heading" class="display display--xl">Stamps</h2>
+    <span class="section-head__aside">{{ countries.size }} countries</span>
+  </div>
+  <div class="passport-page">
+    {% include passport-stamps.html %}
+  </div>
+</section>
+
+<section class="section section--flush-top container" aria-labelledby="timeline-heading">
+  <div class="section-head">
+    <h2 id="timeline-heading" class="display display--xl">Timeline</h2>
+    <span class="section-head__aside">Newest first</span>
+  </div>
+  {% if trips.size > 0 %}
+  <ol class="timeline">
+    {% for trip in trips %}
+    <li class="timeline__item">
+      <p class="timeline__date">{{ trip.date | date: "%b %Y" }}</p>
+      <div class="timeline__body{% if trip.cover %} timeline__body--cover{% endif %}">
+        <div class="timeline__text">
+          <h3 class="timeline__title"><a href="{{ trip.url }}">{{ trip.title }}</a></h3>
+          {% if trip.places.size > 0 %}<p class="timeline__places">{{ trip.places | join: ", " }}</p>{% endif %}
+          {% if trip.countries.size > 0 %}<div class="pills">{% for c in trip.countries %}<span class="pill">{{ c }}</span>{% endfor %}</div>{% endif %}
+          {% if trip.note %}<p class="timeline__note">{{ trip.note }}</p>{% endif %}
+          {% assign photo_count = trip.photos.size | default: 0 %}{% for day in trip.days %}{% assign photo_count = photo_count | plus: day.photos.size %}{% endfor %}
+          <p class="timeline__meta"><a class="timeline__link" href="{{ trip.url }}">Trip details →</a>{% if trip.days.size > 0 %}<span>{{ trip.days.size }} {% if trip.days.size == 1 %}day{% else %}days{% endif %}</span>{% endif %}{% if photo_count > 0 %}<span>{{ photo_count }} {% if photo_count == 1 %}photo{% else %}photos{% endif %}</span>{% endif %}</p>
+        </div>
+        {% if trip.cover %}<a class="timeline__cover" href="{{ trip.url }}" tabindex="-1" aria-hidden="true"><img src="{{ trip.cover }}" alt="" loading="lazy"></a>{% endif %}
+      </div>
+    </li>
+    {% endfor %}
+  </ol>
+  {% else %}
+  <p class="empty-note">The trip timeline is on its way.</p>
+  {% endif %}
+</section>
+
+<script type="application/json" id="travel-map-data">
+{"mode":"all","countries":{{ visited_countries | jsonify }},"places":{{ place_names | jsonify }},"trips":[{% for t in trips %}{{ t.places | jsonify }}{% unless forloop.last %},{% endunless %}{% endfor %}],"cities":{{ site.data.cities | jsonify }}}
+</script>

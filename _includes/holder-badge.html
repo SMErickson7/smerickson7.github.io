@@ -1,0 +1,5 @@
+{%- assign b = include.badge -%}
+<span class="badge badge--{{ b.style }}{% if b.icon %} badge--icon{% endif %}">
+  {%- if b.icon == "globe" %}{% include icon-globe.html %}{% endif -%}
+  {%- if b.label -%}<span aria-hidden="true">{{ b.text }}</span><span class="visually-hidden">{{ b.label }}</span>{%- else -%}{{ b.text }}{%- endif -%}
+</span>

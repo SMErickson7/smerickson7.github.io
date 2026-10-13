@@ -1,0 +1,33 @@
+---
+layout: default
+title: Writing
+section: writing
+permalink: /writing/
+description: Notes on marketing, building things, cycling, travel, and whatever I'm currently curious about.
+---
+<section class="page-head">
+  <div class="container">
+    <p class="label label--light">The blog</p>
+    <h1 class="display display--xxl">Writing</h1>
+    <p class="page-head__lead">Notes on marketing, building things, cycling, travel, and whatever I'm currently curious about.</p>
+  </div>
+</section>
+
+<section class="section container" aria-label="All posts">
+  <nav class="chips" aria-label="Filter by topic" data-filter>
+    <button type="button" class="chip chip--active" data-topic="all" aria-pressed="true">All</button>
+    {% for t in site.topics %}<button type="button" class="chip" data-topic="{{ t.slug }}" aria-pressed="false">{{ t.name }}</button>{% endfor %}
+  </nav>
+  {% if site.posts.size > 0 %}
+  <div class="fixtures fixtures--archive" data-posts>
+    {% for post in site.posts %}
+    {% include post-row.html post=post excerpt=true %}
+    {% endfor %}
+  </div>
+  <p class="empty-note" data-empty hidden>No posts on this topic yet.</p>
+  {% else %}
+  <p class="empty-note">The first posts are on their way.</p>
+  {% endif %}
+</section>
+
+<script src="/assets/js/writing-filter.js" defer></script>

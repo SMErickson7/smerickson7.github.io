@@ -1,0 +1,70 @@
+# Site settings for the redesigned stevenmerickson.com
+title: Steven M. Erickson
+description: Musings of a marketer, cyclist, traveler, soccer fanatic, and techie. Rarely in that order, never without an opinion.
+url: https://www.stevenmerickson.com
+author: Steven M. Erickson
+email: steven@stevenmerickson.com
+
+home_path: /
+
+resume: /files/Steven_Erickson_Resume.pdf
+google_analytics: G-L3H86C604W
+
+social:
+  linkedin: https://www.linkedin.com/in/steven-michael-erickson
+  strava: https://www.strava.com/athletes/33163193
+  instagram: https://www.instagram.com/stevenmerickson/
+  tiktok: https://www.tiktok.com/@steven_ma720
+
+# Topics used to label and filter posts. A post sets `topic:` to one of these slugs.
+topics:
+  - slug: observations
+    name: Observations
+  - slug: news
+    name: In the News
+  - slug: experiences
+    name: Experiences
+  - slug: projects
+    name: Projects
+  - slug: events-travel
+    name: Events & Travel
+
+# Workshop project reports live in _projects/ and are published at /workshop/<file-name>/
+# Projects are listed in the order set by `order:` in each file (1 shows first).
+collections:
+  projects:
+    output: true
+    permalink: /workshop/:name/
+  # Trips live in _trips/ as YYYY-MM-DD-short-name.md and are published at /travel/short-name/
+  trips:
+    output: true
+    permalink: /travel/:slug/
+
+# Blog posts live in _posts/ and are published at /writing/<post-title>/
+permalink: /writing/:title/
+markdown: kramdown
+kramdown:
+  input: GFM
+plugins:
+  - jekyll-feed
+feed:
+  path: feed.xml
+
+# Keep editor and local tooling files out of the published site.
+# Underscore folders such as _tools are already skipped by Jekyll.
+exclude:
+  - .vscode
+  - Desktop.ini
+  - Gemfile
+  - Gemfile.lock
+  - vendor/bundle/
+  - wrangler.jsonc
+  - img/headers/Erickson_headshot.psd
+  - "**/*.psd"
+
+# Every trip uses the trip layout, so trip files don't need to set it.
+defaults:
+  - scope:
+      type: trips
+    values:
+      layout: trip

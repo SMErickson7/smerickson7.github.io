@@ -1,0 +1,8 @@
+<div class="photo-grid">
+  {% for photo in include.photos %}
+  <figure class="photo-grid__item">
+    <a href="{{ photo.src }}"><img src="{{ photo.src }}" alt="{{ photo.alt | default: photo.caption }}" loading="lazy"></a>
+    {% if photo.caption %}<figcaption>{{ photo.caption }}</figcaption>{% endif %}
+  </figure>
+  {% endfor %}
+</div>

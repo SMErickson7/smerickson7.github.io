@@ -1,0 +1,32 @@
+{% comment %}
+  Tile free D3 travel map. The page must also output a JSON <script> with id include.data_id
+  (see travel/index.html or _layouts/trip.html). Parameters:
+  data_id: id of that JSON script. label: summary read by screen readers.
+  countries: optional list of visited countries, shown as a text list under the map.
+  modifier: optional extra class, e.g. travel-map--all.
+{% endcomment %}
+<div class="travel-map {{ include.modifier }}" data-travel-map="{{ include.data_id }}" data-map-label="{{ include.label | escape }}">
+  <div class="map-stage">
+    <div class="map-tip" role="status" hidden></div>
+  </div>
+  <div class="map-controls" role="group" aria-label="Map zoom">
+    <button type="button" class="map-control" data-zoom="in" aria-label="Zoom in">+</button>
+    <button type="button" class="map-control" data-zoom="out" aria-label="Zoom out">&minus;</button>
+    <button type="button" class="map-control map-control--reset" data-zoom="reset" aria-label="Reset map">Reset</button>
+  </div>
+</div>
+<div class="map-legend">
+  <span class="map-legend__item"><span class="map-legend__swatch map-legend__swatch--visited"></span>Visited</span>
+  <span class="map-legend__item"><span class="map-legend__swatch"></span>Not yet</span>
+  <span class="map-legend__item"><span class="map-legend__dot"></span>City</span>
+  <span class="map-legend__hint">Drag or use the buttons to zoom. On touch screens, use two fingers.</span>
+</div>
+{% if include.countries %}
+<details class="map-list">
+  <summary>List of countries visited ({{ include.countries.size }})</summary>
+  <ul>{% for c in include.countries %}<li>{{ c }}</li>{% endfor %}</ul>
+</details>
+{% endif %}
+<script src="/assets/vendor/d3.v7.min.js" defer></script>
+<script src="/assets/vendor/topojson-client.min.js" defer></script>
+<script src="/assets/js/travel-map.js?v={{ site.time | date: '%s' }}" defer></script>

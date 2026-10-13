@@ -1,0 +1,16 @@
+<footer class="site-footer">
+  <div class="container site-footer__inner">
+    <div class="site-footer__contact">
+      <p class="site-footer__title">Send a message</p>
+      <a href="mailto:{{ site.email }}">{{ site.email }}</a>
+    </div>
+    <nav class="site-footer__social" aria-label="Elsewhere">
+      <a href="{{ site.social.linkedin }}" aria-label="LinkedIn" title="LinkedIn">{% include icons/linkedin.svg %}</a>
+      <a href="{{ site.social.strava }}" aria-label="Strava" title="Strava">{% include icons/strava.svg %}</a>
+      <a href="{{ site.social.instagram }}" aria-label="Instagram" title="Instagram">{% include icons/instagram.svg
+        %}</a>
+      <a href="{{ site.social.tiktok }}" aria-label="TikTok" title="TikTok">{% include icons/tiktok.svg %}</a>
+      <a href="/feed.xml" aria-label="RSS feed" title="RSS feed">{% include icons/rss.svg %}</a>
+    </nav>
+  </div>
+</footer>

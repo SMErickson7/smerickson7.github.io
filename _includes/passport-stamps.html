@@ -1,0 +1,5 @@
+{% comment %}Country stamps from _data/stamps.yml, styled like the team stamps with a flag. Order is shuffled on each build.{% endcomment %}
+{% assign countries = site.data.stamps.countries %}{% assign countries = countries | sample: countries.size %}
+<div class="team-stamps country-stamps">
+  {% for c in countries %}<span class="team-stamp team-stamp--{{ c.style }} country-stamp"><img class="country-stamp__flag" src="/assets/img/flags/{{ c.flag }}.svg" alt="" width="30" height="20"><span>{{ c.name }}</span>{% if c.visits > 1 %}<span class="country-stamp__count">×{{ c.visits }}</span>{% endif %}</span>{% endfor %}
+</div>
