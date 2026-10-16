@@ -2510,7 +2510,6 @@ a:hover {
   border-radius: 10px;
 }
 .cycling-story__photo figcaption,
-.carousel__slide figcaption,
 .metrics__note {
   margin-top: 8px;
   font-size: 14px;
@@ -2533,15 +2532,52 @@ a:hover {
   outline-offset: 4px;
 }
 .carousel__slide {
+  position: relative;
   margin: 0;
   flex: 0 0 min(100%, 560px);
   scroll-snap-align: start;
+  border-radius: 10px;
+  overflow: hidden;
 }
 .carousel__slide img {
   width: 100%;
   aspect-ratio: 4 / 3;
   object-fit: cover;
-  border-radius: 10px;
+  display: block;
+}
+/* Caption sits over the bottom of the photo on a dark fade so it reads on any image */
+.carousel__slide figcaption {
+  position: absolute;
+  inset: auto 0 0 0;
+  padding: 48px 20px 16px;
+  background: linear-gradient(to top, rgba(30, 33, 46, 0.85), rgba(30, 33, 46, 0));
+  color: #ffffff;
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 1.35;
+  text-align: center;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
+}
+/* Gallery view: every photo at once in a grid, set by the toggle in carousel.js */
+.carousel--gallery .carousel__track {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 280px), 1fr));
+  overflow: visible;
+  scroll-snap-type: none;
+  padding-bottom: 0;
+}
+.carousel--gallery .carousel__slide figcaption {
+  padding: 36px 14px 12px;
+  font-size: 14px;
+}
+.carousel--gallery [data-carousel-prev],
+.carousel--gallery [data-carousel-next],
+.carousel--gallery [data-carousel-count],
+.carousel--gallery [data-carousel-play] {
+  display: none;
+}
+.carousel__view {
+  margin-left: auto;
 }
 .carousel__controls {
   margin-top: 16px;

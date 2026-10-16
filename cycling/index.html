@@ -75,6 +75,8 @@ description: My bikes, how I got into cycling, photos from my rides, and my all-
       <button type="button" class="map-control" data-carousel-prev aria-label="Previous photo">&larr;</button>
       <span class="carousel__count" data-carousel-count aria-live="polite">1 / {{ cy.rides.size }}</span>
       <button type="button" class="map-control" data-carousel-next aria-label="Next photo">&rarr;</button>
+      <button type="button" class="map-control map-control--reset" data-carousel-play aria-pressed="false" hidden>Pause</button>
+      <button type="button" class="map-control map-control--reset carousel__view" data-carousel-view aria-pressed="false">Gallery view</button>
     </div>{% endif %}
   </div>
 </section>
