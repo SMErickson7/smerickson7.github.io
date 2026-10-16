@@ -52,7 +52,8 @@
     {% if cy.photo %}<img src="{{ cy.photo }}" alt="{{ cy.photo_alt }}">{% endif %}
     <div class="stamp-panel__inner">
       <p class="label label--muted">Cycling</p>
-      <dl class="ride-stats">{% for st in cy.stats %}{% if st.card %}<div><dt>{{ st.label }}</dt><dd>{{ st.value }}</dd></div>{% endif %}{% endfor %}</dl>
+      {% assign rt = site.data.rides.totals.display %}
+      {% if rt %}<dl class="ride-stats"><div><dt>Rides</dt><dd>{{ rt.rides }}</dd></div><div><dt>Distance</dt><dd>{{ rt.distance }}</dd></div><div><dt>Elevation gain</dt><dd>{{ rt.elevation }}</dd></div></dl>{% endif %}
     </div>
     <a class="card-stub" href="/cycling/"><span>Cycling page</span><span class="card-stub__icon card-stub__icon--bike">{% include icons/bike.html %}</span></a>
   </div>

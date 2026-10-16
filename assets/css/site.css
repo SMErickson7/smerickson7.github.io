@@ -2610,6 +2610,142 @@ a:hover {
   font-size: 22px;
   text-transform: uppercase;
 }
+/* Cycling: By the numbers filters and ride list */
+.ride-filters {
+  margin-top: 32px;
+  max-width: 900px;
+}
+.ride-filters[hidden] {
+  display: none;
+}
+.ride-filters .chips {
+  margin-bottom: 0;
+}
+.ride-filters__row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  gap: 12px 16px;
+  margin-top: 20px;
+}
+.ride-field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.ride-field__label {
+  font-family: var(--mono);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+.ride-field select,
+.ride-field input {
+  height: 40px;
+  padding: 0 10px;
+  border: 2px solid var(--ink);
+  border-radius: 0;
+  background: var(--white);
+  color: var(--ink);
+  font-family: var(--font);
+  font-size: 15px;
+}
+.ride-field select:hover,
+.ride-field input:hover {
+  border-color: var(--brand);
+}
+.ride-empty {
+  margin: 16px 0 0;
+  font-weight: 600;
+  color: var(--ink);
+}
+.ride-log {
+  margin-top: 56px;
+}
+.ride-log[hidden] {
+  display: none;
+}
+.ride-log__head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 8px 16px;
+  padding-bottom: 10px;
+  border-bottom: 6px solid var(--ink);
+}
+.ride-log__title {
+  margin: 0;
+  font-family: var(--display);
+  font-weight: 900;
+  font-size: 34px;
+  line-height: 0.9;
+  text-transform: uppercase;
+  color: var(--ink);
+}
+.table-scroll {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+.ride-table {
+  min-width: 680px;
+}
+.ride-table thead th {
+  border-bottom-width: 1px;
+}
+.ride-table th:first-child,
+.ride-table td:first-child {
+  width: auto;
+  padding-left: 0;
+}
+.ride-table th:last-child,
+.ride-table td:last-child {
+  padding-right: 0;
+}
+.ride-table .num {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+.ride-table td {
+  font-size: 15px;
+}
+.ride-table__date {
+  white-space: nowrap;
+  font-family: var(--mono);
+  font-size: 13px;
+  color: var(--muted);
+}
+.ride-table thead th button {
+  padding: 0;
+  border: 0;
+  background: none;
+  color: inherit;
+  font: inherit;
+  letter-spacing: inherit;
+  text-transform: inherit;
+  cursor: pointer;
+}
+.ride-table thead th button:hover {
+  color: var(--brand);
+}
+.ride-table thead th[aria-sort] button {
+  color: var(--ink);
+}
+.ride-table thead th[aria-sort="ascending"] button::after {
+  content: " \2191";
+}
+.ride-table thead th[aria-sort="descending"] button::after {
+  content: " \2193";
+}
+.ride-log__more {
+  margin-top: 16px;
+}
+.ride-log__more[hidden] {
+  display: none;
+}
+
 .case-callout {
   display: flex;
   flex-direction: column;

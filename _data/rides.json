@@ -1,0 +1,1936 @@
+{
+ "source": "Strava Ride log (Google Sheets), Log tab",
+ "last_ride": "2026-10-09",
+ "totals": {
+  "rides": 238,
+  "miles": 5878.4,
+  "elevation_ft": 187928,
+  "seconds": 1404918,
+  "display": {
+   "rides": "238",
+   "distance": "5,878.4 miles",
+   "elevation": "187,928 ft",
+   "time": "390 hours, 15 minutes",
+   "longest": "81.11 miles",
+   "most_climbing": "3,228 ft"
+  },
+  "bikes": [
+   {
+    "name": "2016 Fuji Sportif 2.3",
+    "rides": "183",
+    "miles": "4,235.6"
+   },
+   {
+    "name": "2023 Trek Domane SL 5 Gen 4",
+    "rides": "55",
+    "miles": "1,642.8"
+   }
+  ]
+ },
+ "rides": [
+  {
+   "date": "2026-10-09",
+   "name": "Morning Ride ☀️",
+   "miles": 31.9,
+   "seconds": 8103,
+   "elevation_ft": 537,
+   "bike": "2023 Trek Domane SL 5 Gen 4"
+  },
+  {
+   "date": "2026-09-18",
+   "name": "Afternoon Ride ☀️",
+   "miles": 34.06,
+   "seconds": 8855,
+   "elevation_ft": 572,
+   "bike": "2023 Trek Domane SL 5 Gen 4"
+  },
+  {
+   "date": "2026-09-08",
+   "name": "Morning Ride ☁️",
+   "miles": 30.97,
+   "seconds": 7569,
+   "elevation_ft": 486,
+   "bike": "2023 Trek Domane SL 5 Gen 4"
+  },
+  {
+   "date": "2026-08-30",
+   "name": "Morning Ride ☀️",
+   "miles": 50.33,
+   "seconds": 11258,
+   "elevation_ft": 1910,
+   "bike": "2023 Trek Domane SL 5 Gen 4"
+  },
+  {
+   "date": "2026-08-25",
+   "name": "Morning Ride ☀️",
+   "miles": 50.72,
+   "seconds": 12851,
+   "elevation_ft": 948,
+   "bike": "2023 Trek Domane SL 5 Gen 4"
+  },
+  {
+   "date": "2026-08-15",
+   "name": "Morning Ride ☀️",
+   "miles": 40.31,
+   "seconds": 10889,
+   "elevation_ft": 1144,
+   "bike": "2023 Trek Domane SL 5 Gen 4"
+  },
+  {
+   "date": "2026-08-13",
+   "name": "Afternoon Ride ☀️",
+   "miles": 20.01,
+   "seconds": 4535,
+   "elevation_ft": 634,
+   "bike": "2023 Trek Domane SL 5 Gen 4"
+  },
+  {
+   "date": "2026-08-09",
+   "name": "Morning Ride ☀️",
+   "miles": 30.26,
+   "seconds": 8043,
+   "elevation_ft": 483,
+   "bike": "2023 Trek Domane SL 5 Gen 4"
+  },
+  {
+   "date": "2026-08-01",
+   "name": "Morning Ride ☀️",
+   "miles": 30.14,
+   "seconds": 7264,
+   "elevation_ft": 482,
+   "bike": "2023 Trek Domane SL 5 Gen 4"
+  },
+  {
+   "date": "2026-07-28",
+   "name": "Afternoon Ride ☁️",
+   "miles": 15.38,
+   "seconds": 3628,
+   "elevation_ft": 633,
+   "bike": "2023 Trek Domane SL 5 Gen 4"
+  },
+  {
+   "date": "2026-07-20",
+   "name": "Afternoon Ride ☀️",
+   "miles": 20.01,
+   "seconds": 4903,
+   "elevation_ft": 634,
+   "bike": "2023 Trek Domane SL 5 Gen 4"
+  },
+  {
+   "date": "2026-07-16",
+   "name": "Afternoon Ride",
+   "miles": 20.01,
+   "seconds": 4707,
+   "elevation_ft": 769,
+   "bike": "2023 Trek Domane SL 5 Gen 4"
+  },
+  {
+   "date": "2026-07-13",
+   "name": "Afternoon Ride ☀️",
+   "miles": 20.02,
+   "seconds": 5131,
+   "elevation_ft": 634,
+   "bike": "2023 Trek Domane SL 5 Gen 4"
+  },
+  {
+   "date": "2026-07-11",
+   "name": "Morning Ride ☀️",
+   "miles": 20.05,
+   "seconds": 5161,
+   "elevation_ft": 763,
+   "bike": "2023 Trek Domane SL 5 Gen 4"
+  },
+  {
+   "date": "2026-05-05",
+   "name": "Afternoon Ride ☀️",
+   "miles": 15.42,
+   "seconds": 4043,
+   "elevation_ft": 633,
+   "bike": "2023 Trek Domane SL 5 Gen 4"
+  },
+  {
+   "date": "2025-07-29",
+   "name": "Evening Ride ☀️",
+   "miles": 20.84,
+   "seconds": 5483,
+   "elevation_ft": 461,
+   "bike": "2023 Trek Domane SL 5 Gen 4"
+  },
+  {
+   "date": "2025-06-13",
+   "name": "Evening Ride ⛅",
+   "miles": 30.57,
+   "seconds": 8627,
+   "elevation_ft": 438,
+   "bike": "2023 Trek Domane SL 5 Gen 4"
+  },
+  {
+   "date": "2025-05-02",
+   "name": "Afternoon Ride",
+   "miles": 20.02,
+   "seconds": 4647,
+   "elevation_ft": 637,
+   "bike": "2023 Trek Domane SL 5 Gen 4"
+  },
+  {
+   "date": "2025-04-29",
+   "name": "Afternoon Ride ⛅",
+   "miles": 20.04,
+   "seconds": 4741,
+   "elevation_ft": 773,
+   "bike": "2023 Trek Domane SL 5 Gen 4"
+  },
+  {
+   "date": "2025-04-22",
+   "name": "Afternoon Ride ⛅",
+   "miles": 20.02,
+   "seconds": 4697,
+   "elevation_ft": 637,
+   "bike": "2023 Trek Domane SL 5 Gen 4"
+  },
+  {
+   "date": "2025-04-19",
+   "name": "Lunch Ride ⛅",
+   "miles": 20.04,
+   "seconds": 4786,
+   "elevation_ft": 773,
+   "bike": "2023 Trek Domane SL 5 Gen 4"
+  },
+  {
+   "date": "2025-04-19",
+   "name": "Lunch Ride",
+   "miles": 20.0,
+   "seconds": 4888,
+   "elevation_ft": 807,
+   "bike": "2023 Trek Domane SL 5 Gen 4"
+  },
+  {
+   "date": "2024-08-30",
+   "name": "Afternoon Ride ⛅",
+   "miles": 48.37,
+   "seconds": 12968,
+   "elevation_ft": 691,
+   "bike": "2023 Trek Domane SL 5 Gen 4"
+  },
+  {
+   "date": "2024-08-16",
+   "name": "Afternoon Ride",
+   "miles": 20.03,
+   "seconds": 4752,
+   "elevation_ft": 639,
+   "bike": "2023 Trek Domane SL 5 Gen 4"
+  },
+  {
+   "date": "2024-07-18",
+   "name": "Afternoon Ride ⛅",
+   "miles": 20.17,
+   "seconds": 4416,
+   "elevation_ft": 766,
+   "bike": "2023 Trek Domane SL 5 Gen 4"
+  },
+  {
+   "date": "2024-06-29",
+   "name": "Morning Ride ⛅",
+   "miles": 47.14,
+   "seconds": 11771,
+   "elevation_ft": 1207,
+   "bike": "2023 Trek Domane SL 5 Gen 4"
+  },
+  {
+   "date": "2024-06-28",
+   "name": "Afternoon Ride",
+   "miles": 15.2,
+   "seconds": 3556,
+   "elevation_ft": 667,
+   "bike": "2023 Trek Domane SL 5 Gen 4"
+  },
+  {
+   "date": "2024-06-25",
+   "name": "Afternoon Ride ⛅",
+   "miles": 20.08,
+   "seconds": 4528,
+   "elevation_ft": 638,
+   "bike": "2023 Trek Domane SL 5 Gen 4"
+  },
+  {
+   "date": "2024-06-20",
+   "name": "Afternoon Ride ⛅",
+   "miles": 20.02,
+   "seconds": 4878,
+   "elevation_ft": 638,
+   "bike": "2023 Trek Domane SL 5 Gen 4"
+  },
+  {
+   "date": "2024-06-15",
+   "name": "1st Muffin House 48 ⛅",
+   "miles": 48.65,
+   "seconds": 11120,
+   "elevation_ft": 1825,
+   "bike": "2023 Trek Domane SL 5 Gen 4"
+  },
+  {
+   "date": "2024-06-13",
+   "name": "Afternoon Ride ⛅",
+   "miles": 20.09,
+   "seconds": 4550,
+   "elevation_ft": 763,
+   "bike": "2023 Trek Domane SL 5 Gen 4"
+  },
+  {
+   "date": "2024-06-11",
+   "name": "Afternoon Ride ⛅",
+   "miles": 15.14,
+   "seconds": 3374,
+   "elevation_ft": 676,
+   "bike": "2023 Trek Domane SL 5 Gen 4"
+  },
+  {
+   "date": "2024-06-07",
+   "name": "Afternoon Ride ⛅",
+   "miles": 20.02,
+   "seconds": 4829,
+   "elevation_ft": 638,
+   "bike": "2023 Trek Domane SL 5 Gen 4"
+  },
+  {
+   "date": "2024-06-05",
+   "name": "Afternoon Ride ☀️",
+   "miles": 31.23,
+   "seconds": 7767,
+   "elevation_ft": 997,
+   "bike": "2023 Trek Domane SL 5 Gen 4"
+  },
+  {
+   "date": "2024-06-03",
+   "name": "Afternoon Ride ⛅",
+   "miles": 20.12,
+   "seconds": 4690,
+   "elevation_ft": 763,
+   "bike": "2023 Trek Domane SL 5 Gen 4"
+  },
+  {
+   "date": "2024-05-01",
+   "name": "Afternoon Ride ⛅",
+   "miles": 19.95,
+   "seconds": 4644,
+   "elevation_ft": 594,
+   "bike": "2023 Trek Domane SL 5 Gen 4"
+  },
+  {
+   "date": "2024-04-29",
+   "name": "First ride of 2024 ⛅",
+   "miles": 20.0,
+   "seconds": 4532,
+   "elevation_ft": 638,
+   "bike": "2023 Trek Domane SL 5 Gen 4"
+  },
+  {
+   "date": "2023-10-14",
+   "name": "Send out a search party for Dubes ⛅",
+   "miles": 48.31,
+   "seconds": 12058,
+   "elevation_ft": 1835,
+   "bike": "2023 Trek Domane SL 5 Gen 4"
+  },
+  {
+   "date": "2023-09-08",
+   "name": "Afternoon Ride ⛅",
+   "miles": 25.01,
+   "seconds": 5425,
+   "elevation_ft": 872,
+   "bike": "2023 Trek Domane SL 5 Gen 4"
+  },
+  {
+   "date": "2023-09-02",
+   "name": "Morning Ride",
+   "miles": 49.03,
+   "seconds": 12196,
+   "elevation_ft": 1875,
+   "bike": "2023 Trek Domane SL 5 Gen 4"
+  },
+  {
+   "date": "2023-08-31",
+   "name": "Meine längste Radtour 🤪",
+   "miles": 81.11,
+   "seconds": 19989,
+   "elevation_ft": 3228,
+   "bike": "2023 Trek Domane SL 5 Gen 4"
+  },
+  {
+   "date": "2023-08-29",
+   "name": "Lunch Ride",
+   "miles": 20.02,
+   "seconds": 4447,
+   "elevation_ft": 637,
+   "bike": "2023 Trek Domane SL 5 Gen 4"
+  },
+  {
+   "date": "2023-08-19",
+   "name": "Morning Ride ☀️",
+   "miles": 31.13,
+   "seconds": 6753,
+   "elevation_ft": 1005,
+   "bike": "2023 Trek Domane SL 5 Gen 4"
+  },
+  {
+   "date": "2023-08-12",
+   "name": "Morning Ride",
+   "miles": 55.56,
+   "seconds": 13373,
+   "elevation_ft": 2166,
+   "bike": "2023 Trek Domane SL 5 Gen 4"
+  },
+  {
+   "date": "2023-08-11",
+   "name": "Afternoon Ride ☀️",
+   "miles": 31.12,
+   "seconds": 6957,
+   "elevation_ft": 1005,
+   "bike": "2023 Trek Domane SL 5 Gen 4"
+  },
+  {
+   "date": "2023-08-09",
+   "name": "Afternoon Ride ⛅",
+   "miles": 20.01,
+   "seconds": 4298,
+   "elevation_ft": 637,
+   "bike": "2023 Trek Domane SL 5 Gen 4"
+  },
+  {
+   "date": "2023-08-06",
+   "name": "Morning Ride ☀️",
+   "miles": 48.19,
+   "seconds": 11361,
+   "elevation_ft": 1810,
+   "bike": "2023 Trek Domane SL 5 Gen 4"
+  },
+  {
+   "date": "2023-08-05",
+   "name": "Morning Ride ⛅",
+   "miles": 45.05,
+   "seconds": 10227,
+   "elevation_ft": 1844,
+   "bike": "2023 Trek Domane SL 5 Gen 4"
+  },
+  {
+   "date": "2023-08-04",
+   "name": "Afternoon Ride ⛅",
+   "miles": 20.03,
+   "seconds": 4820,
+   "elevation_ft": 637,
+   "bike": "2023 Trek Domane SL 5 Gen 4"
+  },
+  {
+   "date": "2023-07-30",
+   "name": "Morning Ride",
+   "miles": 47.01,
+   "seconds": 9769,
+   "elevation_ft": 1144,
+   "bike": "2023 Trek Domane SL 5 Gen 4"
+  },
+  {
+   "date": "2023-07-28",
+   "name": "Afternoon Ride ☀️",
+   "miles": 20.02,
+   "seconds": 4316,
+   "elevation_ft": 766,
+   "bike": "2023 Trek Domane SL 5 Gen 4"
+  },
+  {
+   "date": "2023-07-24",
+   "name": "Evening Ride ☀️",
+   "miles": 30.08,
+   "seconds": 7530,
+   "elevation_ft": 492,
+   "bike": "2023 Trek Domane SL 5 Gen 4"
+  },
+  {
+   "date": "2023-07-23",
+   "name": "Morning Ride ⛅",
+   "miles": 48.18,
+   "seconds": 10420,
+   "elevation_ft": 1810,
+   "bike": "2023 Trek Domane SL 5 Gen 4"
+  },
+  {
+   "date": "2023-07-21",
+   "name": "Afternoon Ride ⛅",
+   "miles": 20.02,
+   "seconds": 4075,
+   "elevation_ft": 637,
+   "bike": "2023 Trek Domane SL 5 Gen 4"
+  },
+  {
+   "date": "2023-07-17",
+   "name": "First ride with the Domane SL 5 ⛅",
+   "miles": 35.59,
+   "seconds": 8356,
+   "elevation_ft": 1287,
+   "bike": "2023 Trek Domane SL 5 Gen 4"
+  },
+  {
+   "date": "2023-07-13",
+   "name": "Afternoon Ride ⛅",
+   "miles": 31.03,
+   "seconds": 6894,
+   "elevation_ft": 998,
+   "bike": "2016 Fuji Sportif 2.3"
+  },
+  {
+   "date": "2023-07-12",
+   "name": "Afternoon Ride",
+   "miles": 20.03,
+   "seconds": 4667,
+   "elevation_ft": 623,
+   "bike": "2016 Fuji Sportif 2.3"
+  },
+  {
+   "date": "2023-07-08",
+   "name": "Morning Ride",
+   "miles": 48.22,
+   "seconds": 10525,
+   "elevation_ft": 1793,
+   "bike": "2016 Fuji Sportif 2.3"
+  },
+  {
+   "date": "2023-07-07",
+   "name": "Afternoon Ride ☀️",
+   "miles": 20.01,
+   "seconds": 4351,
+   "elevation_ft": 623,
+   "bike": "2016 Fuji Sportif 2.3"
+  },
+  {
+   "date": "2023-07-05",
+   "name": "Afternoon Ride",
+   "miles": 26.44,
+   "seconds": 5782,
+   "elevation_ft": 966,
+   "bike": "2016 Fuji Sportif 2.3"
+  },
+  {
+   "date": "2023-07-03",
+   "name": "Afternoon Ride ⛅",
+   "miles": 20.02,
+   "seconds": 4900,
+   "elevation_ft": 622,
+   "bike": "2016 Fuji Sportif 2.3"
+  },
+  {
+   "date": "2023-07-01",
+   "name": "Morning Ride",
+   "miles": 45.01,
+   "seconds": 10134,
+   "elevation_ft": 1932,
+   "bike": "2016 Fuji Sportif 2.3"
+  },
+  {
+   "date": "2023-06-30",
+   "name": "Afternoon Ride ⛅",
+   "miles": 20.0,
+   "seconds": 4475,
+   "elevation_ft": 623,
+   "bike": "2016 Fuji Sportif 2.3"
+  },
+  {
+   "date": "2023-06-27",
+   "name": "Afternoon Ride ⛅",
+   "miles": 20.01,
+   "seconds": 4817,
+   "elevation_ft": 759,
+   "bike": "2016 Fuji Sportif 2.3"
+  },
+  {
+   "date": "2023-06-26",
+   "name": "Afternoon Ride ⛅",
+   "miles": 20.0,
+   "seconds": 4592,
+   "elevation_ft": 622,
+   "bike": "2016 Fuji Sportif 2.3"
+  },
+  {
+   "date": "2023-06-23",
+   "name": "Afternoon Ride ⛅",
+   "miles": 31.09,
+   "seconds": 7114,
+   "elevation_ft": 1006,
+   "bike": "2016 Fuji Sportif 2.3"
+  },
+  {
+   "date": "2023-06-20",
+   "name": "Afternoon Ride",
+   "miles": 50.02,
+   "seconds": 13772,
+   "elevation_ft": 710,
+   "bike": "2016 Fuji Sportif 2.3"
+  },
+  {
+   "date": "2023-06-19",
+   "name": "Afternoon Ride",
+   "miles": 20.01,
+   "seconds": 4379,
+   "elevation_ft": 760,
+   "bike": "2016 Fuji Sportif 2.3"
+  },
+  {
+   "date": "2023-06-16",
+   "name": "Afternoon Ride",
+   "miles": 25.01,
+   "seconds": 5599,
+   "elevation_ft": 884,
+   "bike": "2016 Fuji Sportif 2.3"
+  },
+  {
+   "date": "2023-06-15",
+   "name": "Evening Ride ⛅",
+   "miles": 20.0,
+   "seconds": 4473,
+   "elevation_ft": 623,
+   "bike": "2016 Fuji Sportif 2.3"
+  },
+  {
+   "date": "2023-06-12",
+   "name": "Afternoon Ride ⛅",
+   "miles": 16.02,
+   "seconds": 3771,
+   "elevation_ft": 707,
+   "bike": "2016 Fuji Sportif 2.3"
+  },
+  {
+   "date": "2023-06-10",
+   "name": "Morning Ride ⛅",
+   "miles": 30.18,
+   "seconds": 7487,
+   "elevation_ft": 1226,
+   "bike": "2016 Fuji Sportif 2.3"
+  },
+  {
+   "date": "2023-06-02",
+   "name": "Afternoon Ride ⛅",
+   "miles": 20.13,
+   "seconds": 4626,
+   "elevation_ft": 623,
+   "bike": "2016 Fuji Sportif 2.3"
+  },
+  {
+   "date": "2023-05-31",
+   "name": "Afternoon Ride ☀️",
+   "miles": 20.01,
+   "seconds": 4284,
+   "elevation_ft": 622,
+   "bike": "2016 Fuji Sportif 2.3"
+  },
+  {
+   "date": "2023-05-30",
+   "name": "Afternoon Ride ☀️",
+   "miles": 9.89,
+   "seconds": 2516,
+   "elevation_ft": 358,
+   "bike": "2016 Fuji Sportif 2.3"
+  },
+  {
+   "date": "2023-05-27",
+   "name": "Morning Ride ☀️",
+   "miles": 46.12,
+   "seconds": 11846,
+   "elevation_ft": 1091,
+   "bike": "2016 Fuji Sportif 2.3"
+  },
+  {
+   "date": "2023-05-14",
+   "name": "Morning Ride ⛅",
+   "miles": 31.15,
+   "seconds": 7465,
+   "elevation_ft": 1006,
+   "bike": "2016 Fuji Sportif 2.3"
+  },
+  {
+   "date": "2023-05-05",
+   "name": "Afternoon Ride ⛅",
+   "miles": 20.0,
+   "seconds": 4534,
+   "elevation_ft": 759,
+   "bike": "2016 Fuji Sportif 2.3"
+  },
+  {
+   "date": "2023-05-03",
+   "name": "Afternoon Ride ⛅",
+   "miles": 20.01,
+   "seconds": 4603,
+   "elevation_ft": 622,
+   "bike": "2016 Fuji Sportif 2.3"
+  },
+  {
+   "date": "2023-05-01",
+   "name": "Afternoon Ride ⛅",
+   "miles": 20.01,
+   "seconds": 4724,
+   "elevation_ft": 623,
+   "bike": "2016 Fuji Sportif 2.3"
+  },
+  {
+   "date": "2023-04-28",
+   "name": "Afternoon Ride ⛅",
+   "miles": 31.02,
+   "seconds": 6897,
+   "elevation_ft": 997,
+   "bike": "2016 Fuji Sportif 2.3"
+  },
+  {
+   "date": "2023-04-26",
+   "name": "Afternoon Ride ⛅",
+   "miles": 20.0,
+   "seconds": 4323,
+   "elevation_ft": 623,
+   "bike": "2016 Fuji Sportif 2.3"
+  },
+  {
+   "date": "2023-04-24",
+   "name": "Afternoon Ride ⛅",
+   "miles": 20.0,
+   "seconds": 4589,
+   "elevation_ft": 623,
+   "bike": "2016 Fuji Sportif 2.3"
+  },
+  {
+   "date": "2023-04-21",
+   "name": "Afternoon Ride ⛅",
+   "miles": 31.14,
+   "seconds": 7066,
+   "elevation_ft": 1006,
+   "bike": "2016 Fuji Sportif 2.3"
+  },
+  {
+   "date": "2023-04-19",
+   "name": "Afternoon Ride ⛅",
+   "miles": 20.02,
+   "seconds": 4651,
+   "elevation_ft": 759,
+   "bike": "2016 Fuji Sportif 2.3"
+  },
+  {
+   "date": "2023-04-14",
+   "name": "Afternoon Ride ⛅",
+   "miles": 20.08,
+   "seconds": 4341,
+   "elevation_ft": 623,
+   "bike": "2016 Fuji Sportif 2.3"
+  },
+  {
+   "date": "2023-04-12",
+   "name": "Es ist endlich Frühling 🌻 ⛅",
+   "miles": 20.02,
+   "seconds": 4333,
+   "elevation_ft": 759,
+   "bike": "2016 Fuji Sportif 2.3"
+  },
+  {
+   "date": "2023-04-04",
+   "name": "Afternoon Ride ⛅",
+   "miles": 19.99,
+   "seconds": 4676,
+   "elevation_ft": 760,
+   "bike": "2016 Fuji Sportif 2.3"
+  },
+  {
+   "date": "2023-03-22",
+   "name": "Afternoon Ride ⛅",
+   "miles": 20.03,
+   "seconds": 4736,
+   "elevation_ft": 622,
+   "bike": "2016 Fuji Sportif 2.3"
+  },
+  {
+   "date": "2023-02-10",
+   "name": "Meine erste Radtour des Jahres",
+   "miles": 20.03,
+   "seconds": 4530,
+   "elevation_ft": 759,
+   "bike": "2016 Fuji Sportif 2.3"
+  },
+  {
+   "date": "2022-11-12",
+   "name": "Meine längste Radtour. Siebzig Meilen (einhundertdreizehn Kilometer)",
+   "miles": 70.84,
+   "seconds": 18366,
+   "elevation_ft": 2593,
+   "bike": "2016 Fuji Sportif 2.3"
+  },
+  {
+   "date": "2022-10-30",
+   "name": "Fahrradtour entlang der Paradestrecke 🧟🎃⛔",
+   "miles": 37.66,
+   "seconds": 8095,
+   "elevation_ft": 955,
+   "bike": "2016 Fuji Sportif 2.3"
+  },
+  {
+   "date": "2022-10-22",
+   "name": "Zu Borealis und zurück ☀️",
+   "miles": 45.17,
+   "seconds": 10397,
+   "elevation_ft": 1146,
+   "bike": "2016 Fuji Sportif 2.3"
+  },
+  {
+   "date": "2022-10-21",
+   "name": "Afternoon Ride ☀️",
+   "miles": 20.03,
+   "seconds": 4635,
+   "elevation_ft": 770,
+   "bike": "2016 Fuji Sportif 2.3"
+  },
+  {
+   "date": "2022-10-19",
+   "name": "Afternoon Ride ☀️",
+   "miles": 20.0,
+   "seconds": 4400,
+   "elevation_ft": 770,
+   "bike": "2016 Fuji Sportif 2.3"
+  },
+  {
+   "date": "2022-10-14",
+   "name": "Afternoon Ride ⛅",
+   "miles": 20.05,
+   "seconds": 4557,
+   "elevation_ft": 770,
+   "bike": "2016 Fuji Sportif 2.3"
+  },
+  {
+   "date": "2022-10-12",
+   "name": "Herbstlaub 🍁🍂 ⛅",
+   "miles": 20.01,
+   "seconds": 4345,
+   "elevation_ft": 770,
+   "bike": "2016 Fuji Sportif 2.3"
+  },
+  {
+   "date": "2022-10-10",
+   "name": "Afternoon Ride ⛅",
+   "miles": 20.03,
+   "seconds": 4467,
+   "elevation_ft": 770,
+   "bike": "2016 Fuji Sportif 2.3"
+  },
+  {
+   "date": "2022-10-08",
+   "name": "Das Herbstlaub in New England ist sehr wunderschön. 🍁🍂 ☀️",
+   "miles": 37.02,
+   "seconds": 8085,
+   "elevation_ft": 941,
+   "bike": "2016 Fuji Sportif 2.3"
+  },
+  {
+   "date": "2022-10-02",
+   "name": "Es war sehr windig! ⛅",
+   "miles": 48.25,
+   "seconds": 11134,
+   "elevation_ft": 1830,
+   "bike": "2016 Fuji Sportif 2.3"
+  },
+  {
+   "date": "2022-09-24",
+   "name": "Brrrr ☀️",
+   "miles": 40.1,
+   "seconds": 9033,
+   "elevation_ft": 930,
+   "bike": "2016 Fuji Sportif 2.3"
+  },
+  {
+   "date": "2022-09-10",
+   "name": "Morning Ride ☀️",
+   "miles": 31.12,
+   "seconds": 6447,
+   "elevation_ft": 1003,
+   "bike": "2016 Fuji Sportif 2.3"
+  },
+  {
+   "date": "2022-09-04",
+   "name": "Morning Ride ⛅",
+   "miles": 40.07,
+   "seconds": 8202,
+   "elevation_ft": 929,
+   "bike": "2016 Fuji Sportif 2.3"
+  },
+  {
+   "date": "2022-09-02",
+   "name": "Morning Ride ☀️",
+   "miles": 20.0,
+   "seconds": 4330,
+   "elevation_ft": 770,
+   "bike": "2016 Fuji Sportif 2.3"
+  },
+  {
+   "date": "2022-08-14",
+   "name": "Afternoon Ride ⛅",
+   "miles": 20.05,
+   "seconds": 4280,
+   "elevation_ft": 769,
+   "bike": "2016 Fuji Sportif 2.3"
+  },
+  {
+   "date": "2022-08-12",
+   "name": "Afternoon Ride ☀️",
+   "miles": 33.08,
+   "seconds": 7313,
+   "elevation_ft": 984,
+   "bike": "2016 Fuji Sportif 2.3"
+  },
+  {
+   "date": "2022-08-10",
+   "name": "Afternoon Ride ⛅",
+   "miles": 20.01,
+   "seconds": 4053,
+   "elevation_ft": 770,
+   "bike": "2016 Fuji Sportif 2.3"
+  },
+  {
+   "date": "2022-08-07",
+   "name": "Morning Ride ☀️",
+   "miles": 48.24,
+   "seconds": 10238,
+   "elevation_ft": 1829,
+   "bike": "2016 Fuji Sportif 2.3"
+  },
+  {
+   "date": "2022-07-31",
+   "name": "Meandering around MA ☀️",
+   "miles": 60.55,
+   "seconds": 13391,
+   "elevation_ft": 2590,
+   "bike": "2016 Fuji Sportif 2.3"
+  },
+  {
+   "date": "2022-07-28",
+   "name": "Afternoon Ride ⛅",
+   "miles": 18.78,
+   "seconds": 4056,
+   "elevation_ft": 598,
+   "bike": "2016 Fuji Sportif 2.3"
+  },
+  {
+   "date": "2022-07-22",
+   "name": "Afternoon Ride ☀️",
+   "miles": 20.02,
+   "seconds": 4299,
+   "elevation_ft": 770,
+   "bike": "2016 Fuji Sportif 2.3"
+  },
+  {
+   "date": "2022-07-15",
+   "name": "Afternoon Ride ⛅",
+   "miles": 47.16,
+   "seconds": 12196,
+   "elevation_ft": 671,
+   "bike": "2016 Fuji Sportif 2.3"
+  },
+  {
+   "date": "2022-07-09",
+   "name": "Lunch Ride ⛅",
+   "miles": 20.06,
+   "seconds": 4113,
+   "elevation_ft": 770,
+   "bike": "2016 Fuji Sportif 2.3"
+  },
+  {
+   "date": "2022-07-03",
+   "name": "Morning Ride ⛅",
+   "miles": 30.39,
+   "seconds": 7441,
+   "elevation_ft": 857,
+   "bike": "2016 Fuji Sportif 2.3"
+  },
+  {
+   "date": "2022-06-25",
+   "name": "Morning Ride ☀️",
+   "miles": 31.25,
+   "seconds": 6396,
+   "elevation_ft": 1010,
+   "bike": "2016 Fuji Sportif 2.3"
+  },
+  {
+   "date": "2022-06-14",
+   "name": "Afternoon Ride ☀️",
+   "miles": 20.0,
+   "seconds": 3889,
+   "elevation_ft": 769,
+   "bike": "2016 Fuji Sportif 2.3"
+  },
+  {
+   "date": "2022-06-10",
+   "name": "Afternoon Ride ⛅",
+   "miles": 24.44,
+   "seconds": 5560,
+   "elevation_ft": 480,
+   "bike": "2016 Fuji Sportif 2.3"
+  },
+  {
+   "date": "2022-06-07",
+   "name": "Afternoon Ride ⛅",
+   "miles": 5.49,
+   "seconds": 1378,
+   "elevation_ft": 296,
+   "bike": "2016 Fuji Sportif 2.3"
+  },
+  {
+   "date": "2022-06-07",
+   "name": "Evening Ride ⛅",
+   "miles": 5.47,
+   "seconds": 1199,
+   "elevation_ft": 227,
+   "bike": "2016 Fuji Sportif 2.3"
+  },
+  {
+   "date": "2022-06-04",
+   "name": "Afternoon Ride ⛅",
+   "miles": 34.39,
+   "seconds": 7564,
+   "elevation_ft": 1204,
+   "bike": "2016 Fuji Sportif 2.3"
+  },
+  {
+   "date": "2022-05-29",
+   "name": "Lunch Ride ⛅",
+   "miles": 41.88,
+   "seconds": 8891,
+   "elevation_ft": 1034,
+   "bike": "2016 Fuji Sportif 2.3"
+  },
+  {
+   "date": "2022-05-26",
+   "name": "Afternoon Ride ⛅",
+   "miles": 20.14,
+   "seconds": 4199,
+   "elevation_ft": 784,
+   "bike": "2016 Fuji Sportif 2.3"
+  },
+  {
+   "date": "2022-05-21",
+   "name": "Afternoon Ride ⛅",
+   "miles": 31.28,
+   "seconds": 6696,
+   "elevation_ft": 1010,
+   "bike": "2016 Fuji Sportif 2.3"
+  },
+  {
+   "date": "2022-05-12",
+   "name": "First ride of 2022 ⛅",
+   "miles": 20.03,
+   "seconds": 4344,
+   "elevation_ft": 771,
+   "bike": "2016 Fuji Sportif 2.3"
+  },
+  {
+   "date": "2021-11-13",
+   "name": "Afternoon Ride ☀️",
+   "miles": 20.06,
+   "seconds": 4890,
+   "elevation_ft": 768,
+   "bike": "2016 Fuji Sportif 2.3"
+  },
+  {
+   "date": "2021-10-23",
+   "name": "1k! ⛅",
+   "miles": 32.97,
+   "seconds": 9312,
+   "elevation_ft": 482,
+   "bike": "2016 Fuji Sportif 2.3"
+  },
+  {
+   "date": "2021-10-16",
+   "name": "Lunch Ride ⛅",
+   "miles": 15.03,
+   "seconds": 3634,
+   "elevation_ft": 527,
+   "bike": "2016 Fuji Sportif 2.3"
+  },
+  {
+   "date": "2021-10-09",
+   "name": "Morning Ride ⛅",
+   "miles": 42.02,
+   "seconds": 9790,
+   "elevation_ft": 1044,
+   "bike": "2016 Fuji Sportif 2.3"
+  },
+  {
+   "date": "2021-10-06",
+   "name": "Afternoon Ride ☀️",
+   "miles": 20.06,
+   "seconds": 4760,
+   "elevation_ft": 774,
+   "bike": "2016 Fuji Sportif 2.3"
+  },
+  {
+   "date": "2021-09-15",
+   "name": "Afternoon Ride ☀️",
+   "miles": 15.82,
+   "seconds": 4180,
+   "elevation_ft": 713,
+   "bike": "2016 Fuji Sportif 2.3"
+  },
+  {
+   "date": "2021-09-10",
+   "name": "Afternoon Ride ☀️",
+   "miles": 20.03,
+   "seconds": 4648,
+   "elevation_ft": 768,
+   "bike": "2016 Fuji Sportif 2.3"
+  },
+  {
+   "date": "2021-09-05",
+   "name": "Morning Ride ☀️",
+   "miles": 35.65,
+   "seconds": 9008,
+   "elevation_ft": 1322,
+   "bike": "2016 Fuji Sportif 2.3"
+  },
+  {
+   "date": "2021-08-29",
+   "name": "Womp womp 😐",
+   "miles": 28.74,
+   "seconds": 6779,
+   "elevation_ft": 763,
+   "bike": "2016 Fuji Sportif 2.3"
+  },
+  {
+   "date": "2021-08-24",
+   "name": "Afternoon Ride ☀️",
+   "miles": 19.56,
+   "seconds": 4745,
+   "elevation_ft": 512,
+   "bike": "2016 Fuji Sportif 2.3"
+  },
+  {
+   "date": "2021-08-21",
+   "name": "Two Peacocks☀️",
+   "miles": 31.3,
+   "seconds": 7237,
+   "elevation_ft": 998,
+   "bike": "2016 Fuji Sportif 2.3"
+  },
+  {
+   "date": "2021-08-16",
+   "name": "Afternoon Ride ⛅",
+   "miles": 20.63,
+   "seconds": 4689,
+   "elevation_ft": 792,
+   "bike": "2016 Fuji Sportif 2.3"
+  },
+  {
+   "date": "2021-08-13",
+   "name": "Evening Ride ☀️",
+   "miles": 18.2,
+   "seconds": 4795,
+   "elevation_ft": 637,
+   "bike": "2016 Fuji Sportif 2.3"
+  },
+  {
+   "date": "2021-08-11",
+   "name": "Evening Ride ☀️",
+   "miles": 19.15,
+   "seconds": 4424,
+   "elevation_ft": 564,
+   "bike": "2016 Fuji Sportif 2.3"
+  },
+  {
+   "date": "2021-08-06",
+   "name": "Afternoon Ride ☀️",
+   "miles": 31.12,
+   "seconds": 7501,
+   "elevation_ft": 1023,
+   "bike": "2016 Fuji Sportif 2.3"
+  },
+  {
+   "date": "2021-08-02",
+   "name": "Afternoon Ride ⛅",
+   "miles": 20.06,
+   "seconds": 4952,
+   "elevation_ft": 607,
+   "bike": "2016 Fuji Sportif 2.3"
+  },
+  {
+   "date": "2021-07-22",
+   "name": "Afternoon Ride ☀️",
+   "miles": 18.76,
+   "seconds": 4475,
+   "elevation_ft": 621,
+   "bike": "2016 Fuji Sportif 2.3"
+  },
+  {
+   "date": "2021-07-17",
+   "name": "Wet 31 🌦️",
+   "miles": 31.23,
+   "seconds": 7120,
+   "elevation_ft": 1029,
+   "bike": "2016 Fuji Sportif 2.3"
+  },
+  {
+   "date": "2021-07-15",
+   "name": "Afternoon Ride ⛅",
+   "miles": 20.03,
+   "seconds": 4499,
+   "elevation_ft": 761,
+   "bike": "2016 Fuji Sportif 2.3"
+  },
+  {
+   "date": "2021-07-10",
+   "name": "Lunch Ride ☀️",
+   "miles": 19.12,
+   "seconds": 4364,
+   "elevation_ft": 570,
+   "bike": "2016 Fuji Sportif 2.3"
+  },
+  {
+   "date": "2021-07-05",
+   "name": "Morning Ride ⛅",
+   "miles": 55.56,
+   "seconds": 13209,
+   "elevation_ft": 2093,
+   "bike": "2016 Fuji Sportif 2.3"
+  },
+  {
+   "date": "2021-06-28",
+   "name": "Afternoon Ride ⛅",
+   "miles": 20.85,
+   "seconds": 4888,
+   "elevation_ft": 586,
+   "bike": "2016 Fuji Sportif 2.3"
+  },
+  {
+   "date": "2021-06-27",
+   "name": "GameDay ride ⚽",
+   "miles": 20.54,
+   "seconds": 4979,
+   "elevation_ft": 807,
+   "bike": "2016 Fuji Sportif 2.3"
+  },
+  {
+   "date": "2021-06-13",
+   "name": "Cape Assault training ☀️",
+   "miles": 40.03,
+   "seconds": 9359,
+   "elevation_ft": 944,
+   "bike": "2016 Fuji Sportif 2.3"
+  },
+  {
+   "date": "2021-06-10",
+   "name": "Afternoon Ride ☀️",
+   "miles": 18.77,
+   "seconds": 4515,
+   "elevation_ft": 623,
+   "bike": "2016 Fuji Sportif 2.3"
+  },
+  {
+   "date": "2021-06-07",
+   "name": "Afternoon Ride ☀️",
+   "miles": 22.46,
+   "seconds": 5246,
+   "elevation_ft": 795,
+   "bike": "2016 Fuji Sportif 2.3"
+  },
+  {
+   "date": "2021-06-05",
+   "name": "Morning Ride ☀️",
+   "miles": 31.22,
+   "seconds": 7128,
+   "elevation_ft": 1022,
+   "bike": "2016 Fuji Sportif 2.3"
+  },
+  {
+   "date": "2021-06-02",
+   "name": "Afternoon Ride ☁️",
+   "miles": 19.11,
+   "seconds": 4483,
+   "elevation_ft": 623,
+   "bike": "2016 Fuji Sportif 2.3"
+  },
+  {
+   "date": "2021-05-27",
+   "name": "Afternoon Ride ⛅",
+   "miles": 31.02,
+   "seconds": 6968,
+   "elevation_ft": 1015,
+   "bike": "2016 Fuji Sportif 2.3"
+  },
+  {
+   "date": "2021-05-24",
+   "name": "Afternoon Ride ⛅",
+   "miles": 33.81,
+   "seconds": 8289,
+   "elevation_ft": 1255,
+   "bike": "2016 Fuji Sportif 2.3"
+  },
+  {
+   "date": "2021-05-21",
+   "name": "Afternoon Ride ☀️",
+   "miles": 18.73,
+   "seconds": 4297,
+   "elevation_ft": 622,
+   "bike": "2016 Fuji Sportif 2.3"
+  },
+  {
+   "date": "2021-05-19",
+   "name": "Afternoon Ride ☀️",
+   "miles": 20.04,
+   "seconds": 4635,
+   "elevation_ft": 762,
+   "bike": "2016 Fuji Sportif 2.3"
+  },
+  {
+   "date": "2021-05-17",
+   "name": "Evening Ride ⛅",
+   "miles": 29.15,
+   "seconds": 7165,
+   "elevation_ft": 552,
+   "bike": "2016 Fuji Sportif 2.3"
+  },
+  {
+   "date": "2021-05-14",
+   "name": "Afternoon Ride ⛅",
+   "miles": 20.01,
+   "seconds": 4789,
+   "elevation_ft": 764,
+   "bike": "2016 Fuji Sportif 2.3"
+  },
+  {
+   "date": "2021-05-07",
+   "name": "Afternoon Ride ⛅",
+   "miles": 15.43,
+   "seconds": 3833,
+   "elevation_ft": 695,
+   "bike": "2016 Fuji Sportif 2.3"
+  },
+  {
+   "date": "2021-05-03",
+   "name": "Afternoon Ride ☁️",
+   "miles": 18.65,
+   "seconds": 4696,
+   "elevation_ft": 592,
+   "bike": "2016 Fuji Sportif 2.3"
+  },
+  {
+   "date": "2021-04-20",
+   "name": "Afternoon Ride ⛅",
+   "miles": 15.04,
+   "seconds": 3766,
+   "elevation_ft": 706,
+   "bike": "2016 Fuji Sportif 2.3"
+  },
+  {
+   "date": "2021-04-19",
+   "name": "Afternoon Ride ⛅",
+   "miles": 20.1,
+   "seconds": 4832,
+   "elevation_ft": 762,
+   "bike": "2016 Fuji Sportif 2.3"
+  },
+  {
+   "date": "2021-04-09",
+   "name": "Afternoon Ride ☀️",
+   "miles": 19.98,
+   "seconds": 4567,
+   "elevation_ft": 763,
+   "bike": "2016 Fuji Sportif 2.3"
+  },
+  {
+   "date": "2021-04-07",
+   "name": "Afternoon Ride ⛅",
+   "miles": 12.57,
+   "seconds": 3132,
+   "elevation_ft": 526,
+   "bike": "2016 Fuji Sportif 2.3"
+  },
+  {
+   "date": "2021-04-05",
+   "name": "Afternoon Ride ⛅",
+   "miles": 19.99,
+   "seconds": 4911,
+   "elevation_ft": 758,
+   "bike": "2016 Fuji Sportif 2.3"
+  },
+  {
+   "date": "2021-03-25",
+   "name": "Afternoon Ride ⛅",
+   "miles": 15.23,
+   "seconds": 3801,
+   "elevation_ft": 652,
+   "bike": "2016 Fuji Sportif 2.3"
+  },
+  {
+   "date": "2021-03-21",
+   "name": "Lunch Ride ☀️",
+   "miles": 15.11,
+   "seconds": 3922,
+   "elevation_ft": 710,
+   "bike": "2016 Fuji Sportif 2.3"
+  },
+  {
+   "date": "2021-03-11",
+   "name": "Afternoon Ride ⛅",
+   "miles": 12.58,
+   "seconds": 3342,
+   "elevation_ft": 582,
+   "bike": "2016 Fuji Sportif 2.3"
+  },
+  {
+   "date": "2021-03-09",
+   "name": "Lunch Ride ☀️",
+   "miles": 9.12,
+   "seconds": 2564,
+   "elevation_ft": 388,
+   "bike": "2016 Fuji Sportif 2.3"
+  },
+  {
+   "date": "2020-09-05",
+   "name": "Afternoon Ride ☀️",
+   "miles": 14.88,
+   "seconds": 3779,
+   "elevation_ft": 570,
+   "bike": "2016 Fuji Sportif 2.3"
+  },
+  {
+   "date": "2020-08-19",
+   "name": "Lunch Ride ⛅",
+   "miles": 14.08,
+   "seconds": 3645,
+   "elevation_ft": 486,
+   "bike": "2016 Fuji Sportif 2.3"
+  },
+  {
+   "date": "2020-08-12",
+   "name": "Afternoon Ride ⛅",
+   "miles": 14.31,
+   "seconds": 3833,
+   "elevation_ft": 492,
+   "bike": "2016 Fuji Sportif 2.3"
+  },
+  {
+   "date": "2020-07-21",
+   "name": "Evening Ride ☀️",
+   "miles": 12.04,
+   "seconds": 3097,
+   "elevation_ft": 445,
+   "bike": "2016 Fuji Sportif 2.3"
+  },
+  {
+   "date": "2020-07-18",
+   "name": "Afternoon Ride ☀️",
+   "miles": 17.0,
+   "seconds": 4597,
+   "elevation_ft": 482,
+   "bike": "2016 Fuji Sportif 2.3"
+  },
+  {
+   "date": "2020-05-27",
+   "name": "Afternoon Ride ☀️",
+   "miles": 10.28,
+   "seconds": 2397,
+   "elevation_ft": 170,
+   "bike": "2016 Fuji Sportif 2.3"
+  },
+  {
+   "date": "2020-05-25",
+   "name": "Afternoon Ride ⛅",
+   "miles": 21.11,
+   "seconds": 4890,
+   "elevation_ft": 638,
+   "bike": "2016 Fuji Sportif 2.3"
+  },
+  {
+   "date": "2020-05-22",
+   "name": "Afternoon Ride ☀️",
+   "miles": 14.94,
+   "seconds": 3634,
+   "elevation_ft": 827,
+   "bike": "2016 Fuji Sportif 2.3"
+  },
+  {
+   "date": "2020-05-15",
+   "name": "Afternoon Ride ☀️",
+   "miles": 20.52,
+   "seconds": 4786,
+   "elevation_ft": 578,
+   "bike": "2016 Fuji Sportif 2.3"
+  },
+  {
+   "date": "2020-05-03",
+   "name": "Keep it moooooooving ⛅",
+   "miles": 15.07,
+   "seconds": 4180,
+   "elevation_ft": 378,
+   "bike": "2016 Fuji Sportif 2.3"
+  },
+  {
+   "date": "2020-04-06",
+   "name": "Afternoon Ride ☀️",
+   "miles": 16.19,
+   "seconds": 4219,
+   "elevation_ft": 530,
+   "bike": "2016 Fuji Sportif 2.3"
+  },
+  {
+   "date": "2020-03-27",
+   "name": "Afternoon Ride ☀️",
+   "miles": 19.26,
+   "seconds": 4928,
+   "elevation_ft": 875,
+   "bike": "2016 Fuji Sportif 2.3"
+  },
+  {
+   "date": "2020-03-09",
+   "name": "Afternoon Ride ☀️",
+   "miles": 13.21,
+   "seconds": 3306,
+   "elevation_ft": 445,
+   "bike": "2016 Fuji Sportif 2.3"
+  },
+  {
+   "date": "2020-03-08",
+   "name": "Afternoon Ride ☀️",
+   "miles": 14.0,
+   "seconds": 3616,
+   "elevation_ft": 551,
+   "bike": "2016 Fuji Sportif 2.3"
+  },
+  {
+   "date": "2020-02-23",
+   "name": "Nature is metal 🤘🔥 ☀️",
+   "miles": 18.79,
+   "seconds": 6536,
+   "elevation_ft": 362,
+   "bike": "2016 Fuji Sportif 2.3"
+  },
+  {
+   "date": "2019-10-14",
+   "name": "Cape Assault ⛅",
+   "miles": 56.79,
+   "seconds": 15531,
+   "elevation_ft": 1649,
+   "bike": "2016 Fuji Sportif 2.3"
+  },
+  {
+   "date": "2019-09-15",
+   "name": "2019 Four Bridges Ride ⛅",
+   "miles": 25.86,
+   "seconds": 5852,
+   "elevation_ft": 1323,
+   "bike": "2016 Fuji Sportif 2.3"
+  },
+  {
+   "date": "2019-09-01",
+   "name": "Quick CVS run ☀️",
+   "miles": 5.46,
+   "seconds": 1492,
+   "elevation_ft": 185,
+   "bike": "2016 Fuji Sportif 2.3"
+  },
+  {
+   "date": "2019-08-26",
+   "name": "Afternoon Ride ☀️",
+   "miles": 15.06,
+   "seconds": 3544,
+   "elevation_ft": 547,
+   "bike": "2016 Fuji Sportif 2.3"
+  },
+  {
+   "date": "2019-08-20",
+   "name": "Afternoon Ride ☀️",
+   "miles": 16.35,
+   "seconds": 4168,
+   "elevation_ft": 468,
+   "bike": "2016 Fuji Sportif 2.3"
+  },
+  {
+   "date": "2019-08-10",
+   "name": "Morning Ride ☀️",
+   "miles": 38.38,
+   "seconds": 9360,
+   "elevation_ft": 1585,
+   "bike": "2016 Fuji Sportif 2.3"
+  },
+  {
+   "date": "2019-08-06",
+   "name": "Evening Ride ☀️",
+   "miles": 16.4,
+   "seconds": 3444,
+   "elevation_ft": 468,
+   "bike": "2016 Fuji Sportif 2.3"
+  },
+  {
+   "date": "2019-08-03",
+   "name": "Morning Ride ☀️",
+   "miles": 32.4,
+   "seconds": 8099,
+   "elevation_ft": 1465,
+   "bike": "2016 Fuji Sportif 2.3"
+  },
+  {
+   "date": "2019-07-30",
+   "name": "Afternoon Ride ☀️",
+   "miles": 15.2,
+   "seconds": 3548,
+   "elevation_ft": 554,
+   "bike": "2016 Fuji Sportif 2.3"
+  },
+  {
+   "date": "2019-07-27",
+   "name": "Morning Ride ☀️",
+   "miles": 30.11,
+   "seconds": 6615,
+   "elevation_ft": 681,
+   "bike": "2016 Fuji Sportif 2.3"
+  },
+  {
+   "date": "2019-07-24",
+   "name": "First ride north of West St ⛅",
+   "miles": 17.95,
+   "seconds": 4249,
+   "elevation_ft": 920,
+   "bike": "2016 Fuji Sportif 2.3"
+  },
+  {
+   "date": "2019-07-22",
+   "name": "Afternoon Ride ☁️",
+   "miles": 10.16,
+   "seconds": 2370,
+   "elevation_ft": 204,
+   "bike": "2016 Fuji Sportif 2.3"
+  },
+  {
+   "date": "2019-07-21",
+   "name": "Morning Ride ☀️",
+   "miles": 15.24,
+   "seconds": 3641,
+   "elevation_ft": 552,
+   "bike": "2016 Fuji Sportif 2.3"
+  },
+  {
+   "date": "2019-07-16",
+   "name": "Afternoon Ride ☀️",
+   "miles": 16.52,
+   "seconds": 3665,
+   "elevation_ft": 470,
+   "bike": "2016 Fuji Sportif 2.3"
+  },
+  {
+   "date": "2019-07-13",
+   "name": "Morning Ride ⛅",
+   "miles": 30.15,
+   "seconds": 7529,
+   "elevation_ft": 725,
+   "bike": "2016 Fuji Sportif 2.3"
+  },
+  {
+   "date": "2019-07-10",
+   "name": "Schimmels ☀️",
+   "miles": 25.94,
+   "seconds": 5923,
+   "elevation_ft": 695,
+   "bike": "2016 Fuji Sportif 2.3"
+  },
+  {
+   "date": "2019-07-08",
+   "name": "Afternoon Ride ☀️",
+   "miles": 14.76,
+   "seconds": 3450,
+   "elevation_ft": 588,
+   "bike": "2016 Fuji Sportif 2.3"
+  },
+  {
+   "date": "2019-07-06",
+   "name": "Morning Ride ☁️",
+   "miles": 31.91,
+   "seconds": 7725,
+   "elevation_ft": 613,
+   "bike": "2016 Fuji Sportif 2.3"
+  },
+  {
+   "date": "2019-07-04",
+   "name": "Morning Ride ☀️",
+   "miles": 30.72,
+   "seconds": 7402,
+   "elevation_ft": 768,
+   "bike": "2016 Fuji Sportif 2.3"
+  },
+  {
+   "date": "2019-07-02",
+   "name": "Afternoon Ride ☀️",
+   "miles": 15.4,
+   "seconds": 3772,
+   "elevation_ft": 444,
+   "bike": "2016 Fuji Sportif 2.3"
+  },
+  {
+   "date": "2019-06-05",
+   "name": "Afternoon Ride ☀️",
+   "miles": 14.86,
+   "seconds": 3625,
+   "elevation_ft": 555,
+   "bike": "2016 Fuji Sportif 2.3"
+  },
+  {
+   "date": "2019-05-27",
+   "name": "Lunch Ride ⛅",
+   "miles": 38.95,
+   "seconds": 10522,
+   "elevation_ft": 727,
+   "bike": "2016 Fuji Sportif 2.3"
+  },
+  {
+   "date": "2019-05-25",
+   "name": "Afternoon Ride ☀️",
+   "miles": 10.36,
+   "seconds": 3133,
+   "elevation_ft": 351,
+   "bike": "2016 Fuji Sportif 2.3"
+  },
+  {
+   "date": "2019-05-22",
+   "name": "Afternoon Ride ☀️",
+   "miles": 20.06,
+   "seconds": 5444,
+   "elevation_ft": 283,
+   "bike": "2016 Fuji Sportif 2.3"
+  },
+  {
+   "date": "2019-05-01",
+   "name": "Afternoon Ride ☁️",
+   "miles": 14.88,
+   "seconds": 3742,
+   "elevation_ft": 565,
+   "bike": "2016 Fuji Sportif 2.3"
+  },
+  {
+   "date": "2019-04-25",
+   "name": "Afternoon Ride ☀️",
+   "miles": 20.24,
+   "seconds": 5791,
+   "elevation_ft": 886,
+   "bike": "2016 Fuji Sportif 2.3"
+  },
+  {
+   "date": "2019-04-06",
+   "name": "Afternoon Ride ☀️",
+   "miles": 20.91,
+   "seconds": 5199,
+   "elevation_ft": 554,
+   "bike": "2016 Fuji Sportif 2.3"
+  },
+  {
+   "date": "2019-03-28",
+   "name": "Afternoon Ride ☀️",
+   "miles": 9.04,
+   "seconds": 3238,
+   "elevation_ft": 329,
+   "bike": "2016 Fuji Sportif 2.3"
+  },
+  {
+   "date": "2019-03-20",
+   "name": "Afternoon Ride ⛅",
+   "miles": 9.13,
+   "seconds": 2255,
+   "elevation_ft": 197,
+   "bike": "2016 Fuji Sportif 2.3"
+  },
+  {
+   "date": "2019-03-16",
+   "name": "First ride of 2019 ⛅",
+   "miles": 29.68,
+   "seconds": 8411,
+   "elevation_ft": 539,
+   "bike": "2016 Fuji Sportif 2.3"
+  },
+  {
+   "date": "2018-12-29",
+   "name": "Lunch Ride ☀️",
+   "miles": 14.91,
+   "seconds": 4058,
+   "elevation_ft": 424,
+   "bike": "2016 Fuji Sportif 2.3"
+  },
+  {
+   "date": "2018-11-11",
+   "name": "Lunch Ride ☀️",
+   "miles": 46.72,
+   "seconds": 12156,
+   "elevation_ft": 966,
+   "bike": "2016 Fuji Sportif 2.3"
+  },
+  {
+   "date": "2018-10-20",
+   "name": "Lunch Ride ☁️",
+   "miles": 30.16,
+   "seconds": 7845,
+   "elevation_ft": 890,
+   "bike": "2016 Fuji Sportif 2.3"
+  },
+  {
+   "date": "2018-10-10",
+   "name": "Afternoon Ride ☀️",
+   "miles": 13.21,
+   "seconds": 3427,
+   "elevation_ft": 495,
+   "bike": "2016 Fuji Sportif 2.3"
+  },
+  {
+   "date": "2018-10-09",
+   "name": "Afternoon Ride ⛅",
+   "miles": 13.66,
+   "seconds": 3298,
+   "elevation_ft": 500,
+   "bike": "2016 Fuji Sportif 2.3"
+  },
+  {
+   "date": "2018-10-04",
+   "name": "Afternoon Ride ☁️",
+   "miles": 13.83,
+   "seconds": 3358,
+   "elevation_ft": 498,
+   "bike": "2016 Fuji Sportif 2.3"
+  },
+  {
+   "date": "2018-09-22",
+   "name": "Morning Ride ⛅",
+   "miles": 14.42,
+   "seconds": 3516,
+   "elevation_ft": 286,
+   "bike": "2016 Fuji Sportif 2.3"
+  },
+  {
+   "date": "2018-09-22",
+   "name": "Afternoon Ride",
+   "miles": 14.97,
+   "seconds": 3516,
+   "elevation_ft": 379,
+   "bike": "2016 Fuji Sportif 2.3"
+  },
+  {
+   "date": "2018-09-22",
+   "name": "Morning Ride ⛅",
+   "miles": 15.5,
+   "seconds": 3903,
+   "elevation_ft": 293,
+   "bike": "2016 Fuji Sportif 2.3"
+  },
+  {
+   "date": "2018-09-19",
+   "name": "Afternoon Ride ☁️",
+   "miles": 9.08,
+   "seconds": 2003,
+   "elevation_ft": 163,
+   "bike": "2016 Fuji Sportif 2.3"
+  },
+  {
+   "date": "2018-09-05",
+   "name": "Afternoon Ride ☀️",
+   "miles": 20.21,
+   "seconds": 4880,
+   "elevation_ft": 807,
+   "bike": "2016 Fuji Sportif 2.3"
+  },
+  {
+   "date": "2018-09-04",
+   "name": "Afternoon Ride ⛅",
+   "miles": 10.36,
+   "seconds": 2659,
+   "elevation_ft": 501,
+   "bike": "2016 Fuji Sportif 2.3"
+  },
+  {
+   "date": "2018-09-03",
+   "name": "Morning Ride ⛅",
+   "miles": 41.5,
+   "seconds": 10895,
+   "elevation_ft": 1333,
+   "bike": "2016 Fuji Sportif 2.3"
+  },
+  {
+   "date": "2018-09-01",
+   "name": "Morning Ride ☀️",
+   "miles": 14.43,
+   "seconds": 3431,
+   "elevation_ft": 405,
+   "bike": "2016 Fuji Sportif 2.3"
+  },
+  {
+   "date": "2018-08-23",
+   "name": "Afternoon Ride ☀️",
+   "miles": 18.06,
+   "seconds": 4718,
+   "elevation_ft": 442,
+   "bike": "2016 Fuji Sportif 2.3"
+  },
+  {
+   "date": "2018-08-21",
+   "name": "Afternoon Ride ⛅",
+   "miles": 17.81,
+   "seconds": 4269,
+   "elevation_ft": 483,
+   "bike": "2016 Fuji Sportif 2.3"
+  },
+  {
+   "date": "2018-08-16",
+   "name": "Evening Ride ☀️",
+   "miles": 17.42,
+   "seconds": 4432,
+   "elevation_ft": 623,
+   "bike": "2016 Fuji Sportif 2.3"
+  },
+  {
+   "date": "2018-08-14",
+   "name": "Afternoon Ride ⛅",
+   "miles": 15.15,
+   "seconds": 3904,
+   "elevation_ft": 458,
+   "bike": "2016 Fuji Sportif 2.3"
+  },
+  {
+   "date": "2018-08-09",
+   "name": "Afternoon Ride ⛅",
+   "miles": 11.99,
+   "seconds": 3006,
+   "elevation_ft": 325,
+   "bike": "2016 Fuji Sportif 2.3"
+  },
+  {
+   "date": "2018-08-03",
+   "name": "Afternoon Ride ⛅",
+   "miles": 12.31,
+   "seconds": 3225,
+   "elevation_ft": 399,
+   "bike": "2016 Fuji Sportif 2.3"
+  },
+  {
+   "date": "2018-08-01",
+   "name": "Evening Ride ⛅",
+   "miles": 23.23,
+   "seconds": 6151,
+   "elevation_ft": 420,
+   "bike": "2016 Fuji Sportif 2.3"
+  },
+  {
+   "date": "2018-07-31",
+   "name": "Afternoon Ride ☀️",
+   "miles": 14.47,
+   "seconds": 3948,
+   "elevation_ft": 260,
+   "bike": "2016 Fuji Sportif 2.3"
+  },
+  {
+   "date": "2018-07-29",
+   "name": "Afternoon Ride ⛅",
+   "miles": 9.03,
+   "seconds": 2257,
+   "elevation_ft": 171,
+   "bike": "2016 Fuji Sportif 2.3"
+  },
+  {
+   "date": "2018-07-27",
+   "name": "Afternoon Ride ☀️",
+   "miles": 8.17,
+   "seconds": 2748,
+   "elevation_ft": 349,
+   "bike": "2016 Fuji Sportif 2.3"
+  }
+ ]
+}

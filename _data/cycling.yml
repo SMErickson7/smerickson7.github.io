@@ -4,42 +4,26 @@
 photo: /assets/img/about-ride.jpg
 photo_alt: Steven on a ride, smiling in cycling sunglasses
 
-# All-time Strava stats. Copied from the Google Sheet the old Strava page read live.
-# Update the numbers and `updated` whenever you refresh them.
-# `card: true` also shows that stat on the homepage card (keep it to three).
-updated: October 2026
-stats:
-  - label: Rides
-    value: "238"
-    card: true
-  - label: Distance
-    value: "5,878.4 miles"
-    card: true
-  - label: Elevation gain
-    value: "187,928 ft"
-    card: true
-  - label: Time in the saddle
-    value: 390 hours, 15 minutes
-  - label: Longest ride
-    value: "81.11 miles"
-  - label: Biggest climb
-    value: "232 ft"
+# Ride stats (the homepage card, the page intro, the garage counts and the
+# "By the numbers" table) come from _data/rides.json, which a GitHub Action
+# refreshes every morning from the Log tab of the Strava Ride log Google Sheet.
+# See _tools/sync_rides.py. Nothing to update here after a ride.
 
 # The garage. photo is optional; without one the card shows a placeholder.
 # Put bike photos in /assets/img/cycling/ and add photo: and photo_alt: lines.
+# log_name must match the Bike column in the ride log exactly; it links the
+# bike to its ride and mile counts and to the bike filter.
 bikes:
   - name: Trek Domane SL 5 Gen 4
     photo: /assets/img/cycling/trek-domane.jpg
     photo_alt: Trek Domane SL 5 leaning against a fence
     year: "2023"
-    rides: "55"
-    miles: "1,642.8"
+    log_name: 2023 Trek Domane SL 5 Gen 4
   - name: Fuji Sportif 2.3
     photo: /assets/img/cycling/fuji-sportif.jpg
     photo_alt: Fuji Sportif 2.3 leaning against a pole
     year: "2016"
-    rides: "183"
-    miles: "4,235.6"
+    log_name: 2016 Fuji Sportif 2.3
 
 # Ride photo carousel. Add as many as you like; they show in this order.
 # The arrow buttons appear once there are two or more photos.
