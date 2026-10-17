@@ -2,6 +2,17 @@
 // shown in the footer. Add a new entry at the top for each update.
 export const RELEASES = [
   {
+    version: "2.4",
+    date: "2026-10-17",
+    title: "Shopping mode",
+    notes: [
+      "New Shopping mode on the phone: tap Start shopping and the list takes over the whole screen.",
+      "The header, tabs and search bar step aside. A slim bar on top shows what's left to get.",
+      "Need to add something mid-trip? Tap Quick add. The search bar tucks away again once it's added.",
+      "Shopping mode stays on if your phone locks or the app reloads. Tap Done when you're finished."
+    ]
+  },
+  {
     version: "2.3",
     date: "2026-10-17",
     title: "Big list for the cart",

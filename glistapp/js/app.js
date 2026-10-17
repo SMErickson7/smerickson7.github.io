@@ -49,7 +49,9 @@ const ui = {
   filter: "",
   expanded: new Set(),
   editing: null,
-  fresh: new Set()
+  fresh: new Set(),
+  shopping: false,   // phone shopping mode: just the list
+  quickAdd: false    // search bar shown while shopping
 };
 const undoStack = [];
 let toastTimer;
@@ -281,6 +283,12 @@ function clearQuery() {
   $("q").value = "";
   render();
 }
+// After adding something: in shopping mode the search bar tucks away again;
+// otherwise it stays ready for the next item.
+function afterAdd() {
+  if (ui.shopping) closeQuickAdd();
+  else $("q").focus();
+}
 function submitQuery() {
   const p = parseQuery(ui.query);
   if (!p.term) return;
@@ -289,6 +297,7 @@ function submitQuery() {
   if (found) addToList(found, p.qty, p.explicit);
   else createItem(p.term, p.qty);
   clearQuery();
+  if (ui.shopping) closeQuickAdd();
 }
 
 // ---------- aisle picker ----------
@@ -339,8 +348,8 @@ function renderList() {
       const on = S.list[id] && !S.list[id].done ? S.list[id] : null;
       const action = on ? (p.explicit ? `Set ×${p.qty}` : "+1") : (p.explicit && p.qty > 1 ? `Add ×${p.qty}` : "Add");
       return h("button", {
-        type: "button", class: "result" + (i === 0 ? " top" : ""),
-        onClick: () => { addToList(id, p.qty, p.explicit); clearQuery(); $("q").focus(); }
+        type: "button", class: "result" + (i === 0 ? " best" : ""),
+        onClick: () => { addToList(id, p.qty, p.explicit); clearQuery(); afterAdd(); }
       },
         h("span", { class: "label" }, h("b", { text: it.name }), h("small", { text: aisleName(it) })),
         on ? h("span", { class: "status", text: `On list ×${on.qty || 1}` }) : null,
@@ -350,7 +359,7 @@ function renderList() {
     if (!exact) {
       rows.push(h("button", {
         type: "button", class: "result new" + (ids.length ? "" : " only"),
-        onClick: () => { createItem(p.term, p.qty); clearQuery(); }
+        onClick: () => { createItem(p.term, p.qty); clearQuery(); if (ui.shopping) closeQuickAdd(); }
       },
         h("span", { class: "plus-dot", icon: "plus" }),
         h("span", { class: "label" },
@@ -410,6 +419,7 @@ function renderTrip() {
   const toGet = listIds(false);
   const inCart = listIds(true);
   $("count").textContent = `${toGet.length} to get`;
+  $("shop-count").textContent = toGet.length ? `${toGet.length} to get` : "All done";
 
   $("groups").replaceChildren(...stops(toGet).map((s) => h("section", {},
     h("div", { class: "aisle-head" + (s.key === "_none" ? " unplaced" : "") + (s.visit > 1 ? " again" : "") },
@@ -602,14 +612,57 @@ function setupNotes() {
   $("notes").addEventListener("click", (e) => { if (e.target === $("notes")) $("notes").close(); });
 }
 
+// ---------- shopping mode ----------
+// Phone only (the CSS ignores it on wide screens). Remembered on this device,
+// so it survives the phone locking or the app reloading mid-trip.
+const SHOP_KEY = "glist-shopping";
+function applyMode() {
+  document.body.classList.toggle("shopping", ui.shopping);
+  document.body.classList.toggle("quick-add", ui.shopping && ui.quickAdd);
+  const btn = $("quick-add");
+  btn.textContent = ui.quickAdd ? "Cancel" : "+ Quick add";
+  btn.setAttribute("aria-expanded", String(ui.quickAdd));
+}
+function setShopping(on) {
+  ui.shopping = on;
+  ui.quickAdd = false;
+  ui.open = null;
+  try { if (on) localStorage.setItem(SHOP_KEY, "1"); else localStorage.removeItem(SHOP_KEY); } catch (e) { /* ignore */ }
+  if (ui.query) clearQuery();
+  applyMode();
+  renderTrip();
+  window.scrollTo(0, 0);
+}
+function openQuickAdd() {
+  ui.quickAdd = true;
+  applyMode();
+  window.scrollTo(0, 0);
+  $("q").focus();
+}
+function closeQuickAdd() {
+  ui.quickAdd = false;
+  if (ui.query) clearQuery();
+  $("q").blur();
+  applyMode();
+}
+function setupShopping() {
+  try { ui.shopping = localStorage.getItem(SHOP_KEY) === "1"; } catch (e) { ui.shopping = false; }
+  applyMode();
+  $("start-shop").addEventListener("click", () => setShopping(true));
+  $("end-shop").addEventListener("click", () => setShopping(false));
+  $("finish-shop").addEventListener("click", () => setShopping(false));
+  $("quick-add").addEventListener("click", () => { if (ui.quickAdd) closeQuickAdd(); else openQuickAdd(); });
+}
+
 // ---------- wire up ----------
 function bind() {
   setupNotes();
+  setupShopping();
   const q = $("q");
   q.addEventListener("input", () => { ui.query = q.value; renderList(); });
   q.addEventListener("keydown", (e) => {
     if (e.key === "Enter") { e.preventDefault(); submitQuery(); }
-    if (e.key === "Escape") clearQuery();
+    if (e.key === "Escape") { clearQuery(); if (ui.shopping) closeQuickAdd(); }
   });
   $("clear-q").addEventListener("click", () => { clearQuery(); q.focus(); });
   $("undo").addEventListener("click", undo);

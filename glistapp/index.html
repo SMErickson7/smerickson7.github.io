@@ -18,6 +18,15 @@
 </head>
 <body>
   <div class="app">
+    <div class="shopbar" role="region" aria-label="Shopping">
+      <div class="shop-title">
+        <span class="shop-label">Shopping</span>
+        <span id="shop-count" class="shop-count"></span>
+      </div>
+      <button id="quick-add" class="shop-btn primary" type="button" aria-expanded="false"></button>
+      <button id="end-shop" class="shop-btn" type="button">Done</button>
+    </div>
+
     <header class="top">
       <div class="brand">
         <h1>Grocery List</h1>
@@ -57,10 +66,20 @@
       <section class="trip-panel" aria-label="This trip">
         <div class="trip-head">
           <h2>This trip</h2>
-          <span id="count"></span>
+          <div class="trip-meta">
+            <span id="count"></span>
+            <button id="start-shop" class="start-shop" type="button">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 4h2l2.4 11h10.2L20 8H6.2"/><circle cx="9" cy="19.5" r="1.5"/><circle cx="17" cy="19.5" r="1.5"/></svg>
+              Start shopping
+            </button>
+          </div>
         </div>
         <div id="groups" class="groups"></div>
-        <p id="all-done" class="all-done" hidden>Nothing to get. Search above to start the next list.</p>
+        <div id="all-done" class="all-done" hidden>
+          <p class="not-shopping">Nothing to get. Search above to start the next list.</p>
+          <p class="when-shopping">That's everything on the list.</p>
+          <button id="finish-shop" class="btn primary when-shopping" type="button">Done shopping</button>
+        </div>
         <div id="cart" class="cart" hidden>
           <div class="cart-head">
             <h2 id="cart-title"></h2>
