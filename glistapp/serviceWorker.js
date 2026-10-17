@@ -1,6 +1,6 @@
 // Network first, cache as a fallback, so a new version shows up on the next
 // load instead of the phone holding on to an old copy. Old caches are removed.
-const CACHE = "grocery-list-v5";
+const CACHE = "grocery-list-v6";
 const ASSETS = [
   "./",
   "./index.html",
@@ -31,8 +31,12 @@ self.addEventListener("fetch", (event) => {
   const url = new URL(req.url);
   // Only handle this site's own files. Firebase and fonts go straight to the network.
   if (req.method !== "GET" || url.origin !== self.location.origin) return;
+  // Skip the browser's HTTP cache for files (the host sends max-age=600), so a
+  // new index.html never runs with an old app.js. Pages keep the plain fetch so
+  // redirects like /glistapp to /glistapp/ still work.
+  const fresh = req.mode === "navigate" ? fetch(req) : fetch(req, { cache: "no-cache" });
   event.respondWith(
-    fetch(req)
+    fresh
       .then((res) => {
         const copy = res.clone();
         caches.open(CACHE).then((cache) => cache.put(req, copy));

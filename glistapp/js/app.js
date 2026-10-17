@@ -586,14 +586,19 @@ function setupNotes() {
       h("time", { datetime: r.date, text: formatDate(r.date) })),
     h("ul", {}, ...r.notes.map((n) => h("li", { text: n })))
   )));
+  // Older Safari has <dialog> without showModal(), so fall back to the open attribute.
+  const notes = $("notes");
+  const closeNotes = () => { if (notes.close) notes.close(); else notes.removeAttribute("open"); };
   $("open-notes").addEventListener("click", () => {
-    $("notes").showModal();
+    if (!notes.open) {
+      if (notes.showModal) notes.showModal(); else notes.setAttribute("open", "");
+    }
     $("notes-body").scrollTop = 0;
     try { localStorage.setItem(SEEN_KEY, VERSION); } catch (e) { /* ignore */ }
     $("new-dot").hidden = true;
   });
-  $("close-notes").addEventListener("click", () => $("notes").close());
-  $("notes").addEventListener("click", (e) => { if (e.target === $("notes")) $("notes").close(); });
+  $("close-notes").addEventListener("click", closeNotes);
+  notes.addEventListener("click", (e) => { if (e.target === notes) closeNotes(); });
 }
 
 // ---------- wire up ----------

@@ -35,7 +35,11 @@ a { color: var(--cobalt-tint); }
 [hidden] { display: none !important; }
 .sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
 
-.app { max-width: 1216px; margin: 0 auto; padding: 0 20px 120px; }
+/* Column that's at least the screen's height, so the footer sits at the bottom on short pages */
+.app {
+  max-width: 1216px; margin: 0 auto; padding: 0 20px;
+  display: flex; flex-direction: column; min-height: 100vh; min-height: 100dvh;
+}
 
 /* Header */
 .top {
@@ -277,9 +281,10 @@ dialog.picker::backdrop { background: rgba(0, 0, 0, 0.55); }
 /* Footer and patch notes */
 .foot {
   display: flex; align-items: center; justify-content: center; gap: 8px; flex-wrap: wrap;
-  margin-top: 48px; padding-top: 18px; border-top: 1px solid var(--line);
+  margin-top: auto; padding: 18px 0 max(18px, env(safe-area-inset-bottom)); border-top: 1px solid var(--line);
   font-size: 13px; color: var(--muted);
 }
+.app > main { margin-bottom: 48px; }
 .foot .link-btn { font-size: 13px; position: relative; display: inline-flex; align-items: center; gap: 6px; }
 .new-dot { width: 8px; height: 8px; border-radius: 4px; background: var(--cobalt-tint); }
 dialog.notes {
@@ -316,7 +321,7 @@ dialog.notes::backdrop { background: rgba(0, 0, 0, 0.55); }
   .nav a { padding: 0 10px; }
 }
 @media (min-width: 900px) {
-  .app { padding: 0 32px 120px; }
+  .app { padding: 0 32px; }
   .top { padding: 28px 0 24px; border-bottom: 1px solid var(--line); margin-bottom: 28px; }
   .brand h1 { font-size: 28px; }
   .search { height: 60px; padding-left: 18px; }
