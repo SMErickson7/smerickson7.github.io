@@ -1,4 +1,5 @@
 import { createStore, getPath } from "./store.js";
+import { RELEASES, VERSION } from "./changelog.js";
 
 // ---------- tiny DOM helper ----------
 function h(tag, props = {}, ...children) {
@@ -566,8 +567,38 @@ function renderSaved() {
   }));
 }
 
+// ---------- patch notes ----------
+const SEEN_KEY = "glist-seen-version";
+function seenVersion() {
+  try { return localStorage.getItem(SEEN_KEY); } catch (e) { return VERSION; }
+}
+function formatDate(iso) {
+  const [y, m, d] = iso.split("-").map(Number);
+  return new Date(y, m - 1, d).toLocaleDateString(undefined, { month: "short", day: "numeric", year: "numeric" });
+}
+function setupNotes() {
+  $("app-version").textContent = "v" + VERSION;
+  $("new-dot").hidden = seenVersion() === VERSION;
+  $("notes-body").replaceChildren(...RELEASES.map((r, i) => h("section", { class: "release" + (i === 0 ? " latest" : "") },
+    h("div", { class: "release-head" },
+      h("span", { class: "ver", text: "v" + r.version }),
+      h("h3", { text: r.title }),
+      h("time", { datetime: r.date, text: formatDate(r.date) })),
+    h("ul", {}, ...r.notes.map((n) => h("li", { text: n })))
+  )));
+  $("open-notes").addEventListener("click", () => {
+    $("notes").showModal();
+    $("notes-body").scrollTop = 0;
+    try { localStorage.setItem(SEEN_KEY, VERSION); } catch (e) { /* ignore */ }
+    $("new-dot").hidden = true;
+  });
+  $("close-notes").addEventListener("click", () => $("notes").close());
+  $("notes").addEventListener("click", (e) => { if (e.target === $("notes")) $("notes").close(); });
+}
+
 // ---------- wire up ----------
 function bind() {
+  setupNotes();
   const q = $("q");
   q.addEventListener("input", () => { ui.query = q.value; renderList(); });
   q.addEventListener("keydown", (e) => {
