@@ -2,6 +2,17 @@
 // shown in the footer. Add a new entry at the top for each update.
 export const RELEASES = [
   {
+    version: "2.3",
+    date: "2026-10-17",
+    title: "Big list for the cart",
+    notes: [
+      "List items on the phone are big again, like the original app, so you can read them from the cart.",
+      "Tap anywhere on an item to check it off, not just the circle.",
+      "Quantities show as a bold badge next to the name.",
+      "To change how many, move an item to another aisle, or remove it, tap the ⋯ button on that item."
+    ]
+  },
+  {
     version: "2.2",
     date: "2026-10-16",
     title: "New icon",

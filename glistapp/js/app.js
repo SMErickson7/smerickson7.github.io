@@ -30,6 +30,7 @@ const ICONS = {
   down: '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>',
   pencil: '<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20h4L19 9l-4-4L4 16v4z"/></svg>',
   trash: '<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M10 11v6M14 11v6M6 7l1 13h10l1-13M9 7V4h6v3"/></svg>',
+  more: '<svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><circle cx="5" cy="12" r="2.2"/><circle cx="12" cy="12" r="2.2"/><circle cx="19" cy="12" r="2.2"/></svg>',
   move: '<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 9l-3 3 3 3M19 9l3 3-3 3M2 12h20"/></svg>'
 };
 
@@ -428,19 +429,24 @@ function tripRow(id) {
   const qty = entry.qty || 1;
   const done = !!entry.done;
   const open = ui.open === id && !done;
+  // The whole row checks the item off (or puts it back), so it's easy to hit
+  // from the cart. Quantity, aisle and remove sit behind the "more" button.
   return h("div", { class: "row" + (done ? " done" : "") + (open ? " open" : "") },
     h("button", {
-      type: "button", class: "check",
-      "aria-label": done ? `Put ${it.name} back on the list` : `Check off ${it.name}`,
+      type: "button", class: "hit",
+      "aria-label": done ? `Put ${it.name} back on the list` : `Check off ${it.name}` + (qty > 1 ? `, ${qty}` : ""),
       onClick: () => { if (ui.open === id) ui.open = null; if (done) uncheck(id); else checkOff(id); }
-    }, h("span", { icon: done ? "check" : null })),
-    h("button", {
-      type: "button", class: "name", "aria-expanded": done ? null : String(open),
-      onClick: () => { if (done) return; ui.open = open ? null : id; renderTrip(); }
     },
-      it.name + (done && qty > 1 ? ` ×${qty}` : ""),
-      ui.fresh.has(id) && !done ? h("span", { class: "new-tag", text: "New" }) : null),
-    !done && qty > 1 ? h("span", { class: "qty-badge", text: "×" + qty }) : null,
+      h("span", { class: "box", icon: done ? "check" : null }),
+      h("span", { class: "name" },
+        it.name + (done && qty > 1 ? ` ×${qty}` : ""),
+        ui.fresh.has(id) && !done ? h("span", { class: "new-tag", text: "New" }) : null),
+      !done && qty > 1 ? h("span", { class: "qty-badge", text: "×" + qty }) : null),
+    done ? null : h("button", {
+      type: "button", class: "more", icon: "more",
+      "aria-label": `Change ${it.name}`, "aria-expanded": String(open),
+      onClick: () => { ui.open = open ? null : id; renderTrip(); }
+    }),
     done ? null : h("div", { class: "row-tools" },
       h("div", { class: "stepper" },
         h("button", { type: "button", "aria-label": `Fewer ${it.name}`, disabled: qty <= 1, text: "−", onClick: () => setQty(id, qty - 1) }),
@@ -586,19 +592,14 @@ function setupNotes() {
       h("time", { datetime: r.date, text: formatDate(r.date) })),
     h("ul", {}, ...r.notes.map((n) => h("li", { text: n })))
   )));
-  // Older Safari has <dialog> without showModal(), so fall back to the open attribute.
-  const notes = $("notes");
-  const closeNotes = () => { if (notes.close) notes.close(); else notes.removeAttribute("open"); };
   $("open-notes").addEventListener("click", () => {
-    if (!notes.open) {
-      if (notes.showModal) notes.showModal(); else notes.setAttribute("open", "");
-    }
+    $("notes").showModal();
     $("notes-body").scrollTop = 0;
     try { localStorage.setItem(SEEN_KEY, VERSION); } catch (e) { /* ignore */ }
     $("new-dot").hidden = true;
   });
-  $("close-notes").addEventListener("click", closeNotes);
-  notes.addEventListener("click", (e) => { if (e.target === notes) closeNotes(); });
+  $("close-notes").addEventListener("click", () => $("notes").close());
+  $("notes").addEventListener("click", (e) => { if (e.target === $("notes")) $("notes").close(); });
 }
 
 // ---------- wire up ----------

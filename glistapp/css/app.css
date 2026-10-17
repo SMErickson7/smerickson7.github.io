@@ -35,11 +35,7 @@ a { color: var(--cobalt-tint); }
 [hidden] { display: none !important; }
 .sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
 
-/* Column that's at least the screen's height, so the footer sits at the bottom on short pages */
-.app {
-  max-width: 1216px; margin: 0 auto; padding: 0 20px;
-  display: flex; flex-direction: column; min-height: 100vh; min-height: 100dvh;
-}
+.app { max-width: 1216px; margin: 0 auto; padding: 0 20px 120px; }
 
 /* Header */
 .top {
@@ -135,37 +131,50 @@ kbd { font-family: inherit; font-size: 12px; font-weight: 700; padding: 1px 6px;
   display: flex; align-items: center; justify-content: space-between; gap: 10px;
   padding: 6px 0 4px; border-bottom: 2px solid var(--cobalt-bright);
 }
-.aisle-head h3 { margin: 0; font-size: 12px; font-weight: 800; letter-spacing: 1.2px; text-transform: uppercase; color: var(--cobalt-tint); }
-.aisle-head span { font-size: 12px; font-weight: 700; color: var(--muted); }
+.aisle-head h3 { margin: 0; font-size: 14px; font-weight: 800; letter-spacing: 1.2px; text-transform: uppercase; color: var(--cobalt-tint); }
+.aisle-head span { font-size: 14px; font-weight: 700; color: var(--muted); }
 .aisle-head.unplaced { border-bottom-style: dashed; }
 
-.row { display: flex; align-items: center; gap: 8px; min-height: 54px; border-bottom: 1px solid var(--line); flex-wrap: wrap; }
-.check {
-  width: 44px; height: 44px; margin-left: -8px; border: 0; background: transparent;
+/* List rows. On the phone they're big: the whole row is one tap target, sized
+   to read at a glance from the cart (like the original app: 30px text, 45px box). */
+.row { display: flex; align-items: center; flex-wrap: wrap; border-bottom: 1px solid var(--line); }
+.hit {
+  flex: 1; min-width: 0; display: flex; align-items: center; gap: 16px; min-height: 80px; padding: 10px 0;
+  border: 0; background: transparent; text-align: left;
+}
+.hit:active .box { transform: scale(0.92); }
+.box {
+  width: 46px; height: 46px; border-radius: 23px; border: 3px solid var(--cobalt-bright); flex: none;
+  display: flex; align-items: center; justify-content: center; transition: transform 0.08s;
+}
+.box svg { width: 26px; height: 26px; }
+.row.done .box { background: var(--cobalt); border-color: var(--cobalt); }
+.hit .name {
+  flex: 1; min-width: 0; font-size: 30px; line-height: 1.2; overflow-wrap: anywhere;
+  display: flex; align-items: center; flex-wrap: wrap; gap: 4px 12px;
+}
+.row.done .hit { min-height: 60px; gap: 14px; }
+.row.done .box { width: 34px; height: 34px; border-width: 2px; margin: 0 6px; }
+.row.done .box svg { width: 18px; height: 18px; }
+.row.done .name { color: var(--done); text-decoration: line-through; font-size: 22px; }
+.new-tag { font-size: 13px; font-weight: 700; letter-spacing: 0.6px; text-transform: uppercase; color: var(--cobalt-tint); text-decoration: none; }
+.qty-badge {
+  min-width: 52px; height: 38px; padding: 0 12px; border-radius: 19px; background: var(--cobalt-bright); color: #fff;
+  font-size: 22px; font-weight: 800; display: flex; align-items: center; justify-content: center; flex: none;
+}
+.more {
+  width: 48px; height: 48px; border: 0; border-radius: 24px; background: transparent; color: var(--muted);
   display: flex; align-items: center; justify-content: center; flex: none;
 }
-.check span { width: 24px; height: 24px; border-radius: 12px; border: 2px solid var(--cobalt-bright); display: flex; align-items: center; justify-content: center; }
-.row.done .check span { background: var(--cobalt); border-color: var(--cobalt); }
-.row .name {
-  flex: 1; min-width: 0; min-height: 44px; padding: 0; border: 0; background: transparent; text-align: left;
-  font-size: 17px; display: flex; align-items: center; gap: 8px;
-}
-.row.done .name { color: var(--done); text-decoration: line-through; font-size: 16px; }
-.new-tag { font-size: 11px; font-weight: 700; letter-spacing: 0.6px; text-transform: uppercase; color: var(--cobalt-tint); }
-.qty-badge {
-  min-width: 32px; height: 26px; padding: 0 8px; border-radius: 13px; background: var(--chip);
-  font-size: 14px; font-weight: 700; display: flex; align-items: center; justify-content: center;
-}
-.row-tools { display: none; align-items: center; gap: 6px; }
-.row.open { padding-bottom: 8px; }
-.row.open .row-tools { display: flex; width: 100%; padding-left: 36px; }
-.row.open .qty-badge { display: none; }
+.row.open .more { background: var(--chip); color: var(--text); }
+.row-tools { display: none; align-items: center; gap: 8px; flex-wrap: wrap; }
+.row.open .row-tools { display: flex; width: 100%; padding: 0 0 14px 62px; }
 .stepper { display: flex; align-items: center; border-radius: 10px; background: var(--ink); border: 1px solid var(--line); }
-.stepper button { width: 40px; height: 40px; border: 0; background: transparent; font-size: 20px; line-height: 1; }
-.stepper output { min-width: 24px; text-align: center; font-size: 15px; font-weight: 700; }
+.stepper button { width: 44px; height: 44px; border: 0; background: transparent; font-size: 20px; line-height: 1; }
+.stepper output { min-width: 28px; text-align: center; font-size: 18px; font-weight: 700; }
 .tool {
-  min-height: 40px; padding: 0 12px; border: 1px solid var(--line-strong); border-radius: 10px; background: transparent;
-  font-size: 14px; font-weight: 600; display: flex; align-items: center; gap: 6px;
+  min-height: 44px; padding: 0 14px; border: 1px solid var(--line-strong); border-radius: 10px; background: transparent;
+  font-size: 15px; font-weight: 600; display: flex; align-items: center; gap: 6px;
 }
 .tool.danger { color: var(--muted); }
 .cart { margin-top: 24px; }
@@ -281,10 +290,9 @@ dialog.picker::backdrop { background: rgba(0, 0, 0, 0.55); }
 /* Footer and patch notes */
 .foot {
   display: flex; align-items: center; justify-content: center; gap: 8px; flex-wrap: wrap;
-  margin-top: auto; padding: 18px 0 max(18px, env(safe-area-inset-bottom)); border-top: 1px solid var(--line);
+  margin-top: 48px; padding-top: 18px; border-top: 1px solid var(--line);
   font-size: 13px; color: var(--muted);
 }
-.app > main { margin-bottom: 48px; }
 .foot .link-btn { font-size: 13px; position: relative; display: inline-flex; align-items: center; gap: 6px; }
 .new-dot { width: 8px; height: 8px; border-radius: 4px; background: var(--cobalt-tint); }
 dialog.notes {
@@ -321,7 +329,7 @@ dialog.notes::backdrop { background: rgba(0, 0, 0, 0.55); }
   .nav a { padding: 0 10px; }
 }
 @media (min-width: 900px) {
-  .app { padding: 0 32px; }
+  .app { padding: 0 32px 120px; }
   .top { padding: 28px 0 24px; border-bottom: 1px solid var(--line); margin-bottom: 28px; }
   .brand h1 { font-size: 28px; }
   .search { height: 60px; padding-left: 18px; }
@@ -334,12 +342,19 @@ dialog.notes::backdrop { background: rgba(0, 0, 0, 0.55); }
   .trip-head span { color: var(--cobalt-soft); font-weight: 700; }
   .trip-panel .groups, .trip-panel .cart, .trip-panel .trip-foot, .trip-panel .all-done { margin-left: 22px; margin-right: 22px; }
   .trip-panel .groups { margin-top: 10px; }
-  .row { min-height: 50px; flex-wrap: nowrap; }
-  .row .name { font-size: 15px; }
-  .row .qty-badge { display: none; }
-  .row .row-tools, .row.open .row-tools { display: flex; width: auto; padding: 0; }
+  .aisle-head h3, .aisle-head span { font-size: 12px; }
+  .row { flex-wrap: nowrap; gap: 8px; }
+  .hit { min-height: 50px; gap: 12px; padding: 0; }
+  .box, .row.done .box { width: 24px; height: 24px; border-width: 2px; margin: 0; }
+  .box svg, .row.done .box svg { width: 14px; height: 14px; }
+  .hit .name, .row.done .name { font-size: 15px; }
+  .row.done .hit { min-height: 50px; gap: 12px; }
+  .new-tag { font-size: 11px; }
+  .row .qty-badge, .row .more { display: none; }
+  .row .row-tools, .row.open .row-tools { display: flex; width: auto; padding: 0; flex-wrap: nowrap; }
   .row.done .row-tools { display: none; }
   .row .tool .label { display: none; }
+  .row .stepper output { font-size: 14px; min-width: 22px; }
   .row .stepper button { width: 32px; height: 32px; font-size: 18px; }
   .row .tool { min-height: 32px; padding: 0 8px; border: 0; }
   dialog.picker { margin: auto; border-radius: 22px; }
