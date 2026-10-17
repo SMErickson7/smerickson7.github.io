@@ -2745,6 +2745,108 @@ a:hover {
 .ride-log__more[hidden] {
   display: none;
 }
+/* Cycling: calendar heatmap, months down the side, weekdays across the top */
+.ride-heat {
+  margin-top: 56px;
+}
+.ride-heat[hidden] {
+  display: none;
+}
+.ride-heat .chips {
+  margin: 0;
+}
+.heat-table {
+  width: 100%;
+  margin-top: 16px;
+  border-collapse: separate;
+  border-spacing: 4px;
+  table-layout: fixed;
+}
+.heat-table th {
+  font-family: var(--mono);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--muted);
+  padding: 0 0 4px;
+  border: 0;
+  text-align: center;
+}
+.heat-table tbody th {
+  width: 44px;
+  padding: 0 6px 0 0;
+  text-align: left;
+}
+.heat-table thead td {
+  width: 44px;
+}
+.heat-table td {
+  padding: 0;
+  border: 0;
+}
+.heat-cell {
+  display: block;
+  height: 40px;
+  border-radius: 4px;
+}
+.heat-0 { background: var(--surface); box-shadow: inset 0 0 0 1px var(--line); }
+.heat-1 { background: #d6e2f5; }
+.heat-2 { background: #a6c0ea; }
+.heat-3 { background: #6f95d8; }
+.heat-4 { background: #346ac2; }
+.heat-5 { background: var(--brand); }
+.heat-cell:hover {
+  outline: 2px solid var(--ink);
+  outline-offset: 1px;
+}
+.heat-foot {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px 16px;
+  margin-top: 12px;
+}
+.heat-readout {
+  margin: 0;
+  font-size: 14px;
+  color: var(--muted);
+}
+.heat-legend {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-family: var(--mono);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+.heat-legend span:first-child {
+  margin-right: 4px;
+}
+.heat-legend span:last-child {
+  margin-left: 4px;
+}
+.heat-legend i {
+  width: 16px;
+  height: 16px;
+  border-radius: 3px;
+}
+@media (max-width: 560px) {
+  .heat-table {
+    border-spacing: 3px;
+  }
+  .heat-table tbody th,
+  .heat-table thead td {
+    width: 34px;
+  }
+  .heat-cell {
+    height: 26px;
+  }
+}
 
 .case-callout {
   display: flex;

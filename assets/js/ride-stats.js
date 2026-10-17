@@ -26,9 +26,14 @@
   var countEl = document.querySelector('[data-ride-count]');
   var moreEl = document.querySelector('[data-ride-more]');
   var sortButtons = document.querySelectorAll('[data-sort]');
+  var heatEl = document.querySelector('[data-ride-heat]');
+  var heatRows = document.querySelector('[data-heat-rows]');
+  var heatCaption = document.querySelector('[data-heat-caption]');
+  var heatReadout = document.querySelector('[data-heat-readout]');
+  var heatButtons = document.querySelectorAll('[data-metric]');
 
   var PAGE = 15;
-  var state = { sort: 'date', dir: -1, showAll: false };
+  var state = { sort: 'date', dir: -1, showAll: false, metric: 'miles' };
 
   // Bike names: the log uses "2023 Trek Domane SL 5 Gen 4", the page shows "Trek Domane SL 5 Gen 4".
   var bikeShort = {};
@@ -188,6 +193,56 @@
     });
   }
 
+  // Calendar heatmap: one square per month and weekday, summed across every
+  // year in the filter, shaded in six steps from no rides up to cobalt.
+  var DAYS = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+  var FULL_MONTHS = ['January', 'February', 'March', 'April', 'May', 'June', 'July',
+    'August', 'September', 'October', 'November', 'December'];
+  var METRIC = {
+    miles: { noun: 'Miles ridden', show: function (v) { return num(v, 1) + ' miles'; } },
+    seconds: { noun: 'Time in the saddle', show: function (v) { return duration(v); } },
+    elevation_ft: { noun: 'Climbing', show: function (v) { return num(v) + ' ft'; } }
+  };
+  var HEAT_HINT = 'Hover a square for the details.';
+  function weekday(iso) {
+    var p = iso.split('-');
+    return new Date(+p[0], +p[1] - 1, +p[2]).getDay();
+  }
+
+  function renderHeat(list) {
+    if (!heatEl) return;
+    var key = state.metric, m = METRIC[key];
+    var cells = [];
+    for (var i = 0; i < 84; i++) cells.push({ value: 0, rides: 0 });
+    list.forEach(function (r) {
+      var c = cells[(+r.date.slice(5, 7) - 1) * 7 + weekday(r.date)];
+      c.value += r[key] || 0;
+      c.rides++;
+    });
+    var max = cells.reduce(function (n, c) { return Math.max(n, c.value); }, 0);
+    var html = '';
+    FULL_MONTHS.forEach(function (month, mi) {
+      html += '<tr><th scope="row">' + MONTHS[mi] + '</th>';
+      DAYS.forEach(function (day, di) {
+        var c = cells[mi * 7 + di];
+        var step = c.rides && max ? Math.max(1, Math.ceil(c.value / max * 5)) : 0;
+        var text = c.rides ? m.show(c.value) + ' over ' + plural(c.rides, 'ride', 'rides') : 'No rides';
+        var tip = day + 's in ' + month + ': ' + text;
+        html += '<td><span class="heat-cell heat-' + step + '" title="' + esc(tip) + '" data-tip="' + esc(tip) + '">' +
+          '<span class="visually-hidden">' + esc(text) + '</span></span></td>';
+      });
+      html += '</tr>';
+    });
+    heatRows.innerHTML = html;
+    heatReadout.textContent = HEAT_HINT;
+    if (heatCaption) heatCaption.textContent = m.noun + ' by month and day of the week: ' + label(current());
+    heatButtons.forEach(function (b) {
+      var on = b.dataset.metric === key;
+      b.classList.toggle('chip--active', on);
+      b.setAttribute('aria-pressed', on ? 'true' : 'false');
+    });
+  }
+
   function render(pushUrl) {
     var f = current();
     var list = rides.filter(function (r) { return matches(r, f); });
@@ -204,7 +259,8 @@
     renderSummary(list, f);
     emptyEl.hidden = list.length > 0;
     logEl.hidden = list.length === 0;
-    if (list.length) renderLog(list);
+    if (heatEl) heatEl.hidden = list.length === 0;
+    if (list.length) { renderLog(list); renderHeat(list); }
     if (pushUrl) writeUrl(f, y);
   }
 
@@ -268,6 +324,20 @@
       render(false);
     });
   });
+  heatButtons.forEach(function (b) {
+    b.addEventListener('click', function () {
+      state.metric = b.dataset.metric;
+      var f = current();
+      renderHeat(rides.filter(function (r) { return matches(r, f); }));
+    });
+  });
+  if (heatRows) {
+    heatRows.addEventListener('mouseover', function (e) {
+      var c = e.target.closest('[data-tip]');
+      if (c) heatReadout.textContent = c.dataset.tip;
+    });
+    heatRows.addEventListener('mouseleave', function () { heatReadout.textContent = HEAT_HINT; });
+  }
   moreEl.addEventListener('click', function () {
     state.showAll = !state.showAll;
     render(false);
