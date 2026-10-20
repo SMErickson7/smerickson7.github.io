@@ -1,0 +1,10 @@
+{%- comment -%}
+Placeholder for an image that hasn't been made yet.
+Usage: {% include img-slot.html n="01" note="What goes here" %}
+To swap in the real image, replace the include with:
+<figure class="case-figure"><img src="/assets/img/projects/<project>/01.jpg" alt="..." loading="lazy"><figcaption>...</figcaption></figure>
+{%- endcomment -%}
+<figure class="case-figure img-slot" aria-label="Image coming soon">
+  <span class="img-slot__label">Image {{ include.n }}</span>
+  <span class="img-slot__note">{{ include.note }}</span>
+</figure>

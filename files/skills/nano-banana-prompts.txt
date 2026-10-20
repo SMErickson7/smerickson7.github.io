@@ -1,0 +1,79 @@
+---
+name: "nano-banana-prompts"
+description: "Write ready-to-paste Gemini prompts for Nano Banana images and Gemini Video clips, sized for blog, LinkedIn, Instagram, stories and TikTok."
+---
+
+# Nano Banana and Gemini Video Prompts
+
+Steven generates visuals himself in the Gemini app on the Google AI Pro plan. Claude writes the prompts; Steven pastes them in. Write for that handoff: each prompt must work on its own, pasted cold into a fresh Gemini chat.
+
+## What the tools do (as of Oct 2026; limits change, check the app)
+
+- Nano Banana (Nano Banana Pro or Nano Banana 2) makes and edits STILL images only. Pro handles complex scenes and on-image text best. The Pro plan allows roughly 100 images a day.
+- Short video comes from the Gemini app's Video option (Veo / Gemini Omni), not Nano Banana. The Pro plan allows only about 3 videos a day, and clips are short (around 8 to 10 seconds).
+- Best video workflow: make the first frame as a Nano Banana image, then upload that image in Video mode with a motion prompt. This locks the look before spending a scarce video generation.
+
+## Aspect ratios
+
+| Use | Ratio | Pixels |
+|---|---|---|
+| Blog hero | 16:9 | 1920x1080 |
+| LinkedIn image | 4:5 or 1:1 | 1080x1350 |
+| Instagram feed / carousel | 4:5 | 1080x1350 |
+| Instagram story | 9:16 | 1080x1920 |
+| TikTok frame or clip | 9:16 | 1080x1920 |
+
+State the ratio in words inside every prompt ("vertical 9:16 image").
+
+## Image prompt formula
+
+Write in full sentences, in this order:
+1. Subject and action
+2. Setting
+3. Composition and camera (shot size, angle, lens feel, where empty space sits for text)
+4. Lighting and time of day
+5. Style and palette (paste the style block from the `brand-kit` skill if listed)
+6. Text to render, in quotes, with position and type style. Keep it to 8 words or fewer per image.
+7. Aspect ratio
+8. `Avoid:` line (for example: extra text, watermarks, logos, distorted hands)
+
+If a slide needs more than 8 words, generate a clean background with empty space instead and note: "Add text in Canva."
+
+## Keeping a set consistent
+
+- Mark one image per set as the STYLE ANCHOR (usually carousel slide 1 or the blog hero). Generate it first.
+- For every later image in the set, start the prompt with: "Using the attached image as the style reference, match its palette, lighting, typography and illustration style." and remind Steven to attach the anchor.
+- To feature Steven himself, tell him to attach his own reference photo; never describe a real person's face from imagination.
+
+## Video prompt formula (Gemini Video)
+
+One continuous shot per prompt, no cuts. Include:
+1. Starting frame: "Animate the attached image" (preferred) or a full scene description
+2. One clear motion for the subject
+3. One camera move (slow push-in, gentle handheld drift, slow orbit, tilt up)
+4. Lighting and mood
+5. Audio: ambient sound described plainly; no dialogue unless the script needs it
+6. "Vertical 9:16, about 8 seconds"
+
+## Never prompt for
+
+Real brand logos, club crests, kits with sponsor marks, stadium branding, celebrities, other real people without their photo supplied by Steven, or copyrighted characters. For sports or travel themes, describe generic equivalents ("a blue and black striped football scarf", "a packed stadium at night").
+
+## Output format
+
+One block per asset, in generation order:
+
+```
+#01  STYLE ANCHOR | slug-ig-01.png | Nano Banana Pro | 4:5
+ATTACH: none
+PROMPT: ...
+Avoid: ...
+```
+
+```
+#07  slug-tt-clip-01.mp4 | Gemini Video | 9:16, ~8s
+ATTACH: slug-tt-frame-01.png
+PROMPT: ...
+```
+
+Finish with a count line: "N images, M video clips (Pro plan: about 3 clips a day)." If M is over 3, say which clips to make on which day.

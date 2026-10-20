@@ -1,0 +1,166 @@
+---
+name: "content-engine"
+description: "Turn Steven's raw brain dump (notes, voice-note transcript, rant, rough draft) into a blog post for stevenmerickson.com plus social posts for the channels he approves (LinkedIn, Instagram feed and story, TikTok), with ready-to-paste Gemini image and video prompts. Use whenever he shares thoughts he wants to turn into content: something he observed at work, a product or service experience, a reaction to news, a project he's building, or an event or trip recap. Trigger even if he only says 'turn this into a post' or 'here's my brain dump'."
+---
+
+# Content Engine
+
+Input: Steven's raw thoughts (a brain dump, voice-note transcript, bullet list, or rough draft).
+Output: a blog post, plus social posts for the channels he confirms, plus every visual prompt he needs for Gemini. Every piece ends with an AI disclosure (section 5). Nothing is ever posted without his approval.
+
+## 1. Before writing
+
+1. Load the `brand-kit` skill first if it's listed, and follow its voice, pillars, approval and LinkedIn routing rules, visual system, banned phrases and AI disclosure wording. Where brand-kit and this skill disagree, brand-kit wins; it's the more current of the two.
+2. Read the brain dump and pin down:
+   - the single core idea and the best story or example in it
+   - the primary pillar (an observation from marketing or work, a product or service experience, a reaction to news, a project, or an event or trip)
+   - the site `topic` (section 3)
+3. If there's no clear core idea, or two competing ones, ask one question to pick.
+4. Facts:
+   - Never invent experiences, opinions, quotes, names, places or numbers about Steven's life. Use only what the dump contains, and leave a `[FILL: what is needed]` note for any missing detail.
+   - For news reactions, check the facts of the news story itself with a search before writing, and keep the source link to cite in the blog post. If something can't be verified, leave a `[FILL]` note rather than guessing.
+
+## 2. Propose channels, then wait
+
+The blog post is always made. Before writing anything else, propose which social channels this piece should go to and wait for Steven to confirm. Present it as a short list: channel, a one-line reason, and a flag on any LinkedIn pick that brand-kit's routing rules would call borderline. Example:
+
+> **Proposed channels for "My printer's firmware update bricked it"**
+> Pillar: product experience. Site topic: experiences.
+> - Blog: always
+> - Instagram feed and story: yes, the before-and-after photos carry it
+> - TikTok: yes, a quick rant to camera fits
+> - LinkedIn: borderline. It names the company and it's mostly a complaint. Want it there anyway, maybe reframed around what good support would have looked like?
+
+Then write only the confirmed channels. If he's not around to answer (for example a scheduled run), draft the blog plus the channels you proposed, mark the borderline ones clearly at the top, and post nothing.
+
+## 3. Blog post (stevenmerickson.com, Jekyll)
+
+The blog is the pillar. Write it first, then derive each social channel from it.
+
+Length and shape depend on the pillar:
+
+| Pillar | Length | Shape |
+|---|---|---|
+| Observations from marketing and work | 300 to 600 words | The thing he noticed, his honest take on it, what he'd do instead; 0 to 2 H2 sections |
+| Reacting to news | 300 to 600 words | Lead with his reaction, link the source early, 0 to 2 H2 sections |
+| Product or service experience | 300 to 600 words | What happened, why it mattered, what would have fixed it; 0 to 2 H2 sections |
+| Projects | 800 to 1,500 words | The problem, the messy middle, what worked; 3 to 5 H2 sections |
+| Events and travel | 800 to 1,500 words | What stood out to him, not a schedule; 3 to 5 H2 sections |
+
+File and front matter, matching the redesign's `_drafts/post-template.md`:
+
+- File name: `YYYY-MM-DD-slug.md` for the `_posts` folder. The date is the publish date; the slug becomes the URL `/writing/slug/`.
+
+```
+---
+layout: post
+title: ""
+description: ""   # one or two sentences on what the reader gets; shown on the homepage, Writing page and link previews
+topic: projects   # exactly one of: observations, news, experiences, projects, events-travel
+image: /assets/img/posts/SLUG/hero.png   # optional; 16:10
+image_alt: ""
+ai_assisted: true
+---
+```
+
+- `topic` must be exactly one of the five site topic slugs, matched to the pillar:
+
+  | Pillar | Topic slug | Shown as |
+  |---|---|---|
+  | Observations from marketing and work | `observations` | Observations |
+  | Reacting to news | `news` | In the News |
+  | Product or service experience | `experiences` | Experiences |
+  | Projects | `projects` | Projects |
+  | Events and travel | `events-travel` | Events & Travel |
+- Open with a story, moment or reaction. No throat clearing.
+- Close with the takeaway or an open question, then the blog AI disclosure (section 5).
+- Plan 1 hero image (16:10) and up to 2 inline images, marked with `<!-- IMAGE: slug-blog-02.png -->` and placed in Markdown as `![alt text](/assets/img/posts/SLUG/slug-blog-02.png)`.
+
+## 4. Social channels (only the confirmed ones)
+
+Every channel gets its own angle and its own hook; never just shorten the blog. Each piece should stand on its own for someone who never reads the blog.
+
+### LinkedIn
+- 150 to 300 words, including the disclosure. The first two lines have to earn the "see more" click.
+- One idea per short paragraph, generous line breaks.
+- His take and his experience, told the way he'd tell a colleague. No expert framing, listicle lessons or "here's what this teaches us about marketing."
+- No link in the body. Add a note: "Post blog link as first comment."
+- End with a question that invites real replies (not "Thoughts?"), then the LinkedIn disclosure, then up to 3 hashtags. Never use #OpenToWork.
+- Visual: one image, 4:5 (1080x1350), or suggest reusing carousel slides as a LinkedIn document post.
+
+### Instagram feed post
+- Default: carousel of 5 to 8 slides, 4:5 (1080x1350).
+  - Slide 1: hook headline.
+  - Middle slides: one idea each, 20 words or fewer of on-slide text.
+  - Last slide: takeaway plus "Full story: link in bio." and a small footer line: "Made with my Claude AI workflow".
+- For each slide give: on-slide text, image prompt, alt text.
+- Caption: hook first line, 80 to 200 words, call to action, the Instagram disclosure, then 5 to 10 relevant hashtags (include #AIassisted).
+
+### Instagram story
+- 3 to 5 frames, 9:16 (1080x1920).
+- Each frame: on-screen text (12 words or fewer), image prompt, and one sticker idea (poll, question box, quiz, or emoji slider).
+- Final frame: link sticker to the blog post, plus the story disclosure and a question sticker reading "Ask me how I built it".
+
+### TikTok
+- 20 to 45 seconds, 9:16.
+- Hook in the first 2 seconds, both spoken and as on-screen text.
+- Script as a table: Time | Spoken (voiceover or to camera) | On-screen text | Visual.
+- Last 2 to 3 seconds: end card with the TikTok disclosure as on-screen text.
+- Tag every visual as `[AI CLIP]`, `[STILL]`, or `[SELF-SHOT]`.
+  - Use at most 3 `[AI CLIP]` shots (Gemini Pro allows only a few videos per day), each about 8 seconds, one continuous shot each.
+  - Fill the rest with talking to camera, Steven's own footage (for example DJI Osmo Pocket 3 b-roll), or Nano Banana stills with a pan or zoom added in the editor.
+- Caption under 150 characters including the short disclosure, plus 3 to 5 hashtags (include #AIassisted).
+- Sound: say "pick a trending sound in-app" or describe a mood; never name a specific song.
+
+## 5. AI disclosure (required on every piece)
+
+It has to be obvious that AI helped write and prep the content, and it should invite people to ask how the workflow works. Use the channel wording from brand-kit if it's listed. Otherwise use these:
+
+- **Blog** (after a horizontal rule at the very end, in italics):
+  `*This post was produced with a Claude repurposing agentic workflow I built: I write down my raw thoughts, and AI helps turn them into this post, my social posts and the visuals. I review and edit everything before it goes live. Curious how it works? Ask me how I built it!*`
+- **LinkedIn** (own paragraph before the hashtags):
+  `This post was produced with a Claude repurposing agentic workflow I built (AI-assisted writing and posting). Ask me how I built it!`
+- **Instagram caption** (before the hashtags):
+  `Made with my Claude repurposing agentic workflow: AI-assisted writing and visuals. Ask me how I built it!`
+- **Instagram story** (final frame, on-screen):
+  `Made with my AI workflow. Ask me how!`
+- **TikTok** end card: `Made with my Claude AI workflow. Ask me how!`; caption: `AI-assisted with my Claude workflow. Ask me how!`
+
+Rules:
+- Keep the disclosure whole when space is tight; trim the content instead. It's what keeps the audience's trust.
+- Never phrase it in a way that implies the content was written without AI.
+- When visuals came from Gemini, the blog, Instagram and TikTok versions mention AI visuals too ("AI-assisted writing and visuals").
+- In the posting checklist, remind Steven to switch on platform AI labels where offered: TikTok's AI-generated content toggle for posts with AI clips or realistic AI images, and Instagram's AI label for AI images.
+
+## 6. Visual prompts
+
+Every visual should look like part of the site's Matchday x Passport system: start each prompt from brand-kit's image prompt style block and its color and type specs. If the `nano-banana-prompts` skill is listed, load it and follow its formulas and output format. If not, include: subject, setting, composition, lighting, style and palette, any text to render in quotes, aspect ratio, and an Avoid line.
+
+Name every asset `SLUG-CHANNEL-NN.ext` (for example `inter-trip-ig-03.png`, `inter-trip-tt-clip-01.mp4`).
+
+## 7. Delivery and approval
+
+- Blog post: deliver as the `.md` file, ready to drop into `_posts`.
+- Everything else: one Content Kit document with these sections, skipping any channel that wasn't confirmed:
+  1. Summary: core idea, pillar, site topic, and the angle for each channel (one line each).
+  2. LinkedIn
+  3. Instagram feed
+  4. Instagram story
+  5. TikTok
+  6. Visual prompt checklist: every prompt, numbered, with file name, tool (Nano Banana or Gemini Video) and aspect ratio, in the order to generate them (style-anchor image first).
+  7. Posting checklist, confirmed channels only: blog live first, then LinkedIn (link in first comment), Instagram feed, story with link sticker, TikTok; AI label toggles on each platform.
+- End the reply with any `[FILL]` notes Steven must resolve, then ask for his approval of each piece by channel.
+- Never post, schedule or publish anything (including pushing the blog post to the site repo) until Steven explicitly approves that specific piece. Approving one channel doesn't approve the others, and a revised draft needs a fresh yes.
+
+## 8. Quality pass (do this before delivering)
+
+- It sounds like Steven: thinking out loud, his asides and wry humor intact, not corporate or thought-leader polished. Read it against brand-kit's Voice section.
+- No filler "so" anywhere. Search for it and restructure those sentences.
+- Every channel has a different hook. Read them side by side.
+- Each piece stands alone; nobody needs to have read the blog.
+- Every piece ends with its AI disclosure, clearly visible (not buried in hashtags).
+- Every fact traces back to the brain dump or, for news, to a cited source.
+- Any LinkedIn piece has passed brand-kit's routing check.
+- No em dashes, en dashes or double hyphens anywhere, including captions, disclosures and on-image text.
+- None of the brand-kit banned phrases, and no #OpenToWork hashtag on any channel.
+- Character and length limits respected, with the disclosure counted.

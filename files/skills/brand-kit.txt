@@ -1,0 +1,146 @@
+---
+name: "brand-kit"
+description: "Steven Erickson's brand: voice, content pillars, approval and LinkedIn routing rules, AI disclosure, hard writing rules, and the Matchday x Passport visual system (exact colors, fonts, motifs) from his site redesign. Load before writing, editing or designing anything for stevenmerickson.com or his LinkedIn, Instagram or TikTok: blog posts, captions, scripts, image or video prompts, graphics, slides, thumbnails, or site pages. Use it even when the request only says 'a post', 'a caption' or 'a graphic' without naming the brand."
+---
+
+# Brand Kit: Steven Erickson
+
+Steven: edit anything that doesn't sound like you. The Voice section is built from one sample of how you write; paste more of your writing into a chat any time and ask Claude to refine it.
+
+## Home base
+
+- Site: www.stevenmerickson.com (Jekyll, GitHub repo `SMErickson7/smerickson7.github.io`; the new look lives on the `redesign` branch). Blog posts publish at `/writing/<post-title>/`.
+- Every social post points back to the blog post.
+
+## Approval and channel routing
+
+This is Steven's outlet for his own thoughts, not a professional-only feed. Not every piece belongs on every channel.
+
+- **Nothing gets posted without Steven's explicit approval.** Draft everything, then stop and ask. Approval for one piece or one channel doesn't carry over to the next.
+- **LinkedIn check.** Before proposing a piece for LinkedIn, judge whether it fits there. If it's borderline, flag it and ask whether he still wants it on LinkedIn, with a one-line reason. Borderline includes:
+  - Sharp complaints that name a company or person, especially without a constructive point
+  - Purely personal or fandom topics (football, a trip recap with no wider takeaway)
+  - Politics, or anything a former colleague or future employer could read badly
+  - Humor that relies on the reader knowing him personally
+- Clearly fine for LinkedIn: observations from work, news reactions with a real take, project build stories, fair product critiques with a lesson.
+- When presenting drafts, list which channels each piece is proposed for. He approves or drops each one.
+
+## Accounts
+
+| Channel | Handle | URL |
+|---|---|---|
+| Instagram | @stevenmerickson | https://www.instagram.com/stevenmerickson/ |
+| TikTok | @steven_ma720 | https://www.tiktok.com/@steven_ma720 |
+| LinkedIn | Steven Michael Erickson | [FILL: full LinkedIn profile URL] |
+
+## Voice
+
+Built from Steven's own writing. The goal is for posts to sound like him talking, lightly tidied, not like a polished thought-leader post.
+
+### How he sounds
+
+- **Thinks out loud.** He lets the reader watch him reach a conclusion: "the more I think about it, the more I'm realizing that..." Keep that sense of a mind working, rather than opening with a tidy thesis.
+- **Conversational and direct.** First person, contractions, plain words. He says what he wants plainly ("I will always give the approval before any content is posted") and owns opinions with soft framing ("I would say", "I wouldn't worry about").
+- **Parenthetical asides do a lot of work.** He uses parentheses for quick examples, honest caveats and dry humor: "(more like complaints, but we'll work on the tone)", "(there's enough of those)". Use them the same way: one short aside, not nested clauses.
+- **Concrete examples, named.** He grounds points with real specifics strung inline with commas (HubSpot layoffs, a Fitbit announcement, a 3D print that solved a pain point) rather than abstract claims.
+- **Honest and self-aware.** He admits where he's still figuring things out and what he isn't trying to be. Keep that candor; it's the point of the content.
+- **Light, wry humor.** Understated and in passing, usually inside an aside. Encouraged, never forced.
+- **Sentence rhythm.** Mostly medium-length, flowing sentences joined with "and" or "but", broken up by short, blunt ones. Starting a sentence with "And" or "Also" is fine.
+
+### What to do and avoid
+
+- Lead with a real moment, reaction or detail, then what he took from it.
+- Share insights and experiences, not expertise. He isn't positioning himself as a subject matter expert; skip "here are 5 lessons" framing, frameworks and authority-building language.
+- Don't over-polish. Tighten rambling and fix grammar, but keep his cadence, asides and hedges. If a draft reads like a corporate post, it's wrong.
+- Cut the word "so" when it's filler: as an opener ("So, I..."), as a connector ("..., so I..."), or as an intensifier ("so good"). He's actively trying to drop it, and it shows up in his natural writing; expect to remove it. Restructure the sentence rather than swapping in another filler like "anyway" or "basically".
+- In finished posts, write out "for example" instead of "i.e." or "e.g." (he sometimes uses "i.e." to introduce examples, which technically means "that is"), and drop "etc." in favor of a fuller list or "and more".
+
+
+## Content pillars
+
+Each piece maps to one primary pillar, and each pillar has a matching site topic (the `topic` slug in a post's front matter, set in `_config.yml`). Note both in the content kit summary.
+
+| Pillar | Site topic slug | Shown on site as |
+|---|---|---|
+| Observations | `observations` | Observations |
+| Reacting to news | `news` | In the News |
+| Product and service experiences | `experiences` | Experiences |
+| Projects | `projects` | Projects |
+| Events and travel | `events-travel` | Events & Travel |
+
+1. **Observations.** Something he noticed, usually from marketing or work, and his honest thoughts on it (for example ungating content for AEO, and why it was ever gated). This isn't general how-to or strategy advice; it's his reaction to something he saw or did.
+2. **Reacting to news.** His take on industry and tech news (for example HubSpot layoffs, Artcraft vibe coding Adobe apps, a Fitbit product announcement). Lead with his reaction, not a recap of the article. Never invent facts about the news; check them.
+3. **Product and service experiences.** Musings on something he bought, used or dealt with. These often start as complaints; keep the tone fair and specific: what happened, why it mattered, what would have fixed it. Wry beats bitter.
+4. **Projects.** Build stories and the process behind them: the website redesign, a 3D print that solved a pain point, AI and agentic workflows. Show the messy middle, not just the result.
+5. **Events and travel.** Summaries of events he attends and trips he takes, focused on what stood out to him.
+
+## AI disclosure (always on)
+
+Steven is open about using AI. Every piece of content ends with a clear note that a Claude agentic workflow helped write it and prep it for posting, plus an invitation to ask how it was built. This doubles as a hook for his projects pillar.
+
+Base message: "This content was produced with a Claude repurposing agentic workflow. Ask me how I built it!"
+
+| Channel | Placement | Wording |
+|---|---|---|
+| Blog | Italic note after a horizontal rule at the end; `ai_assisted: true` in front matter | This post was produced with a Claude repurposing agentic workflow I built: I write down my raw thoughts, and AI helps turn them into this post, my social posts and the visuals. I review and edit everything before it goes live. Curious how it works? Ask me how I built it! |
+| LinkedIn | Own paragraph, before hashtags | This post was produced with a Claude repurposing agentic workflow I built (AI-assisted writing and posting). Ask me how I built it! |
+| Instagram caption | Before hashtags; carousel last slide footer "Made with my Claude AI workflow" | Made with my Claude repurposing agentic workflow: AI-assisted writing and visuals. Ask me how I built it! |
+| Instagram story | Final frame on-screen, plus question sticker "Ask me how I built it" | Made with my AI workflow. Ask me how! |
+| TikTok | End card on-screen; short line in caption | Made with my Claude AI workflow. Ask me how! |
+
+The disclosure is what keeps the audience's trust. Keep it whole even when space is tight. Turn on platform AI labels (TikTok AI-generated content toggle, Instagram AI label) when AI visuals are used.
+
+## Hard writing rules
+
+- Never use em dashes, en dashes, or double hyphens. Use commas, periods, colons, semicolons or parentheses.
+- Banned phrases: "In today's fast-paced world", "game-changer", "Let's dive in", "unlock", "unleash", "delve", "Here's the thing", "elevate", "in the ever-evolving landscape".
+- No engagement bait ("Comment YES if...").
+- Never use the #OpenToWork hashtag (or any open-to-work wording as a hashtag) on any channel.
+- Never invent experiences, numbers or quotes.
+
+## Visual system: Matchday x Passport
+
+Source of truth: `assets/css/site.css` on the site's `redesign` branch. If it changes, update this section to match.
+
+The idea: a football matchday program crossed with a travel passport. Big condensed uppercase headlines, solid cobalt blocks, near-black ink bands, and tilted rubber-stamp badges.
+
+### Colors
+
+| Role | Name | Hex | Use |
+|---|---|---|---|
+| Primary | Cobalt | `#0047AB` | Headers, heroes, footers, links, highlights; the dominant color |
+| Primary dark | Cobalt dark | `#003580` | Hover and pressed states, deeper accents |
+| Accent | Cobalt tint | `#8FB3FF` | Separators and small accents on dark backgrounds |
+| Accent | Cobalt soft | `#C7D7F2` | Labels on cobalt backgrounds |
+| On cobalt | Ice | `#E3EBF8` | Body text sitting on cobalt |
+| Dark | Ink | `#1E212E` | Headlines, ticker bands, dark panels; use instead of pure black |
+| Dark 2 | Ink 2 | `#2F3446` | Secondary dark surfaces |
+| Text | Body | `#3A3F52` | Long-form body copy |
+| Text | Muted | `#4A5068` | Captions, metadata |
+| Neutral | Line | `#D5D9E4` | Dividers, borders |
+| Neutral | Surface | `#EEF1F7` | Light panels and section backgrounds |
+| Base | White | `#FFFFFF` | Page background, text on cobalt |
+
+Keep it to cobalt, ink and white plus their tints. No other hues in brand assets.
+
+### Typography (all Google Fonts)
+
+- **Display: Big Shoulders Display**, weight 800 to 900, always uppercase, very tight line height (about 0.85 to 0.95). Headlines, titles, nav, big numbers.
+- **Body: Inter**, 400 to 700. Paragraphs and UI text.
+- **Labels: Space Mono**, 700, uppercase, slightly letter-spaced. Small tags, dates, metadata, "ticket stub" details.
+
+### Motifs and layout
+
+- Solid cobalt hero and header blocks with white text; ink-colored ticker bands with uppercase items separated by cobalt-tint dots.
+- Rubber stamps and badges: outlined in cobalt or ink (solid, dashed, dotted or double borders), round, pill or square, rotated a few degrees (roughly -6 to +6).
+- Passport details: holder ID card with dashed divider, flags, country stamps, boarding-pass and ticket-stub fields.
+- Matchday details: fixture-list rows (date, topic, title), team code tags, thick 6px ink rules under section heads.
+- Flat color and crisp borders; panels use 18px rounded corners, photos 10px. Generous whitespace, high contrast.
+
+### Image prompt style block
+
+Paste this into image or video prompts to make every asset look like one family:
+
+> Bold editorial matchday-program meets travel-passport style. Dominant cobalt blue (#0047AB) with near-black ink (#1E212E) and white, plus pale cobalt tints only. Huge condensed uppercase sans-serif headlines like Big Shoulders Display, clean sans-serif body like Inter, small monospace uppercase labels like Space Mono. Flat color blocks, crisp borders, tilted rubber-stamp badges with double or dashed outlines, ticket-stub and boarding-pass details. High contrast, uncluttered, generous empty space. No gradients, no other colors.
+
+Image generators often garble text. Add exact headline text as a design layer afterward when it matters.

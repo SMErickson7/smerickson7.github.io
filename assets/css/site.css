@@ -2905,3 +2905,49 @@ a:hover {
   grid-template-columns: minmax(0, 1fr);
   max-width: 760px;
 }
+
+/* Image placeholders in project reports (swap for a case-figure once the image exists) */
+.img-slot {
+  aspect-ratio: 16 / 10;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 24px;
+  text-align: center;
+  background: var(--surface);
+  border: 2px dashed var(--brand);
+  border-radius: 10px;
+}
+.img-slot__label {
+  font-family: var(--mono);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--brand);
+}
+.img-slot__note {
+  max-width: 420px;
+  font-size: 15px;
+  line-height: 1.5;
+  color: var(--muted);
+}
+
+/* Skill instructions in collapsible sections */
+.case-more pre {
+  margin: 12px 0 0;
+  max-height: 480px;
+  overflow: auto;
+  font-size: 13px;
+  line-height: 1.55;
+  white-space: pre-wrap;
+}
+.case-more .case-download {
+  margin: 12px 0 0;
+  font-family: var(--mono);
+  font-size: 13px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
