@@ -2248,6 +2248,11 @@ a:hover {
 .case-more p {
   margin: 12px 0 0;
 }
+.case-more pre {
+  margin: 12px 0 0;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
 .case-note {
   background: var(--surface);
   border-left: 6px solid var(--brand);
