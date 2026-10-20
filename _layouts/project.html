@@ -12,8 +12,8 @@ section: workshop
     </div>
   </header>
 
-  <div class="container report__overview">
-    <div class="report__visual">{% include project-visual.html project=page %}</div>
+  <div class="container{% if page.page_visual == false %} container--narrow report__overview--solo{% endif %} report__overview">
+    {% unless page.page_visual == false %}<div class="report__visual">{% include project-visual.html project=page %}</div>{% endunless %}
     <div class="report__spec">
       <p class="label label--brand">At a glance</p>
       {% include project-spec.html project=page %}
