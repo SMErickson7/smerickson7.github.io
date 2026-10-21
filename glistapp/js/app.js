@@ -1,5 +1,6 @@
 import { createStore, getPath } from "./store.js";
 import { RELEASES, VERSION } from "./changelog.js";
+import { barcodeSvg, eanCheckDigit } from "./barcode.js";
 
 // ---------- tiny DOM helper ----------
 function h(tag, props = {}, ...children) {
@@ -602,19 +603,14 @@ function setupNotes() {
       h("time", { datetime: r.date, text: formatDate(r.date) })),
     h("ul", {}, ...r.notes.map((n) => h("li", { text: n })))
   )));
-  // Older Safari has <dialog> without showModal(), so fall back to the open attribute.
-  const notes = $("notes");
-  const closeNotes = () => { if (notes.close) notes.close(); else notes.removeAttribute("open"); };
   $("open-notes").addEventListener("click", () => {
-    if (!notes.open) {
-      if (notes.showModal) notes.showModal(); else notes.setAttribute("open", "");
-    }
+    $("notes").showModal();
     $("notes-body").scrollTop = 0;
     try { localStorage.setItem(SEEN_KEY, VERSION); } catch (e) { /* ignore */ }
     $("new-dot").hidden = true;
   });
-  $("close-notes").addEventListener("click", closeNotes);
-  notes.addEventListener("click", (e) => { if (e.target === notes) closeNotes(); });
+  $("close-notes").addEventListener("click", () => $("notes").close());
+  $("notes").addEventListener("click", (e) => { if (e.target === $("notes")) $("notes").close(); });
 }
 
 // ---------- shopping mode ----------
@@ -659,9 +655,58 @@ function setupShopping() {
   $("quick-add").addEventListener("click", () => { if (ui.quickAdd) closeQuickAdd(); else openQuickAdd(); });
 }
 
+// ---------- Stop & Shop card ----------
+// The number is kept on this device only (never in the code or the database),
+// and shown full screen on white so the kiosk scanner can read it.
+const CARD_KEY = "glist-card";
+function savedCard() {
+  try { return localStorage.getItem(CARD_KEY) || ""; } catch (e) { return ""; }
+}
+function showCard(setup) {
+  const number = savedCard();
+  const editing = setup || !number;
+  $("card-show").hidden = editing;
+  $("card-setup").hidden = !editing;
+  $("edit-card").hidden = editing;
+  $("card-tip").hidden = editing;
+  $("card-error").hidden = true;
+  if (!editing) {
+    const width = Math.min(window.innerWidth - 32, 560);
+    $("card-barcode").replaceChildren(barcodeSvg(number, width, Math.round(Math.min(150, window.innerHeight * 0.17))));
+    $("card-number").textContent = number;
+  }
+  if (!$("card").open) $("card").showModal();
+  if (editing) {
+    $("card-input").value = number;
+    $("card-input").focus();
+  } else {
+    $("close-card").focus();
+  }
+}
+function setupCard() {
+  $("show-card").addEventListener("click", () => showCard(false));
+  $("close-card").addEventListener("click", () => $("card").close());
+  $("edit-card").addEventListener("click", () => showCard(true));
+  $("card-setup").addEventListener("submit", (e) => {
+    e.preventDefault();
+    const v = $("card-input").value.replace(/[\s-]/g, "");
+    let problem = "";
+    if (!/^\d{6,20}$/.test(v)) problem = "Use just the digits under the barcode.";
+    else if (v.length === 13 && eanCheckDigit(v.slice(0, 12)) !== Number(v[12])) problem = "One of the digits looks off. Double-check the number on your card.";
+    if (problem) {
+      $("card-error").textContent = problem;
+      $("card-error").hidden = false;
+      return;
+    }
+    try { localStorage.setItem(CARD_KEY, v); } catch (err) { /* ignore */ }
+    showCard(false);
+  });
+}
+
 // ---------- wire up ----------
 function bind() {
   setupNotes();
+  setupCard();
   setupShopping();
   const q = $("q");
   q.addEventListener("input", () => { ui.query = q.value; renderList(); });

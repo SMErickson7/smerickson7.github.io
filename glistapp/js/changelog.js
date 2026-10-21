@@ -2,6 +2,16 @@
 // shown in the footer. Add a new entry at the top for each update.
 export const RELEASES = [
   {
+    version: "2.5",
+    date: "2026-10-20",
+    title: "Your Stop & Shop card",
+    notes: [
+      "Your Stop & Shop card is now in Shopping mode: tap the barcode button to show it full screen for the kiosk scanner.",
+      "The first time, type in your card number. It's saved on that phone only, never in the database or on the site.",
+      "Done is now a check mark, to make room in the shopping bar."
+    ]
+  },
+  {
     version: "2.4",
     date: "2026-10-17",
     title: "Shopping mode",

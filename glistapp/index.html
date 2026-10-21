@@ -24,7 +24,12 @@
         <span id="shop-count" class="shop-count"></span>
       </div>
       <button id="quick-add" class="shop-btn primary" type="button" aria-expanded="false"></button>
-      <button id="end-shop" class="shop-btn" type="button">Done</button>
+      <button id="show-card" class="shop-btn icon-only" type="button" aria-label="Show Stop &amp; Shop card" title="Stop &amp; Shop card">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><rect x="2" y="4" width="2" height="16"/><rect x="5.5" y="4" width="1" height="16"/><rect x="8" y="4" width="2.5" height="16"/><rect x="12" y="4" width="1" height="16"/><rect x="14.5" y="4" width="2" height="16"/><rect x="18" y="4" width="1" height="16"/><rect x="20.5" y="4" width="1.5" height="16"/></svg>
+      </button>
+      <button id="end-shop" class="shop-btn icon-only" type="button" aria-label="Done shopping" title="Done shopping">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>
+      </button>
     </div>
 
     <header class="top">
@@ -141,6 +146,32 @@
       <button id="open-notes" class="link-btn" type="button">What's new<span id="new-dot" class="new-dot" hidden></span></button>
     </footer>
   </div>
+
+  <dialog id="card" class="card" aria-labelledby="card-title">
+    <div class="card-top">
+      <div class="card-head">
+        <h2 id="card-title">Stop &amp; Shop Card</h2>
+        <button id="close-card" class="card-close" type="button" aria-label="Close">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
+        </button>
+      </div>
+      <div id="card-show" class="card-show" hidden>
+        <div id="card-barcode" class="card-barcode"></div>
+        <p id="card-number" class="card-number"></p>
+      </div>
+      <form id="card-setup" class="card-setup" hidden>
+        <label for="card-input">Your card number</label>
+        <input id="card-input" type="text" inputmode="numeric" autocomplete="off" placeholder="The number under your card's barcode">
+        <p id="card-error" class="card-error" hidden></p>
+        <button class="btn primary" type="submit">Save</button>
+        <p class="card-note">Saved on this phone only. It's never sent to your site or the database.</p>
+      </form>
+    </div>
+    <div class="card-rest">
+      <p id="card-tip" class="card-tip">Hold the screen up to the kiosk scanner. If it won't read, turn your screen brightness up.</p>
+      <button id="edit-card" class="card-edit" type="button" hidden>Change card number</button>
+    </div>
+  </dialog>
 
   <dialog id="notes" class="notes" aria-labelledby="notes-title">
     <div class="notes-head">
