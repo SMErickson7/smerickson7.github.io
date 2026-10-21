@@ -2,6 +2,14 @@
 // shown in the footer. Add a new entry at the top for each update.
 export const RELEASES = [
   {
+    version: "2.6.1",
+    date: "2026-10-20",
+    title: "Updates show up right away",
+    notes: [
+      "Fixed: new versions could take up to 10 minutes to reach your phone because it reused saved copies of the app. It now checks for a newer version every time it opens."
+    ]
+  },
+  {
     version: "2.6",
     date: "2026-10-20",
     title: "Screen stays on",

@@ -1,6 +1,6 @@
 // Network first, cache as a fallback, so a new version shows up on the next
 // load instead of the phone holding on to an old copy. Old caches are removed.
-const CACHE = "grocery-list-v9";
+const CACHE = "grocery-list-v10";
 const ASSETS = [
   "./",
   "./index.html",
@@ -16,7 +16,7 @@ const ASSETS = [
 ];
 
 self.addEventListener("install", (event) => {
-  event.waitUntil(caches.open(CACHE).then((cache) => cache.addAll(ASSETS)).then(() => self.skipWaiting()));
+  event.waitUntil(caches.open(CACHE).then((cache) => cache.addAll(ASSETS.map((a) => new Request(a, { cache: "no-cache" })))).then(() => self.skipWaiting()));
 });
 
 self.addEventListener("activate", (event) => {
@@ -33,7 +33,9 @@ self.addEventListener("fetch", (event) => {
   // Only handle this site's own files. Firebase and fonts go straight to the network.
   if (req.method !== "GET" || url.origin !== self.location.origin) return;
   event.respondWith(
-    fetch(req)
+    // "no-cache" makes the browser check with the site every time (a quick
+    // "has this changed?" request) instead of reusing a copy for up to 10 minutes.
+    fetch(req, { cache: "no-cache" })
       .then((res) => {
         const copy = res.clone();
         caches.open(CACHE).then((cache) => cache.put(req, copy));
