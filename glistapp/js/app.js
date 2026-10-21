@@ -633,6 +633,38 @@ function setShopping(on) {
   applyMode();
   renderTrip();
   window.scrollTo(0, 0);
+  if (on) keepAwake(true);
+  else releaseAwake();
+}
+
+// ---------- keep the screen on while shopping ----------
+// Uses the browser's Screen Wake Lock. The phone drops the lock whenever the
+// app goes to the background, so it's asked for again when you come back.
+// Phone only, like shopping mode itself.
+let wakeLock = null;
+let wakePending = false;
+const isPhone = () => window.matchMedia("(max-width: 899px)").matches;
+async function keepAwake(announce) {
+  if (!ui.shopping || !isPhone() || document.visibilityState !== "visible" || wakeLock || wakePending) return;
+  if (!("wakeLock" in navigator)) {
+    if (announce) showToast("This phone can't keep the screen on from the app", false);
+    return;
+  }
+  wakePending = true;
+  try {
+    wakeLock = await navigator.wakeLock.request("screen");
+    wakeLock.addEventListener("release", () => { wakeLock = null; });
+    if (announce) showToast("Your screen will stay on while you shop", false);
+    if (!ui.shopping) releaseAwake();
+  } catch (e) {
+    wakeLock = null; // Some phones only allow it right after a tap; the next tap tries again.
+  } finally {
+    wakePending = false;
+  }
+}
+function releaseAwake() {
+  if (wakeLock) wakeLock.release().catch(() => {});
+  wakeLock = null;
 }
 function openQuickAdd() {
   ui.quickAdd = true;
@@ -649,6 +681,9 @@ function closeQuickAdd() {
 function setupShopping() {
   try { ui.shopping = localStorage.getItem(SHOP_KEY) === "1"; } catch (e) { ui.shopping = false; }
   applyMode();
+  keepAwake(false);
+  document.addEventListener("visibilitychange", () => { if (document.visibilityState === "visible") keepAwake(false); });
+  document.addEventListener("pointerdown", () => { if (ui.shopping && !wakeLock) keepAwake(false); }, true);
   $("start-shop").addEventListener("click", () => setShopping(true));
   $("end-shop").addEventListener("click", () => setShopping(false));
   $("finish-shop").addEventListener("click", () => setShopping(false));

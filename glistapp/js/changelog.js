@@ -2,6 +2,15 @@
 // shown in the footer. Add a new entry at the top for each update.
 export const RELEASES = [
   {
+    version: "2.6",
+    date: "2026-10-20",
+    title: "Screen stays on",
+    notes: [
+      "Shopping mode now keeps your screen on, so the list doesn't go dark while your phone sits in the cart.",
+      "It switches off when you tap the check mark to finish, and comes back on if you leave the app and return."
+    ]
+  },
+  {
     version: "2.5",
     date: "2026-10-20",
     title: "Your Stop & Shop card",

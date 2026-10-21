@@ -1,6 +1,6 @@
 // Network first, cache as a fallback, so a new version shows up on the next
 // load instead of the phone holding on to an old copy. Old caches are removed.
-const CACHE = "grocery-list-v8";
+const CACHE = "grocery-list-v9";
 const ASSETS = [
   "./",
   "./index.html",
