@@ -1876,10 +1876,8 @@ a:hover {
   background: var(--surface);
 }
 .author-card img {
-  border-radius: 50%;
-  border: 3px solid var(--brand);
-  background: var(--white);
   flex: none;
+  transform: rotate(-4deg);
 }
 .author-card p {
   margin: 0;
