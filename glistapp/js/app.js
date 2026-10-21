@@ -1,5 +1,6 @@
 import { createStore, getPath } from "./store.js";
 import { RELEASES, VERSION } from "./changelog.js";
+import { barcodeSvg, eanCheckDigit } from "./barcode.js";
 
 // ---------- tiny DOM helper ----------
 function h(tag, props = {}, ...children) {
@@ -602,19 +603,14 @@ function setupNotes() {
       h("time", { datetime: r.date, text: formatDate(r.date) })),
     h("ul", {}, ...r.notes.map((n) => h("li", { text: n })))
   )));
-  // Older Safari has <dialog> without showModal(), so fall back to the open attribute.
-  const notes = $("notes");
-  const closeNotes = () => { if (notes.close) notes.close(); else notes.removeAttribute("open"); };
   $("open-notes").addEventListener("click", () => {
-    if (!notes.open) {
-      if (notes.showModal) notes.showModal(); else notes.setAttribute("open", "");
-    }
+    $("notes").showModal();
     $("notes-body").scrollTop = 0;
     try { localStorage.setItem(SEEN_KEY, VERSION); } catch (e) { /* ignore */ }
     $("new-dot").hidden = true;
   });
-  $("close-notes").addEventListener("click", closeNotes);
-  notes.addEventListener("click", (e) => { if (e.target === notes) closeNotes(); });
+  $("close-notes").addEventListener("click", () => $("notes").close());
+  $("notes").addEventListener("click", (e) => { if (e.target === $("notes")) $("notes").close(); });
 }
 
 // ---------- shopping mode ----------
@@ -637,6 +633,38 @@ function setShopping(on) {
   applyMode();
   renderTrip();
   window.scrollTo(0, 0);
+  if (on) keepAwake(true);
+  else releaseAwake();
+}
+
+// ---------- keep the screen on while shopping ----------
+// Uses the browser's Screen Wake Lock. The phone drops the lock whenever the
+// app goes to the background, so it's asked for again when you come back.
+// Phone only, like shopping mode itself.
+let wakeLock = null;
+let wakePending = false;
+const isPhone = () => window.matchMedia("(max-width: 899px)").matches;
+async function keepAwake(announce) {
+  if (!ui.shopping || !isPhone() || document.visibilityState !== "visible" || wakeLock || wakePending) return;
+  if (!("wakeLock" in navigator)) {
+    if (announce) showToast("This phone can't keep the screen on from the app", false);
+    return;
+  }
+  wakePending = true;
+  try {
+    wakeLock = await navigator.wakeLock.request("screen");
+    wakeLock.addEventListener("release", () => { wakeLock = null; });
+    if (announce) showToast("Your screen will stay on while you shop", false);
+    if (!ui.shopping) releaseAwake();
+  } catch (e) {
+    wakeLock = null; // Some phones only allow it right after a tap; the next tap tries again.
+  } finally {
+    wakePending = false;
+  }
+}
+function releaseAwake() {
+  if (wakeLock) wakeLock.release().catch(() => {});
+  wakeLock = null;
 }
 function openQuickAdd() {
   ui.quickAdd = true;
@@ -653,15 +681,67 @@ function closeQuickAdd() {
 function setupShopping() {
   try { ui.shopping = localStorage.getItem(SHOP_KEY) === "1"; } catch (e) { ui.shopping = false; }
   applyMode();
+  keepAwake(false);
+  document.addEventListener("visibilitychange", () => { if (document.visibilityState === "visible") keepAwake(false); });
+  document.addEventListener("pointerdown", () => { if (ui.shopping && !wakeLock) keepAwake(false); }, true);
   $("start-shop").addEventListener("click", () => setShopping(true));
   $("end-shop").addEventListener("click", () => setShopping(false));
   $("finish-shop").addEventListener("click", () => setShopping(false));
   $("quick-add").addEventListener("click", () => { if (ui.quickAdd) closeQuickAdd(); else openQuickAdd(); });
 }
 
+// ---------- Stop & Shop card ----------
+// The number is kept on this device only (never in the code or the database),
+// and shown full screen on white so the kiosk scanner can read it.
+const CARD_KEY = "glist-card";
+function savedCard() {
+  try { return localStorage.getItem(CARD_KEY) || ""; } catch (e) { return ""; }
+}
+function showCard(setup) {
+  const number = savedCard();
+  const editing = setup || !number;
+  $("card-show").hidden = editing;
+  $("card-setup").hidden = !editing;
+  $("edit-card").hidden = editing;
+  $("card-tip").hidden = editing;
+  $("card-error").hidden = true;
+  if (!editing) {
+    const width = Math.min(window.innerWidth - 32, 560);
+    $("card-barcode").replaceChildren(barcodeSvg(number, width, Math.round(Math.min(150, window.innerHeight * 0.17))));
+    $("card-number").textContent = number;
+  }
+  if (!$("card").open) $("card").showModal();
+  if (editing) {
+    $("card-input").value = number;
+    $("card-input").focus();
+  } else {
+    $("close-card").focus();
+  }
+}
+function setupCard() {
+  $("show-card").addEventListener("click", () => showCard(false));
+  $("close-card").addEventListener("click", () => $("card").close());
+  $("edit-card").addEventListener("click", () => showCard(true));
+  $("card-setup").addEventListener("submit", (e) => {
+    e.preventDefault();
+    const v = $("card-input").value.replace(/[\s-]/g, "");
+    let problem = "";
+    if (!/^\d{6,20}$/.test(v)) problem = "Use just the digits under the barcode.";
+    else if (v.length === 13 && eanCheckDigit(v.slice(0, 12)) !== Number(v[12])) problem = "One of the digits looks off. Double-check the number on your card.";
+    if (problem) {
+      $("card-error").textContent = problem;
+      $("card-error").hidden = false;
+      return;
+    }
+    try { localStorage.setItem(CARD_KEY, v); } catch (err) { /* ignore */ }
+    showCard(false);
+  });
+}
+
 // ---------- wire up ----------
 function bind() {
   setupNotes();
+  setupCard();
   setupShopping();
   const q = $("q");
   q.addEventListener("input", () => { ui.query = q.value; renderList(); });

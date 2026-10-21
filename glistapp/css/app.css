@@ -35,11 +35,7 @@ a { color: var(--cobalt-tint); }
 [hidden] { display: none !important; }
 .sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
 
-/* Column that's at least the screen's height, so the footer sits at the bottom on short pages */
-.app {
-  max-width: 1216px; margin: 0 auto; padding: 0 20px;
-  display: flex; flex-direction: column; min-height: 100vh; min-height: 100dvh;
-}
+.app { max-width: 1216px; margin: 0 auto; padding: 0 20px 120px; }
 
 /* Header */
 .top {
@@ -294,10 +290,9 @@ dialog.picker::backdrop { background: rgba(0, 0, 0, 0.55); }
 /* Footer and patch notes */
 .foot {
   display: flex; align-items: center; justify-content: center; gap: 8px; flex-wrap: wrap;
-  margin-top: auto; padding: 18px 0 max(18px, env(safe-area-inset-bottom)); border-top: 1px solid var(--line);
+  margin-top: 48px; padding-top: 18px; border-top: 1px solid var(--line);
   font-size: 13px; color: var(--muted);
 }
-.app > main { margin-bottom: 48px; }
 .foot .link-btn { font-size: 13px; position: relative; display: inline-flex; align-items: center; gap: 6px; }
 .new-dot { width: 8px; height: 8px; border-radius: 4px; background: var(--cobalt-tint); }
 dialog.notes {
@@ -333,6 +328,42 @@ dialog.notes::backdrop { background: rgba(0, 0, 0, 0.55); }
 .trip-meta { display: flex; align-items: center; gap: 12px; }
 .when-shopping { display: none; }
 .all-done p { margin: 0 0 16px; }
+
+/* Stop & Shop card: full screen, white, barcode in the top third */
+dialog.card {
+  border: 0; padding: 0; margin: 0; width: 100vw; max-width: none; height: 100dvh; max-height: none;
+  background: #FFFFFF; color: #111318; color-scheme: light;
+}
+dialog.card[open] { display: flex; flex-direction: column; }
+dialog.card::backdrop { background: #FFFFFF; }
+.card-top {
+  min-height: 33.4dvh; box-sizing: border-box; display: flex; flex-direction: column; gap: 10px;
+  padding: max(12px, env(safe-area-inset-top)) 16px 12px;
+}
+.card-head { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+.card-head h2 { margin: 0; font-size: 20px; font-weight: 800; }
+.card-close {
+  width: 48px; height: 48px; border: 0; border-radius: 24px; background: #EEF1F7; color: #111318;
+  display: flex; align-items: center; justify-content: center; flex: none;
+}
+.card-show { display: flex; flex-direction: column; align-items: center; gap: 6px; padding-top: 6px; }
+.card-barcode { display: flex; justify-content: center; width: 100%; }
+.card-barcode svg { display: block; }
+.card-number { margin: 0; font-size: 30px; font-weight: 700; letter-spacing: 2px; font-variant-numeric: tabular-nums; }
+.card-setup { display: flex; flex-direction: column; gap: 10px; padding-top: 6px; }
+.card-setup label { font-size: 15px; font-weight: 700; }
+.card-setup input {
+  height: 56px; padding: 0 14px; border-radius: 12px; border: 2px solid #C7D7F2; background: #fff; color: #111318;
+  font-size: 22px; letter-spacing: 1px;
+}
+.card-setup input:focus { outline: none; border-color: var(--cobalt); }
+.card-setup .btn { align-self: flex-start; }
+.card-error { margin: 0; color: #B42318; font-size: 14px; font-weight: 600; }
+.card-note { margin: 0; color: #4A5068; font-size: 13px; }
+.card-rest { flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: flex-end; gap: 8px; padding: 16px 16px max(20px, env(safe-area-inset-bottom)); }
+.card-tip { margin: 0; text-align: center; color: #4A5068; font-size: 14px; max-width: 360px; }
+.card-edit { min-height: 44px; padding: 0 12px; border: 0; background: transparent; color: var(--cobalt); font-size: 15px; font-weight: 700; }
+.shop-btn.icon-only { width: 48px; padding: 0; justify-content: center; }
 
 /* Phone vs laptop */
 @media (max-width: 899px) {
@@ -371,7 +402,7 @@ dialog.notes::backdrop { background: rgba(0, 0, 0, 0.55); }
   .nav a { padding: 0 10px; }
 }
 @media (min-width: 900px) {
-  .app { padding: 0 32px; }
+  .app { padding: 0 32px 120px; }
   .top { padding: 28px 0 24px; border-bottom: 1px solid var(--line); margin-bottom: 28px; }
   .brand h1 { font-size: 28px; }
   .search { height: 60px; padding-left: 18px; }

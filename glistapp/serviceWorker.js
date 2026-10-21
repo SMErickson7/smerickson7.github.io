@@ -1,6 +1,6 @@
 // Network first, cache as a fallback, so a new version shows up on the next
 // load instead of the phone holding on to an old copy. Old caches are removed.
-const CACHE = "grocery-list-v8";
+const CACHE = "grocery-list-v10";
 const ASSETS = [
   "./",
   "./index.html",
@@ -9,13 +9,14 @@ const ASSETS = [
   "./js/store.js",
   "./js/catalog.js",
   "./js/changelog.js",
+  "./js/barcode.js",
   "./manifest.json",
   "./images/icons/icon.svg",
   "./images/icons/icon-192x192.png"
 ];
 
 self.addEventListener("install", (event) => {
-  event.waitUntil(caches.open(CACHE).then((cache) => cache.addAll(ASSETS)).then(() => self.skipWaiting()));
+  event.waitUntil(caches.open(CACHE).then((cache) => cache.addAll(ASSETS.map((a) => new Request(a, { cache: "no-cache" })))).then(() => self.skipWaiting()));
 });
 
 self.addEventListener("activate", (event) => {
@@ -31,12 +32,10 @@ self.addEventListener("fetch", (event) => {
   const url = new URL(req.url);
   // Only handle this site's own files. Firebase and fonts go straight to the network.
   if (req.method !== "GET" || url.origin !== self.location.origin) return;
-  // Skip the browser's HTTP cache for files (the host sends max-age=600), so a
-  // new index.html never runs with an old app.js. Pages keep the plain fetch so
-  // redirects like /glistapp to /glistapp/ still work.
-  const fresh = req.mode === "navigate" ? fetch(req) : fetch(req, { cache: "no-cache" });
   event.respondWith(
-    fresh
+    // "no-cache" makes the browser check with the site every time (a quick
+    // "has this changed?" request) instead of reusing a copy for up to 10 minutes.
+    fetch(req, { cache: "no-cache" })
       .then((res) => {
         const copy = res.clone();
         caches.open(CACHE).then((cache) => cache.put(req, copy));

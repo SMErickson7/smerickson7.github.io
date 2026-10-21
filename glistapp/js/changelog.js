@@ -2,6 +2,33 @@
 // shown in the footer. Add a new entry at the top for each update.
 export const RELEASES = [
   {
+    version: "2.6.1",
+    date: "2026-10-20",
+    title: "Updates show up right away",
+    notes: [
+      "Fixed: new versions could take up to 10 minutes to reach your phone because it reused saved copies of the app. It now checks for a newer version every time it opens."
+    ]
+  },
+  {
+    version: "2.6",
+    date: "2026-10-20",
+    title: "Screen stays on",
+    notes: [
+      "Shopping mode now keeps your screen on, so the list doesn't go dark while your phone sits in the cart.",
+      "It switches off when you tap the check mark to finish, and comes back on if you leave the app and return."
+    ]
+  },
+  {
+    version: "2.5",
+    date: "2026-10-20",
+    title: "Your Stop & Shop card",
+    notes: [
+      "Your Stop & Shop card is now in Shopping mode: tap the barcode button to show it full screen for the kiosk scanner.",
+      "The first time, type in your card number. It's saved on that phone only, never in the database or on the site.",
+      "Done is now a check mark, to make room in the shopping bar."
+    ]
+  },
+  {
     version: "2.4",
     date: "2026-10-17",
     title: "Shopping mode",
