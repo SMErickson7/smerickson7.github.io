@@ -20,6 +20,8 @@ visual:
     - Blog + LinkedIn
 ---
 
+<p class="case-meta">Published October 20, 2026</p>
+
 ## Why I built it {#why}
 
 I had two reasons to build this, and honestly, neither one was "I want to be a content creator."

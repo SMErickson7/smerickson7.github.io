@@ -11,14 +11,13 @@ link_label: Read the build story
 tags: [Hardware, Android, Google Apps Script, Claude]
 ai_assisted: true
 page_visual: false
-project_date: 2026-10-22
 visual:
   type: image
   src: /assets/img/projects/counter-calendar/on-the-counter.jpg
   alt: The finished calendar on a 15.6 inch photo frame sitting on a kitchen counter, showing the week on the left and color-coded games on the right
 ---
 
-<p class="case-meta">A DIY smart display · October 2026</p>
+<p class="case-meta">Published October 22, 2026</p>
 
 ## The problem {#problem}
 

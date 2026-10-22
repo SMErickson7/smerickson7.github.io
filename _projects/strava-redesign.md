@@ -9,20 +9,14 @@ built_with: Miro, Figma, Illustrator, InDesign
 result: "4 fixes: route clarity, bigger buttons, auto-rotate, one view"
 link_label: Read the case study
 tags: [UX, Figma, Cycling]
+page_visual: false
 visual:
   type: image
   src: /assets/img/strava-card.jpg
   alt: Annotated Strava ride screens with sticky notes marking problems
 ---
 
-<p class="case-meta">An unsolicited redesign case study · Published December 15, 2022</p>
-
-<nav class="case-nav" aria-label="Case study sections">
-  <a class="chip" href="#problem">The problem</a>
-  <a class="chip" href="#process">The process</a>
-  <a class="chip" href="#solution">The solution</a>
-  <a class="chip" href="#conclusion">Conclusion</a>
-</nav>
+<p class="case-meta">Published December 15, 2022</p>
 
 ## The problem {#problem}
 
