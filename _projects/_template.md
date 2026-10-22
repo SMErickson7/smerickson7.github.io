@@ -20,6 +20,8 @@ tags: [Tag one, Tag two]
 # Optional: link the card somewhere else instead of this page
 # external_url: /some-page.html
 # link_label: Read the case study
+# Keep the visual on the Workshop card, but not next to At a glance
+page_visual: false
 
 # Pick ONE visual type and delete the others.
 visual:
@@ -38,6 +40,8 @@ visual:
 #   type: iterations
 #   steps: [v1, v2, Final]
 ---
+
+<p class="case-meta">Published Month D, YYYY</p>
 
 ## The problem
 
