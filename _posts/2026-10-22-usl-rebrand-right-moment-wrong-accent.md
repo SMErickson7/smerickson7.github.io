@@ -3,6 +3,10 @@ layout: post
 title: "The USL Rebrand: Right Moment, Wrong Accent"
 description: "My reaction to the USL's new United for Soccer identity, and why a league built on promotion and relegation should lean into being American instead of borrowing England's accent."
 topic: news
+image: /assets/img/posts/usl-rebrand/brooklyn-broadcast.jpg
+image_alt: "Brooklyn FC vs Rhode Island FC broadcast shot through the netting"
+# Use the image on the home page and in link previews, but not again at the top of the post
+hero: false
 ai_assisted: true
 ---
 

@@ -11,7 +11,7 @@ section: writing
       {% if page.description %}<p class="page-head__lead">{{ page.description }}</p>{% endif %}
     </div>
   </header>
-  {% if page.image %}
+  {% if page.image and page.hero != false %}
   <figure class="container post__hero">
     <img src="{{ page.image }}" alt="{{ page.image_alt }}">
   </figure>
