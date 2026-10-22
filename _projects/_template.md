@@ -11,7 +11,7 @@ published: false
 layout: project
 title: "Project title"
 kind: "Short category, like 3D printing or Agentic workflow"
-order: 5          # position on the homepage and Workshop page (1 shows first)
+order: 5 # position on the homepage and Workshop page (1 shows first)
 summary: "One or two sentences on what you built and why."
 goal: "What you set out to do"
 built_with: "Tools and materials"

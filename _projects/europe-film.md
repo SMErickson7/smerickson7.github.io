@@ -5,7 +5,7 @@ published: false
 layout: project
 title: Europe, filmed on a Pocket 3
 kind: Travel film
-order: 3
+order: 5
 summary: Before my last trip to Europe, I learned the basics of filmmaking (shot lists, B-roll, camera movement, and telling a story in the edit), then documented the whole trip on a DJI Osmo Pocket 3.
 goal: Come home with a story, not a camera roll
 built_with: DJI Osmo Pocket 3, [editing software]

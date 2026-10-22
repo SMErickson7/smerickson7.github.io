@@ -2,7 +2,7 @@
 layout: project
 title: A photo frame turned counter calendar
 kind: DIY smart display
-order: 5
+order: 3
 summary: I unlocked a cheap Frameo photo frame and turned it into a calendar for my kitchen counter that puts my own plans first, with my teams' games in their own colors off to the side.
 goal: Stop my appointments getting lost between game days
 built_with: Pastigio Frameo frame, ADB, Fully Kiosk Browser, Google Apps Script, Claude
