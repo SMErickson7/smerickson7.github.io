@@ -10,6 +10,8 @@ result: "4 design versions · 1 unlocked frame · $0 in software"
 link_label: Read the build story
 tags: [Hardware, Android, Google Apps Script, Claude]
 ai_assisted: true
+page_visual: false
+project_date: 2026-10-22
 visual:
   type: image
   src: /assets/img/projects/counter-calendar/on-the-counter.jpg
@@ -18,20 +20,9 @@ visual:
 
 <p class="case-meta">A DIY smart display · October 2026</p>
 
-<nav class="case-nav" aria-label="Project sections">
-  <a class="chip" href="#problem">The problem</a>
-  <a class="chip" href="#frame">The frame</a>
-  <a class="chip" href="#design">The design</a>
-  <a class="chip" href="#unlock">Unlocking it</a>
-  <a class="chip" href="#night">Night mode</a>
-  <a class="chip" href="#cost">The cost</a>
-</nav>
-
 ## The problem {#problem}
 
 My Google Calendar has everything in it: my personal appointments (medical, dates, events), birthdays, holidays, and the schedules of every team I follow. That's the Celtics, the Patriots, the Revs, Rhode Island FC, Inter, the USMNT, Germany and Formula 1 (I follow a lot of teams). With all of that in one place, my own appointments get lost in the middle of it.
-
-I wanted a calendar on my kitchen counter that I could read from across the room. Large text, my plans front and center, and my teams' games off to the side in colors and logos I'd recognize at a glance. It would also replace the Google Home screen on my counter (which I'm moving to my desk).
 
 The spark was a video from Syntax, [Jailbreaking a $50 photo frame](https://www.youtube.com/watch?v=ZLycoUMltNI). The idea: cheap smart photo frames are basically Android tablets in disguise, and with a little work you can strip out the stock software and run your own web dashboard on them. I liked the idea of doing this as a DIY project rather than buying something off the shelf.
 
@@ -46,7 +37,7 @@ The design I landed on needed a 1080p screen, and to read it from across the kit
 
 Buying it from Amazon also meant a return window. If it wouldn't let me in, I could send it back and fall back to a cheap tablet or a Raspberry Pi with a portable monitor.
 
-For comparison, an Amazon Echo Show is $349.99 and a Skylight Calendar is $319.99, and I'm not sure how much customizing you can do with either of them. The frame cost me [FILL: price you paid].
+For comparison, an Amazon Echo Show is $349.99 and a Skylight Calendar is $319.99, and I'm not sure how much customizing you can do with either of them. The frame cost me $106.20 (with tax).
 
 ## Designing it {#design}
 
@@ -140,22 +131,16 @@ The frame doesn't have a motion sensor (the only sensor is the one that detects 
 
 This part took a few rounds too. The script dimmed the screen within seconds and ignored taps at first (it couldn't find Android's tools when it started up at boot), and then refused to dim at all (this frame reports "time ran out" with a different code than usual). It works now.
 
-## The cost {#cost}
-
-| | Price | Customizable? |
-|---|---|---|
-| My Pastigio frame | [FILL: price you paid] | Completely: it runs my own dashboard |
-| Amazon Echo Show | $349.99 | Not sure how much |
-| Skylight Calendar | $319.99 | Not sure how much |
-
-Every piece of software in this build is free: Fully Kiosk Browser (free version), Google Apps Script, the weather data and Termux.
-
 ## What's next
 
-The frame came with a 12 volt barrel plug adapter, and I'd like to switch it to USB-C power with a USB-C to barrel plug cable.
+The calendar works, but it doesn't have a permanent home yet. At 15.6 inches it's pretty large for my kitchen counter, and I'm still figuring out where it should live in my apartment.
+
+- **Mounting it on the wall.** That would free up the counter, but I'd want a discreet way to hide the plug or have the wire blend into the wall (a dangling cord would undo the whole look).
+- **Adding a motion sensor.** The frame doesn't have one built in, and I'd like the calendar to wake up when I walk by instead of waiting for a tap.
+- **Adding more screens.** For example, a full month calendar view, my photos (it is a photo frame, after all), and more.
 
 Big thanks to Wes Bos and the Syntax team for the idea and for documenting the hard parts.
 
 ---
 
-*This page was produced with a Claude repurposing agentic workflow I built, and Claude was my build partner for the project itself: the mockups, the dashboard code and the scripts on the frame. I made the calls, tested everything on my counter, and reviewed and edited everything before it went live. Curious how it works? Ask me how I built it!*
+_This page was produced with a Claude repurposing agentic workflow I built, and Claude was my build partner for the project itself: the mockups, the dashboard code and the scripts on the frame. I made the calls, tested everything on my counter, and reviewed and edited everything before it went live. Curious how it works? Ask me how I built it!_
