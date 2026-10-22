@@ -17,12 +17,7 @@ description: Marketer by trade, tinkerer by habit. Writing about what I learn fr
   </div>
 </section>
 
-{% comment %}The list repeats inside each group so it fills wide screens, and the two identical groups make the loop seamless.{% endcomment %}
-<div class="ticker" aria-hidden="true">
-  <div class="ticker__track">
-    {% for copy in (1..2) %}<div class="ticker__group">{% for pass in (1..3) %}{% for item in site.data.profile.ticker %}<span>{{ item }}</span><span class="ticker__sep">/</span>{% endfor %}{% endfor %}</div>{% endfor %}
-  </div>
-</div>
+{% include ticker.html %}
 
 <section class="section container" aria-labelledby="writing-heading">
   <div class="section-head">

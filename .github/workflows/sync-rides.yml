@@ -1,0 +1,37 @@
+# Pulls the ride log from Google Sheets into _data/rides.json every morning.
+# It only commits when the rides changed, and that commit rebuilds the site.
+# To sync right after a ride: GitHub > Actions > Sync rides > Run workflow.
+name: Sync rides
+
+on:
+  schedule:
+    - cron: "17 11 * * *" # 11:17 UTC, early morning Eastern
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: sync-rides
+  cancel-in-progress: false
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+
+      - name: Download rides from the sheet
+        run: python3 _tools/sync_rides.py
+
+      - name: Commit if anything changed
+        run: |
+          if git diff --quiet -- _data/rides.json; then
+            echo "No new rides."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add _data/rides.json
+          git commit -m "Sync rides from Google Sheets"
+          git push

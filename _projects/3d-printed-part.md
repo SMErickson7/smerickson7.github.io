@@ -1,9 +1,11 @@
 ---
 # MOCK PROJECT: replace the bracketed text with real details before launch.
+# Hidden until the project is ready. Delete the next line to publish it.
+published: false
 layout: project
 title: "[Part name], designed and printed"
 kind: 3D printing
-order: 3
+order: 4
 summary: "[The problem I had, why nothing off the shelf fit, and how I modeled, printed, and refined a part to solve it.]"
 goal: "[What the part needed to do]"
 built_with: "[CAD tool], [printer], [material]"

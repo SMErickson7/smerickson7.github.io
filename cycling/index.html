@@ -3,17 +3,17 @@ layout: default
 title: Cycling
 section: cycling
 permalink: /cycling/
-description: My bikes, how I got into cycling, photos from my rides, and my all-time Strava numbers.
+description: My bikes, how I got into cycling, photos from my rides, and my Strava numbers by year, bike or date range.
 ---
 {% assign cy = site.data.cycling %}
-{% assign rides_stat = cy.stats | where: "label", "Rides" | first %}
-{% assign distance_stat = cy.stats | where: "label", "Distance" | first %}
+{% assign rd = site.data.rides %}
+{% assign rt = rd.totals.display %}
 {% assign case_study = site.projects | where_exp: "p", "p.url contains 'strava-redesign'" | first %}
 <section class="page-head">
   <div class="container">
     <p class="label label--light">On two wheels</p>
     <h1 class="display display--xxl">Cycling</h1>
-    <p class="page-head__lead">{{ rides_stat.value }} rides and {{ distance_stat.value }} on Strava since I started riding in 2018. Here are the bikes, the story, and the numbers.</p>
+    <p class="page-head__lead">{{ rt.rides }} rides and {{ rt.distance }} on Strava since I started riding in 2018. Here are the bikes, the story, and the numbers.</p>
   </div>
 </section>
 
@@ -33,9 +33,10 @@ description: My bikes, how I got into cycling, photos from my rides, and my all-
       <div class="bike__body">
         <p class="label label--brand">{{ bike.year }}</p>
         <h3 class="bike__name">{{ bike.name }}</h3>
+        {% assign bt = rd.totals.bikes | where: "name", bike.log_name | first %}
         <dl class="ride-stats">
-          <div><dt>Rides</dt><dd>{{ bike.rides }}</dd></div>
-          <div><dt>Miles</dt><dd>{{ bike.miles }}</dd></div>
+          <div><dt>Rides</dt><dd>{{ bt.rides | default: "0" }}</dd></div>
+          <div><dt>Miles</dt><dd>{{ bt.miles | default: "0" }}</dd></div>
         </dl>
       </div>
     </article>
@@ -75,6 +76,8 @@ description: My bikes, how I got into cycling, photos from my rides, and my all-
       <button type="button" class="map-control" data-carousel-prev aria-label="Previous photo">&larr;</button>
       <span class="carousel__count" data-carousel-count aria-live="polite">1 / {{ cy.rides.size }}</span>
       <button type="button" class="map-control" data-carousel-next aria-label="Next photo">&rarr;</button>
+      <button type="button" class="map-control map-control--reset" data-carousel-play aria-pressed="false" hidden>Pause</button>
+      <button type="button" class="map-control map-control--reset carousel__view" data-carousel-view aria-pressed="false">Gallery view</button>
     </div>{% endif %}
   </div>
 </section>
@@ -83,20 +86,102 @@ description: My bikes, how I got into cycling, photos from my rides, and my all-
 <section class="section section--flush-top container" aria-labelledby="numbers-heading">
   <div class="section-head">
     <h2 id="numbers-heading" class="display display--xl">By the numbers</h2>
-    <span class="section-head__aside">All time on Strava</span>
+    <span class="section-head__aside" data-ride-range>All time on Strava</span>
   </div>
+
+  <form class="ride-filters" data-ride-filters hidden aria-label="Filter rides">
+    <div class="chips" role="group" aria-label="Pick a year" data-ride-years>
+      <button type="button" class="chip chip--active" data-year="all" aria-pressed="true">All time</button>
+    </div>
+    <div class="ride-filters__row">
+      <label class="ride-field">
+        <span class="ride-field__label">Bike</span>
+        <select data-ride-bike>
+          <option value="">All bikes</option>
+          {% for bike in cy.bikes %}<option value="{{ bike.log_name }}" data-slug="{{ bike.name | slugify }}" data-short="{{ bike.name }}">{{ bike.name }}</option>{% endfor %}
+        </select>
+      </label>
+      <label class="ride-field">
+        <span class="ride-field__label">From</span>
+        <input type="date" data-ride-from>
+      </label>
+      <label class="ride-field">
+        <span class="ride-field__label">To</span>
+        <input type="date" data-ride-to>
+      </label>
+      <button type="reset" class="map-control map-control--reset ride-filters__reset" data-ride-reset>Reset</button>
+    </div>
+  </form>
+
   <div class="metrics">
     <table class="teams-table metrics-table">
-      <caption class="visually-hidden">All-time cycling stats from Strava</caption>
-      <thead><tr><th scope="col">Metric</th><th scope="col">All time</th></tr></thead>
-      <tbody>
-        {% for st in cy.stats %}<tr><th scope="row">{{ st.label }}</th><td>{{ st.value }}</td></tr>{% endfor %}
-        {% for bike in cy.bikes %}<tr><th scope="row">{{ bike.name }}</th><td>{{ bike.rides }} rides, {{ bike.miles }} miles</td></tr>{% endfor %}
+      <caption class="visually-hidden" data-ride-caption>All-time cycling stats from Strava</caption>
+      <thead><tr><th scope="col">Metric</th><th scope="col" data-ride-col>All time</th></tr></thead>
+      <tbody data-ride-summary aria-live="polite">
+        <tr><th scope="row">Rides</th><td>{{ rt.rides }}</td></tr>
+        <tr><th scope="row">Distance</th><td>{{ rt.distance }}</td></tr>
+        <tr><th scope="row">Elevation gain</th><td>{{ rt.elevation }}</td></tr>
+        <tr><th scope="row">Time in the saddle</th><td>{{ rt.time }}</td></tr>
+        <tr><th scope="row">Longest ride</th><td>{{ rt.longest }}</td></tr>
+        <tr><th scope="row">Most climbing in a ride</th><td>{{ rt.most_climbing }}</td></tr>
+        {% for bike in cy.bikes %}{% assign bt = rd.totals.bikes | where: "name", bike.log_name | first %}<tr><th scope="row">{{ bike.name }}</th><td>{{ bt.rides }} rides, {{ bt.miles }} miles</td></tr>{% endfor %}
       </tbody>
     </table>
-    <p class="metrics__note">Updated {{ cy.updated }}. Follow along on <a href="{{ site.social.strava }}">Strava</a>.</p>
+    <p class="ride-empty" data-ride-empty hidden>No rides in this range. Try another year or bike.</p>
+    <p class="metrics__note">Last ride {{ rd.last_ride | date: "%B %-d, %Y" }}. Synced every morning from my ride log. Follow along on <a href="{{ site.social.strava }}">Strava</a>.</p>
+  </div>
+
+  <div class="ride-heat" data-ride-heat hidden>
+    <div class="ride-log__head">
+      <h3 class="ride-log__title">When I ride</h3>
+      <div class="chips" role="group" aria-label="Shade the calendar by" data-heat-metrics>
+        <button type="button" class="chip chip--active" data-metric="miles" aria-pressed="true">Miles</button>
+        <button type="button" class="chip" data-metric="seconds" aria-pressed="false">Time</button>
+        <button type="button" class="chip" data-metric="elevation_ft" aria-pressed="false">Climb</button>
+      </div>
+    </div>
+    <table class="heat-table">
+      <caption class="visually-hidden" data-heat-caption>Miles ridden by month and day of the week</caption>
+      <thead>
+        <tr><td></td><th scope="col">Sun</th><th scope="col">Mon</th><th scope="col">Tue</th><th scope="col">Wed</th><th scope="col">Thu</th><th scope="col">Fri</th><th scope="col">Sat</th></tr>
+      </thead>
+      <tbody data-heat-rows></tbody>
+    </table>
+    <div class="heat-foot">
+      <p class="heat-readout" data-heat-readout aria-hidden="true">Hover a square for the details.</p>
+      <div class="heat-legend" aria-hidden="true">
+        <span>Least</span>
+        <i class="heat-0"></i><i class="heat-1"></i><i class="heat-2"></i><i class="heat-3"></i><i class="heat-4"></i><i class="heat-5"></i>
+        <span>Most</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="ride-log" data-ride-log hidden>
+    <div class="ride-log__head">
+      <h3 class="ride-log__title">The rides</h3>
+      <span class="label label--muted" data-ride-count></span>
+    </div>
+    <div class="table-scroll" tabindex="0" aria-label="Ride list, scroll sideways on small screens">
+      <table class="teams-table ride-table">
+        <caption class="visually-hidden">Every ride in the current filter. Select a column heading to sort.</caption>
+        <thead>
+          <tr>
+            <th scope="col" aria-sort="descending"><button type="button" data-sort="date">Date</button></th>
+            <th scope="col"><button type="button" data-sort="name">Ride</button></th>
+            <th scope="col" class="num"><button type="button" data-sort="miles">Miles</button></th>
+            <th scope="col" class="num"><button type="button" data-sort="seconds">Time</button></th>
+            <th scope="col" class="num"><button type="button" data-sort="elevation_ft">Climb (ft)</button></th>
+            <th scope="col"><button type="button" data-sort="bike">Bike</button></th>
+          </tr>
+        </thead>
+        <tbody data-ride-rows></tbody>
+      </table>
+    </div>
+    <button type="button" class="map-control map-control--reset ride-log__more" data-ride-more hidden></button>
   </div>
 </section>
+<script type="application/json" id="ride-data">{{ rd.rides | jsonify }}</script>
 
 {% if case_study %}
 <section class="section section--flush-top container" aria-label="Related case study">
@@ -110,3 +195,4 @@ description: My bikes, how I got into cycling, photos from my rides, and my all-
 {% endif %}
 
 <script src="/assets/js/carousel.js?v={{ site.time | date: '%s' }}" defer></script>
+<script src="/assets/js/ride-stats.js?v={{ site.time | date: '%s' }}" defer></script>

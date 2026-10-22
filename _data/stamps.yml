@@ -20,8 +20,8 @@ teams:
   - code: CEL
     name: Boston Celtics
     sport: basketball
-    color: "#007A33"
-    tag: "#111111"
+    color: "#FFFFFF"
+    tag: "#007A33"
   - code: SOX
     name: Boston Red Sox
     sport: baseball

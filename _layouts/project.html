@@ -12,8 +12,8 @@ section: workshop
     </div>
   </header>
 
-  <div class="container report__overview">
-    <div class="report__visual">{% include project-visual.html project=page %}</div>
+  <div class="container{% if page.page_visual == false %} container--narrow report__overview--solo{% endif %} report__overview">
+    {% unless page.page_visual == false %}<div class="report__visual">{% include project-visual.html project=page %}</div>{% endunless %}
     <div class="report__spec">
       <p class="label label--brand">At a glance</p>
       {% include project-spec.html project=page %}
@@ -26,6 +26,7 @@ section: workshop
   </div>
 
   {% assign projects = site.projects | sort: "order" %}
+  {% if projects.size > 1 %}
   <nav class="container container--narrow report__more" aria-label="More projects">
     <p class="label label--brand">More from the workshop</p>
     <div class="report__more-list">
@@ -34,4 +35,5 @@ section: workshop
       {% endif %}{% endfor %}
     </div>
   </nav>
+  {% endif %}
 </article>

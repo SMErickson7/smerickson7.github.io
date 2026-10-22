@@ -2,7 +2,7 @@
 layout: project
 title: Strava, redesigned
 kind: UX audit
-order: 4
+order: 1
 summary: A self-initiated audit of the ride-tracking screens, finding where the app adds friction mid-ride, and a redesign that keeps the route and the numbers in one glance.
 goal: Make mid-ride screens readable at a glance
 built_with: Miro, Figma, Illustrator, InDesign
