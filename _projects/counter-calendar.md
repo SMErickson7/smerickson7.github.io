@@ -158,11 +158,16 @@ The fix was to build my own:
 
 The board gets wrapped in heat-shrink tubing and tucks behind the frame. Now the only things on the wall are the flat white charger and a 3 foot USB-C cable, which turned out to be exactly the right length.
 
+<figure class="case-figure">
+  <a href="/assets/img/projects/counter-calendar/on-the-wall.jpg"><img src="/assets/img/projects/counter-calendar/on-the-wall.jpg" alt="The calendar mounted on a hallway wall between a large analog clock and a white lobby intercom phone, with a thin white USB-C cable running down to a flat white charger in the outlet" loading="lazy"></a>
+  <figcaption>The after shot: on the wall, with the flat white charger in the outlet (I blurred my own appointments).</figcaption>
+</figure>
+
 ## What's next
 
 The calendar has a permanent home on the wall now. Next on the list:
 
-- **Hiding the wire.** I have white cord covers to run the cable down the wall and blend it in.
+- **Hiding the wire.** I'm getting a cable channel to run the cord down the wall, which hides it and keeps it from getting snagged on something.
 - **Adding a motion sensor.** The frame doesn't have one built in, and I'd like the calendar to wake up when I walk by instead of waiting for a tap.
 - **Adding more screens.** For example, a full month calendar view, my photos (it is a photo frame, after all), and more.
 
