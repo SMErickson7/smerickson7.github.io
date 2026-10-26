@@ -17,7 +17,7 @@ visual:
   alt: The finished calendar on a 15.6 inch photo frame sitting on a kitchen counter, showing the week on the left and color-coded games on the right
 ---
 
-<p class="case-meta">Published October 22, 2026</p>
+<p class="case-meta">Published October 22, 2026 · Updated October 26, 2026</p>
 
 ## The problem {#problem}
 
@@ -130,11 +130,39 @@ The frame doesn't have a motion sensor (the only sensor is the one that detects 
 
 This part took a few rounds too. The script dimmed the screen within seconds and ignored taps at first (it couldn't find Android's tools when it started up at boot), and then refused to dim at all (this frame reports "time ran out" with a different code than usual). It works now.
 
+## Update: on the wall, with a homemade plug {#plug}
+
+I ended up mounting the frame on the wall, below my analog clock and above the phone I use to buzz in guests from the lobby. The calendar looked right at home there, but the long black wire and the bulky black plug did not. The plug was the biggest eyesore, and I wanted something slim that only takes up one spot on the outlet (I use the other one from time to time).
+
+The catch: the frame runs on 12 volts, and most USB-C chargers don't offer 12V at all. I found a flat white USB-C charger that lists 12V on its label, and then needed something to sit between the charger and the frame, ask for 12V, and end in the right plug.
+
+That plug turned out to be the hard part. The frame takes a 4.0 x 1.35 mm barrel plug, which is surprisingly rare. I couldn't find a single cable with that plug on Amazon, and the more common 4.0 x 1.7 mm size doesn't fit.
+
+My first try was an off-the-shelf USB-C cable with a switchable voltage and a 4.0 x 1.35 mm tip. It worked, but every time it lost power it went back to 5 volts, and at 5 volts the frame boots but runs slow. Not something I wanted to fix by hand after every power cut.
+
+The fix was to build my own:
+
+- **The plug:** I cut the cord off the frame's original power adapter, which gave me the exact 4.0 x 1.35 mm plug, already wired.
+- **The brains:** a tiny USB-C "trigger" board that asks the charger for 12V every time it powers up. You pick the voltage by bridging one pad with a dab of solder.
+- **The tools:** a soldering iron, a set of helping hands and a cheap multimeter, which I used to figure out which wire was positive and to check for 12 volts before anything went near the frame.
+
+<figure class="case-figure case-figure--wide">
+  <a href="/assets/img/projects/counter-calendar/soldering-closeup.jpg"><img src="/assets/img/projects/counter-calendar/soldering-closeup.jpg" alt="Close-up through a magnifier of a small USB-C trigger board with two wires soldered to its positive and negative pads" loading="lazy"></a>
+  <figcaption>The trigger board, with the 12V pad bridged and the original plug's wires soldered on.</figcaption>
+</figure>
+
+<figure class="case-figure case-figure--wide">
+  <a href="/assets/img/projects/counter-calendar/soldering-setup.jpg"><img src="/assets/img/projects/counter-calendar/soldering-setup.jpg" alt="The trigger board held in a helping hands stand on a blue silicone soldering mat, with the black cord running off to the side" loading="lazy"></a>
+  <figcaption>The setup on my soldering mat.</figcaption>
+</figure>
+
+The board gets wrapped in heat-shrink tubing and tucks behind the frame. Now the only things on the wall are the flat white charger and a 3 foot USB-C cable, which turned out to be exactly the right length.
+
 ## What's next
 
-The calendar works, but it doesn't have a permanent home yet. At 15.6 inches it's pretty large for my kitchen counter, and I'm still figuring out where it should live in my apartment.
+The calendar has a permanent home on the wall now. Next on the list:
 
-- **Mounting it on the wall.** That would free up the counter, but I'd want a discreet way to hide the plug or have the wire blend into the wall (a dangling cord would undo the whole look).
+- **Hiding the wire.** I have white cord covers to run the cable down the wall and blend it in.
 - **Adding a motion sensor.** The frame doesn't have one built in, and I'd like the calendar to wake up when I walk by instead of waiting for a tap.
 - **Adding more screens.** For example, a full month calendar view, my photos (it is a photo frame, after all), and more.
 
