@@ -19,6 +19,8 @@ visual:
 
 <p class="case-meta">Published October 22, 2026 · Updated October 26, 2026</p>
 
+Want to build your own? The code and a setup guide are on GitHub: [digital-calendar-frame](https://github.com/SMErickson7/digital-calendar-frame).
+
 ## The problem {#problem}
 
 My Google Calendar has everything in it: my personal appointments (medical, dates, events), birthdays, holidays, and the schedules of every team I follow. That's the Celtics, the Patriots, the Revs, Rhode Island FC, Inter, the USMNT, Germany and Formula 1 (I follow a lot of teams). With all of that in one place, my own appointments get lost in the middle of it.
@@ -170,6 +172,8 @@ The calendar has a permanent home on the wall now. Next on the list:
 - **Hiding the wire.** I'm getting a cable channel to run the cord down the wall, which hides it and keeps it from getting snagged on something.
 - **Adding a motion sensor.** The frame doesn't have one built in, and I'd like the calendar to wake up when I walk by instead of waiting for a tap.
 - **Adding more screens.** For example, a full month calendar view, my photos (it is a photo frame, after all), and more.
+
+All the code from this project (the dashboard and the scripts on the frame) is on GitHub at [digital-calendar-frame](https://github.com/SMErickson7/digital-calendar-frame), with my calendars and location swapped out for placeholders.
 
 Big thanks to Wes Bos and the Syntax team for the idea and for documenting the hard parts.
 
