@@ -1,16 +1,16 @@
 {
  "source": "Strava Ride log (Google Sheets), Log tab",
- "last_ride": "2026-10-09",
+ "last_ride": "2026-11-04",
  "totals": {
-  "rides": 238,
-  "miles": 5878.4,
-  "elevation_ft": 187928,
-  "seconds": 1404918,
+  "rides": 239,
+  "miles": 5908.61,
+  "elevation_ft": 188409,
+  "seconds": 1412450,
   "display": {
-   "rides": "238",
-   "distance": "5,878.4 miles",
-   "elevation": "187,928 ft",
-   "time": "390 hours, 15 minutes",
+   "rides": "239",
+   "distance": "5,908.6 miles",
+   "elevation": "188,409 ft",
+   "time": "392 hours, 21 minutes",
    "longest": "81.11 miles",
    "most_climbing": "3,228 ft"
   },
@@ -22,12 +22,20 @@
    },
    {
     "name": "2023 Trek Domane SL 5 Gen 4",
-    "rides": "55",
-    "miles": "1,642.8"
+    "rides": "56",
+    "miles": "1,673.0"
    }
   ]
  },
  "rides": [
+  {
+   "date": "2026-11-04",
+   "name": "Lunch Ride ☀️",
+   "miles": 30.21,
+   "seconds": 7532,
+   "elevation_ft": 481,
+   "bike": "2023 Trek Domane SL 5 Gen 4"
+  },
   {
    "date": "2026-10-09",
    "name": "Morning Ride ☀️",
